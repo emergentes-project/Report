@@ -3,14 +3,13 @@
 </p>
 
 <p align="center"><strong>Universidad Peruana de Ciencias Aplicadas</strong></p>
-<p align="center">Carrera de Ingeniería de Software</p>
+<p align="center">Ingeniería de Software</p>
 <br>
-<p align="center">1ASI0728</p>
-<p align="center">Arquitecturas de Software Emergentes</p>
-<p align="center">NRC</p>
-<p align="center">9046</p>
-<p align="center">Docente</p>
-<p align="center">Royer Edelwer Rojas Malasquez</p>
+<p align="center">1ASI0728 Arquitecturas de Software Emergentes</p>
+<p align="center">202620</p>
+<br>
+<p align="center">NRC: 9046</p>
+<p align="center">Docente: Royer Edelwer Rojas Malasquez</p>
 <br>
 <p align="center"><strong>Informe de Trabajo Final</strong></p>
 <br>
