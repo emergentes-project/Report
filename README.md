@@ -275,11 +275,39 @@ El producto se llama __Lifeline__, y es una aplicación móvil que funciona con 
 
 #### 1.2.3.1. Lean UX Problem Statements.
 
+En situaciones de desastre natural, como sismos de gran magnitud, los servicios de emergencia suelen colapsar o tardar en llegar a las zonas afectadas. Los **ciudadanos en peligro** enfrentan emergencias médicas y carecen de conocimientos de primeros auxilios confiables, un problema que se agrava por el corte temporal de los servicios de telecomunicaciones e internet. Hemos observado que las soluciones tecnológicas actuales dependen casi en su totalidad de conectividad en la nube, lo que las vuelve inútiles en el momento crítico. Esta falta de herramientas accesibles y offline limita la capacidad de respuesta inmediata y aumenta el riesgo de pérdidas humanas.
+
+**¿Cómo podemos ayudar a los ciudadanos en peligro a recibir indicaciones médicas de primeros auxilios de forma inmediata, confiable y sin depender de una conexión a internet, para así estabilizar a los heridos mientras colaboramos con la llegada del personal de asistencia médica?**
+
 #### 1.2.3.2. Lean UX Assumptions.
+
+- **¿Quién es el usuario?** Ciudadanos en peligro afectados por desastres naturales (sismos) que requieren asistencia médica de emergencia, así como el personal de asistencia médica que recibirá la información de las víctimas.
+- **¿Dónde encaja nuestro producto en su vida?** Lifeline se integra como una herramienta de supervivencia de primer contacto en los minutos y horas críticas tras un sismo, operando directamente desde el dispositivo móvil del ciudadano en peligro sin necesidad de señal.
+- **¿Qué problemas tiene nuestro producto y cómo se pueden resolver?** 
+  - Riesgo de alucinaciones en la IA o indicaciones médicas erróneas: Solución mediante la técnica de Generación Aumentada por Recuperación (RAG) vinculada estrictamente a fuentes de primeros auxilios validadas
+  - Dificultad de uso bajo estrés: Solución a través de un prompt prediseñado que fuerza a la IA a dar respuestas paso a paso, precisas y evitando jerga médica compleja.
+  - Limitación de escritura en emergencias: Solución permitiendo inputs mediante audio y cámara para evaluar heridas.
+- **¿Cómo y cuándo es usado nuestro producto?** Se utiliza en el escenario inmediato post-sismo. El ciudadano en peligro consulta a la aplicación mediante texto, audio o fotos sobre una herida o síntoma. Posteriormente, de forma pasiva, la app se usa cuando el dispositivo recupera internet para notificar automáticamente la ubicación y el estado del paciente al personal de asistencia médica.
+- **¿Qué características son importantes?**
+  - Procesamiento de IA On-Device (funcionamiento 100% offline).
+  - Base de conocimientos médicos curada e integrada mediante RAG.
+  - Soporte multimodal (texto, audio, imágenes).
+  - Sincronización en segundo plano para envío de notificaciones e información de consultas al personal de asistencia médica.
+- **¿Cómo debe verse nuestro producto y cómo comportarse?** Debe tener una interfaz sumamente limpia, de alto contraste y libre de distracciones. Su comportamiento debe ser rápido (baja latencia en la inferencia del modelo), empático y directo, transmitiendo calma al ciudadano en peligro.
 
 #### 1.2.3.3. Lean UX Hypothesis Statements.
 
+- **Creemos que** al utilizar IA on-device para brindar indicaciones médicas, lograremos que los ciudadanos en peligro puedan atender emergencias críticas inmediatamente después de un desastre sin depender de internet. **Sabremos que hemos tenido éxito cuando** en pruebas controladas offline, el 80% de los usuarios logre completar un flujo de consulta de primeros auxilios en menos de 1 minuto.
+- **Creemos que** al integrar la técnica RAG con bases de datos médicas y un prompt que evite términos complejos, lograremos que las instrucciones brindadas a los ciudadanos en peligro sean seguras, confiables y fáciles de seguir bajo presión. **Sabremos que hemos tenido éxito cuando** profesionales de la salud validen que el 95% de las respuestas generadas por el sistema son clínicamente correctas y seguras.
+- **Creemos que** al habilitar la entrada de consultas mediante audio y cámara, lograremos reducir la fricción de uso para los ciudadanos en peligro que están heridos o en estado de shock. **Sabremos que hemos tenido éxito cuando** más del 50% de las consultas registradas en simulacros de uso utilicen métodos multimodales en lugar de texto escrito.
+- **Creemos que** al enviar notificaciones automáticas con información de las consultas una vez recuperada la conexión, lograremos colaborar efectivamente con el personal de asistencia médica. **Sabremos que hemos tenido éxito cuando** el personal médico reciba alertas precisas de triaje y ubicación, reduciendo su tiempo de localización de víctimas simuladas en un 30% utilizando nuestros reportes.
+
 #### 1.2.3.4. Lean UX Canvas.
+[Enlace al Lean UX Canvas.](https://canva.link/a0rosb44f3zycsg)
+
+<p align="center">
+  <img src="public/assets/images/chapter-1/LeanUXCanvas-Lifeline.png" alt="Lean UX Canvas Lifeline">
+</p>
 
 ## 1.3. Segmentos objetivo.
 
