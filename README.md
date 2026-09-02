@@ -82,13 +82,14 @@
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
     - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
   - [1.2. Solution Profile](#12-solution-profile)
-    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
-    - [1.2.2. Lean UX Process](#122-lean-ux-process)
-      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
-      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
-      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
-      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
-  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+    - [1.2.1 Nombre del Producto](#121-nombre-del-producto)
+    - [1.2.2 Lean UX Process.](#122-lean-ux-process)
+    - [1.2.3. Antecedentes y problemática](#123-antecedentes-y-problemática)
+      - [1.2.3.1. Lean UX Problem Statements.](#1231-lean-ux-problem-statements)
+      - [1.2.3.2. Lean UX Assumptions.](#1232-lean-ux-assumptions)
+      - [1.2.3.3. Lean UX Hypothesis Statements.](#1233-lean-ux-hypothesis-statements)
+      - [1.2.3.4. Lean UX Canvas.](#1234-lean-ux-canvas)
+  - [1.3. Segmentos objetivo.](#13-segmentos-objetivo)
 - [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
@@ -212,7 +213,21 @@
 
 ### 1.1.1. Descripción de la Startup
 
+La startup RescueBridge nace con la idea de usar las herramientas tecnológicas para brindar apoyo y asistencia a las personas después de desastres naturales de forma en que se puedan evitar las pérdidas humanas incluso si los servicios de emergencia no han logrado llegar al lugar. Asimismo, esta startup tiene el objetivo de colaborar con los servicios de emergencia ya sea mediante aplicativos o brindandoles la información recolectada para que puedan desarrollar su labor con mayor efectividad.
 
+En este caso, RescueBridge presenta su producto Lifeline, el cual es una aplicación móvil cuyo propósito consiste en ofrecer indicaciones médicas a la población después de un evento sísmico mediante el uso de un modelo de inteligencia artificial que basa su respuesta en una base de conocimientos médicos para asegurar que las indicaciones brindadas sean confiables y seguras. Adicionalmente, se usarán algunas estrategias para asegurar llegar al desempeño esperado. 
+
+En primer lugar, se usará la técnica de la generación aumentada por recuperación (RAG) para vincular al modelo de lenguaje empleado con fuentes de datos de primeros auxilios y procedimientos médicos previamente seleccionados. En segundo lugar, se contará con un prompt prediseñado con indicaciones claras sobre como debe ser expresada la respuesta brindada al usuario de forma en que esta sea comprensible evitando el uso excesivo de términos médicos, precisa mencionando el paso a paso a seguir y adaptada al contexto post-sismo.
+
+Otro aspecto a resaltar de la aplicación es que esta puede funcionar sin necesidad de Internet al utilizar IA on-device, de manera que la falta de señal después de un terremoto no será un impedimento para que la aplicación sea de ayuda en el momento crítico. Además, las consultas pueden ser realizadas en la aplicación tanto por texto como por medio de audio y cámara para poder ingresar imágenes de las heridas sobre las que se consulta. Por último, al contar con conexión a internet, se enviará una notificación a los rescatistas, así como la información de las consultas realizadas para que puedan ubicar a las personas que aún necesitan asistencia médica.
+
+__Misión__
+
+Brindar orientación confiable, accesible y oportuna a las personas afectadas por desastres naturales mediante soluciones tecnológicas capaces de funcionar incluso sin conexión a internet, y facilitar información relevante a los servicios de emergencia para contribuir a una atención y respuesta más efectiva.
+
+__Visión__
+
+Convertirnos en una organización referente en el uso responsable de la inteligencia artificial para la respuesta ante desastres, construyendo comunidades más preparadas y conectadas con los servicios de emergencia.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
@@ -251,19 +266,23 @@
 
 ## 1.2. Solution Profile
 
-### 1.2.1. Antecedentes y problemática
+### 1.2.1 Nombre del Producto
 
-### 1.2.2. Lean UX Process
+El producto se llama __Lifeline__, y es una aplicación móvil que funciona con IA on-device para proporcionar indicaciones médicas en un escenario post-sismo.
 
-#### 1.2.2.1. Lean UX Problem Statements
+### 1.2.2 Lean UX Process.
 
-#### 1.2.2.2. Lean UX Assumptions
+### 1.2.3. Antecedentes y problemática
 
-#### 1.2.2.3. Lean UX Hypothesis Statements
+#### 1.2.3.1. Lean UX Problem Statements.
 
-#### 1.2.2.4. Lean UX Canvas
+#### 1.2.3.2. Lean UX Assumptions.
 
-## 1.3. Segmentos objetivo
+#### 1.2.3.3. Lean UX Hypothesis Statements.
+
+#### 1.2.3.4. Lean UX Canvas.
+
+## 1.3. Segmentos objetivo.
 
 # Capítulo II: Requirements Elicitation & Analysis
 
