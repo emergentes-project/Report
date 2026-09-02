@@ -1,30 +1,57 @@
-# Informe de Trabajo Final
+<p align="center">
+  <img style="width:8%;" src="public/assets/images/cover/logo_upc.png" alt="Logo UPC">
+</p>
 
 <p align="center"><strong>Universidad Peruana de Ciencias Aplicadas</strong></p>
 <p align="center">Carrera de Ingeniería de Software</p>
-<p align="center">Ciclo: </p>
 <br>
+<p align="center">1ASI0728</p>
 <p align="center">Curso: Arquitecturas de Software Emergentes</p>
-<p align="center">Sección: </p>
-<p align="center">Profesor(es): </p>
+<p align="center">NRC</p>
+<p align="center">9046</p>
 <br><br>
 <p align="center"><strong>Informe de Trabajo Final</strong></p>
 <br>
-<p align="center">Startup: </p>
-<p align="center">Producto: </p>
+<p align="center">Docente</p>
+<p align="center">Royer Edelwer Rojas Malasquez</p>
 <br>
-<p align="center"><strong>Integrantes</strong></p>
+<p align="center">Startup: RescueBridge</p>
+<p align="center">Producto: Lifeline</p>
+<br>
 
-| Código | Apellidos y nombres |
-|---|---|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+<p align="center">
+  <strong style="font-size:1.15em;">Integrantes</strong>
+</p>
 
-<br><br>
-<p align="center">Mes y año: </p>
+<table align="center" style="border-collapse:collapse; border:none;">
+  <tr>
+    <th align="left" style="border:none; padding:0.3em 1.5em 0.3em 0;">
+      <strong style="font-size:1.1em;">Código</strong>
+    </th>
+    <th align="left" style="border:none; padding:0.3em 0;">
+      <strong style="font-size:1.1em;">Apellidos y Nombres</strong>
+    </th>
+  </tr>
+  <tr>
+    <td style="border:none; padding:0.3em 1.5em 0.3em 0;">U202310148</td>
+    <td style="border:none; padding:0.3em 0;">Roman Cruz, Natalia Bertha</td>
+  </tr>
+  <tr>
+    <td style="border:none; padding:0.3em 1.5em 0.3em 0;">U202223990</td>
+    <td style="border:none; padding:0.3em 0;">Cacho Seminario, Diego Alonso</td>
+  </tr>
+  <tr>
+    <td style="border:none; padding:0.3em 1.5em 0.3em 0;">aa</td>
+    <td style="border:none; padding:0.3em 0;">Paico Calderon, July Zelmira</td>
+  </tr>
+  <tr>
+    <td style="border:none; padding:0.3em 1.5em 0.3em 0;">aa</td>
+    <td style="border:none; padding:0.3em 0;">Solano Armas, Angelo Héctor</td>
+  </tr>
+</table>
+
+<br>
+<p align="center">Setiembre 2026</p>
 
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
@@ -166,10 +193,23 @@
 
 # Student Outcome
 
-| Criterio específico | Acciones realizadas | Conclusiones |
-|---|---|---|
-| Comunica oralmente ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería. |  |  |
-| Comunica de forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería. |  |  |
+<table>
+  <tr>
+    <td><strong>Criterio específico</strong></td>
+    <td><strong>Acciones realizadas</strong></td>
+    <td><strong>Conclusiones</strong></td>
+  </tr>
+  <tr>
+    <td>Comunica oralmente ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería.</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Comunica de forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería.</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
 # Capítulo I: Introducción
 
