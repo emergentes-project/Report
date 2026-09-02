@@ -212,7 +212,42 @@
 
 ### 1.1.1. Descripción de la Startup
 
+
+
 ### 1.1.2. Perfiles de integrantes del equipo
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Código</th>
+    <th>Descripción</th>
+    <th>Foto</th>
+  </tr>
+  <tr>
+    <td>Roman Cruz, Natalia Bertha</td>
+    <td>U202310148</td>
+    <td>Mi nombre es Natalia Roman y actualmente me encuentro cursando el octavo ciclo de la carrera de ingeniería de software en la UPC. Anteriormente ya he colaborado en proyectos que utilizan tecnologías emergentes como IoT e inteligencia artificial. Siento que puedo aportarle al equipo a través de mis habilidades de desarrollo y al desarrollar el event storming y arquitectura de la aplicación.</td>
+    <td><img src="public/assets/images/chapter-1/integrantes/natalia.png" alt="Natalia Roman Cruz" width="150"></td>
+  </tr>
+  <tr>
+    <td>Cacho Seminario, Diego Alonso</td>
+    <td>U202223990</td>
+    <td>aa</td>
+    <td><img src="public/assets/images/chapter-1/integrantes/diego.png" alt="Diego Cacho Seminario" width="150"></td>
+  </tr>
+  <tr>
+    <td>Paico Calderon, July Zelmira</td>
+    <td>U20211d760</td>
+    <td>aa</td>
+    <td><img src="public/assets/images/chapter-1/integrantes/july.png" alt="July Paico Calderon" width="150"></td>
+  </tr>
+  <tr>
+    <td>Solano Armas, Angelo Héctor</td>
+    <td>U20231b775</td>
+    <td>aa</td>
+    <td><img src="public/assets/images/chapter-1/integrantes/angelo.png" alt="Angelo Solano Armas" width="150"></td>
+  </tr>
+</table>
 
 ## 1.2. Solution Profile
 
