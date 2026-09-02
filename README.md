@@ -6,14 +6,13 @@
 <p align="center">Carrera de Ingeniería de Software</p>
 <br>
 <p align="center">1ASI0728</p>
-<p align="center">Curso: Arquitecturas de Software Emergentes</p>
+<p align="center">Arquitecturas de Software Emergentes</p>
 <p align="center">NRC</p>
 <p align="center">9046</p>
-<br><br>
-<p align="center"><strong>Informe de Trabajo Final</strong></p>
-<br>
 <p align="center">Docente</p>
 <p align="center">Royer Edelwer Rojas Malasquez</p>
+<br>
+<p align="center"><strong>Informe de Trabajo Final</strong></p>
 <br>
 <p align="center">Startup: RescueBridge</p>
 <p align="center">Producto: Lifeline</p>
@@ -41,11 +40,11 @@
     <td style="border:none; padding:0.3em 0;">Cacho Seminario, Diego Alonso</td>
   </tr>
   <tr>
-    <td style="border:none; padding:0.3em 1.5em 0.3em 0;">aa</td>
+    <td style="border:none; padding:0.3em 1.5em 0.3em 0;">U20211d760</td>
     <td style="border:none; padding:0.3em 0;">Paico Calderon, July Zelmira</td>
   </tr>
   <tr>
-    <td style="border:none; padding:0.3em 1.5em 0.3em 0;">aa</td>
+    <td style="border:none; padding:0.3em 1.5em 0.3em 0;">U20231b775</td>
     <td style="border:none; padding:0.3em 0;">Solano Armas, Angelo Héctor</td>
   </tr>
 </table>
@@ -77,10 +76,6 @@
 
 # Contenido
 
-- [Registro de versiones del informe](#registro-de-versiones-del-informe)
-- [Project Report Collaboration Insights](#project-report-collaboration-insights)
-  - [URL del repositorio del informe](#url-del-repositorio-del-informe)
-  - [Evidencias y comentarios por entrega](#evidencias-y-comentarios-por-entrega)
 - [Student Outcome](#student-outcome)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
