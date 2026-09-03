@@ -425,7 +425,23 @@ __Step 7: Read Models__
 
 En el paso siete, los read models agregados recalcan la necesidad de leer tanto la base de conocimientos médicos antes de que la inteligencia artificial genere la respuesta, como de revisar las consultas que no han sido sincronizadas antes para garantizar que no quede ninguna sin registrar ni que se haga un doble envío.
 
+__Step 8: External Systems__
 
+<img src="public/assets/images/chapter-4/step8.png" alt="event storming">
+
+Al realizar el paso ocho, notamos que no usaríamos sistemas externos puesto que, al tener como requisito que a aplicación logre funcionar sin conexión a internet, no sería conveniente depender de una conexión externa. Los aspectos como el modelo de IA empleado y la ubicación serán trabajados localmente dentro de la aplicación móvil.
+
+__Step 9: Aggregates__
+
+<img src="public/assets/images/chapter-4/step9.png" alt="event storming">
+
+Para el paso nueve, consideramos tres aggregates centrales. Primero, tenemos user, el cual aplicará tanto para los ciudadanos como para el personal médico. Asimismo, contamos con consultation, el cual hace referencia a la consulta que se le realiza a la IA sobre la urgencia o emergencia ocurrida. Por último, el aggregate case representa aquella consulta que ya logró pasar al backend y contiene datos como estado o personal asignado.
+
+__Step 10: Bounded Context__
+
+<img src="public/assets/images/chapter-4/step10.png" alt="event storming">
+
+Para el último paso, conectamos nuestros Bounded Contexts formados, considerando las funcionalidades a las quw tendría acceso cada tipo de usuario, así como el flujo que se seguiría y la dependencia que existía de uno a otro. Por ejemplo, existe una conexión directa entre Consultation y Medical Bases puesto que el modelo de IA debe recuperar información de la base de conocimientos médicos cada vez que se le realice una consulta.
 
 ### 4.2.2. Candidate Context Discovery
 
