@@ -281,19 +281,27 @@ En situaciones de desastre natural, como sismos de gran magnitud, los servicios 
 
 #### 1.2.3.2. Lean UX Assumptions.
 
-- **¿Quién es el usuario?** Ciudadanos en peligro afectados por desastres naturales (sismos) que requieren asistencia médica de emergencia, así como el personal de asistencia médica que recibirá la información de las víctimas.
-- **¿Dónde encaja nuestro producto en su vida?** Lifeline se integra como una herramienta de supervivencia de primer contacto en los minutos y horas críticas tras un sismo, operando directamente desde el dispositivo móvil del ciudadano en peligro sin necesidad de señal.
+- **¿Quién es el usuario?**
+
+  Ciudadanos en peligro afectados por desastres naturales (sismos) que requieren asistencia médica de emergencia, así como el personal de asistencia médica que recibirá la información de las víctimas.
+- **¿Dónde encaja nuestro producto en su vida?** 
+  
+  Lifeline se integra como una herramienta de supervivencia de primer contacto en los minutos y horas críticas tras un sismo, operando directamente desde el dispositivo móvil del ciudadano en peligro sin necesidad de señal.
 - **¿Qué problemas tiene nuestro producto y cómo se pueden resolver?** 
   - Riesgo de alucinaciones en la IA o indicaciones médicas erróneas: Solución mediante la técnica de Generación Aumentada por Recuperación (RAG) vinculada estrictamente a fuentes de primeros auxilios validadas
   - Dificultad de uso bajo estrés: Solución a través de un prompt prediseñado que fuerza a la IA a dar respuestas paso a paso, precisas y evitando jerga médica compleja.
   - Limitación de escritura en emergencias: Solución permitiendo inputs mediante audio y cámara para evaluar heridas.
-- **¿Cómo y cuándo es usado nuestro producto?** Se utiliza en el escenario inmediato post-sismo. El ciudadano en peligro consulta a la aplicación mediante texto, audio o fotos sobre una herida o síntoma. Posteriormente, de forma pasiva, la app se usa cuando el dispositivo recupera internet para notificar automáticamente la ubicación y el estado del paciente al personal de asistencia médica.
+- **¿Cómo y cuándo es usado nuestro producto?** 
+
+  Se utiliza en el escenario inmediato post-sismo. El ciudadano en peligro consulta a la aplicación mediante texto, audio o fotos sobre una herida o síntoma. Posteriormente, de forma pasiva, la app se usa cuando el dispositivo recupera internet para notificar automáticamente la ubicación y el estado del paciente al personal de asistencia médica.
 - **¿Qué características son importantes?**
   - Procesamiento de IA On-Device (funcionamiento 100% offline).
   - Base de conocimientos médicos curada e integrada mediante RAG.
   - Soporte multimodal (texto, audio, imágenes).
   - Sincronización en segundo plano para envío de notificaciones e información de consultas al personal de asistencia médica.
-- **¿Cómo debe verse nuestro producto y cómo comportarse?** Debe tener una interfaz sumamente limpia, de alto contraste y libre de distracciones. Su comportamiento debe ser rápido (baja latencia en la inferencia del modelo), empático y directo, transmitiendo calma al ciudadano en peligro.
+- **¿Cómo debe verse nuestro producto y cómo comportarse?** 
+
+  Debe tener una interfaz sumamente limpia, de alto contraste y libre de distracciones. Su comportamiento debe ser rápido (baja latencia en la inferencia del modelo), empático y directo, transmitiendo calma al ciudadano en peligro.
 
 #### 1.2.3.3. Lean UX Hypothesis Statements.
 
@@ -372,6 +380,52 @@ En situaciones de desastre natural, como sismos de gran magnitud, los servicios 
 ## 4.2. Strategic-Level Domain-Driven Design
 
 ### 4.2.1. EventStorming
+
+A cotinuación, se presentará el event storming realizado por el equipo y del cual se lograron formar cuatro bounded contexts para el desarrollo.
+
+__Step 1: Unstructured Exploration__
+
+<img src="public/assets/images/chapter-4/step1.png" alt="event storming">
+
+En el primer paso, colocamos todos los eventos que ocurrirían dentro de la aplicación, los cuales se centran en el proceso que sigue una consulta desde que es realizada por el ciudadano hasta que llega a ser visible y posiblementes tomada por parte del personal médico, pasando por el análisis y respuesta del modelo de inteligencia artificial local empleado.
+
+__Step 2: Timelines__
+
+<img src="public/assets/images/chapter-4/step2.png" alt="event storming">
+
+En el segundo paso, organizamos los eventos lineal para definir el orden en que ocurrirían y en que bunded context debían existir. Dentro de estos, definimos las sencuencias para el registro, configuración, ingreso y salida de los usuarios, así como el camino que seguirían las consultas para ser debidamente procesadas y mostradas con su estado al personal médico. Por otro lado, tmabién consideramos los momentos en que, al fallar algo a nivel interno, es apropiado tener listo un mensaje y caso de error.
+
+__Step 3: Pain Points__
+
+<img src="public/assets/images/chapter-4/step3.png" alt="event storming">
+
+En el tercer paso, agregamos dos pain points para los casos en los que consideramos debemos hacer una mayor investigación y futuramente pruebas con la aplicación para aegurar el desempeño esperado. Estos se refieren precisamente a el cómo asegurar que el modelo brindará respuestas adecuadas que no pongan la vida de las personas en riesgo y en cómo prevenir que la consulta hacia la base de conocimientos médicos tome más tiempo del prudente durante una emergencia.
+
+__Step 4: Pivotal Points__
+
+<img src="public/assets/images/chapter-4/step4.png" alt="event storming">
+
+En el paso cuatro, señalamos dos pivotal points que nos parecen importantes dentro del flujo que seguirán los usuarios en la aplicación. Estos son el registro del usuario que le permite usar las funcionalidades consideradas y la entrada de conexión a internet, puesto que esta permite que las consultas guardadas localmente sean enviadas al backend y que el personal médico pueda visualizarlas y/o darles la atención debida.
+
+__Step 5: Commands__
+
+<img src="public/assets/images/chapter-4/step5.png" alt="event storming">
+
+En el quinto paso, agregamos los comando que accionarían los flujos formados, así como los usuarios que tendrían permitido utilizarlos. Como se puede ver, la mayoría son activados por los usuarios, mas existen dos que se accionan como efecto de otro flujo. En el caso de la base médica, esta es consultada cuando se ha realizado una consulta Por el otro lado, la sincronización se da únicamente al percibir que el dispositivo se pudo conectar a internet y existen consultas sin enviar al backend.
+
+__Step 6: Policies__
+
+<img src="public/assets/images/chapter-4/step6.png" alt="event storming">
+
+En el paso seis, agregamos tres policies que referencias perfectamenre las reglas de negocio que se han estado mencionando. Dos de estas policies especifican que el modelo de lenguaje debe consultar la base de conocimientos médicos antes de brindar las indicaciones médicas para asgurar que estas no están siendo inventadas, y que, por el otro lado, contienen un sustento, así como debe mencionar como último paso el buscar ayuda médica profesional si la situación lo amerita. Asimismo, se tiene una policy explicando que, al recibir internet, se debe dar la sincronización hacia el backend considerando todas las consultas que no han sido enviadas antes.
+
+__Step 7: Read Models__
+
+<img src="public/assets/images/chapter-4/step7.png" alt="event storming">
+
+En el paso siete, los read models agregados recalcan la necesidad de leer tanto la base de conocimientos médicos antes de que la inteligencia artificial genere la respuesta, como de revisar las consultas que no han sido sincronizadas antes para garantizar que no quede ninguna sin registrar ni que se haga un doble envío.
+
+
 
 ### 4.2.2. Candidate Context Discovery
 
