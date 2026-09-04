@@ -258,8 +258,8 @@ Convertirnos en una organización referente en el uso responsable de la intelige
   <tr>
     <td>Solano Armas, Angelo Héctor</td>
     <td>U20231b775</td>
-    <td>aa</td>
-    <td><img src="public/assets/images/chapter-1/integrantes/angelo.png" alt="Angelo Solano Armas" width="150"></td>
+    <td>Mi nombre es Angelo Solano y actualmente curso el octavo ciclo de Ingeniería de Software en la UPC. Me motiva crear soluciones que realmente ayuden a las personas en situaciones difíciles. Siento que puedo aportar al equipo con dedicación y ganas de desarrollar una aplicación simple, confiable y fácil de usar.</td>
+    <td><img src="public/assets/images/chapter-1/integrantes/angelo.jpg" alt="Angelo Solano Armas" width="180"></td>
   </tr>
 </table>
 
