@@ -445,6 +445,46 @@ Para el último paso, conectamos nuestros Bounded Contexts formados, considerand
 
 ### 4.2.2. Candidate Context Discovery
 
+__IAM Bounded Context__
+
+<img src="public/assets/images/chapter-4/iamBC.png" alt="event storming">  
+
+Límite: Este bounded context se encarga de la gestión de nuestros dos tipos de usuarios y de su información personal. Además, aquí se gestiona el ingreso y autenticación, así como se registran los datos específicos necesarios para los ciudadanos y para el personal médico.  
+
+Eventos clave: Usuario registrado, usuario loggeado, datos personales actualizados.  
+
+Justificación: Este dominio se separa los demás ya que tiene el propósito de gestionar a los usuarios registrados, resultando aquí los roles que se tendrán. Además, si bien buscamos garantizar un ingreso sencillo para los ciudadanos puesto usarán la aplicación durante emergencias, consideramos necesario que se realice la autenticación con tokens JWT de forma obligatoria en el caso del personal médico, dado que poseerán información personal de quienes necesitan ayuda.  
+
+__Consultation Bounded Context__
+
+<img src="public/assets/images/chapter-4/consultationBC.png" alt="event storming">  
+
+Límite: Este bounded context se estará encargando de la parte central de la aplicación, siendo esta la referente a las consultas procesadas por el modelo de inteligencia artificial empleado. Aquí, llegará la consulta del usuario con fotografías adjuntas si las hubiera. El modelo se encargará de formar las indicaciones habiendo consultado antes la base médica y terminando por permitir el registro de la consulta ingresada en local.
+
+Eventos clave: Consulta por texto o vox ingresada, indicaciones médicas brindadas, consulta registrada localmente.
+
+Justificación: Este dominio viene a ser el core y se separa de los demás por motivos centrales. En primer lugar, porque representa un procesa central, por lo que debe ser desarrollado con prioridad y cuidado en cuanto a las herrmientas que integra y el flujo que sigue. En segundo lugar, porque este proceso debe darse localmente, por lo que ocurrirá dentro del dispositivo del ciudadano sin poder conectarse al backend en la nube a falta de conexión a internet.
+
+__Medical Bases Bounded Context__
+
+<img src="public/assets/images/chapter-4/medicalBC.png" alt="event storming">  
+
+Límite: Este bounded context se centra solo en las consultas hacia la base de conocimientos médicos, asegurando que el proceso se de con precisión y eficiencia.
+
+Eventos clave: Información de bases médicas recuperada, información de bases médicas consultada.
+
+Justificación: Este dominio existe por su cuenta puesto que consideramos importante poseer un espacio en el cual organizar y clasificar la información recolectada para que el modelo de inteligenia artificial logre revisar los datos que necesita de manera más directa y rápida.
+
+__Case Management Bounded Context__
+
+<img src="public/assets/images/chapter-4/caseBC.png" alt="event storming">  
+
+Límite: Este bounded context abarca todo el flujo que siguen las consultas antes realizadas por los ciudadanos después de haber podido ser enviadas hacia el backend en la nube y, por ende, mostradas al personal médico. Aquí, el personal médico podrá conocer los datos de las emergencias médicas registradas, así como asignárselos en el caso de aquellos que solicitan una atención profesional. Los asos registrados irán pasando por estados hasta llegar a ser cerrados indicando que el paciente fue atendido.
+
+Eventos clave: Conexión recuperada, consulta autoasignada, estado de consulta actualizado, consultas almacenadas localmente enviadas.
+
+Justificación: Este dominio existe para lograr gestionar por separado el flujo de los casos registrados, así como para contar con el historial guardado en la nube y ofrecer la información y posibilidad de ayudar al personal médico.
+
 ### 4.2.3. Domain Message Flows Modeling
 
 ### 4.2.4. Bounded Context Canvases
