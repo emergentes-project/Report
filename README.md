@@ -273,6 +273,33 @@ El producto se llama __Lifeline__, y es una aplicación móvil que funciona con 
 
 ### 1.2.3. Antecedentes y problemática
 
+Actualmente, en escenarios post-sismo en el Perú, los ciudadanos en peligro enfrentan un problema crítico: la falta de indicaciones médicas confiables de primeros auxilios en el momento inmediato de la emergencia, sumada a la dificultad de recibir ayuda profesional a tiempo. De acuerdo con el Instituto Geofísico del Perú (2020) y el Instituto Nacional de Defensa Civil (2023), eventos sísmicos como el de Pisco 2007 evidenciaron un alto impacto humano, con cientos de fallecidos, miles de heridos y cientos de miles de damnificados, lo que demuestra que la capacidad de respuesta puede verse rápidamente sobrepasada. En la misma línea, el Banco Mundial (2021) señala que el Perú presenta una alta vulnerabilidad frente a desastres naturales y que el riesgo sísmico constituye una de las principales amenazas del país.
+
+Por otro lado, la Organización Mundial de la Salud (2022) reconoce que, en emergencias médicas y de trauma, la respuesta rápida es determinante para reducir muertes y complicaciones, lo que se relaciona con el concepto de “golden hour”. Asimismo, la Organización Mundial de la Salud (s. f.) destaca que la comunidad tiene un rol esencial en el reconocimiento temprano de signos de peligro y en la aplicación de primeros auxilios mientras llega la asistencia formal. Sin embargo, estudios locales en el Perú evidencian que el conocimiento de primeros auxilios en la población suele ser insuficiente o irregular, lo que aumenta el riesgo de una respuesta inadecuada en el momento más crítico (Llontop Llenque & Vidarte Farfan, 2018; Cerna Quispe et al., 2025).
+
+A ello se suma un agravante tecnológico. Según la Unión Internacional de Telecomunicaciones (2020), las telecomunicaciones son un componente vital en la gestión de desastres, pero también resultan vulnerables ante fallas de infraestructura, cortes de energía y saturación de redes. Revisiones sobre telemedicina y herramientas digitales en desastres coinciden en que muchas soluciones de salud dependen de internet o de servicios en la nube, por lo que dejan de ser útiles precisamente cuando más se necesitan (Seliana et al., 2026; Salehinejad et al., 2020). En consecuencia, los ciudadanos quedan sin una guía confiable en los minutos posteriores al sismo, cuando la atención inmediata puede marcar la diferencia entre estabilizar a un herido o agravar su condición.
+
+**Who (¿Quiénes?):**  
+Nuestros principales usuarios serán ciudadanos en peligro afectados por sismos que requieren orientación médica inmediata de primeros auxilios, así como personal de asistencia médica que posteriormente pueda recibir información útil sobre la ubicación y el estado de las víctimas cuando se recupere la conectividad.
+
+**What (¿Qué sucede?):**  
+Actualmente, tras un sismo de gran magnitud, los afectados enfrentan emergencias médicas sin contar con conocimientos confiables de primeros auxilios ni con herramientas tecnológicas que funcionen sin internet. Las soluciones existentes suelen depender de conectividad en la nube, por lo que se vuelven inutilizables cuando fallan las telecomunicaciones, generando demora, desinformación y mayor riesgo para los heridos.
+
+**When (¿Cuándo ocurre?):**  
+Los problemas detectados suelen surgir en los minutos y primeras horas posteriores a un sismo, especialmente cuando los servicios de emergencia están saturados, las vías de acceso se ven afectadas y se producen cortes o congestión en las redes de comunicación. También se agrava cuando el ciudadano intenta buscar ayuda digital y no tiene señal ni acceso a internet.
+
+**Where (¿Dónde ocurre?):**  
+Esto ocurre en zonas urbanas y rurales afectadas por sismos en el Perú, incluyendo viviendas, vías públicas, zonas de colapso parcial y espacios de concentración temporal de afectados, es decir, cualquier escenario post-desastre donde exista una emergencia médica y no se cuente con asistencia inmediata ni con herramientas tecnológicas offline de apoyo.
+
+**Why (¿Por qué es un problema?):**  
+Esto es un problema porque la combinación de saturación de los servicios de emergencia, limitada preparación de la población en primeros auxilios y dependencia de soluciones que requieren internet dificulta una respuesta inmediata, reduce la capacidad de estabilizar a los heridos a tiempo y aumenta el riesgo de complicaciones o pérdidas humanas en el periodo más crítico.
+
+**How (¿Cómo lo solucionan hoy?):**  
+La solución que se utiliza hoy consiste en esperar la llegada del personal de emergencia, recurrir a conocimientos previos incompletos, consultar a otras personas cercanas o intentar usar aplicaciones y buscadores que requieren conexión a internet. En muchos casos, no existe una guía estructurada, confiable y accesible en el momento, lo que genera improvisación y aumenta la probabilidad de errores en la atención inicial.
+
+**How much (¿Cuánto cuesta no resolverlo?):**  
+Al no tomar acciones para implementar una solución, se mantiene una ventana crítica sin asistencia efectiva, se eleva el riesgo de deterioro de las víctimas antes de la llegada de ayuda profesional y se pierde la oportunidad de aprovechar los primeros minutos para estabilizar al herido. Además, en un país de alto riesgo sísmico como el Perú, no resolver este problema implica mayor vulnerabilidad poblacional, menor capacidad de respuesta comunitaria y un impacto humano potencialmente alto en futuros desastres.
+
 #### 1.2.3.1. Lean UX Problem Statements.
 
 En situaciones de desastre natural, como sismos de gran magnitud, los servicios de emergencia suelen colapsar o tardar en llegar a las zonas afectadas. Los **ciudadanos en peligro** enfrentan emergencias médicas y carecen de conocimientos de primeros auxilios confiables, un problema que se agrava por el corte temporal de los servicios de telecomunicaciones e internet. Hemos observado que las soluciones tecnológicas actuales dependen casi en su totalidad de conectividad en la nube, lo que las vuelve inútiles en el momento crítico. Esta falta de herramientas accesibles y offline limita la capacidad de respuesta inmediata y aumenta el riesgo de pérdidas humanas.
@@ -606,5 +633,25 @@ Justificación: Este dominio existe para lograr gestionar por separado el flujo 
 # Video About-the-Team
 
 # Bibliografía
+
+Banco Mundial. (2021). *Advancing policy reforms in Peru to reduce risk from natural hazards*. https://www.worldbank.org/en/results/2021/11/05/advancing-policy-reforms-in-peru-to-reduce-risk-from-natural-hazards
+
+Cerna Quispe, G. V., Castillo Ramos, N. E., & Ñaupa Contreras, J. C. (2025). Protocolos de primeros auxilios en docentes de educación inicial del distrito de Trujillo - Perú. *European Public & Social Innovation Review, 10*. https://doi.org/10.31637/epsir-2025-1489
+
+Instituto Geofísico del Perú. (2020). *Pisco 2007: 13 años de un sismo devastador*. Gob.pe. https://www.gob.pe/institucion/igp/noticias/294466-pisco-2007-13-anos-de-un-sismo-devastador
+
+Instituto Nacional de Defensa Civil. (2023). *Compendio estadístico del INDECI 2023: Gestión reactiva*. https://sinia.minam.gob.pe/documentos/compendio-estadistico-indeci-2023
+
+Llontop Llenque, J. M., & Vidarte Farfan, S. L. (2018). *Nivel de conocimiento en madres de familia sobre primeros auxilios en el hogar. Sector 6 El Pescador - distrito de San José, Lambayeque. 2017* [Tesis de bachiller, Universidad Católica Santo Toribio de Mogrovejo]. http://hdl.handle.net/20.500.12423/1960
+
+Organización Mundial de la Salud. (2022). *Rapid reaction aiming for the golden hour of health emergency response*. https://www.who.int/about/accountability/results/who-results-report-2022-mtr/rapid-reaction-aiming-for-the-golden-hour-of-health-emergency-response
+
+Organización Mundial de la Salud. (s. f.). *Community-based care*. https://www.who.int/teams/integrated-health-services/clinical-services-and-systems/emergency-and-critical-care/community-based-care
+
+Salehinejad, S., Jannati, N., Ershad Sarabi, R., & Bahaadinbeigy, K. (2020). Use of telemedicine and e-health in disasters: A systematic review. *Journal of Emergency Practice and Trauma*. https://doi.org/10.34172/jept.2020.34
+
+Seliana, I., Paripurno, E. T., Maharani, Y. N., Susanto, H., Rahmadinie, A., Agastya, W. D., Tanggono, A., & Sumardi, F. S. (2026). The role of telemedicine in healthcare response to natural disasters: A systematic review. *IOP Conference Series: Earth and Environmental Science, 1586*(1), 012054. https://doi.org/10.1088/1755-1315/1586/1/012054
+
+Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national emergency telecommunication plans*. https://www.itu.int/en/ITU-D/Emergency-Telecommunications/Documents/2020/NETP-guidelines.pdf
 
 # Anexos
