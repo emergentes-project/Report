@@ -470,6 +470,8 @@ __Step 10: Bounded Context__
 
 Para el último paso, conectamos nuestros Bounded Contexts formados, considerando las funcionalidades a las quw tendría acceso cada tipo de usuario, así como el flujo que se seguiría y la dependencia que existía de uno a otro. Por ejemplo, existe una conexión directa entre Consultation y Medical Bases puesto que el modelo de IA debe recuperar información de la base de conocimientos médicos cada vez que se le realice una consulta.
 
+[Enlace al Event Storming](https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a)
+
 ### 4.2.2. Candidate Context Discovery
 
 __IAM Bounded Context__
