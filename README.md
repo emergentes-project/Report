@@ -346,6 +346,30 @@ En situaciones de desastre natural, como sismos de gran magnitud, los servicios 
 
 ## 1.3. Segmentos objetivo.
 
+Lifeline fue diseñada pensando en que la población en general logre contar con acceso inmediato a apoyo médico después de un sismo a través de indicaciones generadas por un modelo de inteligencia artifical que obtenga los datos de una base de conocimientos médicos provenientes de organizaciones o instituciones de renombre, de forma en que se pueda asegurar que estas indicaciones son seguras. A su vez, deseamos ayudar a que los servicios de emergencia estén informados de la situación vivida lo antes posible, así como buscamos conectar a las personas heridas con el personal médico. En ese sentido, estaremos tomando en cuenta estos dos segmentos objetivos.
+
+__Ciudadanos__
+
+- Rango de edad: 12 años a más
+- Lugar de residencia: Lima, Perú
+- Nivel educativo: Nivel primario de eduación básica a superior
+- Idioma: Español
+- Descripción:  
+  Los ciudadanos son personas que estudian o trabajan ya sea de forma externa o en el hogar y que pueden verse afectados bajo un sismo. En este caso nos estamos centrado en Lima Metropolitana. Estas personas poseen un celular personal y, por lo general, carecen de la preparación médica necesaria para actuar en emergencias.
+- Preocupaciones:  
+  Los ciudadanos temen que ellos o sus familias se vean afectados físicamente después de un evento sísmico, así como al no lograr encontrar a una persona con conocimientos médicos que pueda apoyar a atender a los heridos. Les precoupa causar más daño a la víctima al intentar ayudar y desean poder encontrar un medio que los ayude a proveer primeros auxilios de forma segura, aún cuando informarse en internet no sea una opción dado en escenario.
+
+__Personal médico__
+
+- Rango de edad: 20 años a más
+- Lugar de residencia: Lima, Perú
+- Nivel educativo: Nivel universitario a superior
+- Idioma: Español
+- Descripción:  
+  El personal médico abarca a los médicos, enfermeros, paramédicos, bomberos con entrenamientos médico, internos, residentes de medicina y demás personas entrenadas en el arte de la medicina que pueden proveer apoyo en la curación de heridas, estabilización de pacientes y atención a las víctimas en general después de un sismo o terremoto.
+- Preocupaciones:  
+  Al personal médico le preocupa la falta de preparación que existe en general dentro de la población para actuar frente a un sismo, en especial considerando la aplicación de primeros auxilios. Por otro lado, temen no conocer la situación de las víctimas después de un terremoto y, por ende, no llegar a ellos preparados para su atención o ni siquiera saber donde se encuentran.
+
 # Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1. Competidores
