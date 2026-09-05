@@ -382,6 +382,37 @@ __Personal médico__
 
 ### 2.2.1. Diseño de entrevistas
 
+Para ambos segmentos, se estarán solicitando los datos de nombre completo, edad, nivel de estudios, distrito de residencia y opcupación antes de proceder con las preguntas específicas de segmento. A través de estas, se busca conocer la opinión de las personas respecto al usa de la inteligencia artificial en el ámbito médico y como apoyo de respuesta ante emergencias, así como su nivel de confianza hacia la misma.
+
+**Segmento objetivo 1: Ciudadanos**
+
+1. ¿Ha vivido alguna emergencia o urgencia médica durante o después de un sismo? Cuénteme qué ocurrió y qué hizo para ayudar a la persona.
+2. Actualmente, si usted o alguien cercano resultara herido después de un sismo, ¿cuáles serían sus primeras acciones y en qué orden las realizaría?
+3. ¿Qué sería lo más difícil o confuso al intentar ayudar a una persona herida sin contar inmediatamente con personal médico?
+4. ¿Cómo cree que se sentiría en esa situación y cómo ello podría afectar su capacidad para seguir instrucciones?
+5. ¿Qué señales tomaría en cuenta para decidir si puede atender temporalmente una herida o si debe buscar ayuda profesional de inmediato?
+6. Si no tuviera internet, ¿dónde buscaría información de primeros auxilios y qué problemas podría encontrar?
+7. En una emergencia, ¿cómo le resultaría más fácil explicar lo que está ocurriendo: escribiendo, hablando, tomando una fotografía o de otra manera? ¿Por qué?
+8. Si usted fuera a atender a una persona herida después de un sismo, ¿cómo deberían presentarse las indicaciones médicas para que pueda comprenderlas y seguirlas sin problemas?
+9. ¿Qué necesitaría ver o saber para confiar en indicaciones médicas proporcionadas por una aplicación que usa inteligencia artificial?
+10. ¿Le gustaría que sea la inteligencia artificial de la aplicación la que le sugiera si solicitar o no apoyo médico profesional? ¿Por qué?
+11. ¿Qué información personal, médica o de ubicación estaría dispuesto a compartir con el personal de emergencia?
+
+**Segmento objetivo 2: Personal médico**
+
+1. Desde su experiencia, ¿cree que son suficientes los conocimientos de primeros auxilios que posee la población en general? ¿Cuáles son los errores o desconocimientos más frecuentes?
+2. En un escenario post-sismo, ¿cómo considera que una persona sin formación médica debería atender inicialmente a un familiar herido?
+3. Durante una emergencia con múltiples víctimas, ¿qué dificultades encuentra para obtener información confiable y localizar a quienes necesitan ayuda?
+4. ¿Cuál es la información mínima que necesita conocer para evaluar inicialmente la gravedad de un caso?
+5. ¿Qué datos utiliza para decidir qué casos deben atenderse primero y cuáles pueden esperar?
+6. ¿Qué opina de que, en una situación post sísmica en la que no han llegado los equipos de emergencia, un ciudadano reciba indicaciones de parte de una inteligencia artifical con conocimiento médico para atender a un familiar herido?
+7. ¿Cómo influiría en su atención recibir a un paciente que antes fue atentido por otr persona que seguía indicaciones generadas por una IAcon conocimiento médico? ¿Qué beneficios o riesgos identifica?
+8. ¿Qué necesitaría revisar para confiar en la información, indicaciones y recomendaciones generadas por una inteligencia artifial con conocimiento médico?
+9. ¿Qué conocimientos, protocolos y procedimientos de primeros auxilios considera que debería dominar una inteligencia artificial diseñada para orientar a personas después de un sismo?
+10. Antes de ofrecer una indicación, ¿qué preguntas debería realizar la IA sobre el paciente, la lesión y el entorno para comprender correctamente la situación?
+11. ¿Qué síntomas, lesiones o señales de peligro debería reconocer la IA para recomendar esperar por atención profesional y evitar que el ciudadano continúe actuando por su cuenta?
+12. ¿Qué acciones nunca debería recomendar una IA y qué advertencias, limitaciones o medidas de seguridad considera que tendría que comunicar al usuario?
+
 ### 2.2.2. Registro de entrevistas
 
 ### 2.2.3. Análisis de entrevistas
