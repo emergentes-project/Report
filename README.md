@@ -421,6 +421,18 @@ Para ambos segmentos, se estarán solicitando los datos de nombre completo, edad
 
 ### 2.3.1. User Personas
 
+**Ciudadanos**
+
+<p align="center">
+  <img src="public/assets/images/chapter-2/User Personas/Ciudadanos-Adriana Rojas.png" alt="User Persona Adriana Rojas - Ciudadanos">
+</p>
+
+**Personal médico**
+
+<p align="center">
+  <img src="public/assets/images/chapter-2/User Personas/Personal Medico-Luis Mendoza.png" alt="User Persona Luis Mendoza - Personal médico">
+</p>
+
 ### 2.3.2. User Task Matrix
 
 ### 2.3.3. Empathy Mapping
