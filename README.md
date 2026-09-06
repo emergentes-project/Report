@@ -447,6 +447,20 @@ Para ambos segmentos, se estarán solicitando los datos de nombre completo, edad
 
 ## 3.2. User Stories
 
+__Epics__
+
+| N.º | Título | Descripción |
+|---|---|---|
+| **EP-01** | **Gestión de identidad, acceso y perfiles** | Como ciudadano o personal médico, quiero ingresar a la aplicación y a mi perfil personal para utilizar las funcionalidades de la aplicación. |
+| **EP-02** | **Registro de consultas médicas** | Como ciudadano, quiero registrar una consulta médica para recibir orientación de atención por medio de la inteligencia artificial. |
+| **EP-03** | **Orientación médica mediante IA y bases médicas** | Como ciudadano, quiero recibir orientación médica basada en información confiable para poder ayudar a los heridos sin ponerlos en peligro. |
+| **EP-04** | **Operación sin conexión y sincronización bidireccional** | Como ciudadano o personal médico, quiero utilizar la aplicación sin conexión y que mi información se sincronice al recibir señal para seguir empleando las funcionalidades de la aplicación sin internet. |
+| **EP-05** | **Gestión e historial de consultas** | Como ciudadano o personal médico, quiero gestionar y dar seguimiento a las consultas para conocer el progreso de su atención. |
+
+__User Stories__
+
+
+
 ## 3.3. Impact Mapping
 
 ## 3.4. Product Backlog
