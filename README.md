@@ -459,7 +459,448 @@ __Epics__
 
 __User Stories__
 
-
+<table>
+<thead>
+<tr>
+<th>User Story ID</th>
+<th>Título</th>
+<th>Descripción</th>
+<th>Criterios de Aceptación</th>
+<th>Relacionado con (Epic ID)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US01</td>
+<td>Registro de una cuenta como ciudadano</td>
+<td>Como ciudadano, quiero registrar una cuenta para ingresar a la aplicación y utilizar sus funcionalidades.</td>
+<td><strong>Escenario 1:</strong> Registro exitoso del ciudadano.<br><strong>Dado que</strong> el ciudadano no cuenta con una cuenta registrada<br><strong>Cuando</strong> el ciudadano completa los datos obligatorios y confirma el registro<br><strong>Entonces</strong> el sistema crea la cuenta con el rol de ciudadano y permite su ingreso a la aplicación.<br><br><strong>Escenario 2:</strong> Datos de registro incompletos.<br><strong>Dado que</strong> el ciudadano no ha completado todos los datos obligatorios<br><strong>Cuando</strong> el ciudadano intenta registrar la cuenta<br><strong>Entonces</strong> el sistema no permite el registro.</td>
+<td>EP-01</td>
+</tr>
+<tr>
+<td>US02</td>
+<td>Registro de una cuenta como personal médico</td>
+<td>Como personal médico, quiero registrar una cuenta validando mi identificación profesional para acceder a las funcionalidades correspondientes a mi rol.</td>
+<td><strong>Escenario 1:</strong> Registro válido del personal médico.<br><strong>Dado que</strong> la persona completa sus datos e ingresa una identificación profesional válida<br><strong>Cuando</strong> la persona confirma el registro<br><strong>Entonces</strong> el sistema crea la cuenta con el rol de personal médico.<br><br><strong>Escenario 2:</strong> Identificación profesional no válida.<br><strong>Dado que</strong> la identificación profesional ingresada no puede ser validada<br><strong>Cuando</strong> la persona intenta registrarse como personal médico<br><strong>Entonces</strong> el sistema no permite el registro con dicho rol.</td>
+<td>EP-01</td>
+</tr>
+<tr>
+<td>US03</td>
+<td>Inicio de sesión</td>
+<td>Como ciudadano o personal médico, quiero iniciar sesión para acceder a las funcionalidades disponibles para mi rol.</td>
+<td><strong>Escenario 1:</strong> Inicio de sesión exitoso.<br><strong>Dado que</strong> la persona posee una cuenta registrada<br><strong>Cuando</strong> la persona ingresa credenciales válidas<br><strong>Entonces</strong> el sistema inicia su sesión y muestra las funcionalidades correspondientes a su rol.<br><br><strong>Escenario 2:</strong> Credenciales incorrectas.<br><strong>Dado que</strong> la persona ingresa credenciales que no coinciden con una cuenta registrada<br><strong>Cuando</strong> la persona intenta iniciar sesión<br><strong>Entonces</strong> el sistema rechaza el acceso y muestra un mensaje informativo.</td>
+<td>EP-01</td>
+</tr>
+<tr>
+<td>US04</td>
+<td>Consulta del perfil personal</td>
+<td>Como ciudadano o personal médico, quiero consultar mi perfil para revisar los datos asociados a mi cuenta.</td>
+<td><strong>Escenario 1:</strong> Visualización del perfil.<br><strong>Dado que</strong> la persona ha iniciado sesión<br><strong>Cuando</strong> la persona accede a la sección de su perfil<br><strong>Entonces</strong> el sistema muestra los datos personales registrados en su cuenta.<br><br><strong>Escenario 2:</strong> Sesión no válida al consultar el perfil.<br><strong>Dado que</strong> la sesión de la persona ya no se encuentra activa<br><strong>Cuando</strong> la persona intenta acceder a su perfil<br><strong>Entonces</strong> el sistema solicita que vuelva a iniciar sesión antes de mostrar los datos personales.</td>
+<td>EP-01</td>
+</tr>
+<tr>
+<td>US05</td>
+<td>Actualización de datos personales</td>
+<td>Como ciudadano o personal médico, quiero actualizar mis datos personales para mantener vigente la información de mi perfil.</td>
+<td><strong>Escenario 1:</strong> Actualización exitosa del perfil.<br><strong>Dado que</strong> la persona se encuentra en su perfil<br><strong>Cuando</strong> la persona modifica sus datos con valores válidos y guarda los cambios<br><strong>Entonces</strong> el sistema actualiza la información y muestra los nuevos datos.<br><br><strong>Escenario 2:</strong> Datos actualizados no válidos.<br><strong>Dado que</strong> la persona ha ingresado información que no cumple con el formato requerido<br><strong>Cuando</strong> la persona intenta guardar los cambios<br><strong>Entonces</strong> el sistema conserva la información anterior.</td>
+<td>EP-01</td>
+</tr>
+<tr>
+<td>US06</td>
+<td>Cierre de sesión</td>
+<td>Como ciudadano o personal médico, quiero cerrar mi sesión para impedir que otras personas accedan a mi cuenta desde el dispositivo.</td>
+<td><strong>Escenario 1:</strong> Cierre de sesión exitoso.<br><strong>Dado que</strong> la persona mantiene una sesión activa<br><strong>Cuando</strong> la persona selecciona la opción de cerrar sesión<br><strong>Entonces</strong> el sistema finaliza la sesión y solicita autenticación para volver a ingresar.<br><br><strong>Escenario 2:</strong> Acceso posterior al cierre de sesión.<br><strong>Dado que</strong> la persona ha cerrado su sesión<br><strong>Cuando</strong> la persona intenta ingresar nuevamente a una funcionalidad restringida<br><strong>Entonces</strong> el sistema impide el acceso y muestra la pantalla de inicio de sesión.</td>
+<td>EP-01</td>
+</tr>
+<tr>
+<td>US07</td>
+<td>Registro de una consulta mediante texto</td>
+<td>Como ciudadano, quiero describir una consulta médica mediante texto para comunicar la situación del paciente.</td>
+<td><strong>Escenario 1:</strong> Ingreso de una consulta escrita.<br><strong>Dado que</strong> el ciudadano se encuentra en el registro de una consulta<br><strong>Cuando</strong> el ciudadano escribe la situación médica del paciente<br><strong>Entonces</strong> el sistema incorpora el texto como parte de la consulta que será procesada.<br><br><strong>Escenario 2:</strong> Descripción vacía.<br><strong>Dado que</strong> el ciudadano no ha ingresado una descripción por texto ni por voz<br><strong>Cuando</strong> el ciudadano intenta procesar la consulta<br><strong>Entonces</strong> el sistema solicita que describa la situación antes de continuar.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>US08</td>
+<td>Registro de una consulta mediante voz</td>
+<td>Como ciudadano, quiero describir una consulta médica mediante voz para registrar la situación cuando no pueda escribirla con facilidad.</td>
+<td><strong>Escenario 1:</strong> Registro de la descripción por voz.<br><strong>Dado que</strong> el ciudadano se encuentra en el registro de una consulta<br><strong>Cuando</strong> el ciudadano graba una descripción por voz<br><strong>Entonces</strong> el sistema convierte el audio en texto y lo incorpora a la consulta.<br><br><strong>Escenario 2:</strong> Audio que no logra ser transcrito.<br><strong>Dado que</strong> la grabación no tiene la calidad suficiente para ser transcrita<br><strong>Cuando</strong> la aplicación intenta convertirla en texto<br><strong>Entonces</strong> informa que no pudo completar la transcripción y permite volver a grabar o escribir la consulta.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>US09</td>
+<td>Adjunto de fotografías a una consulta</td>
+<td>Como ciudadano, quiero adjuntar fotografías a una consulta para complementar la descripción de la situación del paciente.</td>
+<td><strong>Escenario 1:</strong> Fotografía agregada correctamente.<br><strong>Dado que</strong> el ciudadano está registrando una consulta<br><strong>Cuando</strong> el ciudadano selecciona o captura una fotografía compatible<br><strong>Entonces</strong> el sistema adjunta la imagen y la muestra como parte de la consulta.<br><br><strong>Escenario 2:</strong> Fotografía no compatible.<br><strong>Dado que</strong> el ciudadano selecciona una imagen con un formato no admitido o que no puede ser procesada<br><strong>Cuando</strong> el ciudadano intenta adjuntarla<br><strong>Entonces</strong> el sistema rechaza el archivo e informa que debe seleccionar otra fotografía.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>US10</td>
+<td>Ingreso de datos del paciente</td>
+<td>Como ciudadano, quiero ingresar los datos del paciente cuando solicite apoyo profesional para facilitar la atención del caso.</td>
+<td><strong>Escenario 1:</strong> Solicitud de datos del paciente.<br><strong>Dado que</strong> el ciudadano está registrando una consulta<br><strong>Cuando</strong> el ciudadano selecciona la opción de solicitar apoyo profesional<br><strong>Entonces</strong> el sistema solicita los datos del paciente.<br><br><strong>Escenario 2:</strong> Consulta sin solicitud de apoyo profesional.<br><strong>Dado que</strong> el ciudadano está registrando una consulta<br><strong>Cuando</strong> el ciudadano continúa sin seleccionar la opción de solicitar apoyo profesional<br><strong>Entonces</strong> el sistema permite continuar con el registro de la consulta sin pedir información del paciente.<br><br><strong>Escenario 3:</strong> Datos obligatorios del paciente incompletos.<br><strong>Dado que</strong> el ciudadano seleccionó la opción de solicitar apoyo profesional y que no completó todos los datos del paciente<br><strong>Cuando</strong> el ciudadano intenta registrar la solicitud de apoyo<br><strong>Entonces</strong> el sistema solicita completar la información del paciente antes de continuar.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>US11</td>
+<td>Registro de la ubicación de la consulta</td>
+<td>Como ciudadano, quiero registrar la ubicación del paciente para que el personal médico pueda conocer dónde se encuentra.</td>
+<td><strong>Escenario 1:</strong> Ubicación obtenida correctamente.<br><strong>Dado que</strong> el dispositivo puede acceder a la ubicación actual<br><strong>Cuando</strong> el ciudadano registra la consulta<br><strong>Entonces</strong> el sistema guarda las coordenadas y las asocia con la consulta.<br><br><strong>Escenario 2:</strong> Ubicación no disponible.<br><strong>Dado que</strong> el dispositivo no puede obtener la ubicación actual<br><strong>Cuando</strong> el ciudadano registra la consulta<br><strong>Entonces</strong> el sistema guarda la consulta sin ubicación.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>US12</td>
+<td>Elección de solicitud de apoyo profesional</td>
+<td>Como ciudadano, quiero indicar si necesito apoyo profesional para que el personal médico llegue en mi apoyo si lo requiero.</td>
+<td><strong>Escenario 1:</strong> Solicitud de apoyo profesional.<br><strong>Dado que</strong> el ciudadano ha recibido las indicaciones médicas<br><strong>Cuando</strong> el ciudadano selecciona la opción de solicitar apoyo profesional<br><strong>Entonces</strong> el sistema registra la solicitud dentro de la consulta.<br><br><strong>Escenario 2:</strong> Consulta sin solicitud de apoyo.<br><strong>Dado que</strong> el ciudadano ha recibido las indicaciones médicas<br><strong>Cuando</strong> el ciudadano continúa sin seleccionar la opción de apoyo profesional<br><strong>Entonces</strong> el sistema registra la consulta sin solicitar la intervención del personal médico.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>US13</td>
+<td>Incorporación de fuentes médicas autorizadas</td>
+<td>Como desarrollador, quiero incorporar y validar fuentes autorizadas para sustentar la orientación generada por la aplicación.</td>
+<td><strong>Escenario 1:</strong> Incorporación de una fuente autorizada.<br><strong>Dado que</strong> se dispone de un documento proveniente de una fuente médica autorizada<br><strong>Cuando</strong> el responsable confirma su validez y lo incorpora<br><strong>Entonces</strong> el contenido queda disponible para su procesamiento en la base médica.<br><br><strong>Escenario 2:</strong> Fuente no validada.<br><strong>Dado que</strong> no se puede comprobar la procedencia o validez de una fuente<br><strong>Cuando</strong> el responsable intenta incorporarla<br><strong>Entonces</strong> el contenido no queda habilitado para sustentar las orientaciones médicas.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>US14</td>
+<td>Obtención de indicaciones médicas sin conexión</td>
+<td>Como ciudadano, quiero obtener indicaciones médicas basadas en mi consulta sin conexión a internet para actuar ante la emergencia.</td>
+<td><strong>Escenario 1:</strong> Orientación generada sin conexión.<br><strong>Dado que</strong> el dispositivo no tiene acceso a internet<br><strong>Y que</strong> se cuenta con los componentes locales necesarios<br><strong>Cuando</strong> el ciudadano envía una consulta<br><strong>Entonces</strong> la aplicación procesa la información localmente<br><strong>Y</strong> muestra indicaciones basadas en la base médica disponible.<br><br><strong>Escenario 2:</strong> Componentes locales no disponibles.<br><strong>Dado que</strong> el dispositivo no tiene conexión<br><strong>Y que</strong> no puede cargar el modelo o la base médica local<br><strong>Cuando</strong> el ciudadano intenta procesar la consulta<br><strong>Entonces</strong> la aplicación informa que no puede generar la orientación<strong><br>Y</strong> evita mostrar indicaciones incompletas.<br></td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>US15</td>
+<td>Indicaciones médicas claras y ordenadas</td>
+<td>Como ciudadano, quiero recibir indicaciones claras y ordenadas para comprender las acciones que debo realizar.</td>
+<td><strong>Escenario 1:</strong> Presentación comprensible de las indicaciones.<br><strong>Dado que</strong> la aplicación ha procesado la consulta<br><strong>Cuando</strong> la aplicación muestra la orientación médica<br><strong>Entonces</strong> presenta las acciones en un orden lógico, con lenguaje claro y sin términos técnicos innecesarios.<br><br><strong>Escenario 2:</strong> Procedimiento compuesto por varios pasos.<br><strong>Dado que</strong> la orientación requiere realizar más de una acción<br><strong>Cuando</strong> la aplicación presenta la respuesta<br><strong>Entonces</strong> enumera los pasos en la secuencia en la que deben realizarse.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>US16</td>
+<td>Respuesta segura ante información insuficiente</td>
+<td>Como ciudadano, quiero ser informado cuando no exista información suficiente para recibir una orientación confiable y evitar realizar acciones inseguras.</td>
+<td><strong>Escenario 1:</strong> Información insuficiente para orientar.<br><strong>Dado que</strong> la consulta no contiene datos suficientes o la base médica no permite sustentar una respuesta<br><strong>Cuando</strong> la aplicación procesa la solicitud<br><strong>Entonces</strong> informa que no puede brindar una orientación confiable y evita generar instrucciones no sustentadas.<br><br><strong>Escenario 2:</strong> Consulta fuera del contenido disponible.<br><strong>Dado que</strong> la situación descrita no está cubierta por la base médica local<br><strong>Cuando</strong> la aplicación busca información para responder<br><strong>Entonces</strong> comunica la limitación y recomienda solicitar apoyo profesional.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>US17</td>
+<td>Recomendación de atención profesional</td>
+<td>Como ciudadano, quiero recibir una recomendación de atención profesional cuando se identifiquen señales de gravedad para buscar ayuda especializada.</td>
+<td><strong>Escenario 1:</strong> Consulta con señales de gravedad.<br><strong>Dado que</strong> la información de la consulta presenta señales configuradas como graves<br><strong>Cuando</strong> la aplicación genera las indicaciones<br><strong>Entonces</strong> incluye al final la recomendación de solicitar atención de un profesional.<br><br><strong>Escenario 2:</strong> Consulta sin señales de gravedad identificadas.<br><strong>Dado que</strong> la información registrada no coincide con las reglas de gravedad configuradas<br><strong>Cuando</strong> la aplicación genera las indicaciones<br><strong>Entonces</strong> presenta las indicaciones médicas sin indicar solicitar apoyo profesional.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>US18</td>
+<td>Guardado de una consulta pendiente de sincronización</td>
+<td>Como ciudadano, quiero que mi consulta se guarde cuando no exista conexión para que pueda enviarse posteriormente.</td>
+<td><strong>Escenario 1:</strong> Consulta guardada sin conexión.<br><strong>Dado que</strong> el dispositivo no tiene acceso a internet<br><strong>Cuando</strong> el ciudadano completa el registro de la consulta<br><strong>Entonces</strong> la aplicación la almacena localmente con el estado pendiente de sincronización.<br><br><strong>Escenario 2:</strong> Persistencia de la consulta pendiente.<br><strong>Dado que</strong> una consulta fue guardada localmente y aún no se ha sincronizado<br><strong>Cuando</strong> el ciudadano cierra y vuelve a abrir la aplicación<br><strong>Entonces</strong> la consulta continúa disponible con el estado pendiente de sincronización.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>US19</td>
+<td>Visualización de consultas almacenadas localmente</td>
+<td>Como ciudadano, quiero visualizar las consultas almacenadas en mi dispositivo para conocer cuáles están pendientes de sincronización.</td>
+<td><strong>Escenario 1:</strong> Consulta de registros locales.<br><strong>Dado que</strong> existen consultas guardadas en el dispositivo<br><strong>Cuando</strong> el ciudadano accede a sus consultas locales<br><strong>Entonces</strong> la aplicación muestra cada consulta con su estado de sincronización.<br><br><strong>Escenario 2:</strong> Ausencia de consultas locales.<br><strong>Dado que</strong> el dispositivo no contiene consultas almacenadas localmente<br><strong>Cuando</strong> el ciudadano accede a esta sección<br><strong>Entonces</strong> la aplicación informa que no existen consultas pendientes en el dispositivo.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>US20</td>
+<td>Sincronización automática de consultas y actualizaciones</td>
+<td>Como ciudadano o personal médico, quiero que las consultas y sus actualizaciones se sincronicen automáticamente para mantener la información disponible y actualizada.</td>
+<td><strong>Escenario 1:</strong> Envío de consultas pendientes.<br><strong>Dado que</strong> existen consultas guardadas localmente<br><strong>Cuando</strong> la aplicación recupera la conexión a internet<br><strong>Entonces</strong> envía automáticamente las consultas pendientes al backend.<br><br><strong>Escenario 2:</strong> Recepción de actualizaciones de las consultas.<br><strong>Dado que</strong> una consulta sincronizada cambió de estado o fue tomada por personal médico<br><strong>Cuando</strong> la aplicación se conecta con el backend<br><strong>Entonces</strong> actualiza la copia local con el nuevo estado y la información del profesional asignado.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>US21</td>
+<td>Notificaciones sobre la sincronización y atención del caso</td>
+<td>Como ciudadano, quiero recibir notificaciones sobre la sincronización y atención de mi consulta para mantenerme informado sobre su progreso.</td>
+<td><strong>Escenario 1:</strong> Consulta tomada por personal médico.<br><strong>Dado que</strong> una consulta sincronizada ha sido autoasignada por personal médico<br><strong>Cuando</strong> la aplicación recibe la actualización<br><strong>Entonces</strong> notifica al ciudadano sobre la atención de su caso.<br><br><strong>Escenario 2:</strong> Sincronización no completada.<br><strong>Dado que</strong> la aplicación intentó sincronizar una consulta y el proceso falló<br><strong>Cuando</strong> la aplicación registra el resultado del intento<br><strong>Entonces</strong> informa al ciudadano que la consulta continúa pendiente de sincronización.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>US22</td>
+<td>Consulta del historial de consultas realizadas</td>
+<td>Como ciudadano, quiero consultar mi historial para revisar las consultas médicas que he realizado.</td>
+<td><strong>Escenario 1:</strong> Historial disponible.<br><strong>Dado que</strong> el ciudadano ha registrado consultas anteriormente<br><strong>Cuando</strong> el ciudadano accede a su historial<br><strong>Entonces</strong> la aplicación muestra las consultas asociadas con su cuenta.<br><br><strong>Escenario 2:</strong> Historial sin consultas.<br><strong>Dado que</strong> el ciudadano todavía no ha registrado consultas<br><strong>Cuando</strong> el ciudadano accede a su historial<br><strong>Entonces</strong> la aplicación informa que aún no existen consultas para mostrar.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US23</td>
+<td>Visualización del detalle actualizado de una consulta</td>
+<td>Como ciudadano, quiero visualizar el detalle actualizado de una consulta para conocer su información y el progreso de la atención.</td>
+<td><strong>Escenario 1:</strong> Detalle de una consulta asignada.<br><strong>Dado que</strong> el ciudadano selecciona una consulta tomada por personal médico<br><strong>Cuando</strong> el ciudadano abre su detalle<br><strong>Entonces</strong> la aplicación muestra la información ingresada, las indicaciones generadas, el estado de sincronización, el estado de atención y el nombre del profesional asignado.<br><br><strong>Escenario 2:</strong> Detalle de una consulta sin asignación.<br><strong>Dado que</strong> el ciudadano selecciona una consulta que todavía no ha sido tomada<br><strong>Cuando</strong> el ciudadano abre su detalle<br><strong>Entonces</strong> la aplicación muestra la información disponible e indica que aún no existe personal médico asignado.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US24</td>
+<td>Visualización de consultas que solicitan apoyo profesional</td>
+<td>Como personal médico, quiero visualizar las consultas que solicitan apoyo profesional para identificar casos que puedo atender.</td>
+<td><strong>Escenario 1:</strong> Listado de consultas disponibles.<br><strong>Dado que</strong> existen consultas sincronizadas con solicitud de apoyo profesional<br><strong>Cuando</strong> el personal médico accede al listado de casos<br><strong>Entonces</strong> la aplicación muestra las consultas que pueden ser revisadas para su atención.<br><br><strong>Escenario 2:</strong> Ausencia de consultas disponibles.<br><strong>Dado que</strong> no existen consultas disponibles que soliciten apoyo profesional<br><strong>Cuando</strong> el personal médico accede al listado de casos<br><strong>Entonces</strong> la aplicación informa que no hay consultas disponibles para atender.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US25</td>
+<td>Filtrado de consultas por estado</td>
+<td>Como personal médico, quiero filtrar las consultas por estado para encontrar los casos que necesito revisar.</td>
+<td><strong>Escenario 1:</strong> Aplicación del filtro de estado.<br><strong>Dado que</strong> el personal médico visualiza el listado de consultas<br><strong>Cuando</strong> el personal médico selecciona un estado como criterio de filtrado<br><strong>Entonces</strong> la aplicación muestra únicamente las consultas que poseen dicho estado.<br><br><strong>Escenario 2:</strong> Retiro del filtro aplicado.<br><strong>Dado que</strong> el listado se encuentra filtrado por un estado<br><strong>Cuando</strong> el personal médico elimina el filtro<br><strong>Entonces</strong> la aplicación vuelve a mostrar todas las consultas disponibles.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US26</td>
+<td>Visualización de consultas autoasignadas</td>
+<td>Como personal médico, quiero visualizar las consultas que me he autoasignado para organizar los casos bajo mi atención.</td>
+<td><strong>Escenario 1:</strong> Listado de casos autoasignados.<br><strong>Dado que</strong> el personal médico se ha autoasignado una o más consultas<br><strong>Cuando</strong> el personal médico accede a sus consultas asignadas<br><strong>Entonces</strong> la aplicación muestra únicamente los casos asociados con su cuenta.<br><br><strong>Escenario 2:</strong> Ausencia de casos autoasignados.<br><strong>Dado que</strong> el personal médico no tiene consultas bajo su responsabilidad<br><strong>Cuando</strong> el personal médico accede a sus consultas asignadas<br><strong>Entonces</strong> la aplicación informa que todavía no posee casos asignados.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US27</td>
+<td>Consulta del detalle completo de un caso</td>
+<td>Como personal médico, quiero consultar el detalle completo de un caso para evaluar la información registrada y la orientación proporcionada.</td>
+<td><strong>Escenario 1:</strong> Visualización del caso seleccionado.<br><strong>Dado que</strong> el personal médico tiene acceso a una consulta<br><strong>Cuando</strong> el personal médico selecciona el caso<br><strong>Entonces</strong> la aplicación muestra los datos del paciente, la descripción, las fotografías, la orientación generada y el estado actual.<br><br><strong>Escenario 2:</strong> Consulta sin fotografía adjunta.<br><strong>Dado que</strong> el ciudadano registró una consulta sin fotografía<br><strong>Cuando</strong> el personal médico revisa el detalle del caso<br><strong>Entonces</strong> la aplicación muestra la información restante e indica que no se adjuntaron imágenes.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US28</td>
+<td>Visualización de la ubicación del paciente</td>
+<td>Como personal médico, quiero visualizar la ubicación registrada del paciente para conocer dónde se encuentra el caso.</td>
+<td><strong>Escenario 1:</strong> Ubicación disponible en la consulta.<br><strong>Dado que</strong> la consulta posee coordenadas registradas<br><strong>Cuando</strong> el personal médico revisa la ubicación del caso<br><strong>Entonces</strong> la aplicación muestra la posición asociada con la consulta.<br><br><strong>Escenario 2:</strong> Ubicación no registrada.<br><strong>Dado que</strong> la consulta no contiene coordenadas disponibles<br><strong>Cuando</strong> el personal médico revisa su detalle<br><strong>Entonces</strong> la aplicación informa que no se pudo registrar la ubicación del paciente.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US29</td>
+<td>Autoasignación de una consulta disponible</td>
+<td>Como personal médico, quiero autoasignarme una consulta disponible para hacerme responsable de su atención.</td>
+<td><strong>Escenario 1:</strong> Autoasignación exitosa.<br><strong>Dado que</strong> la consulta se encuentra disponible y no tiene personal médico asignado<br><strong>Cuando</strong> el profesional confirma la autoasignación<br><strong>Entonces</strong> la aplicación lo registra como responsable y actualiza el estado del caso.<br><br><strong>Escenario 2:</strong> Consulta asignada previamente.<br><strong>Dado que</strong> otro profesional ya tomó la consulta<br><strong>Cuando</strong> otro integrante del personal médico intenta autoasignarse esa consulta<br><strong>Entonces</strong> la aplicación no muestra la opción disponible.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US30</td>
+<td>Inicio de la atención de una consulta</td>
+<td>Como personal médico, quiero iniciar la atención de una consulta autoasignada para registrar que el caso se encuentra en progreso.</td>
+<td><strong>Escenario 1:</strong> Atención iniciada.<br><strong>Dado que</strong> la consulta está asignada al personal médico y permanece pendiente de atención<br><strong>Cuando</strong> el profesional inicia la atención<br><strong>Entonces</strong> la aplicación actualiza el caso al estado en progreso.<br><br><strong>Escenario 2:</strong> Inicio solicitado por otro profesional.<br><strong>Dado que</strong> la consulta está asignada a una persona diferente<br><strong>Cuando</strong> otro integrante del personal médico intenta iniciar la atención<br><strong>Entonces</strong> la aplicación no muestra la opción disponible.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US31</td>
+<td>Cierre de una consulta con observaciones</td>
+<td>Como personal médico, quiero cerrar una consulta y registrar observaciones para dejar constancia de la atención realizada.</td>
+<td><strong>Escenario 1:</strong> Cierre exitoso del caso.<br><strong>Dado que</strong> la consulta se encuentra en atención por el personal médico<br><strong>Cuando</strong> el personal médico asignado registra sus observaciones y confirma el cierre<br><strong>Entonces</strong> la aplicación guarda las observaciones y actualiza la consulta al estado cerrado.<br><br><strong>Escenario 2:</strong> Cierre solicitado por personal no asignado.<br><strong>Dado que</strong> la consulta está bajo la responsabilidad de otro profesional<br><strong>Cuando</strong> una persona diferente intenta cerrarla<br><strong>Entonces</strong> la aplicación rechaza la operación y conserva el estado actual del caso.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>US32</td>
+<td>Consulta del historial de casos atendidos</td>
+<td>Como personal médico, quiero consultar el historial de casos que he atendido para revisar las atenciones realizadas.</td>
+<td><strong>Escenario 1:</strong> Historial de atenciones disponible.<br><strong>Dado que</strong> el personal médico ha atendido consultas anteriormente<br><strong>Cuando</strong> el personal médico accede a su historial<br><strong>Entonces</strong> la aplicación muestra los casos atendidos asociados con su cuenta.<br><br><strong>Escenario 2:</strong> Historial sin casos atendidos.<br><strong>Dado que</strong> el personal médico todavía no ha cerrado ninguna consulta<br><strong>Cuando</strong> el personal médico accede a su historial<br><strong>Entonces</strong> la aplicación informa que aún no posee casos atendidos.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>TS01</td>
+<td>Protección de la sesión almacenada en el dispositivo</td>
+<td>Como desarrollador, quiero proteger la sesión almacenada en el dispositivo para evitar el acceso no autorizado a la cuenta.</td>
+<td><strong>Escenario 1:</strong> Almacenamiento seguro de la sesión.<br><strong>Dado que</strong> una persona ha iniciado sesión correctamente<br><strong>Cuando</strong> la aplicación conserva la información necesaria para mantenerla activa<br><strong>Entonces</strong> los datos de sesión se almacenan mediante un mecanismo seguro y dejan de ser válidos al cerrar la sesión.<br><br><strong>Escenario 2:</strong> Sesión expirada.<br><strong>Dado que</strong> la información de sesión superó su período de validez<br><strong>Cuando</strong> la aplicación intenta utilizarla para acceder a una función restringida<br><strong>Entonces</strong> rechaza la sesión almacenada y solicita una nueva autenticación.</td>
+<td>EP-01</td>
+</tr>
+<tr>
+<td>TS02</td>
+<td>Conversión local de voz a texto</td>
+<td>Como desarrollador, quiero implementar la conversión local de voz a texto para registrar consultas habladas sin depender de internet.</td>
+<td><strong>Escenario 1:</strong> Transcripción sin conexión.<br><strong>Dado que</strong> el dispositivo no tiene acceso a internet y el ciudadano ha grabado una descripción<br><strong>Cuando</strong> la aplicación procesa el audio<br><strong>Entonces</strong> genera localmente el texto correspondiente y lo incorpora a la consulta.<br><br><strong>Escenario 2:</strong> Fallo del motor de transcripción.<br><strong>Dado que</strong> el componente local no puede procesar el audio recibido<br><strong>Cuando</strong> intenta generar la transcripción<br><strong>Entonces</strong> devuelve un resultado controlado, no incorpora texto incompleto y permite realizar un nuevo intento.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>TS03</td>
+<td>Compresión y optimización de fotografías adjuntas</td>
+<td>Como desarrollador, quiero comprimir las fotografías adjuntas para reducir el almacenamiento y la transferencia sin impedir su revisión.</td>
+<td><strong>Escenario 1:</strong> Optimización de una fotografía.<br><strong>Dado que</strong> el ciudadano ha seleccionado una imagen compatible<br><strong>Cuando</strong> la aplicación la incorpora a la consulta<br><strong>Entonces</strong> genera una versión optimizada que respeta el límite configurado y mantiene una calidad suficiente para su visualización.<br><br><strong>Escenario 2:</strong> Fallo durante la compresión.<br><strong>Dado que</strong> la aplicación no puede generar la versión optimizada de una fotografía<br><strong>Cuando</strong> finaliza el intento de procesamiento<br><strong>Entonces</strong> no marca la imagen como lista para enviar y devuelve un error controlado.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>TS04</td>
+<td>Optimización del procesamiento de entradas multimodales</td>
+<td>Como desarrollador, quiero optimizar el procesamiento de texto, voz y fotografías para mantener una respuesta fluida durante el registro de la consulta.</td>
+<td><strong>Escenario 1:</strong> Procesamiento conjunto de las entradas.<br><strong>Dado que</strong> una consulta contiene texto transcrito y fotografías<br><strong>Cuando</strong> la aplicación prepara la información para su análisis<br><strong>Entonces</strong> procesa las entradas dentro de los objetivos de tiempo y uso de recursos definidos para el producto.<br><br><strong>Escenario 2:</strong> Recursos limitados en el dispositivo.<br><strong>Dado que</strong> el dispositivo posee recursos disponibles cercanos al límite permitido<br><strong>Cuando</strong> la aplicación procesa las entradas multimodales<br><strong>Entonces</strong> controla el uso de memoria y evita el cierre inesperado de la aplicación.</td>
+<td>EP-02</td>
+</tr>
+<tr>
+<td>TS05</td>
+<td>Procesamiento e indexación de documentos médicos por tipo de procedimiento</td>
+<td>Como desarrollador, quiero procesar e indexar los documentos médicos por tipo de procedimiento para facilitar la recuperación de información relevante.</td>
+<td><strong>Escenario 1:</strong> Indexación de un documento médico.<br><strong>Dado que</strong> una fuente médica fue autorizada para su incorporación<br><strong>Cuando</strong> se ejecuta el proceso de preparación de la base<br><strong>Entonces</strong> el contenido se divide, clasifica por tipo de procedimiento e incorpora al índice de búsqueda.<br><br><strong>Escenario 2:</strong> Documento que no puede ser procesado.<br><strong>Dado que</strong> el contenido de una fuente autorizada está vacío o posee un formato no compatible<br><strong>Cuando</strong> se ejecuta la indexación<br><strong>Entonces</strong> el documento no se incorpora al índice y el proceso registra el motivo del rechazo.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS06</td>
+<td>Almacenamiento local del índice médico</td>
+<td>Como desarrollador, quiero implementar el almacenamiento local del índice médico para permitir su consulta sin conexión a internet.</td>
+<td><strong>Escenario 1:</strong> Disponibilidad local del índice.<br><strong>Dado que</strong> la base médica ha sido procesada e indexada<br><strong>Cuando</strong> la aplicación se ejecuta sin conexión<br><strong>Entonces</strong> puede cargar y consultar el índice desde el almacenamiento del dispositivo.<br><br><strong>Escenario 2:</strong> Índice local no disponible.<br><strong>Dado que</strong> el índice médico no existe o no puede ser leído en el dispositivo<br><strong>Cuando</strong> la aplicación intenta iniciar una búsqueda<br><strong>Entonces</strong> detiene el procesamiento y devuelve un estado controlado que impide generar una orientación sin respaldo.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS07</td>
+<td>Optimización de la búsqueda de información médica</td>
+<td>Como desarrollador, quiero optimizar la búsqueda en la base médica para recuperar información relevante con rapidez.</td>
+<td><strong>Escenario 1:</strong> Recuperación eficiente de información.<br><strong>Dado que</strong> una consulta fue preparada para buscar información médica<br><strong>Cuando</strong> el sistema consulta el índice local<br><strong>Entonces</strong> recupera los contenidos relevantes dentro del objetivo de tiempo definido para la aplicación.<br><br><strong>Escenario 2:</strong> Ausencia de resultados relevantes.<br><strong>Dado que</strong> ningún contenido supera el nivel mínimo de relevancia configurado<br><strong>Cuando</strong> el sistema completa la búsqueda<br><strong>Entonces</strong> devuelve un resultado vacío en lugar de seleccionar información que no corresponda con la consulta.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS08</td>
+<td>Integración del modelo de IA local</td>
+<td>Como desarrollador, quiero integrar un modelo de inteligencia artificial local para generar orientación sin depender de servicios en la nube.</td>
+<td><strong>Escenario 1:</strong> Inferencia ejecutada localmente.<br><strong>Dado que</strong> el modelo se encuentra instalado y disponible en el dispositivo<br><strong>Cuando</strong> la aplicación procesa una consulta sin conexión<br><strong>Entonces</strong> ejecuta localmente la inferencia y obtiene una respuesta sin comunicarse con un servicio externo.<br><br><strong>Escenario 2:</strong> Modelo local no disponible.<br><strong>Dado que</strong> la aplicación no puede cargar el modelo en el dispositivo<br><strong>Cuando</strong> intenta procesar una consulta<br><strong>Entonces</strong> detiene la inferencia y comunica el fallo mediante el mecanismo de respuesta segura.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS09</td>
+<td>Implementación del flujo de recuperación aumentada por generación</td>
+<td>Como desarrollador, quiero implementar el flujo RAG para generar orientación utilizando información recuperada de la base médica.</td>
+<td><strong>Escenario 1:</strong> Ejecución completa del flujo RAG.<br><strong>Dado que</strong> el ciudadano ha registrado una consulta<br><strong>Cuando</strong> la aplicación inicia su procesamiento<br><strong>Entonces</strong> recupera información médica relacionada, la entrega al modelo local y genera una respuesta basada en dicho contexto.<br><br><strong>Escenario 2:</strong> Contexto médico insuficiente.<br><strong>Dado que</strong> la búsqueda no recupera información con relevancia suficiente<br><strong>Cuando</strong> el flujo RAG intenta generar la orientación<br><strong>Entonces</strong> evita producir indicaciones no sustentadas y deriva el resultado al mecanismo de respuesta segura.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS10</td>
+<td>Diseño del prompt de orientación médica</td>
+<td>Como desarrollador, quiero diseñar un prompt de orientación médica para obtener respuestas claras, ordenadas y prudentes.</td>
+<td><strong>Escenario 1:</strong> Aplicación del formato de orientación.<br><strong>Dado que</strong> el modelo cuenta con la consulta y la información médica recuperada<br><strong>Cuando</strong> genera la respuesta mediante el prompt diseñado<br><strong>Entonces</strong> presenta instrucciones ordenadas, utiliza lenguaje comprensible y evita afirmar información que no esté sustentada.<br><br><strong>Escenario 2:</strong> Información incompleta en el contexto.<br><strong>Dado que</strong> el contenido recuperado no permite responder una parte de la consulta<br><strong>Cuando</strong> el modelo aplica el prompt<br><strong>Entonces</strong> expresa la limitación y no completa la respuesta con información inventada.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS11</td>
+<td>Validación del sustento de las respuestas en la base médica</td>
+<td>Como desarrollador, quiero validar que las respuestas se sustenten en la base médica para reducir la generación de indicaciones sin respaldo.</td>
+<td><strong>Escenario 1:</strong> Respuesta respaldada por el contexto recuperado.<br><strong>Dado que</strong> el modelo ha generado una orientación<br><strong>Cuando</strong> se contrasta su contenido con la información recuperada<br><strong>Entonces</strong> la aplicación permite la respuesta únicamente si mantiene relación con el contexto médico proporcionado.<br><br><strong>Escenario 2:</strong> Respuesta sin sustento suficiente.<br><strong>Dado que</strong> la orientación contiene indicaciones que no pueden relacionarse con el contexto recuperado<br><strong>Cuando</strong> se ejecuta la validación<br><strong>Entonces</strong> la aplicación descarta la respuesta y activa el mecanismo de respuesta segura.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS12</td>
+<td>Optimización de la latencia y el consumo de recursos de la IA</td>
+<td>Como desarrollador, quiero optimizar la ejecución local de la inteligencia artificial para brindar respuestas rápidas sin sobrecargar el dispositivo.</td>
+<td><strong>Escenario 1:</strong> Procesamiento bajo carga esperada.<br><strong>Dado que</strong> la aplicación procesa una consulta con el modelo y la base médica local<br><strong>Cuando</strong> se ejecutan las pruebas de rendimiento<br><strong>Entonces</strong> la latencia, el uso de memoria y el consumo de procesamiento se mantienen dentro de los límites definidos para el producto.<br><br><strong>Escenario 2:</strong> Incumplimiento de un límite de rendimiento.<br><strong>Dado que</strong> una prueba supera el tiempo o consumo máximo establecido<br><strong>Cuando</strong> se analizan sus resultados<br><strong>Entonces</strong> el caso queda registrado como no conforme y no se considera cumplido el objetivo de rendimiento.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS13</td>
+<td>Mecanismos de respuesta segura ante fallos</td>
+<td>Como desarrollador, quiero implementar mecanismos de respuesta segura para controlar los fallos ocurridos durante la generación de orientación.</td>
+<td><strong>Escenario 1:</strong> Fallo del procesamiento de la orientación.<br><strong>Dado que</strong> ocurre un error en la búsqueda médica o en la ejecución del modelo<br><strong>Cuando</strong> la aplicación no puede completar la respuesta<br><strong>Entonces</strong> muestra un mensaje controlado, evita presentar indicaciones incompletas y permite que la aplicación continúe funcionando.<br><br><strong>Escenario 2:</strong> Recuperación después del fallo.<br><strong>Dado que</strong> un procesamiento anterior terminó con un error controlado<br><strong>Cuando</strong> el ciudadano corrige la consulta o realiza un nuevo intento<br><strong>Entonces</strong> la aplicación permite volver a ejecutar el flujo sin conservar resultados parciales del intento fallido.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS14</td>
+<td>Evaluación de la precisión y claridad de las indicaciones</td>
+<td>Como desarrollador, quiero evaluar la precisión y claridad de las indicaciones generadas para comprobar la calidad de la orientación médica.</td>
+<td><strong>Escenario 1:</strong> Ejecución de pruebas de calidad.<br><strong>Dado que</strong> se dispone de un conjunto de consultas y resultados esperados<br><strong>Cuando</strong> se ejecuta la evaluación del modelo<br><strong>Entonces</strong> se registran resultados de precisión, sustento y claridad que pueden compararse con los criterios definidos para la aplicación.<br><br><strong>Escenario 2:</strong> Resultado inferior al criterio esperado.<br><strong>Dado que</strong> una evaluación no alcanza los niveles definidos de precisión o claridad<br><strong>Cuando</strong> se genera el reporte de resultados<br><strong>Entonces</strong> el caso queda identificado para ajustar el modelo, el prompt o la recuperación de información.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS15</td>
+<td>Reglas de identificación de señales de gravedad</td>
+<td>Como desarrollador, quiero implementar reglas para identificar señales de gravedad y añadir una recomendación de atención profesional cuando corresponda.</td>
+<td><strong>Escenario 1:</strong> Identificación de una señal configurada como grave.<br><strong>Dado que</strong> la consulta contiene información que coincide con una regla de gravedad definida<br><strong>Cuando</strong> la aplicación genera la orientación<br><strong>Entonces</strong> incluye la recomendación de solicitar atención profesional al finalizar la respuesta.<br><br><strong>Escenario 2:</strong> Ausencia de señales configuradas como graves.<br><strong>Dado que</strong> la consulta no coincide con ninguna regla de gravedad definida<br><strong>Cuando</strong> la aplicación evalúa la información<br><strong>Entonces</strong> no marca el caso como grave y continúa con el flujo normal de orientación.</td>
+<td>EP-03</td>
+</tr>
+<tr>
+<td>TS16</td>
+<td>Implementación de la base de datos local</td>
+<td>Como desarrollador, quiero implementar una base de datos local para conservar la información necesaria cuando no exista conexión.</td>
+<td><strong>Escenario 1:</strong> Persistencia local de la información.<br><strong>Dado que</strong> la aplicación debe guardar una consulta en el dispositivo<br><strong>Cuando</strong> se ejecuta la operación de almacenamiento<br><strong>Entonces</strong> la información queda disponible en la base local para su posterior consulta y sincronización.<br><br><strong>Escenario 2:</strong> Lectura posterior de la información.<br><strong>Dado que</strong> una consulta fue almacenada correctamente y la aplicación se ha reiniciado<br><strong>Cuando</strong> se consulta la base local<br><strong>Entonces</strong> se recuperan los datos completos y el estado previamente guardado.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS17</td>
+<td>Almacenamiento seguro de fotografías y datos médicos</td>
+<td>Como desarrollador, quiero almacenar de forma segura las fotografías y los datos médicos para proteger la información guardada en el dispositivo.</td>
+<td><strong>Escenario 1:</strong> Protección de información local.<br><strong>Dado que</strong> una consulta contiene datos médicos o fotografías<br><strong>Cuando</strong> la aplicación los guarda localmente<br><strong>Entonces</strong> utiliza los mecanismos de protección definidos y restringe su acceso al contexto autorizado de la aplicación.<br><br><strong>Escenario 2:</strong> Intento de acceso sin autorización.<br><strong>Dado que</strong> un proceso ajeno al contexto autorizado intenta leer la información protegida<br><strong>Cuando</strong> solicita acceso a los datos almacenados<br><strong>Entonces</strong> el mecanismo de protección impide obtener el contenido legible.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS18</td>
+<td>Implementación de una cola local de consultas pendientes</td>
+<td>Como desarrollador, quiero implementar una cola local para organizar las consultas que deben enviarse al recuperar la conexión.</td>
+<td><strong>Escenario 1:</strong> Incorporación de una consulta a la cola.<br><strong>Dado que</strong> una consulta fue registrada sin conexión<br><strong>Cuando</strong> la aplicación finaliza su almacenamiento local<br><strong>Entonces</strong> agrega la consulta a la cola con el estado pendiente de sincronización.<br><br><strong>Escenario 2:</strong> Consulta sincronizada correctamente.<br><strong>Dado que</strong> una consulta pendiente fue confirmada por el backend<br><strong>Cuando</strong> la cola procesa el resultado de la sincronización<br><strong>Entonces</strong> marca el elemento como enviado y evita que permanezca entre los registros pendientes.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS19</td>
+<td>Transacciones atómicas para la persistencia local</td>
+<td>Como desarrollador, quiero implementar transacciones atómicas para evitar que una consulta quede almacenada de forma parcial.</td>
+<td><strong>Escenario 1:</strong> Escritura local completada.<br><strong>Dado que</strong> todos los componentes de una consulta pueden ser almacenados<br><strong>Cuando</strong> la transacción finaliza correctamente<br><strong>Entonces</strong> confirma todos los cambios como una sola operación.<br><br><strong>Escenario 2:</strong> Escritura local interrumpida.<br><strong>Dado que</strong> la aplicación está guardando los componentes de una consulta<br><strong>Cuando</strong> una parte de la operación no puede completarse<br><strong>Entonces</strong> la transacción revierte los cambios incompletos y conserva un estado consistente.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS20</td>
+<td>Gestión eficiente del almacenamiento del dispositivo</td>
+<td>Como desarrollador, quiero gestionar eficientemente el almacenamiento local para evitar un consumo innecesario de espacio.</td>
+<td><strong>Escenario 1:</strong> Control del espacio utilizado.<br><strong>Dado que</strong> la aplicación mantiene consultas y archivos en el dispositivo<br><strong>Cuando</strong> administra el almacenamiento local<br><strong>Entonces</strong> optimiza el tamaño de los archivos y conserva sin pérdida las consultas que continúan pendientes.<br><br><strong>Escenario 2:</strong> Espacio disponible insuficiente.<br><strong>Dado que</strong> el dispositivo no posee espacio suficiente para almacenar una nueva consulta<br><strong>Cuando</strong> la aplicación intenta guardarla<br><strong>Entonces</strong> evita un registro parcial e informa que se necesita liberar espacio.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS21</td>
+<td>Detección de la recuperación de la conexión a internet</td>
+<td>Como desarrollador, quiero detectar la recuperación de la conexión para iniciar automáticamente la sincronización pendiente.</td>
+<td><strong>Escenario 1:</strong> Conexión recuperada.<br><strong>Dado que</strong> la aplicación se encuentra sin conexión y existen consultas pendientes<br><strong>Cuando</strong> el dispositivo recupera el acceso a internet<br><strong>Entonces</strong> la aplicación detecta el cambio e inicia el proceso de sincronización.<br><br><strong>Escenario 2:</strong> Conexión detectada sin acceso efectivo.<br><strong>Dado que</strong> el dispositivo se conecta a una red que no permite comunicarse con el backend<br><strong>Cuando</strong> la aplicación verifica la conectividad<br><strong>Entonces</strong> conserva las consultas como pendientes y no registra una sincronización exitosa.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS22</td>
+<td>Sincronización bidireccional en segundo plano</td>
+<td>Como desarrollador, quiero implementar la sincronización bidireccional en segundo plano para enviar consultas y recibir sus actualizaciones sin interrumpir el uso de la aplicación.</td>
+<td><strong>Escenario 1:</strong> Intercambio bidireccional de información.<br><strong>Dado que</strong> existe conexión y hay cambios locales o remotos pendientes<br><strong>Cuando</strong> se ejecuta la sincronización en segundo plano<br><strong>Entonces</strong> la aplicación envía la información local y actualiza los datos del dispositivo con los cambios recibidos.<br><br><strong>Escenario 2:</strong> Sincronización repetida de una consulta.<br><strong>Dado que</strong> una consulta ya fue recibida correctamente por el backend<br><strong>Cuando</strong> la aplicación vuelve a ejecutar la sincronización<br><strong>Entonces</strong> el sistema reconoce el registro existente y evita crear una consulta duplicada.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS23</td>
+<td>Reintentos automáticos ante fallos de sincronización</td>
+<td>Como desarrollador, quiero implementar reintentos automáticos para completar la sincronización después de fallos temporales.</td>
+<td><strong>Escenario 1:</strong> Reintento de una consulta no enviada.<br><strong>Dado que</strong> un intento de sincronización no pudo completarse<br><strong>Cuando</strong> se cumplen las condiciones configuradas para un nuevo intento<br><strong>Entonces</strong> la aplicación vuelve a procesar la consulta sin requerir una acción manual.<br><br><strong>Escenario 2:</strong> Reintentos temporalmente agotados.<br><strong>Dado que</strong> los intentos configurados continúan fallando<br><strong>Cuando</strong> finaliza el ciclo automático de reintentos<br><strong>Entonces</strong> la consulta permanece pendiente y puede procesarse en un ciclo posterior.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS24</td>
+<td>Tolerancia a fallos del servicio de sincronización</td>
+<td>Como desarrollador, quiero implementar tolerancia a fallos en el servicio de sincronización para conservar la continuidad y la fiabilidad del intercambio de información.</td>
+<td><strong>Escenario 1:</strong> Servicio de sincronización temporalmente no disponible.<br><strong>Dado que</strong> el servicio no puede atender una solicitud<br><strong>Cuando</strong> la aplicación intenta sincronizar información<br><strong>Entonces</strong> conserva los datos pendientes, registra el fallo y permite procesarlos cuando el servicio vuelva a estar disponible.<br><br><strong>Escenario 2:</strong> Recuperación del servicio de sincronización.<br><strong>Dado que</strong> existen operaciones pendientes por una interrupción anterior<br><strong>Cuando</strong> el servicio vuelve a estar disponible<br><strong>Entonces</strong> la aplicación retoma el procesamiento sin perder ni duplicar las consultas pendientes.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS25</td>
+<td>Registro y monitoreo de errores de sincronización</td>
+<td>Como desarrollador, quiero registrar y monitorear los errores de sincronización para detectar problemas y facilitar su corrección.</td>
+<td><strong>Escenario 1:</strong> Registro de un error de sincronización.<br><strong>Dado que</strong> ocurre un fallo durante el envío o recepción de información<br><strong>Cuando</strong> el proceso de sincronización finaliza sin éxito<br><strong>Entonces</strong> el sistema registra el tipo de error, la operación afectada y el estado pendiente correspondiente.<br><br><strong>Escenario 2:</strong> Detección de errores repetidos.<br><strong>Dado que</strong> el mismo tipo de fallo se presenta de forma reiterada<br><strong>Cuando</strong> el sistema analiza los registros de sincronización<br><strong>Entonces</strong> permite identificar la frecuencia y las operaciones afectadas para facilitar su diagnóstico.</td>
+<td>EP-04</td>
+</tr>
+<tr>
+<td>TS26</td>
+<td>Mantenimiento de una copia local actualizada del historial</td>
+<td>Como desarrollador, quiero mantener una copia local actualizada del historial para permitir su consulta desde el dispositivo.</td>
+<td><strong>Escenario 1:</strong> Actualización de la copia local.<br><strong>Dado que</strong> la aplicación recibe cambios de una consulta sincronizada<br><strong>Cuando</strong> procesa la actualización<br><strong>Entonces</strong> modifica la copia local del historial con el nuevo estado y la información del personal médico asignado.<br><br><strong>Escenario 2:</strong> Consulta del historial sin conexión.<br><strong>Dado que</strong> la aplicación posee una copia local del historial y pierde la conexión<br><strong>Cuando</strong> la persona consulta sus registros<br><strong>Entonces</strong> muestra la última información sincronizada disponible en el dispositivo.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>TS27</td>
+<td>Consistencia concurrente de los casos</td>
+<td>Como desarrollador, quiero mantener la consistencia concurrente de los casos para impedir asignaciones o cambios incompatibles realizados al mismo tiempo.</td>
+<td><strong>Escenario 1:</strong> Autoasignaciones simultáneas.<br><strong>Dado que</strong> dos integrantes del personal médico intentan tomar la misma consulta disponible<br><strong>Cuando</strong> el backend procesa ambas solicitudes<br><strong>Entonces</strong> acepta solamente la primera operación válida y rechaza la otra sin generar estados contradictorios.<br><br><strong>Escenario 2:</strong> Cambios simultáneos sobre un caso asignado.<br><strong>Dado que</strong> se reciben dos operaciones incompatibles para una misma consulta<br><strong>Cuando</strong> el backend valida su estado y responsable actual<br><strong>Entonces</strong> aplica únicamente la operación válida y conserva un estado consistente.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>TS28</td>
+<td>Trazabilidad de asignaciones y cambios de estado</td>
+<td>Como desarrollador, quiero registrar la trazabilidad de las asignaciones y los cambios de estado para conservar el historial de la atención de cada caso.</td>
+<td><strong>Escenario 1:</strong> Registro de una transición del caso.<br><strong>Dado que</strong> una consulta es asignada o cambia de estado<br><strong>Cuando</strong> la operación se completa correctamente<br><strong>Entonces</strong> el sistema registra la acción, el momento en que ocurrió y el personal médico relacionado.<br><br><strong>Escenario 2:</strong> Consulta de la trazabilidad.<br><strong>Dado que</strong> un caso ha tenido asignaciones o cambios de estado<br><strong>Cuando</strong> se revisan sus registros de trazabilidad<br><strong>Entonces</strong> las acciones aparecen ordenadas y vinculadas con la consulta correspondiente.</td>
+<td>EP-05</td>
+</tr>
+<tr>
+<td>TS29</td>
+<td>Tolerancia a fallos en la gestión de casos</td>
+<td>Como desarrollador, quiero implementar tolerancia a fallos en la gestión de casos para evitar la pérdida o corrupción de cambios durante la atención.</td>
+<td><strong>Escenario 1:</strong> Fallo durante una operación del caso.<br><strong>Dado que</strong> ocurre una interrupción al asignar, iniciar o cerrar una consulta<br><strong>Cuando</strong> la operación no puede confirmarse correctamente<br><strong>Entonces</strong> el sistema conserva un estado consistente y permite recuperar o reintentar la operación sin duplicarla.<br><br><strong>Escenario 2:</strong> Recuperación del servicio de gestión de casos.<br><strong>Dado que</strong> una operación quedó pendiente por una interrupción temporal<br><strong>Cuando</strong> el servicio vuelve a estar disponible<br><strong>Entonces</strong> valida el estado actual del caso antes de completar o rechazar la operación pendiente.</td>
+<td>EP-05</td>
+</tr>
+</tbody>
+</table>
 
 ## 3.3. Impact Mapping
 
