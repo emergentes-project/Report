@@ -1048,6 +1048,10 @@ Justificación: Este dominio existe para lograr gestionar por separado el flujo 
 
 ### 4.3.2. Software Architecture Context Level Diagrams
 
+<p align="center">
+  <img src="public/assets/images/chapter-4/Context Level Diagrams.png" alt="C1 - Software Architecture Context Level Diagram - Lifeline">
+</p>
+
 ### 4.3.3. Software Architecture Container Level Diagrams
 
 ### 4.3.4. Software Architecture Deployment Diagrams
