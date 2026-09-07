@@ -1054,6 +1054,10 @@ Justificación: Este dominio existe para lograr gestionar por separado el flujo 
 
 ### 4.3.3. Software Architecture Container Level Diagrams
 
+<p align="center">
+  <img src="public/assets/images/chapter-4/Container Level Diagrams.png" alt="C2 - Software Architecture Container Level Diagram - Lifeline">
+</p>
+
 ### 4.3.4. Software Architecture Deployment Diagrams
 
 # Capítulo V: Tactical-Level Software Design
