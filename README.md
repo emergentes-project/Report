@@ -1060,6 +1060,10 @@ Justificación: Este dominio existe para lograr gestionar por separado el flujo 
 
 ### 4.3.4. Software Architecture Deployment Diagrams
 
+<p align="center">
+  <img src="public/assets/images/chapter-4/Deployment Diagrams.png" alt="C2 - Software Architecture Deployment Diagram - Lifeline">
+</p>
+
 # Capítulo V: Tactical-Level Software Design
 
 ## 5.X. Bounded Context: Nombre del Bounded Context
