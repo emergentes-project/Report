@@ -1046,6 +1046,10 @@ Justificación: Este dominio existe para lograr gestionar por separado el flujo 
 
 ### 4.3.1. Software Architecture System Landscape Diagram
 
+<p align="center">
+  <img src="public/assets/images/chapter-4/Landscape Diagram.png" alt="System Landscape Diagram - Lifeline">
+</p>
+
 ### 4.3.2. Software Architecture Context Level Diagrams
 
 <p align="center">
