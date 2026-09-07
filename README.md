@@ -441,6 +441,137 @@ Para ambos segmentos, se estarán solicitando los datos de nombre completo, edad
 
 ## 2.4. Ubiquitous Language
 
+En este proyecto, el uso de Domain-Driven Design (DDD) permite alinear el desarrollo de software con la realidad del dominio de respuesta post-sismo y orientación médica asistida. Uno de los pilares de DDD es el Lenguaje Ubicuo (Ubiquitous Language), el cual es un conjunto de términos compartidos que se construyen en colaboración entre desarrolladores, diseñadores y expertos del dominio. En nuestro caso, entre el equipo de desarrollo, ciudadanos usuarios de la aplicación y personal médico vinculado a la atención de emergencias.
+
+### Glosario de Términos
+
+<table>
+  <thead>
+    <tr>
+      <th>Término (Inglés)</th>
+      <th>Término (Español)</th>
+      <th>Definición</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Citizen</td>
+      <td>Ciudadano</td>
+      <td>Usuario afectado por un sismo que solicita orientación de primeros auxilios desde la aplicación.</td>
+    </tr>
+    <tr>
+      <td>Medical Staff</td>
+      <td>Personal médico</td>
+      <td>Profesional de salud o emergencia que visualiza, asigna, atiende y cierra casos sincronizados.</td>
+    </tr>
+    <tr>
+      <td>Consultation</td>
+      <td>Consulta</td>
+      <td>Solicitud de orientación médica registrada por el ciudadano mediante texto, voz y/o fotografía.</td>
+    </tr>
+    <tr>
+      <td>Patient</td>
+      <td>Paciente</td>
+      <td>Persona herida o con síntomas descrita dentro de una consulta.</td>
+    </tr>
+    <tr>
+      <td>Medical Guidance</td>
+      <td>Orientación médica</td>
+      <td>Indicaciones paso a paso generadas por la IA a partir de la consulta y la base de conocimientos médicos.</td>
+    </tr>
+    <tr>
+      <td>Medical Knowledge Base</td>
+      <td>Base de conocimientos médicos</td>
+      <td>Conjunto local de información de primeros auxilios utilizado para sustentar las respuestas del sistema.</td>
+    </tr>
+    <tr>
+      <td>RAG</td>
+      <td>Generación aumentada por recuperación</td>
+      <td>Técnica que recupera información médica relevante antes de generar la orientación, para reducir respuestas sin respaldo.</td>
+    </tr>
+    <tr>
+      <td>On-device AI</td>
+      <td>IA on-device</td>
+      <td>Modelo de inteligencia artificial que se ejecuta en el dispositivo sin depender de conexión a internet.</td>
+    </tr>
+    <tr>
+      <td>Offline Mode</td>
+      <td>Modo offline</td>
+      <td>Operación de la aplicación sin conexión, permitiendo consultar y almacenar información localmente.</td>
+    </tr>
+    <tr>
+      <td>Outbox</td>
+      <td>Outbox / Cola de salida</td>
+      <td>Registro local de elementos pendientes de envío hacia la nube cuando se recupere la conectividad.</td>
+    </tr>
+    <tr>
+      <td>Synchronization</td>
+      <td>Sincronización</td>
+      <td>Proceso de envío y actualización de información entre el dispositivo y el backend al existir conexión.</td>
+    </tr>
+    <tr>
+      <td>Case</td>
+      <td>Caso</td>
+      <td>Representación en la nube de una consulta sincronizada que puede ser gestionada por el personal médico.</td>
+    </tr>
+    <tr>
+      <td>Case Status</td>
+      <td>Estado del caso</td>
+      <td>Situación actual de un caso, como pendiente, asignado, en atención o cerrado.</td>
+    </tr>
+    <tr>
+      <td>Professional Support Request</td>
+      <td>Solicitud de apoyo profesional</td>
+      <td>Indicación del ciudadano para que el personal médico intervenga en la atención.</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>Ubicación</td>
+      <td>Referencia espacial asociada a la consulta o al paciente para facilitar su localización.</td>
+    </tr>
+    <tr>
+      <td>Assignment</td>
+      <td>Asignación</td>
+      <td>Acción mediante la cual el personal médico toma responsabilidad de un caso.</td>
+    </tr>
+    <tr>
+      <td>Care / Attention</td>
+      <td>Atención</td>
+      <td>Proceso en el que el personal médico inicia y desarrolla la intervención de un caso asignado.</td>
+    </tr>
+    <tr>
+      <td>Case Closure</td>
+      <td>Cierre de caso</td>
+      <td>Finalización formal de un caso luego de la atención, incluyendo observaciones.</td>
+    </tr>
+    <tr>
+      <td>History</td>
+      <td>Historial</td>
+      <td>Registro de consultas o casos previos asociados a un usuario.</td>
+    </tr>
+    <tr>
+      <td>Profile</td>
+      <td>Perfil</td>
+      <td>Información personal y de cuenta del ciudadano o del personal médico.</td>
+    </tr>
+    <tr>
+      <td>Role</td>
+      <td>Rol</td>
+      <td>Tipo de usuario en la aplicación que determina permisos y funcionalidades disponibles.</td>
+    </tr>
+    <tr>
+      <td>Evidence</td>
+      <td>Evidencia</td>
+      <td>Fotografía u otro insumo adjunto que complementa la descripción de una consulta.</td>
+    </tr>
+    <tr>
+      <td>Lifeline</td>
+      <td>Lifeline</td>
+      <td>Aplicación móvil de RescueBridge orientada a brindar primeros auxilios post-sismo y sincronizar casos.</td>
+    </tr>
+  </tbody>
+</table>
+
 # Capítulo III: Requirements Specification
 
 ## 3.1. To-Be Scenario Mapping
