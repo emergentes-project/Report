@@ -432,6 +432,23 @@ Para Barbara, ....
 
 https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
 
+Entrevistado N°2: Roberto Mauricio Huertas Romero
+
+Sexo: Masculino
+Edad: 21 años
+Ubicación en la que vive: Ate Vitarte
+Ocupación: Estudiante
+Grado de instrucción: Universitario
+Acerca de la entrevista:
+
+Instante en el que inicia: 0:00
+Duración: 10:06
+Resumen:
+
+Para Roberto, ....
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+
 **Segmento objetivo 2: Personal médico**
 
 Entrevistado N°1: Andre Ramirez Pella
