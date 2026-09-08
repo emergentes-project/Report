@@ -415,6 +415,41 @@ Para ambos segmentos, se estarán solicitando los datos de nombre completo, edad
 
 ### 2.2.2. Registro de entrevistas
 
+**Segmento objetivo 1: Ciudadanos**
+
+Entrevistado N°1: Barbara Eliana Seminario Leon
+
+Sexo: Femenino
+Edad: 52 años
+Ubicación en la que vive: Santiago de Surco
+Acerca de la entrevista:
+
+Instante en el que inicia: 0:00
+Duración: 4:49
+Resumen:
+
+Para Barbara, ....
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
+
+**Segmento objetivo 2: Personal médico**
+
+Entrevistado N°1: Andre Ramirez Pella
+
+Sexo: Masculino
+Edad: 24 años
+Ubicación en la que vive: Santiago de Surco
+Acerca de la entrevista:
+
+Instante en el que inicia: 0:00
+Duración: 10:13
+Resumen:
+
+Para Andre, ....
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
+
+
 ### 2.2.3. Análisis de entrevistas
 
 ## 2.3. Needfinding
