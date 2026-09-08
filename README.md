@@ -427,7 +427,7 @@ Entrevistado N°1: Barbara Eliana Seminario Leon
   - Duración: 4:49
   - Resumen:
 
-Para Barbara, ....
+Para Barbara, enfrentar una emergencia médica post-sismo es una situación delicada y potencialmente frustrante, tal como lo experimentó al tener que evacuar cuidadosamente a una persona con el pie torcido. Su principal barrera actual es la incapacidad de comunicarse con servicios de emergencia o buscar información de primeros auxilios sin acceso a internet, lo que complica el manejo de heridas complejas o situaciones donde el paciente no puede ser movilizado. Frente a estos problemas, encuentra una gran oportunidad en una aplicación que le permita describir la emergencia combinando fotos y texto, recibiendo a cambio indicaciones médicas claras, concisas y ordenadas a modo de checklist. Para confiar plenamente en esta herramienta, recalca que la inteligencia artificial debe basarse en información verificada y no "alucinar", considerándola excelente para un triaje o descarte inicial, aunque manteniendo el deseo de una eventual interacción humana y mostrándose completamente dispuesta a compartir la información personal o de ubicación que sea necesaria para facilitar el rescate.
 
 - Enlace a la entrevista:
 
@@ -463,7 +463,7 @@ Entrevistado N°1: Andre Ramirez Pella
   - Duración: 10:13
   - Resumen:
 
-Para Andre, ....
+Para Andre, la alarmante falta de conocimientos en primeros auxilios por parte de la población representa un riesgo crítico, ya que la mayoría desconoce cómo realizar una evaluación inicial o aplicar maniobras básicas para salvar vidas. A esta barrera se le suma la gran dificultad que tienen los equipos médicos para localizar víctimas durante desastres con derrumbes. En este contexto, considera que recibir orientación de una inteligencia artificial sería una herramienta sumamente útil para empoderar a los ciudadanos, agilizando el proceso de atención y reduciendo riesgos antes de que llegue la ayuda. Para que el sistema sea confiable y seguro, la IA debe basarse en fuentes verificadas, realizar preguntas clave (como medir el pulso, nivel de conciencia, sangrados o fracturas) e identificar rápidamente si la situación requiere atención profesional inmediata. Finalmente, hace hincapié en que la aplicación nunca debe sugerir la automedicación ni indicar movimientos o tratamientos complejos que requieran entrenamiento previo, ya que un mal análisis o una ejecución incorrecta podrían empeorar gravemente el estado del paciente.
 
 - Enlace a la entrevista:
 
