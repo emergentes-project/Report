@@ -419,33 +419,35 @@ Para ambos segmentos, se estarán solicitando los datos de nombre completo, edad
 
 Entrevistado N°1: Barbara Eliana Seminario Leon
 
-Sexo: Femenino
-Edad: 52 años
-Ubicación en la que vive: Santiago de Surco
-Acerca de la entrevista:
-
-Instante en el que inicia: 0:00
-Duración: 4:49
-Resumen:
+- Sexo: Femenino
+- Edad: 52 años
+- Ubicación en la que vive: Santiago de Surco
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:00
+  - Duración: 4:49
+  - Resumen:
 
 Para Barbara, ....
+
+- Enlace a la entrevista:
 
 https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
 
 Entrevistado N°2: Roberto Mauricio Huertas Romero
 
-Sexo: Masculino
-Edad: 21 años
-Ubicación en la que vive: Ate Vitarte
-Ocupación: Estudiante
-Grado de instrucción: Universitario
-Acerca de la entrevista:
-
-Instante en el que inicia: 0:00
-Duración: 10:06
-Resumen:
+- Sexo: Masculino
+- Edad: 21 años
+- Ubicación en la que vive: Ate Vitarte
+- Ocupación: Estudiante
+- Grado de instrucción: Universitario
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:00
+  - Duración: 10:06
+  - Resumen:
 
 Para Roberto, ....
+
+- Enlace a la entrevista:
 
 https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
@@ -453,16 +455,17 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQj
 
 Entrevistado N°1: Andre Ramirez Pella
 
-Sexo: Masculino
-Edad: 24 años
-Ubicación en la que vive: Santiago de Surco
-Acerca de la entrevista:
-
-Instante en el que inicia: 0:00
-Duración: 10:13
-Resumen:
+- Sexo: Masculino
+- Edad: 24 años
+- Ubicación en la que vive: Santiago de Surco
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:00
+  - Duración: 10:13
+  - Resumen:
 
 Para Andre, ....
+
+- Enlace a la entrevista:
 
 https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
 
