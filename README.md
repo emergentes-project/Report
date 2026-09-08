@@ -1088,6 +1088,58 @@ Para lograrlo, el proceso de diseño se guía por Attribute-Driven Design (ADD) 
 
 #### 4.1.2.1. Primary Functionality (Primary User Stories)
 
+Dentro del sistema, si bien se contempla la implementación de numerosas user stories, se deben priorizar aquellas que cubren las funcionalidades principales de la aplicación. En este caso, se tomaran como las user stories principales aquellas centradas en el desarrollo de las respuestas con indicaciones médicas generadas por el modelo de inteligencia artifical, así como las que se centran en la gestión de los casos una vez que han sido lanzados hacia el backend.
+
+A continuación, presentamos las user stories seleccionadas:
+
+__US07: Registro de una consulta mediante texto__
+
+Descripción: Como ciudadano, quiero describir una consulta médica mediante texto para comunicar la situación del paciente.
+
+Impacto: Esta user story requiere que se logre proporcionar el registro de consultas mediante texto y que el mismo sea enviado hacia el modelo de IA empleado para su procesamiento siguiendo el flujo planteado. Así, los ciuadanos logran registrar su consulta y pasan a contar con las indicaciones médicas proporcionadas. 
+
+__US09: Adjunto de fotografías a una consulta__
+
+Descripción: Como ciudadano, quiero adjuntar fotografías a una consulta para complementar la descripción de la situación del paciente.
+
+Impacto: Esta user story requiere que la imagen se almacene de forma óptima localmente hasta lograr ser sincronizada hacia el backend, así como esta debe ser integrada con el procesamiento multimodal. En cuanto a negocio, permite que los ciuadanos puedan proporcionar mayor claridad sobre la emergencia médica por la que consultan.
+
+__US13: Incorporación de fuentes médicas autorizadas__
+
+Descripción: Como desarrollador, quiero incorporar y validar fuentes autorizadas para sustentar la orientación generada por la aplicación.
+
+Impacto: Requiere que las fuentes recolectadas sean validadas, segmentadas e infexadas en un formato que el modelo pueda procesar con velocidad y precisión mediante el RAG aplicado. Además, incrementa la veracidad de las indicaciones que la IA brindará a los ciudadanos.
+
+__US14: Obtención de indicaciones médicas sin conexión__
+
+Descripción: Como ciudadano, quiero obtener indicaciones médicas basadas en mi consulta sin conexión a internet para actuar ante la emergencia.
+
+Impacto: Esta user story contempla que el modelo de IA pueda ejecutarse localmente junto con el RAG y contando con acceso a la base médica, mientras se controla el rendimiento y los recursos del dispositivo para evitar fallos al generar respuestas. En cuanto a negocio, permite que las indicaciones médicas brindadas se sustentes en conocimientos de organizaciones oficiales sin necesidad de conexión a internet.
+
+__US15: Indicaciones médicas claras y ordenadas__
+
+Descripción: Como ciudadano, quiero recibir indicaciones claras y ordenadas para comprender las acciones que debo realizar.
+
+Impacto: Esta user story requiere que se regule la estructura y lenguaje empleado en las indicaciones médicas generadas por medio de un prompt previamente implementado y probado, así como que se cuente con mecanismos de validación de la respuesta. De esta forma, los ciudadanos no tendrán problemas para comprender las instrucciones presentadas.
+
+__US17: Recomendación de atención profesional__
+
+Descripción: Como ciudadano, quiero recibir una recomendación de atención profesional cuando se identifiquen señales de gravedad para buscar ayuda especializada.
+
+Impacto: Requiere que dentro del prompt implementado se especifiquen los criterios para identificar las señales de gravedad en las consultas ingresadas, de forma en que la indicación final sugiera solicitar atención médica profesional. Esto ayuda a los ciudadanos puesto que les permite conocer con mayor seguridad las situaciones en las que es necesario buscar atención especializada.
+
+__US20: Sincronización automática de consultas y actualizaciones__
+
+Descripción: Como ciudadano o personal médico, quiero que las consultas y sus actualizaciones se sincronicen automáticamente para mantener la información disponible y actualizada.
+
+Impacto: Requiere una arquitectura offline-first con almacenamiento local, sincronización bidireccional, reintentos, control de duplicados y manejo de fallos que permita ejecutar la sincronización de envío y actualización de consultas evitando la pérdida de alguna en el camino. Así, tanto los ciudadanos como el personal médico cuentan con una vista real hacia la última situación registrada.
+
+__US29: Autoasignación de una consulta disponible__
+
+Descripción: Como personal médico, quiero autoasignarme una consulta disponible para hacerme responsable de su atención.
+
+Impacto: Requiere control de concurrencia y consistencia para impedir que una consulta sea asignada por dos o más profesional al mismo tiempo. En cuanto a negocio, posee un gran impacto puesto que marca el inicio de la atención profesional de la consulta y su camino hacia lograr ser cerrada.
+
 #### 4.1.2.2. Quality Attribute Scenarios
 
 #### 4.1.2.3. Constraints
