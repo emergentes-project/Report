@@ -306,29 +306,80 @@ En situaciones de desastre natural, como sismos de gran magnitud, los servicios 
 
 **¿Cómo podemos ayudar a los ciudadanos en peligro a recibir indicaciones médicas de primeros auxilios de forma inmediata, confiable y sin depender de una conexión a internet, para así estabilizar a los heridos mientras colaboramos con la llegada del personal de asistencia médica?**
 
-#### 1.2.3.2. Lean UX Assumptions.
+#### 1.2.3.2. Lean UX Assumptions
 
-- **¿Quién es el usuario?**
+**Business Assumptions**
 
-  Ciudadanos en peligro afectados por desastres naturales (sismos) que requieren asistencia médica de emergencia, así como el personal de asistencia médica que recibirá la información de las víctimas.
-- **¿Dónde encaja nuestro producto en su vida?** 
-  
-  Lifeline se integra como una herramienta de supervivencia de primer contacto en los minutos y horas críticas tras un sismo, operando directamente desde el dispositivo móvil del ciudadano en peligro sin necesidad de señal.
-- **¿Qué problemas tiene nuestro producto y cómo se pueden resolver?** 
-  - Riesgo de alucinaciones en la IA o indicaciones médicas erróneas: Solución mediante la técnica de Generación Aumentada por Recuperación (RAG) vinculada estrictamente a fuentes de primeros auxilios validadas
-  - Dificultad de uso bajo estrés: Solución a través de un prompt prediseñado que fuerza a la IA a dar respuestas paso a paso, precisas y evitando jerga médica compleja.
-  - Limitación de escritura en emergencias: Solución permitiendo inputs mediante audio y cámara para evaluar heridas.
-- **¿Cómo y cuándo es usado nuestro producto?** 
+1. El ciudadano necesita recibir indicaciones médicas de primeros auxilios inmediatas y confiables tras un sismo, sin depender de una conexión a internet ni de la llegada inmediata de equipos de rescate.
+2. Las necesidades del ciudadano se resolverán mediante una aplicación móvil que integre IA on-device, capaz de funcionar offline, utilizando la técnica RAG para asegurar la precisión de las indicaciones médicas.
+3. Nuestros usuarios iniciales son ciudadanos en zonas de alto riesgo sísmico y el personal de asistencia médica que requiere información adelantada para optimizar los rescates.
+4. El principal valor que los ciudadanos esperan de Lifeline es una herramienta de supervivencia que brinde instrucciones claras, paso a paso y precisas en el momento de la emergencia.
+5. El personal de asistencia médica también puede obtener beneficios adicionales al recibir notificaciones automáticas con la ubicación y triaje preliminar de las víctimas una vez que se restablezca la conexión.
+6. Obtendremos nuestra base de usuarios mediante campañas de prevención de desastres, alianzas con municipalidades e instituciones de defensa civil.
+7. Generaremos valor social a través de alianzas gubernamentales o de ONGs enfocadas en la respuesta a desastres naturales.
+8. Nuestra principal competencia serán los manuales físicos de primeros auxilios y el conocimiento empírico de la población, dado que otras aplicaciones médicas dependen de conectividad a la nube.
+9. Nuestro mayor riesgo es que el modelo de IA on-device requiera demasiados recursos de hardware (batería, memoria) y no funcione fluidamente en dispositivos de gama baja a media.
+10. ¿Cuáles son las suposiciones que, si se demuestran falsas, harán que el proyecto fracase?
+* Los ciudadanos no confiarán en las indicaciones de una IA durante una emergencia médica crítica.
+* Los modelos on-device no logran la precisión médica necesaria, generando "alucinaciones" que ponen en riesgo la vida del usuario.
+* Los dispositivos móviles se descargan rápidamente o sufren daños físicos durante el sismo, impidiendo el uso de la aplicación.
 
-  Se utiliza en el escenario inmediato post-sismo. El ciudadano en peligro consulta a la aplicación mediante texto, audio o fotos sobre una herida o síntoma. Posteriormente, de forma pasiva, la app se usa cuando el dispositivo recupera internet para notificar automáticamente la ubicación y el estado del paciente al personal de asistencia médica.
-- **¿Qué características son importantes?**
-  - Procesamiento de IA On-Device (funcionamiento 100% offline).
-  - Base de conocimientos médicos curada e integrada mediante RAG.
-  - Soporte multimodal (texto, audio, imágenes).
-  - Sincronización en segundo plano para envío de notificaciones e información de consultas al personal de asistencia médica.
-- **¿Cómo debe verse nuestro producto y cómo comportarse?** 
+**Business Outcomes**
 
-  Debe tener una interfaz sumamente limpia, de alto contraste y libre de distracciones. Su comportamiento debe ser rápido (baja latencia en la inferencia del modelo), empático y directo, transmitiendo calma al ciudadano en peligro.
+* Esperamos lograr que una base significativa de ciudadanos en zonas de riesgo descargue y mantenga la aplicación en sus dispositivos como medida preventiva en el primer año de lanzamiento.
+* Queremos reducir el tiempo de atención inicial de heridas o emergencias estabilizables en un 50% durante simulacros, validando la efectividad del modelo de lenguaje y la arquitectura RAG.
+* Proyectamos establecer alianzas estratégicas con servicios de emergencia locales para integrar nuestro sistema de notificaciones asíncronas de víctimas en sus protocolos de rescate.
+* Alcanzar una precisión superior al 95% en las respuestas médicas generadas por la IA on-device, validado por profesionales de la salud.
+
+**User Assumptions**
+
+1. **¿Quién es el usuario?** Ciudadanos en peligro afectados por desastres naturales (sismos) que requieren asistencia médica de emergencia, así como el personal de asistencia médica que recibirá la información de las víctimas.
+
+2. **¿Dónde encajaría nuestro producto en la vida (o trabajo) del usuario?** Lifeline se integra como una herramienta de supervivencia de primer contacto en los minutos y horas críticas tras un sismo, operando directamente desde el dispositivo móvil del ciudadano en peligro sin necesidad de señal.
+
+3. **¿Qué problemas resuelve el producto para el usuario?**
+* Riesgo de alucinaciones en la IA o indicaciones médicas erróneas: Solución mediante la técnica de Generación Aumentada por Recuperación (RAG) vinculada estrictamente a fuentes de primeros auxilios validadas.
+
+* Dificultad de uso bajo estrés: Solución a través de un prompt prediseñado que fuerza a la IA a dar respuestas paso a paso, precisas y evitando jerga médica compleja.
+
+* Limitación de escritura en emergencias: Solución permitiendo inputs mediante audio y cámara para evaluar heridas.
+
+4. **¿En qué contexto utiliza el usuario el producto?** Se utiliza en el escenario inmediato post-sismo. El ciudadano en peligro consulta a la aplicación mediante texto, audio o fotos sobre una herida o síntoma. Posteriormente, de forma pasiva, la app se usa cuando el dispositivo recupera internet para notificar automáticamente la ubicación y el estado del paciente al personal de asistencia médica.
+
+5. **¿Qué características son esenciales para el usuario? ¿Y por qué?**
+* Procesamiento de IA On-Device (funcionamiento 100% offline).
+
+* Base de conocimientos médicos curada e integrada mediante RAG.
+
+* Soporte multimodal (texto, audio, imágenes).
+
+* Sincronización en segundo plano para envío de notificaciones e información de consultas al personal de asistencia médica.
+
+6. **¿Cómo debería verse y comportarse el producto?** Debe tener una interfaz sumamente limpia, de alto contraste y libre de distracciones. Su comportamiento debe ser rápido (baja latencia en la inferencia del modelo), empático y directo, transmitiendo calma al ciudadano en peligro.
+
+**User Outcomes**
+
+* Los ciudadanos en peligro quieren sentir seguridad y tranquilidad al saber qué pasos exactos seguir para atender una herida o estabilizar a un familiar herido en un momento de crisis.
+* Los ciudadanos esperan que la interacción con la aplicación sea sumamente rápida y con la menor fricción posible (utilizando voz o fotografías) debido a la situación de alto estrés o limitaciones físicas temporales.
+* El personal de asistencia médica quiere reducir el tiempo de localización de víctimas y disponer de un triaje preliminar automatizado para priorizar la atención una vez lleguen a la zona de desastre.
+
+**Features Assumptions**
+
+1. **Procesamiento IA On-Device (100% Offline)**
+* **Suposición:** Si el modelo de inteligencia artificial se ejecuta localmente en el dispositivo, garantizamos que los ciudadanos puedan recibir asistencia inmediata incluso en un colapso total de las redes de telecomunicaciones.
+* **Riesgo:** Si el modelo requiere excesivos recursos del dispositivo, la batería se agotará rápidamente o la latencia de respuesta será demasiado alta para ser útil en una emergencia.
+
+2. **Generación Aumentada por Recuperación (RAG)**
+* **Suposición:** Restringir el modelo de lenguaje a una base de datos validada de primeros auxilios pre-cargada reducirá a cero las alucinaciones peligrosas y asegurará instrucciones seguras.
+* **Riesgo:** Si la base de conocimientos curada es demasiado limitada y no abarca el espectro de lesiones típicas de un sismo, el sistema no podrá ofrecer soluciones para casos complejos.
+
+3. **Soporte Multimodal (Texto, Audio, Imágenes)**
+* **Suposición:** Permitir que los usuarios ingresen síntomas o evidencien heridas mediante fotografías y mensajes de voz acelerará el flujo de triaje bajo condiciones donde escribir resulta físicamente difícil.
+* **Riesgo:** Si el entorno post-sismo carece de buena iluminación o presenta altos niveles de ruido, el procesamiento de imágenes o el reconocimiento de voz podrían fallar repetidamente, causando frustración.
+
+4. **Sincronización y Notificación en Segundo Plano**
+* **Suposición:** Enviar un paquete de datos compactado con el estado del paciente, el diagnóstico preliminar de la IA y la ubicación al personal de rescate, en el instante en que se recupere la señal, optimizará radicalmente la logística de emergencia.
+* **Riesgo:** Si la conexión recuperada es excesivamente débil o intermitente, el paquete de datos podría corromperse o nunca enviarse con éxito.
 
 #### 1.2.3.3. Lean UX Hypothesis Statements.
 
