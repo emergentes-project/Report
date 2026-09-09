@@ -540,6 +540,35 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juW
 
 ### 2.3.2. User Task Matrix
 
+La presente matriz identifica las tareas fundamentales que realizan los segmentos objetivo en un escenario de emergencia post-sismo, independientemente del uso de cualquier solución tecnológica. Estas tareas representan el estado actual (As-Is) del dominio del problema y permiten comprender las necesidades reales y los retos de los usuarios antes de la intervención de una herramienta digital.
+
+Se consideran los dos User Personas representativos:
+
+* **Adriana Rojas** - Ciudadano
+* **Luis Mendoza** - Personal Médico
+
+Cada tarea ha sido evaluada en función de:
+
+* **Frecuencia:** Baja / Media / Alta
+* **Importancia:** Baja / Media / Alta
+
+Las tareas descritas corresponden a actividades propias del contexto de supervivencia, rescate y atención médica de emergencias, no a funcionalidades de software.
+
+| Tarea | Adriana (Frecuencia) | Adriana (Importancia) | Luis (Frecuencia) | Luis (Importancia) |
+| --- | --- | --- | --- | --- |
+| **Evaluar el entorno y el estado físico inicial de los heridos** | Alta | Alta | Alta | Alta |
+| **Buscar o recordar información sobre primeros auxilios** | Media | Alta | Baja | Baja |
+| **Brindar atención inicial o estabilizar a un paciente** | Media | Alta | Alta | Alta |
+| **Localizar físicamente a las víctimas en la zona de desastre** | Baja | Media | Alta | Alta |
+| **Realizar el triaje y determinar la gravedad para priorizar casos** | Baja | Alta | Alta | Alta |
+| **Contactar y solicitar ayuda a los servicios de emergencia** | Alta | Alta | Media | Alta |
+| **Comunicar la ubicación exacta y el estado de salud de los afectados** | Alta | Alta | Alta | Alta |
+| **Tomar decisiones críticas bajo altos niveles de estrés** | Alta | Alta | Alta | Alta |
+| **Coordinar acciones de rescate con otros miembros de la comunidad o equipo** | Media | Media | Alta | Alta |
+
+El análisis de la matriz de tareas evidencia que en un escenario post-sismo, ambos segmentos comparten el objetivo crítico de salvar vidas, pero abordan las tareas desde posiciones completamente distintas. Adriana (Ciudadano) se enfrenta a la necesidad de evaluar heridos, brindar atención inicial y comunicar su ubicación con una frecuencia media/alta y una importancia vital, pero careciendo de preparación técnica, lo que genera frustración y riesgo. Por su parte, Luis (Personal Médico) ejecuta labores de triaje, localización y atención experta de manera altamente frecuente, siendo su mayor desafío la falta de información oportuna para priorizar y llegar a los pacientes. Esto confirma que la brecha principal a resolver es la orientación asertiva para el ciudadano en el primer contacto y la posterior transmisión de datos clave hacia el rescatista.
+
+
 ### 2.3.3. Empathy Mapping
 
 ### 2.3.4. As-is Scenario Mapping
