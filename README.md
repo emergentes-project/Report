@@ -571,6 +571,14 @@ El análisis de la matriz de tareas evidencia que en un escenario post-sismo, am
 
 ### 2.3.3. Empathy Mapping
 
+<p align="center">
+  <img src="public/assets/images/chapter-2/AdrianaRojas-EmpathyMap.png" alt="Empathy Map Adriana Rojas ">
+</p>
+
+<p align="center">
+  <img src="public/assets/images/chapter-2/LuisMendoza-EmpathyMap.png" alt="Empathy Map Luis Mendoza">
+</p>
+
 ### 2.3.4. As-is Scenario Mapping
 
 ## 2.4. Ubiquitous Language
