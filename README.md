@@ -726,6 +726,14 @@ En este proyecto, el uso de Domain-Driven Design (DDD) permite alinear el desarr
 
 ## 3.1. To-Be Scenario Mapping
 
+<p align="center">
+  <img src="public/assets/images/chapter-3/Ciudadanos-ToBe.png" alt="To-Be Scenario Map Adriana Rojas ">
+</p>
+
+<p align="center">
+  <img src="public/assets/images/chapter-3/PersonalMedico-ToBe.png" alt="To-Be Scenario Map Luis Mendoza">
+</p>
+
 ## 3.2. User Stories
 
 __Epics__
