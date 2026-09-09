@@ -581,6 +581,14 @@ El análisis de la matriz de tareas evidencia que en un escenario post-sismo, am
 
 ### 2.3.4. As-is Scenario Mapping
 
+<p align="center">
+  <img src="public/assets/images/chapter-2/Ciudadanos-AsIs.png" alt="As-Is Scenario Map Adriana Rojas ">
+</p>
+
+<p align="center">
+  <img src="public/assets/images/chapter-2/PersonalMedico-AsIs.png" alt="As-Is Scenario Map Luis Mendoza">
+</p>
+
 ## 2.4. Ubiquitous Language
 
 En este proyecto, el uso de Domain-Driven Design (DDD) permite alinear el desarrollo de software con la realidad del dominio de respuesta post-sismo y orientación médica asistida. Uno de los pilares de DDD es el Lenguaje Ubicuo (Ubiquitous Language), el cual es un conjunto de términos compartidos que se construyen en colaboración entre desarrolladores, diseñadores y expertos del dominio. En nuestro caso, entre el equipo de desarrollo, ciudadanos usuarios de la aplicación y personal médico vinculado a la atención de emergencias.
