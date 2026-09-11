@@ -1414,6 +1414,16 @@ En esta sección se incluye la especificación de la primera versión de los esc
 
 #### 4.1.2.3. Constraints
 
+En esta sección se incluye la especificación de restricciones, es decir características que no pueden ser negociadas y son impuestas por el cliente o el propio negocio como guía para la elaboración de la solución. Para Lifeline, las restricciones principales provienen de la naturaleza offline-first del producto, la sensibilidad de la información médica y personal manejada, y el marco normativo peruano de protección de datos.
+
+| Technical Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
+|---|---|---|---|---|
+| TS-C01 | Ejecución de IA sin conexión a internet | Como equipo de desarrollo, debemos garantizar que el modelo de IA y el proceso RAG se ejecuten completamente en el dispositivo, sin depender de servicios en la nube, dado que la aplicación debe operar en escenarios sin telecomunicaciones. | Dado que el dispositivo no tiene conexión, cuando el ciudadano envía una consulta, entonces la aplicación genera la orientación sin ninguna llamada a servicios externos. | EP-03 |
+| TS-C02 | Compatibilidad con dispositivos de gama media | Como equipo de desarrollo, debemos asegurar que la aplicación y el modelo de IA funcionen en dispositivos Android de gama media, dado que no todos los ciudadanos poseen equipos de alta gama. | Dado un dispositivo con las especificaciones mínimas definidas por el equipo, cuando se ejecuta el modelo de IA, entonces la aplicación no supera los límites de memoria y batería establecidos. | EP-03 |
+| TS-C03 | Cumplimiento de la Ley de Protección de Datos Personales (Ley N° 29733) | Como equipo de desarrollo, debemos cumplir con la normativa peruana de protección de datos personales al almacenar y transmitir información médica y de ubicación de los usuarios. | Dado que se recolectan datos personales o médicos, cuando estos se almacenan o sincronizan, entonces se cumplen los principios de consentimiento, finalidad y seguridad exigidos por la ley. | EP-01 |
+| TS-C04 | Uso obligatorio de fuentes médicas validadas | Como equipo de desarrollo, debemos restringir la generación de indicaciones médicas a información proveniente exclusivamente de fuentes autorizadas y validadas mediante RAG, dado que no está permitido que el modelo invente contenido clínico. | Dado que el modelo genera una respuesta, cuando esta no puede sustentarse en el contexto recuperado de fuentes validadas, entonces el sistema no la muestra al usuario. | EP-03 |
+| TS-C05 | Entrega dentro del cronograma académico del curso | Como equipo del curso, debemos entregar los incrementos funcionales de Lifeline dentro de los sprints definidos por el cronograma de Arquitecturas de Software Emergentes. | Dado el cronograma de sprints establecido, cuando finaliza cada sprint, entonces el equipo entrega los artefactos y el incremento de software correspondiente. | EP-01 |
+
 ### 4.1.3. Architectural Drivers Backlog
 
 ### 4.1.4. Architectural Design Decisions
