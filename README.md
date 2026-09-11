@@ -253,7 +253,7 @@ Convertirnos en una organización referente en el uso responsable de la intelige
     <td>Paico Calderon, July Zelmira</td>
     <td>U20211d760</td>
     <td>Mi nombre es July Paico y actualmente estudio Ingeniería de Software en la UPC. Me considero una persona colaborativa, con interés en el análisis de datos y el diseño centrado en el usuario. Me motiva resolver problemas mediante la tecnología. Siento que puedo aportar al equipo a través de mi interés por la gestión de proyectos y mi capacidad de organización, además de mis ganas constantes de aprender cosas nuevas.</td>
-    <td><img src="public/assets/images/chapter-1/integrantes/july.png" alt="July Paico Calderon" width="150"></td>
+    <td><img src="public/assets/images/chapter-1/integrantes/July.png" alt="July Paico Calderon" width="150"></td>
   </tr>
   <tr>
     <td>Solano Armas, Angelo Héctor</td>
