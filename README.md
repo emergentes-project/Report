@@ -442,7 +442,7 @@ El propósito de esta sección es reconocer a los competidores directos que oper
         </tr>
         <tr>
             <td colspan="3">(En la cabecera colocar nombre y logo de cada competidor)</td>
-            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/rescuebridge.png?raw=true" style="width: 60px; height: auto;"><br>Lifeline (RescueBridge)</td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/rescuebridge.png?raw=true" style="width: auto; height: 60px;"><br>Lifeline (RescueBridge)</td>
             <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/ifrc.png?raw=true" style="width: 60px; height: auto;"><br>Primeros Auxilios (Cruz Roja / IFRC)</td>
             <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/ada.png?raw=true" style="width: 60px; height: auto;"><br>Ada Health</td>
             <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/buoyHealth.png?raw=true" style="width: 60px; height: auto;"><br>Buoy Health</td>
