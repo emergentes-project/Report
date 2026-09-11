@@ -1471,6 +1471,71 @@ En la **Iteración 3** se abordó la consistencia concurrente en la gestión de 
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
+En esta sección, el equipo especifica la relación de escenarios priorizados para atributos de calidad. Se retoman las decisiones tomadas al finalizar el proceso de Quality Attribute Workshop, colocando a continuación la versión final de los escenarios refinados en orden de prioridad.
+
+**Scenario Refinement for Scenario 1**
+
+|                                  |                                                                                                                                |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| **Scenario(s):**                 | QAS-01 — Disponibilidad offline de la orientación médica                                                                       |
+| **Business Goals:**              | Garantizar que los ciudadanos reciban asistencia médica inmediata incluso cuando las telecomunicaciones colapsen tras un sismo |
+| **Relevant Quality Attributes:** | Disponibilidad, Confiabilidad                                                                                                  |
+|                                  | **Stimulus:** El ciudadano registra una consulta médica sin conexión a internet                                                |
+
+**Scenario Components**
+
+|                          |                                                                                                                           |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| **Stimulus Source:**     | Ciudadano en peligro                                                                                                      |
+| **Environment:**         | Escenario post-sismo, sin cobertura de red móvil ni Wi-Fi                                                                 |
+| **Artifact (if Known):** | Módulo de orientación médica (IA on-device + índice RAG local)                                                            |
+| **Response:**            | El sistema procesa la consulta localmente y entrega indicaciones sustentadas en la base médica                            |
+| **Response Measure:**    | 100% de las consultas se procesan sin conexión; éxito en al menos el 95% de los intentos en pruebas controladas           |
+| **Questions:**           | ¿Qué ocurre si el modelo o el índice local no pueden cargarse por falta de espacio o corrupción de archivos?              |
+| **Issues:**              | Definir el tamaño máximo aceptable del modelo cuantizado para dispositivos de gama media sin sacrificar precisión clínica |
+
+**Scenario Refinement for Scenario 2**
+
+|                                  |                                                                                                                                             |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| **Scenario(s):**                 | QAS-02 — Rendimiento de la inferencia local                                                                                                 |
+| **Business Goals:**              | Minimizar el tiempo entre el registro de la consulta y la entrega de la orientación médica, dado que cada segundo importa en una emergencia |
+| **Relevant Quality Attributes:** | Rendimiento (Performance)                                                                                                                   |
+|                                  | **Stimulus:** El ciudadano envía una consulta multimodal (texto, foto o audio)                                                              |
+
+**Scenario Components**
+
+|                          |                                                                                                |
+|--------------------------|------------------------------------------------------------------------------------------------|
+| **Stimulus Source:**     | Ciudadano en peligro                                                                           |
+| **Environment:**         | Modo offline, dispositivo Android de gama media                                                |
+| **Artifact (if Known):** | Pipeline de inferencia local (recuperación RAG + generación del modelo de IA)                  |
+| **Response:**            | El sistema recupera el contexto médico relevante y genera la respuesta completa                |
+| **Response Measure:**    | Respuesta entregada en menos de 15 segundos en el 90% de los casos                             |
+| **Questions:**           | ¿Cómo se comporta la latencia cuando la consulta incluye una fotografía de alta resolución?    |
+| **Issues:**              | Evaluar compresión de imágenes previa al procesamiento para no degradar el tiempo de respuesta |
+
+**Scenario Refinement for Scenario 3**
+
+|                                  |                                                                                                                           |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| **Scenario(s):**                 | QAS-06 — Sincronización tolerante a fallos                                                                                |
+| **Business Goals:**              | Asegurar que el personal médico reciba información oportuna y completa de los casos apenas se restablezca la conectividad |
+| **Relevant Quality Attributes:** | Disponibilidad, Tolerancia a fallos                                                                                       |
+|                                  | **Stimulus:** El dispositivo recupera conexión a internet con consultas pendientes de envío                               |
+
+**Scenario Components**
+
+|                          |                                                                                                                                  |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **Stimulus Source:**     | Ciudadano o personal médico                                                                                                      |
+| **Environment:**         | Post-sismo, red intermitente o de baja calidad                                                                                   |
+| **Artifact (if Known):** | Servicio de sincronización bidireccional (cola local + backend)                                                                  |
+| **Response:**            | El sistema envía las consultas pendientes y recibe actualizaciones sin duplicar ni perder información                            |
+| **Response Measure:**    | 100% de las consultas pendientes sincronizadas dentro de 2 minutos, en el 95% de los casos                                       |
+| **Questions:**           | ¿Qué pasa si la conexión se pierde nuevamente a mitad de una sincronización en curso?                                            |
+| **Issues:**              | Definir la estrategia de reintentos (backoff exponencial) y el límite de intentos antes de marcar el caso como error persistente |
+
 ## 4.2. Strategic-Level Domain-Driven Design
 
 ### 4.2.1. EventStorming
