@@ -1665,9 +1665,25 @@ Secuencia narrada:
 6. La aplicación muestra las indicaciones al Ciudadano y, de ser necesario, le recomienda solicitar apoyo profesional.
 7. La consulta y sus datos (incluyendo ubicación, si está disponible) se **almacenan localmente** con el estado "pendiente de sincronización".
 
-![Registro y procesamiento de una consulta médica offline.png](public/assets/images/chapter-4/domain-message-flows-modeling/Registro%20y%20procesamiento%20de%20una%20consulta%20m%C3%A9dica%20offline.png)
+![Domain Story 1 Registro y procesamiento de una consulta médica offline.png](public/assets/images/chapter-4/domain-message-flows-modeling/Domain%20Story%201%20Registro%20y%20procesamiento%20de%20una%20consulta%20m%C3%A9dica%20offline.png)
 
+#### Domain Story 2: Sincronización y atención de un caso por el personal médico
 
+Esta historia describe cómo, al recuperarse la conexión a internet, una consulta pasa a estar disponible para el personal médico y es atendida hasta su cierre.
+
+Secuencia narrada:
+1. El dispositivo del **Ciudadano** recupera la conexión a internet.
+2. **Consultation** detecta la conexión recuperada y envía la consulta pendiente hacia el bounded context **Case Management** en la nube.
+3. **Case Management** registra la consulta como un nuevo **Caso**, con estado "disponible".
+4. El **Personal médico** visualiza el listado de casos disponibles que solicitan apoyo profesional.
+5. El Personal médico **se autoasigna** el caso, y Case Management actualiza su estado a "asignado".
+6. El Personal médico **inicia la atención** del caso, cambiando su estado a "en progreso".
+7. Una vez estabilizado el paciente, el Personal médico **cierra el caso**, registrando sus observaciones finales.
+8. **Case Management** notifica al Ciudadano (cuando su dispositivo se reconecta) que su consulta fue atendida.
+
+![Domain Story 2 Sincronización y atención de un caso por el personal médico.png](public/assets/images/chapter-4/domain-message-flows-modeling/Domain%20Story%202%20Sincronizaci%C3%B3n%20y%20atenci%C3%B3n%20de%20un%20caso%20por%20el%20personal%20m%C3%A9dico.png)
+
+Ambas historias evidencian la colaboración necesaria entre los cuatro bounded contexts: **Consultation** actúa como el núcleo que orquesta la generación de orientación médica apoyándose en **Medical Bases**, mientras que **Case Management** retoma la consulta una vez sincronizada para habilitar la colaboración con el **Personal médico**, todo ello sobre la identidad y autenticación gestionada por **IAM**.
 
 ### 4.2.4. Bounded Context Canvases
 
