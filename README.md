@@ -536,6 +536,34 @@ El propósito de esta sección es reconocer a los competidores directos que oper
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
+Esta sección examina las acciones estratégicas y tácticas que se implementarán para contrarrestar las fortalezas de la competencia y capitalizar sus debilidades, sin dejar de considerar las oportunidades y amenazas presentes en el mercado.
+
+* **Estrategia de diferenciación por inteligencia sin conexión:**
+  * Se busca ofrecer una solución que combine lo que ninguna app existente logra simultáneamente: funcionar sin conexión a internet y razonar sobre el caso específico del usuario mediante IA. Frente a Ada Health y Buoy Health —que dependen de la nube— Lifeline mantiene su funcionalidad completa incluso cuando las telecomunicaciones colapsan tras un sismo.
+    * **Tácticas:**
+      * Comunicar en el onboarding y en material de difusión el mensaje "cuando ellos dejan de funcionar, Lifeline sigue".
+      * Ejecutar todo el pipeline de IA (modelo + RAG + base médica) de forma local, sin llamadas externas.
+* **Estrategia de confiabilidad clínica reforzada:**
+  * El objetivo es que Lifeline no reemplace el contenido validado de instituciones como la Cruz Roja, sino que lo dinamice: en vez de un checklist fijo, adaptar la respuesta a la foto, el texto o el audio que describe el caso real del paciente.
+    * **Tácticas:**
+      * Sustentar cada indicación mediante RAG sobre fuentes médicas oficiales (MINSA, OMS, Cruz Roja Peruana).
+      * Buscar alianzas de validación de contenido con estas instituciones para ganar legitimidad ante los usuarios.
+* **Estrategia de accesibilidad multimodal:**
+  * Ninguno de los competidores analizados permite adjuntar una fotografía de la herida o describir la emergencia por voz para que el sistema razone sobre ella; esta es la ventaja de uso bajo estrés que Lifeline explota.
+    * **Tácticas:**
+      * Priorizar en el diseño de UX flujos de consulta por voz y cámara antes que el ingreso por texto.
+      * Optimizar el procesamiento multimodal para mantener baja latencia incluso en dispositivos de gama media.
+* **Estrategia de cierre de brecha con el personal médico:**
+  * Ninguna de las apps de primeros auxilios o symptom checkers analizadas conecta al ciudadano con el rescatista; todas terminan la interacción en el propio ciudadano. Lifeline convierte esa notificación en su diferenciador institucional.
+    * **Tácticas:**
+      * Enviar automáticamente ubicación y estado del paciente al personal médico al recuperar conexión.
+      * Usar este flujo como argumento principal en conversaciones con INDECI, EsSalud y municipalidades para integraciones futuras.
+* **Estrategia de entrada al mercado por prevención:**
+  * Dado que un sismo corta la posibilidad de descargar cualquier app nueva en el momento, la meta es lograr que Lifeline ya esté instalada antes de que ocurra la emergencia.
+    * **Tácticas:**
+      * Distribuir la app durante simulacros de sismo nacionales, que ya cuentan con alta participación ciudadana en Perú.
+      * Impulsar campañas de descarga junto a municipalidades y colegios en zonas de alto riesgo sísmico.
+
 ## 2.2. Entrevistas
 
 ### 2.2.1. Diseño de entrevistas
@@ -1371,6 +1399,18 @@ Descripción: Como personal médico, quiero autoasignarme una consulta disponibl
 Impacto: Requiere control de concurrencia y consistencia para impedir que una consulta sea asignada por dos o más profesional al mismo tiempo. En cuanto a negocio, posee un gran impacto puesto que marca el inicio de la atención profesional de la consulta y su camino hacia lograr ser cerrada.
 
 #### 4.1.2.2. Quality Attribute Scenarios
+
+En esta sección se incluye la especificación de la primera versión de los escenarios de atributos de calidad que tienen mayor impacto en la arquitectura de la solución, los cuales sirven de input para el proceso de diseño. Dado el contexto de Lifeline —una aplicación que debe operar sin conexión durante una emergencia, generar orientación médica confiable y sincronizar información al recuperar señal— se priorizaron los atributos de disponibilidad, rendimiento, usabilidad, confiabilidad y seguridad.
+
+| Atributo | Fuente | Estímulo | Artefacto | Entorno | Respuesta | Medida |
+|---|---|---|---|---|---|---|
+| Disponibilidad | Ciudadano en peligro | Registra una consulta médica cuando el dispositivo no tiene conexión a internet | Módulo de orientación médica (IA on-device + RAG local) | Escenario post-sismo sin cobertura de red | El sistema procesa la consulta localmente y genera la orientación sin depender de servicios externos | El 100% de las consultas se procesan exitosamente sin conexión, en al menos el 95% de los intentos registrados en pruebas controladas |
+| Rendimiento | Ciudadano en peligro | Envía una consulta multimodal (texto, foto o audio) al sistema | Pipeline de inferencia local (RAG + modelo de IA) | Operación offline, dispositivo de gama media | El sistema recupera el contexto médico relevante y genera la orientación | La respuesta completa se entrega en menos de 15 segundos en el 90% de los casos |
+| Usabilidad | Ciudadano en peligro (bajo estrés) | Intenta registrar una consulta usando voz o cámara en lugar de texto | Interfaz de registro de consultas | Escenario de alta ansiedad, baja luminosidad o ruido ambiental | La aplicación permite completar el registro con el mínimo de pasos posibles, sin necesidad de escribir | El 80% de los usuarios completa el flujo de consulta en menos de 1 minuto en pruebas controladas |
+| Confiabilidad | Módulo de orientación médica (IA + RAG) | Genera una respuesta sin contar con suficiente contexto recuperado desde la base médica | Mecanismo de respuesta segura | Operación offline durante una emergencia | El sistema descarta la respuesta no sustentada y comunica la limitación en lugar de generar una indicación inventada | 0% de respuestas sin sustento entregadas al usuario final, validado en el 95% de los casos de prueba |
+| Seguridad | Proceso externo al contexto autorizado de la aplicación | Intenta acceder a fotografías o datos médicos almacenados localmente | Almacenamiento local (base de datos y archivos) | Dispositivo del ciudadano, en cualquier momento | El sistema impide el acceso mediante cifrado y restricciones del contexto autorizado | 100% de los datos sensibles almacenados cifrados; 0 accesos no autorizados exitosos en pruebas de penetración |
+| Disponibilidad / Tolerancia a fallos | Ciudadano o personal médico | El dispositivo recupera la conexión a internet tras haber estado offline con consultas pendientes | Servicio de sincronización bidireccional | Post-sismo, con red intermitente o débil | El sistema sincroniza automáticamente las consultas pendientes sin duplicarlas ni perderlas, reintentando ante fallos | El 100% de las consultas pendientes se sincronizan correctamente dentro de los 2 minutos posteriores a la recuperación de conexión, en el 95% de los casos |
+| Escalabilidad / Consistencia concurrente | Dos o más integrantes del personal médico | Intentan autoasignarse la misma consulta disponible al mismo tiempo | Servicio de gestión de casos (backend) | Emergencia masiva con múltiples profesionales conectados simultáneamente | El sistema acepta solo la primera solicitud válida y rechaza las demás sin generar estados inconsistentes | 0% de casos con doble asignación en pruebas de concurrencia con al menos 50 solicitudes simultáneas |
 
 #### 4.1.2.3. Constraints
 
