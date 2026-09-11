@@ -1815,6 +1815,33 @@ En esta sección el equipo diseña los candidate bounded contexts identificados 
 
 ### 4.2.5. Context Mapping
 
+## 4.2.5. Context Mapping
+
+En esta sección el equipo elabora el conjunto de context maps que visualizan las relaciones estructurales entre los cuatro bounded contexts identificados: IAM, Consultation, Medical Bases y Case Management. Para ello se revisó la información recolectada en el EventStorming, el Domain Message Flows Modeling y los Bounded Context Canvases, y se sometió el diseño candidato a un proceso de discusión guiado por preguntas de diseño.
+
+### Preguntas de diseño aplicadas
+
+- **¿Qué pasaría si movemos el capability de "recomendación de atención profesional" de Consultation a un nuevo context?** Se descartó, ya que esta capability depende directamente del resultado generado por el modelo de IA dentro de Consultation; separarla generaría una dependencia circular innecesaria.
+- **¿Qué pasaría si descomponemos Medical Bases y movemos la indexación a Consultation?** Se descartó, porque acoplaría la lógica de gestión de contenido médico (incorporación y validación de fuentes) con la lógica de orquestación de consultas, dificultando el mantenimiento independiente de la base de conocimientos.
+- **¿Qué pasaría si creamos un shared service para la identidad de usuario entre Consultation y Case Management?** Se evaluó como alternativa a IAM como bounded context independiente; se descartó a favor de mantener IAM autónomo, dado que ambos contextos requieren distintos niveles de detalle del perfil (el ciudadano requiere datos básicos, el personal médico requiere validación profesional adicional).
+- **¿Qué pasaría si aislamos el core capability de Case Management (gestión de estados del caso) y movemos la trazabilidad a un context aparte?** Se descartó por ahora, ya que la trazabilidad es un requisito estrecho e inseparable del ciclo de vida del caso en esta primera versión del producto.
+- **¿Qué pasaría si duplicamos el modelo de "Paciente" entre Consultation y Case Management para romper la dependencia directa?** Se aceptó parcialmente: ambos contextos comparten un **Shared Kernel** con los datos esenciales del paciente (nombre, edad, ubicación) para evitar que Case Management dependa de cambios internos en el modelo de Consultation.
+
+### Context Map final y patrones aplicados
+
+El siguiente diagrama, generado con **ContextMapper**, resume la relación estructural final entre los cuatro bounded contexts de Lifeline:
+
+![context-map.png](public/assets/images/chapter-4/context-mapping/context-map.png)
+
+| Relación | Upstream (U) | Downstream (D) | Patrón DDD aplicado | Justificación |
+|---|---|---|---|---|
+| IAM → Consultation | IAM | Consultation | Customer/Supplier (OHS/ACL) | IAM provee el modelo de identidad y rol mediante un Open Host Service; Consultation lo protege con una Anti-Corruption Layer. |
+| IAM → Case Management | IAM | Case Management | Customer/Supplier (OHS/ACL) | Case Management depende del rol "Personal médico" validado por IAM para habilitar la autoasignación y atención de casos. |
+| Consultation → Medical Bases | Medical Bases | Consultation | Customer/Supplier (OHS/ACL) | Consultation es cliente de la capacidad de búsqueda semántica que expone Medical Bases mediante un índice RAG local. |
+| Consultation ↔ Case Management | — | — | Shared Kernel | Ambos contextos comparten un modelo mínimo de datos del paciente para evitar acoplarse a cambios internos del otro. |
+
+**Conclusión:** el diseño final privilegia bounded contexts desacoplados mediante relaciones tipo Open Host Service / Anti-Corruption Layer, reservando el patrón de Shared Kernel únicamente para el pequeño conjunto de datos del paciente que necesita viajar de forma consistente entre Consultation y Case Management.
+
 ## 4.3. Software Architecture
 
 ### 4.3.1. Software Architecture System Landscape Diagram
