@@ -1473,7 +1473,7 @@ En la **Iteración 3** se abordó la consistencia concurrente en la gestión de 
 
 En esta sección, el equipo especifica la relación de escenarios priorizados para atributos de calidad. Se retoman las decisiones tomadas al finalizar el proceso de Quality Attribute Workshop, colocando a continuación la versión final de los escenarios refinados en orden de prioridad.
 
-**Scenario Refinement for Scenario 1**
+**Scenario Refinement for Scenario N° 1**
 
 |                                  |                                                                                                                                |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
@@ -1494,7 +1494,7 @@ En esta sección, el equipo especifica la relación de escenarios priorizados pa
 | **Questions:**           | ¿Qué ocurre si el modelo o el índice local no pueden cargarse por falta de espacio o corrupción de archivos?              |
 | **Issues:**              | Definir el tamaño máximo aceptable del modelo cuantizado para dispositivos de gama media sin sacrificar precisión clínica |
 
-**Scenario Refinement for Scenario 2**
+**Scenario Refinement for Scenario N°2**
 
 |                                  |                                                                                                                                             |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1515,7 +1515,7 @@ En esta sección, el equipo especifica la relación de escenarios priorizados pa
 | **Questions:**           | ¿Cómo se comporta la latencia cuando la consulta incluye una fotografía de alta resolución?    |
 | **Issues:**              | Evaluar compresión de imágenes previa al procesamiento para no degradar el tiempo de respuesta |
 
-**Scenario Refinement for Scenario 3**
+**Scenario Refinement for Scenario N°3**
 
 |                                  |                                                                                                                           |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -1535,6 +1535,7 @@ En esta sección, el equipo especifica la relación de escenarios priorizados pa
 | **Response Measure:**    | 100% de las consultas pendientes sincronizadas dentro de 2 minutos, en el 95% de los casos                                       |
 | **Questions:**           | ¿Qué pasa si la conexión se pierde nuevamente a mitad de una sincronización en curso?                                            |
 | **Issues:**              | Definir la estrategia de reintentos (backoff exponencial) y el límite de intentos antes de marcar el caso como error persistente |
+
 
 ## 4.2. Strategic-Level Domain-Driven Design
 
