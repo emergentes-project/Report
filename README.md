@@ -1426,6 +1426,33 @@ En esta sección se incluye la especificación de restricciones, es decir caract
 
 ### 4.1.3. Architectural Drivers Backlog
 
+## 4.1.3. Architectural Drivers Backlog
+
+En esta sección se establece el conjunto de Architectural Drivers acordados por el equipo, resultado del proceso iterativo de Quality Attribute Workshop. El backlog incluye los Functional Drivers seleccionados (user stories principales), los Quality Attribute Drivers (derivados de los QAS) y todos los Constraints. Los drivers se ordenan colocando primero aquellos de alta importancia para Stakeholders y alto impacto en Architecture Technical Complexity.
+
+| Driver ID | Título de Driver                                       | Descripción                                                                                           | Importancia para Stakeholders | Impacto en Architecture Technical Complexity |
+|---|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------|----------------------------------------------|
+| AD-01 | Orientación médica sin conexión (US14)                 | El sistema debe generar indicaciones médicas confiables ejecutando IA y RAG localmente, sin internet. | High                          | High                                         |
+| AD-02 | Sincronización automática de consultas (US20)          | Las consultas y sus actualizaciones deben sincronizarse automáticamente al recuperar conexión.        | High                          | High                                         |
+| AD-03 | Disponibilidad offline del sistema (QAS-01)            | La aplicación debe mantener su funcionalidad completa sin acceso a internet.                          | High                          | High                                         |
+| AD-04 | Rendimiento de la inferencia local (QAS-02)            | Las respuestas de IA deben generarse con baja latencia en dispositivos de gama media.                 | High                          | High                                         |
+| AD-05 | Confiabilidad de las respuestas médicas (QAS-04)       | El sistema no debe generar indicaciones sin sustento en la base médica.                               | High                          | High                                         |
+| AD-06 | Tolerancia a fallos en la sincronización (QAS-06)      | El envío y recepción de datos debe ser resiliente a conexiones débiles o intermitentes.               | High                          | High                                         |
+| AD-07 | Ejecución de IA sin conexión a internet (TS-C01)       | Restricción técnica: el modelo y el RAG deben correr 100% on-device.                                  | High                          | High                                         |
+| AD-08 | Incorporación de fuentes médicas autorizadas (US13)    | El contenido que sustenta las respuestas debe provenir de fuentes validadas e indexadas.              | High                          | Medium                                       |
+| AD-09 | Indicaciones médicas claras y ordenadas (US15)         | La orientación generada debe presentarse en pasos comprensibles y sin jerga médica.                   | High                          | Medium                                       |
+| AD-10 | Compatibilidad con dispositivos de gama media (TS-C02) | Restricción de hardware: el modelo debe operar dentro de límites de memoria y batería definidos.      | High                          | Medium                                       |
+| AD-11 | Uso obligatorio de fuentes médicas validadas (TS-C04)  | Restricción: prohibido generar contenido clínico no sustentado.                                       | High                          | Medium                                       |
+| AD-12 | Seguridad de los datos médicos locales (QAS-05)        | Los datos médicos y fotografías deben protegerse mediante cifrado y control de acceso.                | High                          | Medium                                       |
+| AD-13 | Autoasignación de una consulta disponible (US29)       | El personal médico debe poder tomar responsabilidad de un caso sin conflictos de concurrencia.        | High                          | Medium                                       |
+| AD-14 | Recomendación de atención profesional (US17)           | El sistema debe identificar señales de gravedad y sugerir apoyo profesional.                          | High                          | Low                                          |
+| AD-15 | Cumplimiento de la Ley N° 29733 (TS-C03)               | Restricción legal sobre el tratamiento de datos personales y médicos.                                 | High                          | Low                                          |
+| AD-16 | Adjunto de fotografías a una consulta (US09)           | El ciudadano debe poder complementar su consulta con evidencia visual.                                | Medium                        | Medium                                       |
+| AD-17 | Consistencia concurrente en gestión de casos (QAS-07)  | El sistema debe evitar asignaciones duplicadas de un mismo caso.                                      | Medium                        | Medium                                       |
+| AD-18 | Registro de una consulta mediante texto (US07)         | Funcionalidad base para el ingreso de una consulta médica.                                            | Medium                        | Low                                          |
+| AD-19 | Usabilidad bajo estrés (QAS-03)                        | La interfaz debe permitir consultas rápidas mediante voz y cámara.                                    | High                          | Medium                                       |
+| AD-20 | Entrega dentro del cronograma académico (TS-C05)       | Restricción de negocio/académica sobre los tiempos de entrega del proyecto.                           | Medium                        | Low                                          |
+
 ### 4.1.4. Architectural Design Decisions
 
 ### 4.1.5. Quality Attribute Scenario Refinements
