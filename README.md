@@ -1426,8 +1426,6 @@ En esta sección se incluye la especificación de restricciones, es decir caract
 
 ### 4.1.3. Architectural Drivers Backlog
 
-## 4.1.3. Architectural Drivers Backlog
-
 En esta sección se establece el conjunto de Architectural Drivers acordados por el equipo, resultado del proceso iterativo de Quality Attribute Workshop. El backlog incluye los Functional Drivers seleccionados (user stories principales), los Quality Attribute Drivers (derivados de los QAS) y todos los Constraints. Los drivers se ordenan colocando primero aquellos de alta importancia para Stakeholders y alto impacto en Architecture Technical Complexity.
 
 | Driver ID | Título de Driver                                       | Descripción                                                                                           | Importancia para Stakeholders | Impacto en Architecture Technical Complexity |
@@ -1454,6 +1452,22 @@ En esta sección se establece el conjunto de Architectural Drivers acordados por
 | AD-20 | Entrega dentro del cronograma académico (TS-C05)       | Restricción de negocio/académica sobre los tiempos de entrega del proyecto.                           | Medium                        | Low                                          |
 
 ### 4.1.4. Architectural Design Decisions
+
+El equipo siguió el proceso iterativo del *Quality Attribute Workshop* (ADD), evaluando en cada iteración los drivers de mayor prioridad (High/High) del backlog antes de continuar con los de prioridad media. En la **Iteración 1** se abordaron los drivers relacionados con la ejecución de IA sin conexión y el rendimiento de la inferencia local (AD-01, AD-04, AD-07, AD-10), dado que estos condicionan la viabilidad completa del producto: si el modelo no puede ejecutarse eficientemente en el dispositivo, ninguna otra funcionalidad tiene sentido. Se evaluaron patrones de despliegue de IA (edge inference vs. cloud vs. híbrido) y se seleccionó una arquitectura de **IA on-device** con modelo cuantizado y motor de inferencia embebido, complementada con un índice local de RAG.
+
+En la **Iteración 2** se trabajaron los drivers de sincronización y confiabilidad de datos (AD-02, AD-03, AD-06, AD-12), evaluando patrones de persistencia y sincronización offline-first, seleccionando el patrón **Outbox** junto con reintentos automáticos y control de idempotencia para evitar duplicados.
+
+En la **Iteración 3** se abordó la consistencia concurrente en la gestión de casos (AD-13, AD-17), comparando mecanismos de control de concurrencia optimista y pesimista, seleccionando **control de concurrencia optimista** dado que la contención esperada (número de profesionales médicos autoasignándose simultáneamente el mismo caso) es baja-moderada.
+
+**Candidate Pattern Evaluation Matrix**
+
+| Driver ID     | Título de Driver             | Patrón 1                                                                                         |                                                         | Patrón 2                                               |                                                               | Patrón 3                                                                           |                                                                           |
+|---------------|------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+|               |                              | **Pro**                                                                                          | **Con**                                                 | **Pro**                                                | **Con**                                                       | **Pro**                                                                            | **Con**                                                                   |
+| AD-01 / AD-07 | Ejecución de IA sin conexión | **On-device inference** (modelo cuantizado embebido): funciona 100% offline, sin latencia de red | Consumo de batería/memoria; limita el tamaño del modelo | **Cloud inference**: modelos más grandes y precisos    | Inutilizable sin conexión, viola constraint principal         | **Híbrido** (on-device + fallback cloud): balance entre precisión y disponibilidad | Mayor complejidad; el fallback no sirve en el escenario crítico sin señal |
+| AD-02 / AD-06 | Sincronización de consultas  | **Offline-first + Outbox**: garantiza entrega eventual sin pérdida ni duplicados                 | Requiere lógica adicional de reconciliación             | **Sincronización síncrona directa** al recuperar señal | Bloquea la UI; falla si la conexión es intermitente           | **Event-driven vía cola de mensajes remota**                                       | Depende de infraestructura de mensajería adicional; mayor costo operativo |
+| AD-13 / AD-17 | Autoasignación de casos      | **Concurrencia optimista** (compare-and-swap sobre estado del caso) — simple, bajo overhead      | Requiere reintento si hay colisión                      | **Bloqueo pesimista** (locks distribuidos)             | Mayor complejidad operativa y menor throughput                | —                                                                                  | —                                                                         |
+| AD-12         | Seguridad de datos locales   | **Cifrado a nivel de SO** (Keystore/Keychain) — aprovecha mecanismos ya certificados             | Dependencia de la plataforma (Android/iOS)              | **Cifrado propio** (librería custom)                   | Mayor control, pero mayor riesgo de errores de implementación | —                                                                                  | —                                                                         |
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
