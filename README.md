@@ -1648,6 +1648,27 @@ Justificación: Este dominio existe para lograr gestionar por separado el flujo 
 
 ### 4.2.3. Domain Message Flows Modeling
 
+Para visualizar cómo deben colaborar los bounded contexts identificados (IAM, Consultation, Medical Bases y Case Management) al resolver los casos de uso principales del negocio, el equipo aplicó la técnica de **Domain Storytelling**. Esta técnica permite representar, mediante pictogramas de actores, objetos de trabajo y flechas numeradas, la secuencia de acciones que ocurre entre los usuarios (ciudadano, personal médico) y los sistemas involucrados para completar una historia concreta del dominio.
+
+Se elaboraron dos Domain Stories, correspondientes a los flujos más críticos identificados durante el EventStorming: el registro y procesamiento de una consulta médica sin conexión, y la sincronización más atención de un caso por parte del personal médico.
+
+#### Domain Story 1: Registro y procesamiento de una consulta médica offline
+
+Esta historia describe cómo un ciudadano en peligro registra una consulta médica y recibe orientación de primeros auxilios sin necesidad de conexión a internet.
+
+Secuencia narrada:
+1. El **Ciudadano** abre la aplicación Lifeline en su dispositivo móvil.
+2. El Ciudadano describe la emergencia médica a través de **texto, audio o una fotografía** de la herida.
+3. La aplicación (bounded context **Consultation**) recibe la consulta y solicita al bounded context **Medical Bases** la información relevante de primeros auxilios según el tipo de lesión descrita.
+4. **Medical Bases** recupera del índice local los fragmentos de la base de conocimientos médicos relacionados con la consulta.
+5. **Consultation** entrega el contexto recuperado junto con la consulta al modelo de IA local (RAG), el cual genera la **orientación médica** paso a paso.
+6. La aplicación muestra las indicaciones al Ciudadano y, de ser necesario, le recomienda solicitar apoyo profesional.
+7. La consulta y sus datos (incluyendo ubicación, si está disponible) se **almacenan localmente** con el estado "pendiente de sincronización".
+
+![Registro y procesamiento de una consulta médica offline.png](public/assets/images/chapter-4/domain-message-flows-modeling/Registro%20y%20procesamiento%20de%20una%20consulta%20m%C3%A9dica%20offline.png)
+
+
+
 ### 4.2.4. Bounded Context Canvases
 
 ### 4.2.5. Context Mapping
