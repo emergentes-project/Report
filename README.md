@@ -1815,8 +1815,6 @@ En esta sección el equipo diseña los candidate bounded contexts identificados 
 
 ### 4.2.5. Context Mapping
 
-## 4.2.5. Context Mapping
-
 En esta sección el equipo elabora el conjunto de context maps que visualizan las relaciones estructurales entre los cuatro bounded contexts identificados: IAM, Consultation, Medical Bases y Case Management. Para ello se revisó la información recolectada en el EventStorming, el Domain Message Flows Modeling y los Bounded Context Canvases, y se sometió el diseño candidato a un proceso de discusión guiado por preguntas de diseño.
 
 ### Preguntas de diseño aplicadas
