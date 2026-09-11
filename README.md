@@ -424,8 +424,115 @@ __Personal médico__
 # Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1. Competidores
+El propósito de esta sección es reconocer a los competidores directos que operan con modelos de negocio sustentados en productos digitales similares, así como a los competidores indirectos que ofrecen soluciones que, aunque no idénticas, guardan cierta relación o cubren necesidades similares.
 
 ### 2.1.1. Análisis competitivo
+
+<table border="1px">
+    <thead>
+        <th colspan="9">Competitive Analysis Landscape</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2" colspan="1">¿Por qué realizar este análisis?</td>
+            <td colspan="8">El propósito de este análisis es entender cómo funcionan y qué características poseen los productos relacionados con la orientación médica y los primeros auxilios, con el fin de diseñar estrategias y tácticas que nos permitan potenciar las fortalezas de Lifeline y aprovechar las debilidades detectadas en la competencia, especialmente en el escenario de emergencia post-sismo.</td>
+        </tr>
+        <tr>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td colspan="1">(En la cabecera colocar nombre y logo de cada competidor)</td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/rescuebridge.png?raw=true" style="width: 60px; height: auto;"><br>Lifeline</br> (RescueBridge)</td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/ifrc.png?raw=true" style="width: 60px; height: auto;"><br><br>Primeros Auxilios</br> (Cruz Roja / IFRC)</td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/ada.png?raw=true" style="width: 60px; height: auto;"><br><b>Ada Health</b></td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/buoyHealth.png?raw=true" style="width: 60px; height: auto;"><br><b>Buoy Health</b></td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="1">Perfil</td>
+            <td colspan="2">Descripción general</td>
+            <td colspan="2">App móvil que brinda orientación médica de primeros auxilios en un escenario post-sismo, mediante un modelo de IA on-device (offline) que usa RAG sobre fuentes médicas validadas, con entrada multimodal (texto, voz, foto).</td>
+            <td colspan="2">App oficial de la Cruz Roja / IFRC con guías precargadas de primeros auxilios, videos explicativos y cuestionarios interactivos para aprender y consultar en el momento.</td>
+            <td colspan="2">App de evaluación de síntomas con IA conversacional que hace preguntas personalizadas y sugiere posibles causas médicas.</td>
+            <td colspan="2">Plataforma de triaje con IA que analiza síntomas mediante preguntas y recomienda el nivel de atención médica a buscar.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Ventaja competitiva<br>¿Qué valor ofrece?</td>
+            <td colspan="2">Es la única solución que combina funcionamiento 100% offline con indicaciones generadas por IA adaptadas al caso específico del usuario (no un checklist fijo), y que además notifica al personal médico la ubicación y estado del paciente al recuperar señal.</td>
+            <td colspan="2">Respaldo institucional global de gran confianza, contenido validado clínicamente y disponible sin conexión.</td>
+            <td colspan="2">IA conversacional validada clínicamente, con más de 10 años de desarrollo y una amplia base de datos de condiciones médicas.</td>
+            <td colspan="2">Algoritmos entrenados con miles de datos clínicos reales; reporta una tasa de acierto cercana al 90% frente a diagnóstico médico.</td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="1">Perfil de Marketing</td>
+            <td colspan="2">Mercado objetivo</td>
+            <td colspan="2">Ciudadanos en zonas de alto riesgo sísmico en Lima Metropolitana y personal de asistencia médica (bomberos, paramédicos, enfermeros, personal de rescate).</td>
+            <td colspan="2">Población general a nivel mundial interesada en aprender o consultar primeros auxilios.</td>
+            <td colspan="2">Personas a nivel global preocupadas por síntomas de salud cotidianos, sistemas de salud y aseguradoras.</td>
+            <td colspan="2">Empleados de empresas en EE.UU. con beneficios de salud contratados por sus empleadores.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Estrategia de Marketing</td>
+            <td colspan="2">Alianzas con INDECI, municipalidades y Cruz Roja Peruana; distribución durante simulacros nacionales de sismo; campañas de prevención de desastres.</td>
+            <td colspan="2">Distribución mediante cursos presenciales de primeros auxilios, campañas institucionales y alianzas gubernamentales.</td>
+            <td colspan="2">Posicionamiento en tiendas de apps, alianzas con sistemas de salud y aseguradoras.</td>
+            <td colspan="2">Alianzas B2B directas con empleadores y aseguradoras que ofrecen la herramienta como beneficio laboral.</td>
+        </tr>
+        <tr>
+            <td rowspan="3" colspan="1">Perfil de Producto</td>
+            <td colspan="2">Producto & Servicio</td>
+            <td colspan="2">App móvil offline-first con IA on-device + RAG médico, entrada multimodal, sincronización bidireccional y gestión de casos para personal médico.</td>
+            <td colspan="2">App con checklist estático de primeros auxilios, videos, cuestionarios y botón de llamada directa a emergencias.</td>
+            <td colspan="2">Symptom checker con IA conversacional en la nube, recomendaciones de siguiente paso y opción de telemedicina paga.</td>
+            <td colspan="2">Plataforma de triaje conversacional y marketplace de opciones de atención médica.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Precio & Costos</td>
+            <td colspan="2">Modelo freemium: gratuito para ciudadanos; licenciamiento institucional para municipalidades/entidades de salud.</td>
+            <td colspan="2">Totalmente gratuita.</td>
+            <td colspan="2">Gratuita, con opción de consulta médica paga (aprox. $25).</td>
+            <td colspan="2">Modelo B2B, cubierto dentro de los beneficios laborales del usuario.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Canales</td>
+            <td colspan="2">Aplicación móvil (Android/iOS), funciona sin conexión a internet.</td>
+            <td colspan="2">Aplicación móvil (Android/iOS), contenido precargado offline.</td>
+            <td colspan="2">Aplicación móvil, requiere conexión a internet (procesamiento en la nube).</td>
+            <td colspan="2">Aplicación web y móvil, requiere conexión a internet.</td>
+        </tr>
+        <tr>
+            <td rowspan="5">Análisis SWOT</td>
+            <td colspan="9">Elabore un análisis para su startup y competidores. Las fortalezas deben respaldar oportunidades y reforzar ventajas competitivas.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Fortalezas</td>
+            <td colspan="2">Funciona sin conexión, indicaciones adaptadas al caso real mediante IA, entrada multimodal, conecta al ciudadano con personal médico.</td>
+            <td colspan="2">Marca reconocida y confiable, contenido validado clínicamente, funciona sin internet.</td>
+            <td colspan="2">IA robusta y validada, gran base de usuarios, evaluación personalizada de síntomas.</td>
+            <td colspan="2">Precisión reportada alta, modelo de negocio B2B ya consolidado.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Debilidades</td>
+            <td colspan="2">Startup nueva sin trayectoria; requiere validación clínica e institucional; depende de recursos de hardware del dispositivo (batería, memoria).</td>
+            <td colspan="2">Contenido estático (checklist fijo); no analiza el caso específico del usuario; no admite fotos ni voz.</td>
+            <td colspan="2">Depende 100% de internet; no está diseñada para emergencias agudas ni post-desastre; no permite adjuntar fotos de heridas.</td>
+            <td colspan="2">No funciona offline; no orientada a emergencias físicas ni al contexto peruano; no permite intervención directa sobre heridas.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Oportunidades</td>
+            <td colspan="2">Alto riesgo sísmico en Perú, alianzas gubernamentales, escaso mercado de soluciones offline + IA médica.</td>
+            <td colspan="2">Podría incorporar IA en el futuro, aprovechando su respaldo institucional.</td>
+            <td colspan="2">Podría expandirse a mercados de emergencia si desarrollara una versión offline.</td>
+            <td colspan="2">Podría expandirse a mercados fuera de EE.UU.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Amenazas</td>
+            <td colspan="2">Desconfianza de la población hacia decisiones médicas de una IA; necesidad de convencer a instituciones para validar el contenido.</td>
+            <td colspan="2">Apps con IA más adaptativa (como Lifeline) podrían ofrecer mayor valor percibido en emergencias reales.</td>
+            <td colspan="2">Ninguna amenaza directa en el nicho de emergencias post-desastre, dado que no compite en ese escenario.</td>
+            <td colspan="2">Ninguna amenaza directa en el nicho de emergencias post-desastre, dado que no compite en ese escenario.</td>
+        </tr>
+    </tbody>
+</table>
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
