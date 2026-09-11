@@ -430,22 +430,22 @@ El propósito de esta sección es reconocer a los competidores directos que oper
 
 <table border="1px">
     <thead>
-        <th colspan="9">Competitive Analysis Landscape</th>
+        <th colspan="11">Competitive Analysis Landscape</th>
     </thead>
     <tbody>
         <tr>
-            <td rowspan="2" colspan="1">¿Por qué realizar este análisis?</td>
-            <td colspan="8">El propósito de este análisis es entender cómo funcionan y qué características poseen los productos relacionados con la orientación médica y los primeros auxilios, con el fin de diseñar estrategias y tácticas que nos permitan potenciar las fortalezas de Lifeline y aprovechar las debilidades detectadas en la competencia, especialmente en el escenario de emergencia post-sismo.</td>
+            <td rowspan="2" colspan="2">¿Por qué realizar este análisis?</td>
+            <td colspan="9">Indicar en este espacio la pregunta que se busca responder o el propósito principal del análisis.</td>
         </tr>
         <tr>
-            <td colspan="8"></td>
+            <td colspan="9">El propósito de este análisis es entender cómo funcionan y qué características poseen los productos relacionados con la orientación médica y los primeros auxilios, con el fin de diseñar estrategias y tácticas que nos permitan potenciar las fortalezas de Lifeline y aprovechar las debilidades detectadas en la competencia, especialmente en el escenario de emergencia post-sismo.</td>
         </tr>
         <tr>
-            <td colspan="1">(En la cabecera colocar nombre y logo de cada competidor)</td>
-            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/rescuebridge.png?raw=true" style="width: 60px; height: auto;"><br>Lifeline</br> (RescueBridge)</td>
-            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/ifrc.png?raw=true" style="width: 60px; height: auto;"><br><br>Primeros Auxilios</br> (Cruz Roja / IFRC)</td>
-            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/ada.png?raw=true" style="width: 60px; height: auto;"><br><b>Ada Health</b></td>
-            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/buoyHealth.png?raw=true" style="width: 60px; height: auto;"><br><b>Buoy Health</b></td>
+            <td colspan="3">(En la cabecera colocar nombre y logo de cada competidor)</td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/rescuebridge.png?raw=true" style="width: 60px; height: auto;"><br>Lifeline (RescueBridge)</td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/ifrc.png?raw=true" style="width: 60px; height: auto;"><br>Primeros Auxilios (Cruz Roja / IFRC)</td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/ada.png?raw=true" style="width: 60px; height: auto;"><br>Ada Health</td>
+            <td colspan="2"><img src="https://github.com/emergentes-project/Report/blob/main/public/assets/images/chapter-1/competidores/buoyHealth.png?raw=true" style="width: 60px; height: auto;"><br>Buoy Health</td>
         </tr>
         <tr>
             <td rowspan="2" colspan="1">Perfil</td>
@@ -501,7 +501,7 @@ El propósito de esta sección es reconocer a los competidores directos que oper
         </tr>
         <tr>
             <td rowspan="5">Análisis SWOT</td>
-            <td colspan="9">Elabore un análisis para su startup y competidores. Las fortalezas deben respaldar oportunidades y reforzar ventajas competitivas.</td>
+            <td colspan="10">Elabore un análisis para su startup y competidores. Las fortalezas deben respaldar oportunidades y reforzar ventajas competitivas.</td>
         </tr>
         <tr>
             <td colspan="2">Fortalezas</td>
