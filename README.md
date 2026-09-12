@@ -607,51 +607,61 @@ Entrevistado N°1: Barbara Eliana Seminario Leon
 
 - Sexo: Femenino
 - Edad: 52 años
-- Ubicación en la que vive: Santiago de Surco
+- Distrito: Santiago de Surco
 - Acerca de la entrevista:
   - Instante en el que inicia: 0:00
   - Duración: 4:49
-  - Resumen:
 
-Para Barbara, enfrentar una emergencia médica post-sismo es una situación delicada y potencialmente frustrante, tal como lo experimentó al tener que evacuar cuidadosamente a una persona con el pie torcido. Su principal barrera actual es la incapacidad de comunicarse con servicios de emergencia o buscar información de primeros auxilios sin acceso a internet, lo que complica el manejo de heridas complejas o situaciones donde el paciente no puede ser movilizado. Frente a estos problemas, encuentra una gran oportunidad en una aplicación que le permita describir la emergencia combinando fotos y texto, recibiendo a cambio indicaciones médicas claras, concisas y ordenadas a modo de checklist. Para confiar plenamente en esta herramienta, recalca que la inteligencia artificial debe basarse en información verificada y no "alucinar", considerándola excelente para un triaje o descarte inicial, aunque manteniendo el deseo de una eventual interacción humana y mostrándose completamente dispuesta a compartir la información personal o de ubicación que sea necesaria para facilitar el rescate.
+<img src="public/assets/images/chapter-2/interviews/barbara.png">
+
+- Resumen:
+
+  Para Barbara, enfrentar una emergencia médica post-sismo es una situación delicada y potencialmente frustrante, tal como lo experimentó al tener que evacuar cuidadosamente a una persona con el pie torcido. Su principal barrera actual es la incapacidad de comunicarse con servicios de emergencia o buscar información de primeros auxilios sin acceso a internet, lo que complica el manejo de heridas complejas o situaciones donde el paciente no puede ser movilizado. Frente a estos problemas, encuentra una gran oportunidad en una aplicación que le permita describir la emergencia combinando fotos y texto, recibiendo a cambio indicaciones médicas claras, concisas y ordenadas a modo de checklist. Para confiar plenamente en esta herramienta, recalca que la inteligencia artificial debe basarse en información verificada y no "alucinar", considerándola excelente para un triaje o descarte inicial, aunque manteniendo el deseo de una eventual interacción humana y mostrándose completamente dispuesta a compartir la información personal o de ubicación que sea necesaria para facilitar el rescate.
 
 - Enlace a la entrevista:
 
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
+  https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
 
 Entrevistado N°2: Roberto Mauricio Huertas Romero
 
 - Sexo: Masculino
 - Edad: 21 años
-- Ubicación en la que vive: Ate Vitarte
+- Distrito: Ate Vitarte
 - Ocupación: Estudiante
 - Grado de instrucción: Universitario
 - Acerca de la entrevista:
   - Instante en el que inicia: 0:00
   - Duración: 10:06
-  - Resumen:
 
-Para Roberto, su experiencia cercana con una emergencia post-sismo ocurrió cuando su primita se cayó de las escaleras al asustarse por el movimiento. Aunque las heridas fueron leves y sin mayor gravedad, el evento le dejó claro lo difícil que puede resultar actuar sin conocimientos médicos. En una situación similar, indica que primero revisaría los ojos y la cabeza, por considerarla la zona más frágil, y luego observaría el comportamiento de la persona para detectar signos de desorientación. Reconoce que lo más complicado sería determinar cómo ayudar correctamente, ya que no cuenta con preparación médica y teme realizar alguna acción inadecuada. Además, señala que los nervios y la ansiedad por querer ayudar podrían afectar su capacidad para seguir instrucciones de forma correcta. Respecto a la gravedad, considera que a veces es necesario actuar con rapidez, pero si la persona pierde el conocimiento buscaría ayuda profesional de inmediato. Sin internet, afirma que le resultaría muy difícil buscar información de primeros auxilios y preferiría acudir directamente a un profesional. En una emergencia, le resultaría más fácil explicar la situación hablando y tomando fotografías. Le gustaría que las indicaciones médicas se presenten paso a paso, con imágenes y textos precisos, y que estén avaladas para poder confiar plenamente en ellas. También considera útil que la inteligencia artificial sugiera si es necesario solicitar apoyo médico profesional, precisamente porque él no tiene formación en el área. Finalmente, estaría dispuesto a compartir información personal y médica en una emergencia, como el tipo de sangre o posibles alergias a medicamentos, porque considera que esos datos pueden facilitar una atención más segura.
+<img src="public/assets/images/chapter-2/interviews/roberto.png">
+
+- Resumen:
+
+  Para Roberto, su experiencia cercana con una emergencia post-sismo ocurrió cuando su primita se cayó de las escaleras al asustarse por el movimiento. Aunque las heridas fueron leves y sin mayor gravedad, el evento le dejó claro lo difícil que puede resultar actuar sin conocimientos médicos. En una situación similar, indica que primero revisaría los ojos y la cabeza, por considerarla la zona más frágil, y luego observaría el comportamiento de la persona para detectar signos de desorientación. Reconoce que lo más complicado sería determinar cómo ayudar correctamente, ya que no cuenta con preparación médica y teme realizar alguna acción inadecuada. Además, señala que los nervios y la ansiedad por querer ayudar podrían afectar su capacidad para seguir instrucciones de forma correcta. Respecto a la gravedad, considera que a veces es necesario actuar con rapidez, pero si la persona pierde el conocimiento buscaría ayuda profesional de inmediato. Sin internet, afirma que le resultaría muy difícil buscar información de primeros auxilios y preferiría acudir directamente a un profesional. En una emergencia, le resultaría más fácil explicar la situación hablando y tomando fotografías. Le gustaría que las indicaciones médicas se presenten paso a paso, con imágenes y textos precisos, y que estén avaladas para poder confiar plenamente en ellas. También considera útil que la inteligencia artificial sugiera si es necesario solicitar apoyo médico profesional, precisamente porque él no tiene formación en el área. Finalmente, estaría dispuesto a compartir información personal y médica en una emergencia, como el tipo de sangre o posibles alergias a medicamentos, porque considera que esos datos pueden facilitar una atención más segura.
 - Enlace a la entrevista:
 
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+  https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 Entrevistada N°3: Araceli Felicia Reyna Caicedo
 
 - Sexo: Femenino
 - Edad: 21 años
-- Ubicación en la que vive: Chorrillos
+- Distrito: Chorrillos
 - Ocupación: Estudiante
 - Grado de instrucción: Universitario
 - Acerca de la entrevista:
   - Instante en el que inicia: 0:00
   - Duración: 13:17
-  - Resumen:
 
-Araceli no ha vivido una urgencia médica durante un sismo, pero al no contar con conocimientos en primeros auxilios, siente que sin internet no tendría una fuente de información. En una situación post sismo, siente que lo más difícil es no saber cuál sería el primer paso para tratar a un paciente. Siente que para comunicar una situación de emergencia, más fácil le parece a través de un audio porque simplifica el tiempo, y considera que tomar fotos ayudaría en la descripción. Al momento de recibir indicaciones valoraría la forma escrita y numerada de pasos, con imágenes adjuntas. Siente que confiaría más en las indicaciones de la ia, si éstas referencian a portales médicos o instituciones y sí está dispuesta a compartir su información personal. 
+<img src="public/assets/images/chapter-2/interviews/araceli.png">
+
+- Resumen:
+
+  Araceli no ha vivido una urgencia médica durante un sismo, pero al no contar con conocimientos en primeros auxilios, siente que sin internet no tendría una fuente de información. En una situación post sismo, siente que lo más difícil es no saber cuál sería el primer paso para tratar a un paciente. Siente que para comunicar una situación de emergencia, más fácil le parece a través de un audio porque simplifica el tiempo, y considera que tomar fotos ayudaría en la descripción. Al momento de recibir indicaciones valoraría la forma escrita y numerada de pasos, con imágenes adjuntas. Siente que confiaría más en las indicaciones de la ia, si éstas referencian a portales médicos o instituciones y sí está dispuesta a compartir su información personal. 
+
 - Enlace a la entrevista:
 
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L
+  https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L
 
 **Segmento objetivo 2: Personal médico**
 
@@ -659,20 +669,46 @@ Entrevistado N°1: Andre Ramirez Pella
 
 - Sexo: Masculino
 - Edad: 24 años
-- Ubicación en la que vive: Santiago de Surco
+- Distrito: San Miguel
+- Grado de instrucción: Universitario
 - Acerca de la entrevista:
   - Instante en el que inicia: 0:00
   - Duración: 10:13
-  - Resumen:
 
-Para Andre, la alarmante falta de conocimientos en primeros auxilios por parte de la población representa un riesgo crítico, ya que la mayoría desconoce cómo realizar una evaluación inicial o aplicar maniobras básicas para salvar vidas. A esta barrera se le suma la gran dificultad que tienen los equipos médicos para localizar víctimas durante desastres con derrumbes. En este contexto, considera que recibir orientación de una inteligencia artificial sería una herramienta sumamente útil para empoderar a los ciudadanos, agilizando el proceso de atención y reduciendo riesgos antes de que llegue la ayuda. Para que el sistema sea confiable y seguro, la IA debe basarse en fuentes verificadas, realizar preguntas clave (como medir el pulso, nivel de conciencia, sangrados o fracturas) e identificar rápidamente si la situación requiere atención profesional inmediata. Finalmente, hace hincapié en que la aplicación nunca debe sugerir la automedicación ni indicar movimientos o tratamientos complejos que requieran entrenamiento previo, ya que un mal análisis o una ejecución incorrecta podrían empeorar gravemente el estado del paciente.
+<img src="public/assets/images/chapter-2/interviews/andre.png">
+
+- Resumen:
+
+  Para Andre, la alarmante falta de conocimientos en primeros auxilios por parte de la población representa un riesgo crítico, ya que la mayoría desconoce cómo realizar una evaluación inicial o aplicar maniobras básicas para salvar vidas. A esta barrera se le suma la gran dificultad que tienen los equipos médicos para localizar víctimas durante desastres con derrumbes. En este contexto, considera que recibir orientación de una inteligencia artificial sería una herramienta sumamente útil para empoderar a los ciudadanos, agilizando el proceso de atención y reduciendo riesgos antes de que llegue la ayuda. Para que el sistema sea confiable y seguro, la IA debe basarse en fuentes verificadas, realizar preguntas clave (como medir el pulso, nivel de conciencia, sangrados o fracturas) e identificar rápidamente si la situación requiere atención profesional inmediata. Finalmente, hace hincapié en que la aplicación nunca debe sugerir la automedicación ni indicar movimientos o tratamientos complejos que requieran entrenamiento previo, ya que un mal análisis o una ejecución incorrecta podrían empeorar gravemente el estado del paciente.
 
 - Enlace a la entrevista:
 
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
+  https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
+
+Entrevistado N°2: Katia Milagros Saavedra Saavedra
+
+- Sexo: Femenino
+- Edad: 52 años
+- Distrito: Santiago de Surco
+- Grado de instrucción: Universitario
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:01
+  - Duración: 13:36
+
+<img src="public/assets/images/chapter-2/interviews/katia.png">
+
+- Resumen:
+
+  Para Katia, médica reumatóloga, la falta de una cultura de primeros auxilios y de acceso a capacitaciones representa un riesgo importante, pues muchas personas no saben reconocer señales de alarma ni actuar mientras llega la ayuda profesional. Considera que una inteligencia artificial podría ser útil para orientar a ciudadanos sin experiencia durante una emergencia posísmica, ayudándolos a evaluar la respiración y el pulso, recopilar información sobre el accidente y clasificar a las víctimas según su gravedad. Para brindar recomendaciones confiables, la IA debería preguntar por el mecanismo de la lesión, los síntomas, el tipo y la ubicación del dolor, el tiempo transcurrido y los antecedentes médicos, además de analizar signos vitales como la frecuencia cardíaca, la frecuencia respiratoria, la presión arterial y la temperatura, idealmente mediante sensores. Sin embargo, enfatiza que la IA no puede detectar con precisión problemas internos, como una hemorragia, ni reemplazar la evaluación clínica y la experiencia del personal médico. Finalmente, señala que nunca debería recomendar mover a un paciente sin la presencia de un profesional o paramédico, excepto cuando permanezca en una zona de peligro inminente, y siempre debe advertir que su función es únicamente orientar, acelerar la atención y facilitar la priorización de las personas con mayor riesgo.
+
+- Enlace a la entrevista:
+
+  https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
 
 
 ### 2.2.3. Análisis de entrevistas
+
+
 
 ## 2.3. Needfinding
 
