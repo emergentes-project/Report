@@ -705,6 +705,26 @@ Entrevistado N°2: Katia Milagros Saavedra Saavedra
 
   https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
 
+Entrevistado N°3: Kevin Franco Escobar Coca
+
+- Sexo: Masculino
+- Edad: 27 años
+- Distrito: Ate
+- Grado de instrucción: Universitario
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:01
+  - Duración: 17:02
+
+<img src="public/assets/images/chapter-2/interviews/kevin.png">
+
+- Resumen:
+
+  Para Kevin, enfermero especializado en el área de emergencias, la falta de conocimientos médicos en la población general representa un grave riesgo ante accidentes o desastres sísmicos, debido a que las personas suelen incurrir en prácticas perjudiciales como retirar objetos incrustados de una herida, dar agua a personas inconscientes o precipitarse a conclusiones sin una valoración previa. Señala que lo primero que debe evaluarse en una víctima es su estado neurológico y nivel de orientación (verificar si se encuentra desorientada o desconcertada), así como la presencia de contusiones y traumatismos. Explica además que, para gestionar la atención cuando hay múltiples heridos, se debe aplicar un triaje por colores y examinar signos visibles como hematomas para determinar con rapidez quiénes requieren auxilio inmediato. Respecto al uso de una inteligencia artificial en primeros auxilios, opina que representa tanto un beneficio como una amenaza latente: si bien puede ser de gran utilidad, indicaciones imprecisas o mal formuladas podrían complicar severamente el cuadro clínico del paciente y dificultar la labor posterior del equipo médico. Por ello, considera indispensable que la solución esté formalmente avalada y respaldada por métricas y resultados clínicos demostrables. En cuanto a las capacidades del sistema, resalta la necesidad de dominar protocolos fundamentales como RCP y soporte respiratorio, además de realizar un interrogatorio activo sobre el estado general del paciente (por ejemplo, detectar oportunamente si se encuentra en shock u otra condición crítica) para evitar equivocaciones. Finalmente, enfatiza que si un paciente se encuentra en estado grave, la aplicación debe ordenar de manera taxativa e inmediata la llamada a un profesional de la salud, recordando que la preservación de la vida es primordial.
+
+- Enlace a la entrevista:
+
+  https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4
+
 
 ### 2.2.3. Análisis de entrevistas
 
