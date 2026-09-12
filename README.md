@@ -715,7 +715,7 @@ Entrevistado N°3: Kevin Franco Escobar Coca
   - Instante en el que inicia: 0:01
   - Duración: 17:02
 
-<img src="public/assets/images/chapter-2/interviews/kevin.png">
+<img src="public/assets/images/chapter-2/interviews/Kevin.png">
 
 - Resumen:
 
