@@ -636,6 +636,23 @@ Para Roberto, su experiencia cercana con una emergencia post-sismo ocurrió cuan
 
 https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
+Entrevistada N°3: Araceli Felicia Reyna Caicedo
+
+- Sexo: Femenino
+- Edad: 21 años
+- Ubicación en la que vive: Chorrillos
+- Ocupación: Estudiante
+- Grado de instrucción: Universitario
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:00
+  - Duración: 13:17
+  - Resumen:
+
+Araceli no ha vivido una urgencia médica durante un sismo, pero al no contar con conocimientos en primeros auxilios, siente que sin internet no tendría una fuente de información. En una situación post sismo, siente que lo más difícil es no saber cuál sería el primer paso para tratar a un paciente. Siente que para comunicar una situación de emergencia, más fácil le parece a través de un audio porque simplifica el tiempo, y considera que tomar fotos ayudaría en la descripción. Al momento de recibir indicaciones valoraría la forma escrita y numerada de pasos, con imágenes adjuntas. Siente que confiaría más en las indicaciones de la ia, si éstas referencian a portales médicos o instituciones y sí está dispuesta a compartir su información personal. 
+- Enlace a la entrevista:
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L
+
 **Segmento objetivo 2: Personal médico**
 
 Entrevistado N°1: Andre Ramirez Pella
