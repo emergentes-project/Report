@@ -728,8 +728,6 @@ Sin embargo, los especialistas enfatizan que la confiabilidad del sistema depend
 
 Finalmente, los profesionales señalan que la aplicación debe incorporar restricciones de seguridad estrictas. No debería recomendar la automedicación, el traslado innecesario de una víctima ni maniobras o tratamientos complejos que requieran entrenamiento, debido a que una indicación o ejecución incorrecta podría agravar el estado del paciente. La única excepción para mover a una persona sería la existencia de un peligro inminente en el entorno. En conjunto, las entrevistas muestran que la IA es aceptada como una herramienta complementaria para orientar, agilizar el triaje y reducir el tiempo de respuesta, pero nunca como un reemplazo de la atención médica profesional.
 
-
-
 ## 2.3. Needfinding
 
 ### 2.3.1. User Personas
