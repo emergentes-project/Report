@@ -708,6 +708,26 @@ Entrevistado N°2: Katia Milagros Saavedra Saavedra
 
 ### 2.2.3. Análisis de entrevistas
 
+#### Análisis del segmento de ciudadanos
+
+Los ciudadanos entrevistados evidencian un nivel limitado de conocimientos en primeros auxilios y una marcada inseguridad para actuar ante una emergencia medica presentada posterior a un sismo. Aunque algunos han presenciado accidentes de gravedad leve, coinciden en que les resultaría difícil determinar cuál debe ser el primer paso, evaluar correctamente el estado de una víctima o aplicar una maniobra sin temor a empeorar su condición. Asimismo, los nervios y la ansiedad aparecen como factores que pueden afectar su capacidad para comprender y seguir indicaciones durante una situación crítica.
+
+La falta de conexión a internet se identifica como una barrera común en este segmento. Los tres entrevistados reconocen que, sin conectividad, tendrían dificultades para buscar información o comunicarse con los servicios de emergencia. En este contexto, perciben de forma positiva una aplicación con inteligencia artificial que funcione sin conexión y brinde orientación inmediata mientras llega la ayuda profesional. La solución es valorada principalmente como una herramienta de apoyo para realizar una evaluación inicial, reconocer señales de peligro y determinar cuándo es indispensable solicitar asistencia médica.
+
+En cuanto a la interacción con la aplicación, los entrevistados prefieren mecanismos rápidos y sencillos para describir la emergencia, como audios, fotografías y texto. También coinciden en que las indicaciones deben presentarse de manera clara, breve y secuencial, mediante pasos numerados, listas de verificación e imágenes que faciliten su ejecución aun bajo condiciones de estrés. Estas preferencias reflejan la necesidad de una experiencia accesible que reduzca la carga cognitiva del usuario y evite instrucciones ambiguas o excesivamente técnicas.
+
+Finalmente, la confianza en la inteligencia artificial depende de que sus recomendaciones estén respaldadas por fuentes médicas verificadas o instituciones reconocidas, y de que el sistema evite generar información incorrecta. Los entrevistados también consideran importante que la aplicación recomiende oportunamente la intervención de un profesional y mantenga la posibilidad de contacto humano. Todos manifiestan disposición a compartir información personal, médica o de ubicación durante una emergencia, siempre que ello permita agilizar el rescate y recibir una atención más segura.
+
+#### Análisis del segmento de personal médico
+
+Los profesionales entrevistados coinciden en que la falta de conocimientos básicos de primeros auxilios en la población representa un riesgo considerable durante una emergencia. Desde su perspectiva, muchas personas no saben evaluar inicialmente a una víctima, reconocer señales de alarma ni aplicar maniobras básicas mientras esperan la llegada de los equipos especializados. A esta dificultad se suman los problemas de organización y localización de víctimas en escenarios con múltiples afectados, por lo que resaltan la importancia del triaje y de una clasificación clara que permita priorizar a quienes presentan mayor riesgo.
+
+En este contexto, todos los entrevistados muestran una percepción favorable hacia el uso de una inteligencia artificial como herramienta de orientación previa a la atención profesional. Consideran que podría ayudar a ciudadanos sin formación médica a recopilar información relevante, realizar comprobaciones básicas y comunicar con mayor rapidez el estado de una víctima. Para ello, la IA debería formular preguntas sobre el mecanismo del accidente, el nivel de conciencia, la respiración, el pulso, los sangrados, las fracturas, el tipo y la localización del dolor, el tiempo transcurrido y los antecedentes médicos. Esta información permitiría efectuar un descarte inicial, identificar señales de peligro y apoyar la priorización de los casos.
+
+Sin embargo, los especialistas enfatizan que la confiabilidad del sistema dependerá de que se base en fuentes verificadas y reconozca claramente sus limitaciones. La IA no puede sustituir el examen físico ni la experiencia clínica, y podría no detectar lesiones internas o cambios en el estado de un paciente que obliguen a modificar su nivel de prioridad. Por esta razón, toda clasificación realizada por el sistema debe considerarse preliminar y ser reevaluada por personal médico.
+
+Finalmente, los profesionales señalan que la aplicación debe incorporar restricciones de seguridad estrictas. No debería recomendar la automedicación, el traslado innecesario de una víctima ni maniobras o tratamientos complejos que requieran entrenamiento, debido a que una indicación o ejecución incorrecta podría agravar el estado del paciente. La única excepción para mover a una persona sería la existencia de un peligro inminente en el entorno. En conjunto, las entrevistas muestran que la IA es aceptada como una herramienta complementaria para orientar, agilizar el triaje y reducir el tiempo de respuesta, pero nunca como un reemplazo de la atención médica profesional.
+
 
 
 ## 2.3. Needfinding
