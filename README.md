@@ -1429,6 +1429,70 @@ __User Stories__
 
 ## 3.4. Product Backlog
 
+| Orden | ID | Título | Descripción | Story Points |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | US01 | Registro de una cuenta como ciudadano | Como ciudadano, quiero registrar una cuenta para ingresar a la aplicación y utilizar sus funcionalidades. | 3 |
+| 2 | US02 | Registro de una cuenta como personal médico | Como personal médico, quiero registrar una cuenta validando mi identificación profesional para acceder a las funcionalidades correspondientes a mi rol. | 5 |
+| 3 | US03 | Inicio de sesión | Como ciudadano o personal médico, quiero iniciar sesión para acceder a las funcionalidades disponibles para mi rol. | 2 |
+| 4 | US04 | Consulta del perfil personal | Como ciudadano o personal médico, quiero consultar mi perfil para revisar los datos asociados a mi cuenta. | 2 |
+| 5 | US05 | Actualización de datos personales | Como ciudadano o personal médico, quiero actualizar mis datos personales para mantener vigente la información de mi perfil. | 2 |
+| 6 | US06 | Cierre de sesión | Como ciudadano o personal médico, quiero cerrar mi sesión para impedir que otras personas accedan a mi cuenta desde el dispositivo. | 1 |
+| 7 | TS01 | Protección de la sesión almacenada en el dispositivo | Como desarrollador, quiero proteger la sesión almacenada en el dispositivo para evitar el acceso no autorizado a la cuenta. | 3 |
+| 8 | US07 | Registro de una consulta mediante texto | Como ciudadano, quiero describir una consulta médica mediante texto para comunicar la situación del paciente. | 2 |
+| 9 | US08 | Registro de una consulta mediante voz | Como ciudadano, quiero describir una consulta médica mediante voz para registrar la situación cuando no pueda escribirla con facilidad. | 5 |
+| 10 | TS02 | Conversión local de voz a texto | Como desarrollador, quiero implementar la conversión local de voz a texto para registrar consultas habladas sin depender de internet. | 8 |
+| 11 | US09 | Adjunto de fotografías a una consulta | Como ciudadano, quiero adjuntar fotografías a una consulta para complementar la descripción de la situación del paciente. | 3 |
+| 12 | TS03 | Compresión y optimización de fotografías adjuntas | Como desarrollador, quiero comprimir las fotografías adjuntas para reducir el almacenamiento y la transferencia sin impedir su revisión. | 5 |
+| 13 | TS04 | Optimización del procesamiento de entradas multimodales | Como desarrollador, quiero optimizar el procesamiento de texto, voz y fotografías para mantener una respuesta fluida durante el registro de la consulta. | 5 |
+| 14 | US10 | Ingreso de datos del paciente | Como ciudadano, quiero ingresar los datos del paciente cuando solicite apoyo profesional para facilitar la atención del caso. | 2 |
+| 15 | US11 | Registro de la ubicación de la consulta | Como ciudadano, quiero registrar la ubicación del paciente para que el personal médico pueda conocer dónde se encuentra. | 3 |
+| 16 | US12 | Elección de solicitud de apoyo profesional | Como ciudadano, quiero indicar si necesito apoyo profesional para que el personal médico llegue en mi apoyo si lo requiero. | 2 |
+| 17 | US13 | Incorporación de fuentes médicas autorizadas | Como desarrollador, quiero incorporar y validar fuentes autorizadas para sustentar la orientación generada por la aplicación. | 5 |
+| 18 | TS05 | Procesamiento e indexación de documentos médicos por tipo de procedimiento | Como desarrollador, quiero procesar e indexar los documentos médicos por tipo de procedimiento para facilitar la recuperación de información relevante. | 8 |
+| 19 | TS06 | Almacenamiento local del índice médico | Como desarrollador, quiero implementar el almacenamiento local del índice médico para permitir su consulta sin conexión a internet. | 5 |
+| 20 | TS07 | Optimización de la búsqueda de información médica | Como desarrollador, quiero optimizar la búsqueda en la base médica para recuperar información relevante con rapidez. | 5 |
+| 21 | TS08 | Integración del modelo de IA local | Como desarrollador, quiero integrar un modelo de inteligencia artificial local para generar orientación sin depender de servicios en la nube. | 8 |
+| 22 | TS09 | Implementación del flujo de recuperación aumentada por generación | Como desarrollador, quiero implementar el flujo RAG para generar orientación utilizando información recuperada de la base médica. | 8 |
+| 23 | TS10 | Diseño del prompt de orientación médica | Como desarrollador, quiero diseñar un prompt de orientación médica para obtener respuestas claras, ordenadas y prudentes. | 3 |
+| 24 | TS11 | Validación del sustento de las respuestas en la base médica | Como desarrollador, quiero validar que las respuestas se sustenten en la base médica para reducir la generación de indicaciones sin respaldo. | 5 |
+| 25 | US14 | Obtención de indicaciones médicas sin conexión | Como ciudadano, quiero obtener indicaciones médicas basadas en mi consulta sin conexión a internet para actuar ante la emergencia. | 8 |
+| 26 | US15 | Indicaciones médicas claras y ordenadas | Como ciudadano, quiero recibir indicaciones claras y ordenadas para comprender las acciones que debo realizar. | 2 |
+| 27 | US16 | Respuesta segura ante información insuficiente | Como ciudadano, quiero ser informado cuando no exista información suficiente para recibir una orientación confiable y evitar realizar acciones inseguras. | 3 |
+| 28 | TS13 | Mecanismos de respuesta segura ante fallos | Como desarrollador, quiero implementar mecanismos de respuesta segura para controlar los fallos ocurridos durante la generación de orientación. | 3 |
+| 29 | TS12 | Optimización de la latencia y el consumo de recursos de la IA | Como desarrollador, quiero optimizar la ejecución local de la inteligencia artificial para brindar respuestas rápidas sin sobrecargar el dispositivo. | 8 |
+| 30 | TS14 | Evaluación de la precisión y claridad de las indicaciones | Como desarrollador, quiero evaluar la precisión y claridad de las indicaciones generadas para comprobar la calidad de la orientación médica. | 5 |
+| 31 | TS15 | Reglas de identificación de señales de gravedad | Como desarrollador, quiero implementar reglas para identificar señales de gravedad y añadir una recomendación de atención profesional cuando corresponda. | 5 |
+| 32 | US17 | Recomendación de atención profesional | Como ciudadano, quiero recibir una recomendación de atención profesional cuando se identifiquen señales de gravedad para buscar ayuda especializada. | 2 |
+| 33 | TS16 | Implementación de la base de datos local | Como desarrollador, quiero implementar una base de datos local para conservar la información necesaria cuando no exista conexión. | 5 |
+| 34 | TS17 | Almacenamiento seguro de fotografías y datos médicos | Como desarrollador, quiero almacenar de forma segura las fotografías y los datos médicos para proteger la información guardada en el dispositivo. | 5 |
+| 35 | US18 | Guardado de una consulta pendiente de sincronización | Como ciudadano, quiero que mi consulta se guarde cuando no exista conexión para que pueda enviarse posteriormente. | 3 |
+| 36 | TS18 | Implementación de una cola local de consultas pendientes | Como desarrollador, quiero implementar una cola local para organizar las consultas que deben enviarse al recuperar la conexión. | 5 |
+| 37 | TS19 | Transacciones atómicas para la persistencia local | Como desarrollador, quiero implementar transacciones atómicas para evitar que una consulta quede almacenada de forma parcial. | 5 |
+| 38 | US19 | Visualización de consultas almacenadas localmente | Como ciudadano, quiero visualizar las consultas almacenadas en mi dispositivo para conocer cuáles están pendientes de sincronización. | 3 |
+| 39 | TS20 | Gestión eficiente del almacenamiento del dispositivo | Como desarrollador, quiero gestionar eficientemente el almacenamiento local para evitar un consumo innecesario de espacio. | 3 |
+| 40 | TS21 | Detección de la recuperación de la conexión a internet | Como desarrollador, quiero detectar la recuperación de la conexión para iniciar automáticamente la sincronización pendiente. | 3 |
+| 41 | TS22 | Sincronización bidireccional en segundo plano | Como desarrollador, quiero implementar la sincronización bidireccional en segundo plano para enviar consultas y recibir sus actualizaciones sin interrumpir el uso de la aplicación. | 8 |
+| 42 | US20 | Sincronización automática de consultas y actualizaciones | Como ciudadano o personal médico, quiero que las consultas y sus actualizaciones se sincronicen automáticamente para mantener la información disponible y actualizada. | 5 |
+| 43 | TS23 | Reintentos automáticos ante fallos de sincronización | Como desarrollador, quiero implementar reintentos automáticos para completar la sincronización después de fallos temporales. | 3 |
+| 44 | TS24 | Tolerancia a fallos del servicio de sincronización | Como desarrollador, quiero implementar tolerancia a fallos en el servicio de sincronización para conservar la continuidad y la fiabilidad del intercambio de información. | 5 |
+| 45 | TS25 | Registro y monitoreo de errores de sincronización | Como desarrollador, quiero registrar y monitorear los errores de sincronización para detectar problemas y facilitar su corrección. | 3 |
+| 46 | US21 | Notificaciones sobre la sincronización y atención del caso | Como ciudadano, quiero recibir notificaciones sobre la sincronización y atención de mi consulta para mantenerme informado sobre su progreso. | 3 |
+| 47 | TS26 | Mantenimiento de una copia local actualizada del historial. | Como desarrollador, quiero mantener una copia local actualizada del historial para permitir su consulta desde el dispositivo. | 5 |
+| 48 | US22 | Consulta del historial de consultas realizadas | Como ciudadano, quiero consultar mi historial para revisar las consultas médicas que he realizado. | 2 |
+| 49 | US23 | Visualización del detalle actualizado de una consulta | Como ciudadano, quiero visualizar el detalle actualizado de una consulta para conocer su información y el progreso de la atención. | 3 |
+| 50 | US24 | Visualización de consultas que solicitan apoyo profesional | Como personal médico, quiero visualizar las consultas que solicitan apoyo profesional para identificar casos que puedo atender. | 3 |
+| 51 | US25 | Filtrado de consultas por estado | Como personal médico, quiero filtrar las consultas por estado para encontrar los casos que necesito revisar. | 2 |
+| 52 | US26 | Visualización de consultas autoasignadas | Como personal médico, quiero visualizar las consultas que me he autoasignado para organizar los casos bajo mi atención. | 2 |
+| 53 | US27 | Consulta del detalle completo de un caso | Como personal médico, quiero consultar el detalle completo de un caso para evaluar la información registrada y la orientación proporcionada. | 3 |
+| 54 | US28 | Visualización de la ubicación del paciente | Como personal médico, quiero visualizar la ubicación registrada del paciente para conocer dónde se encuentra el caso. | 2 |
+| 55 | TS27 | Consistencia concurrente de los casos | Como desarrollador, quiero mantener la consistencia concurrente de los casos para impedir asignaciones o cambios incompatibles realizados al mismo tiempo. | 5 |
+| 56 | US29 | Autoasignación de una consulta disponible | Como personal médico, quiero autoasignarme una consulta disponible para hacerme responsable de su atención. | 3 |
+| 57 | TS28 | Trazabilidad de asignaciones y cambios de estado | Como desarrollador, quiero registrar la trazabilidad de las asignaciones y los cambios de estado para conservar el historial de la atención de cada caso. | 3 |
+| 58 | US30 | Inicio de la atención de una consulta | Como personal médico, quiero iniciar la atención de una consulta autoasignada para registrar que el caso se encuentra en progreso. | 2 |
+| 59 | TS29 | Tolerancia a fallos en la gestión de casos | Como desarrollador, quiero implementar tolerancia a fallos en la gestión de casos para evitar la pérdida o corrupción de cambios durante la atención. | 5 |
+| 60 | US31 | Cierre de una consulta con observaciones | Como personal médico, quiero cerrar una consulta y registrar observaciones para dejar constancia de la atención realizada. | 2 |
+| 61 | US32 | Consulta del historial de casos atendidos | Como personal médico, quiero consultar el historial de casos que he atendido para revisar las atenciones realizadas. | 2 |
+
 # Capítulo IV: Strategic-Level Software Design
 
 ## 4.1. Strategic-Level Attribute-Driven Design
