@@ -1419,6 +1419,14 @@ __User Stories__
 
 ## 3.3. Impact Mapping
 
+<p align="center">
+  <img src="public/assets/images/chapter-3/ImpactMap-Sector1.png" alt="Impact Map Sector 1 - Adriana Rojas ">
+</p>
+
+<p align="center">
+  <img src="public/assets/images/chapter-3/ImpactMap-Sector2.png" alt="Impact Map Sector 2 - Luis Mendoza ">
+</p>
+
 ## 3.4. Product Backlog
 
 # Capítulo IV: Strategic-Level Software Design
