@@ -246,7 +246,7 @@ Convertirnos en una organización referente en el uso responsable de la intelige
   <tr>
     <td>Cacho Seminario, Diego Alonso</td>
     <td>U202223990</td>
-    <td>aa</td>
+    <td>Mi nombre es Diego Alonso Cacho Seminario y me encuentro cursando por el octavo ciclo de la carrera de Ingeniería de Software en la UPC. Al tener experiencia realizando proyectos de calibre similar en cursos pasados, me siento cómodo trabajando con las herramientas de desarrollo gestión grupal. Me considero como una persona responsable y lista para el cambio en cuanto se necesite. Espero lograr un buen desempeño junto a mis compañeros a lo largo de las actividades.</td>
     <td><img src="public/assets/images/chapter-1/integrantes/diego.png" alt="Diego Cacho Seminario" width="150"></td>
   </tr>
   <tr>
