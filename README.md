@@ -2059,6 +2059,37 @@ El siguiente diagrama, generado con **ContextMapper**, resume la relación estru
 
 # Conclusiones y recomendaciones
 
+## Conclusiones
+
+1. La problemática queda bastante clara con lo trabajado en el Capítulo I. Tras un sismo, la gente necesita orientación de primeros auxilios en los primeros minutos, pero muchas apps médicas dejan de servir si se cae internet. Fuentes como IGP, INDECI, OMS y UIT respaldan ese escenario: respuesta saturada, telecomunicaciones frágiles y poco conocimiento previo en la población.
+
+2. En las entrevistas con ciudadanos salió algo más concreto que “no saben qué hacer”. Les cuesta decidir el primer paso, se ponen nerviosos y prefieren describir la emergencia con texto, audio o fotos. También piden indicaciones cortas, numeradas y con apoyo visual. Confían más si la respuesta cita fuentes médicas reales y si, ante gravedad, el sistema les dice que llamen a un profesional.
+
+3. El personal médico no rechaza la IA, pero la pone condiciones. Sirve para orientar y para un triaje preliminar por colores o prioridad, no para reemplazar evaluación clínica. En las entrevistas alertaron sobre errores comunes de la gente (sacar objetos incrustados, dar agua a alguien inconsciente) y sobre la necesidad de cubrir protocolos básicos como RCP. También coinciden en que no debe sugerirse automedicación ni mover al herido, salvo peligro inminente.
+
+4. El needfinding (personas, matriz de tareas, empathy maps) ayudó a separar bien los dos segmentos. El ciudadano necesita actuar offline bajo estrés. El médico necesita, cuando vuelve la red, ubicación, estado del caso y una forma ordenada de asignarse trabajo. Eso después se tradujo en user stories de consulta multimodal, orientación offline y gestión de casos.
+
+5. En ADD priorizamos drivers High/High ligados a IA sin conexión, rendimiento local y sync confiable. De ahí salió la decisión de inferencia on-device con RAG local, patrón Outbox para no perder consultas al sincronizar, y concurrencia optimista en la autoasignación de casos. Cloud queda para cuando hay red, no como dependencia del momento crítico.
+
+6. Con DDD quedaron cuatro bounded contexts: IAM, Consultation, Medical Bases y Case Management. El context mapping evita acoplar de más: OHS/ACL entre contextos y un Shared Kernel chico solo para datos mínimos del paciente entre Consultation y Case Management. La arquitectura C4 (landscape, context, containers, deployment) cierra esa decisión con un monolito modular offline-first y backend en la nube para la parte de sync y triaje.
+
+
+## Recomendaciones
+
+1. Armar un set cerrado de fuentes médicas autorizadas y un protocolo de actualización del índice RAG antes de ampliar el modelo. Sin eso, la confianza que pidieron en entrevistas se cae rápido.
+
+2. Definir métricas simples de calidad de respuesta (precisión frente a casos de prueba, tasa de derivación a profesional, respuestas peligrosas bloqueadas). En las entrevistas pedían aval y resultados medibles; no alcanza con decir que la IA “está certificada”.
+
+3. En el diseño táctico e implementación, fijar reglas duras de seguridad clínica: no sugerir automedicación, no retirar objetos incrustados, no dar líquidos a inconscientes, y forzar llamada a ayuda cuando haya shock o signos graves.
+
+4. Probar el flujo offline en celulares de gama media-baja (batería, memoria, tiempo de respuesta). Es el riesgo de negocio que ya asumimos en Lean UX; si el modelo no corre bien en dispositivo real, el resto del diseño no sirve en sismo.
+
+5. En UX, diseñar pantallas pensadas para estrés: pocos campos, pasos numerados, audio/foto como entrada rápida y lenguaje sin tecnicismos. Validarlo después con ciudadanos, no solo con el equipo.
+
+6. Para personal médico, dejar el triaje y la sincronización como vista preliminar editable. El médico debe poder reclasificar el caso; la etiqueta de la app no puede quedar como verdad clínica.
+
+7. En validación (Capítulo VII), volver a entrevistar ambos segmentos con prototipo o build temprana. Comparar si entienden las indicaciones, si confían en las fuentes mostradas y si el sync de casos ayuda de verdad en priorización. Hasta no tener eso, estas conclusiones siguen siendo parciales al cierre del diseño estratégico.
+
 # Video About-the-Team
 
 # Bibliografía
