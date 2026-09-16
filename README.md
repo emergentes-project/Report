@@ -129,6 +129,7 @@
     - [4.3.2. Software Architecture Context Level Diagrams](#432-software-architecture-context-level-diagrams)
     - [4.3.3. Software Architecture Container Level Diagrams](#433-software-architecture-container-level-diagrams)
     - [4.3.4. Software Architecture Deployment Diagrams](#434-software-architecture-deployment-diagrams)
+    - [4.3.5. Software Architecture Component Level Diagrams](#435-software-architecture-component-level-diagrams)
 - [Capítulo V: Tactical-Level Software Design](#capítulo-v-tactical-level-software-design)
   - [5.X. Bounded Context: Nombre del Bounded Context](#5x-bounded-context-nombre-del-bounded-context)
     - [5.X.1. Domain Layer](#5x1-domain-layer)
@@ -2026,7 +2027,35 @@ El siguiente diagrama, generado con **ContextMapper**, resume la relación estru
 ### 4.3.4. Software Architecture Deployment Diagrams
 
 <p align="center">
-  <img src="public/assets/images/chapter-4/Deployment Diagrams.png" alt="C2 - Software Architecture Deployment Diagram - Lifeline">
+  <img src="public/assets/images/chapter-4/Deployment Diagrams.png" alt="Deployment - Software Architecture Deployment Diagram - Lifeline">
+</p>
+
+### 4.3.5. Software Architecture Component Level Diagrams
+
+A continuación se presentan los diagramas de componentes (C3) por bounded context, desglosando la estructura interna de cada módulo definido en el nivel de contenedores.
+
+**Consultation**
+
+<p align="center">
+  <img src="public/assets/images/chapter-4/C3-Consultation.png" alt="C3 - Component Level Diagram - Consultation">
+</p>
+
+**Medical Bases**
+
+<p align="center">
+  <img src="public/assets/images/chapter-4/C3-Medical Bases.png" alt="C3 - Component Level Diagram - Medical Bases">
+</p>
+
+**Case Management**
+
+<p align="center">
+  <img src="public/assets/images/chapter-4/C3-Case Management.png" alt="C3 - Component Level Diagram - Case Management">
+</p>
+
+**IAM**
+
+<p align="center">
+  <img src="public/assets/images/chapter-4/C3-IAM.png" alt="C3 - Component Level Diagram - IAM">
 </p>
 
 # Capítulo V: Tactical-Level Software Design
