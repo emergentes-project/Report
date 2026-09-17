@@ -1960,128 +1960,31 @@ En este flujo se puede ver como el personal médico recibe acceso a los casos pr
 
 En esta sección el equipo diseña los candidate bounded contexts identificados durante el EventStorming (IAM, Consultation, Medical Bases y Case Management), siguiendo el proceso iterativo del Bounded Context Canvas: Context Overview Definition, Business Rules Distillation & Ubiquitous Language Capture, Capability Analysis, Capability Layering, Dependencies Capture y Design Critique. Se priorizó **Consultation** por ser el core domain del producto, seguido de **Case Management**, **Medical Bases** e **IAM**.
 
+Se pueden verificar las imagenes por medio del siguiente enlace de Miro: https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
+
 #### Bounded Context Canvas: Consultation
 
-**1. Context Overview Definition**
-- **Nombre:** Consultation
-- **Propósito:** Gestionar el ciclo de vida de una consulta médica desde que el ciudadano la describe hasta que es procesada por el modelo de IA local y almacenada para su posterior sincronización.
-- **Clasificación estratégica:** Core Domain — representa la propuesta de valor central de Lifeline (orientación médica offline mediante IA).
-
-**2. Business Rules Distillation & Ubiquitous Language Capture**
-- Una consulta debe contar con al menos una descripción (texto o voz) antes de ser procesada.
-- Toda orientación médica generada debe sustentarse en información recuperada de Medical Bases; si no hay sustento suficiente, se activa una respuesta segura en lugar de generar indicaciones sin respaldo.
-- Términos clave: *Consulta, Paciente, Orientación médica, Evidencia, Solicitud de apoyo profesional.*
-
-**3. Capability Analysis**
-- Registrar consulta (texto/voz/foto).
-- Recuperar contexto médico relevante (vía Medical Bases).
-- Generar orientación médica mediante IA on-device + RAG.
-- Detectar señales de gravedad y recomendar apoyo profesional.
-- Almacenar la consulta localmente con estado de sincronización.
-
-**4. Capability Layering**
-- *Interacción:* registro multimodal de la consulta.
-- *Procesamiento:* orquestación del flujo RAG + modelo de IA.
-- *Persistencia:* almacenamiento local (outbox) de la consulta.
-
-**5. Dependencies Capture**
-- **Entrante:** IAM (identidad del ciudadano autenticado).
-- **Saliente:** Medical Bases (recuperación de contenido médico); Case Management (envío de la consulta sincronizada).
-
-**6. Design Critique**
-- Riesgo: acoplar demasiada lógica de negocio (reglas de gravedad, formato del prompt) dentro de este contexto podría dificultar su mantenimiento; se evalúa extraer las reglas de gravedad como un componente independiente en iteraciones futuras.
+<img src="public/assets/images/chapter-4/BCC-Consultation.png" alt="BCC-Consultation">  
 
 ---
 
 #### Bounded Context Canvas: Medical Bases
 
-**1. Context Overview Definition**
-- **Nombre:** Medical Bases
-- **Propósito:** Organizar, indexar y servir la base de conocimientos médicos validada que sustenta las respuestas generadas por Consultation.
-- **Clasificación estratégica:** Supporting Domain — es indispensable para el core, pero no es en sí mismo el diferenciador del producto.
-
-**2. Business Rules Distillation & Ubiquitous Language Capture**
-- Solo se indexa contenido proveniente de fuentes médicas autorizadas y validadas.
-- El contenido debe clasificarse por tipo de procedimiento para optimizar su recuperación.
-- Términos clave: *Base de conocimientos médicos, Fuente autorizada, Índice médico, Recuperación de información.*
-
-**3. Capability Analysis**
-- Incorporar y validar fuentes médicas autorizadas.
-- Procesar e indexar documentos por tipo de procedimiento.
-- Responder consultas de búsqueda semántica desde Consultation.
-
-**4. Capability Layering**
-- *Gestión de contenido:* incorporación y clasificación de fuentes.
-- *Recuperación:* búsqueda semántica sobre el índice local.
-
-**5. Dependencies Capture**
-- **Entrante:** ninguna (contexto autocontenido, no depende de otros bounded contexts para operar).
-- **Saliente:** Consultation (consumidor de la información recuperada).
-
-**6. Design Critique**
-- Pregunta abierta: ¿debería este contexto exponerse también al Personal médico para consultas educativas directas, o mantenerse exclusivamente como soporte interno de Consultation? Por ahora se mantiene como soporte interno.
+<img src="public/assets/images/chapter-4/BCC-MedicalBases.png" alt="BCC-MedicalBases">  
 
 ---
 
 #### Bounded Context Canvas: Case Management
 
-**1. Context Overview Definition**
-- **Nombre:** Case Management
-- **Propósito:** Gestionar el ciclo de vida de los casos sincronizados en la nube, desde su disponibilidad hasta su cierre por parte del personal médico.
-- **Clasificación estratégica:** Core Domain — habilita la colaboración con el personal médico, un diferenciador clave frente a la competencia.
-
-**2. Business Rules Distillation & Ubiquitous Language Capture**
-- Un caso solo puede ser autoasignado por un profesional a la vez (consistencia concurrente).
-- Un caso no puede cerrarse sin observaciones del profesional responsable.
-- Términos clave: *Caso, Estado del caso, Asignación, Atención, Cierre de caso, Trazabilidad.*
-
-**3. Capability Analysis**
-- Recibir y registrar consultas sincronizadas como casos.
-- Permitir filtrado y autoasignación de casos disponibles.
-- Gestionar el flujo de estados: disponible → asignado → en atención → cerrado.
-- Registrar trazabilidad de cada cambio de estado.
-
-**4. Capability Layering**
-- *Gestión de casos:* creación, asignación y cierre.
-- *Consulta y filtrado:* listados por estado o por profesional asignado.
-- *Trazabilidad:* historial de acciones sobre cada caso.
-
-**5. Dependencies Capture**
-- **Entrante:** Consultation (recepción de consultas sincronizadas); IAM (identidad y rol del personal médico).
-- **Saliente:** ninguna por el momento (posible integración futura con INDECI/EsSalud).
-
-**6. Design Critique**
-- Riesgo de concurrencia: dos profesionales autoasignándose el mismo caso simultáneamente; se decidió abordarlo mediante control de concurrencia optimista (ver sección 4.1.4).
+<img src="public/assets/images/chapter-4/BCC-CaseManagement.png" alt="BCC-CaseManagement">  
 
 ---
 
 #### Bounded Context Canvas: IAM
 
-**1. Context Overview Definition**
-- **Nombre:** IAM (Identity and Access Management)
-- **Propósito:** Gestionar el registro, autenticación y datos personales de los dos tipos de usuario (ciudadano y personal médico).
-- **Clasificación estratégica:** Generic Subdomain — es una capacidad común a la mayoría de sistemas, no diferenciadora del negocio.
+<img src="public/assets/images/chapter-4/BCC-IAM.png" alt="BCC-IAM">  
 
-**2. Business Rules Distillation & Ubiquitous Language Capture**
-- El personal médico requiere validación de una identificación profesional para registrarse con ese rol.
-- La sesión debe expirar y solicitar nueva autenticación tras superar su período de validez.
-- Términos clave: *Usuario, Rol, Sesión, Perfil, Autenticación.*
-
-**3. Capability Analysis**
-- Registrar cuentas de ciudadano y de personal médico.
-- Autenticar e iniciar/cerrar sesión.
-- Consultar y actualizar el perfil personal.
-
-**4. Capability Layering**
-- *Identidad:* registro y validación de rol.
-- *Sesión:* autenticación, expiración y cierre de sesión.
-
-**5. Dependencies Capture**
-- **Entrante:** ninguna.
-- **Saliente:** Consultation y Case Management (ambos consumen la identidad y el rol del usuario autenticado).
-
-**6. Design Critique**
-- Se evaluó si IAM debía ser un Shared Kernel entre Consultation y Case Management dado que ambos dependen de su modelo de usuario; se optó por mantenerlo como contexto independiente que expone una interfaz clara (ver sección 4.2.5).
+---
 
 ### 4.2.5. Context Mapping
 
