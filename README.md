@@ -1647,15 +1647,63 @@ En esta sección se incluye la especificación de la primera versión de los esc
 
 #### 4.1.2.3. Constraints
 
-En esta sección se incluye la especificación de restricciones, es decir características que no pueden ser negociadas y son impuestas por el cliente o el propio negocio como guía para la elaboración de la solución. Para Lifeline, las restricciones principales provienen de la naturaleza offline-first del producto, la sensibilidad de la información médica y personal manejada, y el marco normativo peruano de protección de datos.
+En esta sección se especifican las restricciones que condicionan el diseño y la implementación de Lifeline. Estas restricciones provienen principalmente de la necesidad de operar después de un evento sísmico sin depender de las telecomunicaciones, de la seguridad requerida al proporcionar orientación de primeros auxilios, del tratamiento de información personal y médica, y del acceso controlado a los casos sincronizados. Así, se trabajará enfocandose en que el procesamiento crítico de la orientación debe realizarse localmente y asegurando que las respuestas proporcionadas sean seguras y vengan con un sustento verídico.
 
-| Technical Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
-|---|---|---|---|---|
-| TS-C01 | Ejecución de IA sin conexión a internet | Como equipo de desarrollo, debemos garantizar que el modelo de IA y el proceso RAG se ejecuten completamente en el dispositivo, sin depender de servicios en la nube, dado que la aplicación debe operar en escenarios sin telecomunicaciones. | Dado que el dispositivo no tiene conexión, cuando el ciudadano envía una consulta, entonces la aplicación genera la orientación sin ninguna llamada a servicios externos. | EP-03 |
-| TS-C02 | Compatibilidad con dispositivos de gama media | Como equipo de desarrollo, debemos asegurar que la aplicación y el modelo de IA funcionen en dispositivos Android de gama media, dado que no todos los ciudadanos poseen equipos de alta gama. | Dado un dispositivo con las especificaciones mínimas definidas por el equipo, cuando se ejecuta el modelo de IA, entonces la aplicación no supera los límites de memoria y batería establecidos. | EP-03 |
-| TS-C03 | Cumplimiento de la Ley de Protección de Datos Personales (Ley N° 29733) | Como equipo de desarrollo, debemos cumplir con la normativa peruana de protección de datos personales al almacenar y transmitir información médica y de ubicación de los usuarios. | Dado que se recolectan datos personales o médicos, cuando estos se almacenan o sincronizan, entonces se cumplen los principios de consentimiento, finalidad y seguridad exigidos por la ley. | EP-01 |
-| TS-C04 | Uso obligatorio de fuentes médicas validadas | Como equipo de desarrollo, debemos restringir la generación de indicaciones médicas a información proveniente exclusivamente de fuentes autorizadas y validadas mediante RAG, dado que no está permitido que el modelo invente contenido clínico. | Dado que el modelo genera una respuesta, cuando esta no puede sustentarse en el contexto recuperado de fuentes validadas, entonces el sistema no la muestra al usuario. | EP-03 |
-| TS-C05 | Entrega dentro del cronograma académico del curso | Como equipo del curso, debemos entregar los incrementos funcionales de Lifeline dentro de los sprints definidos por el cronograma de Arquitecturas de Software Emergentes. | Dado el cronograma de sprints establecido, cuando finaliza cada sprint, entonces el equipo entrega los artefactos y el incremento de software correspondiente. | EP-01 |
+<table>
+  <thead>
+    <tr>
+      <th>Technical Story ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Criterios de Aceptación</th>
+      <th>Relacionado con (Epic ID)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-C01</td>
+      <td>Ejecución local del flujo crítico de procesamiento de consultas médicas</td>
+      <td>Como desarrollador, debo garantizar que el modelo de IA y la persistencia local se ejecuten en el dispositivo sin depender del backend en la nube o servicios extersos, para que la orientación esté disponible cuando las telecomunicaciones colapsen.</td>
+      <td><strong>Escenario 1:</strong> Orientación médica sin conexión.<br><strong>Dado que</strong> el dispositivo no dispone de conexión a Internet y cuenta con los componentes locales instalados<br><strong>Cuando</strong> el ciudadano registra una consulta<br><strong>Entonces</strong> el sistema genera una orientación sustentada o una respuesta segura, almacena la consulta localmente y no realiza solicitudes a servicios externos.</td>
+      <td>EP-02, EP-03, EP-04</td>
+    </tr>
+    <tr>
+      <td>TS-C02</td>
+      <td>Uso exclusivo de fuentes médicas autorizadas</td>
+      <td>Como desarrollador, debo asegurarme de que la información introducida en la base de conocimientos médicos sea verídica para que las indicaciones sean seguras.</td>
+      <td><strong>Escenario 1:</strong> Rechazo de una fuente médica no autorizada.<br><strong>Dado que</strong> un documento no cuenta con procedencia, versión o validación verificable<br><strong>Cuando</strong> se intenta incorporarlo a la base de conocimientos médicos<br><strong>Entonces</strong> se rechaza su inclusión y el documento no queda disponible para el flujo RAG.<br><br><strong>Escenario 2:</strong> Orientación sin sustento suficiente.<br><strong>Dado que</strong> el contexto recuperado no contiene evidencia médica aprobada suficiente<br><strong>Cuando</strong> la orientación generada es validada<br><strong>Entonces</strong> el sistema no la muestra al ciudadano y activa una respuesta segura.</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td>TS-C03</td>
+      <td>Limitación del alcance clínico de la inteligencia artificial</td>
+      <td>Como desarrollador, debo limitar la IA a proporcionar orientación inicial de primeros auxilios y apoyo médico para evitar que se realicen procedimientos riesgos o se intente reemplazar al personal médico real.</td>
+      <td><strong>Escenario 1:</strong> Bloqueo de una indicación fuera del alcance permitido.<br><strong>Dado que</strong> la IA genera una respuesta que incluye un diagnóstico, una prescripción, automedicación o una acción clínica prohibida<br><strong>Cuando</strong> la respuesta pasa por la validación clínica<br><strong>Entonces</strong> el sistema bloquea la indicación y muestra una alternativa segura.<br><br><strong>Escenario 2:</strong> Detección de señales de gravedad.<br><strong>Dado que</strong> la consulta contiene señales de gravedad configuradas en las reglas clínicas<br><strong>Cuando</strong> el sistema procesa la consulta<br><strong>Entonces</strong> la orientación recomienda solicitar atención profesional e indica que no reemplaza la evaluación médica.</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td>TS-C04</td>
+      <td>Cumplimiento de la normativa de protección de datos personales</td>
+      <td>Como desarrollador, debo tratar los datos de identidad, salud, fotografías, audios y ubicación conforme a la Ley N.° 29733 y su reglamento vigente durante su recolección y procesamiento para cumplir los requisitos reales.</td>
+      <td><strong>Escenario 1:</strong> Tratamiento autorizado de datos personales y médicos.<br><strong>Dado que</strong> una funcionalidad requiere recopilar o procesar datos personales o médicos<br><strong>Cuando</strong> el usuario utiliza dicha funcionalidad<br><strong>Entonces</strong> el sistema trata únicamente los datos necesarios para la finalidad documentada y protege la información durante su almacenamiento y transmisión.</td>
+      <td>EP-01, EP-02, EP-03, EP-04, EP-05</td>
+    </tr>
+    <tr>
+      <td>TS-C05</td>
+      <td>Acceso exclusivo del personal médico validado a la gestión de casos</td>
+      <td>Como desarrollador, debo restringir la visualización, asignación y modificación de casos médicos a usuarios autenticados como personal médico para garantizar que quienes brinden apoyo sean profesional verídicos.</td>
+      <td><strong>Escenario 1:</strong> Acceso autorizado del personal médico.<br><strong>Dado que</strong> el usuario mantiene una sesión válida y su identificación profesional registrada<br><strong>Cuando</strong> intenta visualizar o gestionar un caso<br><strong>Entonces</strong> el sistema permite únicamente las operaciones autorizadas para su rol.<br><br><strong>Escenario 2:</strong> Acceso no autorizado a un caso.<br><strong>Dado que</strong> el usuario no posee una sesión válida, tiene un rol diferente al de personal médico o su identificación profesional no ha sido validada<br><strong>Cuando</strong> intenta visualizar, autoasignarse, atender o cerrar un caso<br><strong>Entonces</strong> el sistema rechaza la operación.</td>
+      <td>EP-01, EP-05</td>
+    </tr>
+    <tr>
+      <td>TS-C06</td>
+      <td>Sincronización diferida obligatoria de consultas</td>
+      <td>Como desarrollador, debo conservar las consultas registradas sin conexión y sincronizarlas automáticamente cuando se recupere la conectividad para que le personal médico pueda visualizar los casos registrados y ofrecer ayuda.</td>
+      <td><strong>Escenario 1:</strong> Sincronización automática al recuperar la conexión.<br><strong>Dado que</strong> existe una consulta pendiente almacenada localmente<br><strong>Cuando</strong> el dispositivo recupera la conexión a Internet<br><strong>Entonces</strong> el sistema envía la consulta al backend y la marca como sincronizada después de recibir la confirmación.<br><br><strong>Escenario 2:</strong> Interrupción durante la sincronización.<br><strong>Dado que</strong> una consulta pendiente está siendo enviada al backend<br><strong>Cuando</strong> la conexión se interrumpe antes de recibir la confirmación<br><strong>Entonces</strong> el sistema conserva la consulta como pendiente y vuelve a intentar su envío al recuperar la conexión, sin crear un segundo caso con el mismo identificador.</td>
+      <td>EP-04, EP-05</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 4.1.3. Architectural Drivers Backlog
 
