@@ -1932,40 +1932,29 @@ Justificación: Este dominio existe para lograr gestionar por separado el flujo 
 
 Para visualizar cómo deben colaborar los bounded contexts identificados (IAM, Consultation, Medical Bases y Case Management) al resolver los casos de uso principales del negocio, el equipo aplicó la técnica de **Domain Storytelling**. Esta técnica permite representar, mediante pictogramas de actores, objetos de trabajo y flechas numeradas, la secuencia de acciones que ocurre entre los usuarios (ciudadano, personal médico) y los sistemas involucrados para completar una historia concreta del dominio.
 
-Se elaboraron dos Domain Stories, correspondientes a los flujos más críticos identificados durante el EventStorming: el registro y procesamiento de una consulta médica sin conexión, y la sincronización más atención de un caso por parte del personal médico.
+__Domain Story 1: Registro de consulta y obtención de orientación offline__
 
-#### Domain Story 1: Registro y procesamiento de una consulta médica offline
+En este flujo se puede observar el camino que sigue una consulta al ser realizada por un ciudadano y procesada de forma local.
 
-Esta historia describe cómo un ciudadano en peligro registra una consulta médica y recibe orientación de primeros auxilios sin necesidad de conexión a internet.
+![Domain Story](public/assets/images/chapter-4/domain-message-flows-modeling/flow1.png)
 
-Secuencia narrada:
-1. El **Ciudadano** abre la aplicación Lifeline en su dispositivo móvil.
-2. El Ciudadano describe la emergencia médica a través de **texto, audio o una fotografía** de la herida.
-3. La aplicación (bounded context **Consultation**) recibe la consulta y solicita al bounded context **Medical Bases** la información relevante de primeros auxilios según el tipo de lesión descrita.
-4. **Medical Bases** recupera del índice local los fragmentos de la base de conocimientos médicos relacionados con la consulta.
-5. **Consultation** entrega el contexto recuperado junto con la consulta al modelo de IA local (RAG), el cual genera la **orientación médica** paso a paso.
-6. La aplicación muestra las indicaciones al Ciudadano y, de ser necesario, le recomienda solicitar apoyo profesional.
-7. La consulta y sus datos (incluyendo ubicación, si está disponible) se **almacenan localmente** con el estado "pendiente de sincronización".
+__Domain Story 2: Respuesta segura ante información médica insuficiente__
 
-![Domain Story 1 Registro y procesamiento de una consulta médica offline.png](public/assets/images/chapter-4/domain-message-flows-modeling/Domain%20Story%201%20Registro%20y%20procesamiento%20de%20una%20consulta%20m%C3%A9dica%20offline.png)
+En este flujo se observa como se consulta la información de la base de datos de conocimientos médicos antes de ofrecer una respuesta. Al no contar con información suficiente, se opta por enviar el mensaje al ciudadano y sugerirle esperar la ayuda profesional.
 
-#### Domain Story 2: Sincronización y atención de un caso por el personal médico
+![Domain Story](public/assets/images/chapter-4/domain-message-flows-modeling/flow2.png)
 
-Esta historia describe cómo, al recuperarse la conexión a internet, una consulta pasa a estar disponible para el personal médico y es atendida hasta su cierre.
+__Domain Story 3: Sincronización de consulta y creación del caso__
 
-Secuencia narrada:
-1. El dispositivo del **Ciudadano** recupera la conexión a internet.
-2. **Consultation** detecta la conexión recuperada y envía la consulta pendiente hacia el bounded context **Case Management** en la nube.
-3. **Case Management** registra la consulta como un nuevo **Caso**, con estado "disponible".
-4. El **Personal médico** visualiza el listado de casos disponibles que solicitan apoyo profesional.
-5. El Personal médico **se autoasigna** el caso, y Case Management actualiza su estado a "asignado".
-6. El Personal médico **inicia la atención** del caso, cambiando su estado a "en progreso".
-7. Una vez estabilizado el paciente, el Personal médico **cierra el caso**, registrando sus observaciones finales.
-8. **Case Management** notifica al Ciudadano (cuando su dispositivo se reconecta) que su consulta fue atendida.
+En este flujo se observa el camino que sigue el sistema cuando recibe la conexión de internet y debe sincronizar los casos almacenados localmente para que sean revisados por el personal médico mientras aseguro que estos no se pierdan en el camino.
 
-![Domain Story 2 Sincronización y atención de un caso por el personal médico.png](public/assets/images/chapter-4/domain-message-flows-modeling/Domain%20Story%202%20Sincronizaci%C3%B3n%20y%20atenci%C3%B3n%20de%20un%20caso%20por%20el%20personal%20m%C3%A9dico.png)
+![Domain Story](public/assets/images/chapter-4/domain-message-flows-modeling/flow3.png)
 
-Ambas historias evidencian la colaboración necesaria entre los cuatro bounded contexts: **Consultation** actúa como el núcleo que orquesta la generación de orientación médica apoyándose en **Medical Bases**, mientras que **Case Management** retoma la consulta una vez sincronizada para habilitar la colaboración con el **Personal médico**, todo ello sobre la identidad y autenticación gestionada por **IAM**.
+__Domain Story 4: Asignación, atención y seguimiento del caso__
+
+En este flujo se puede ver como el personal médico recibe acceso a los casos previamente registrados y realiza procesos como la autoasignación, atención y cambio de estado de los mismos.
+
+![Domain Story](public/assets/images/chapter-4/domain-message-flows-modeling/flow4.png)
 
 ### 4.2.4. Bounded Context Canvases
 
