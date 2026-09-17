@@ -1564,17 +1564,86 @@ Impacto: Requiere control de concurrencia y consistencia para impedir que una co
 
 #### 4.1.2.2. Quality Attribute Scenarios
 
-En esta sección se incluye la especificación de la primera versión de los escenarios de atributos de calidad que tienen mayor impacto en la arquitectura de la solución, los cuales sirven de input para el proceso de diseño. Dado el contexto de Lifeline —una aplicación que debe operar sin conexión durante una emergencia, generar orientación médica confiable y sincronizar información al recuperar señal— se priorizaron los atributos de disponibilidad, rendimiento, usabilidad, confiabilidad y seguridad.
+En esta sección se incluye la especificación de la primera versión de los escenarios de atributos de calidad que tienen mayor impacto en la arquitectura de la solución, los cuales sirven de input para el proceso de diseño. Dado el contexto de Lifeline, la cual es una aplicación que debe operar sin conexión durante una emergencia, generar orientación médica confiable y sincronizar información al recuperar señal,  se priorizaron los atributos de alta disponibilidad, perfomance, usabilidad, fiabilidad.
 
-| Atributo | Fuente | Estímulo | Artefacto | Entorno | Respuesta | Medida |
-|---|---|---|---|---|---|---|
-| Disponibilidad | Ciudadano en peligro | Registra una consulta médica cuando el dispositivo no tiene conexión a internet | Módulo de orientación médica (IA on-device + RAG local) | Escenario post-sismo sin cobertura de red | El sistema procesa la consulta localmente y genera la orientación sin depender de servicios externos | El 100% de las consultas se procesan exitosamente sin conexión, en al menos el 95% de los intentos registrados en pruebas controladas |
-| Rendimiento | Ciudadano en peligro | Envía una consulta multimodal (texto, foto o audio) al sistema | Pipeline de inferencia local (RAG + modelo de IA) | Operación offline, dispositivo de gama media | El sistema recupera el contexto médico relevante y genera la orientación | La respuesta completa se entrega en menos de 15 segundos en el 90% de los casos |
-| Usabilidad | Ciudadano en peligro (bajo estrés) | Intenta registrar una consulta usando voz o cámara en lugar de texto | Interfaz de registro de consultas | Escenario de alta ansiedad, baja luminosidad o ruido ambiental | La aplicación permite completar el registro con el mínimo de pasos posibles, sin necesidad de escribir | El 80% de los usuarios completa el flujo de consulta en menos de 1 minuto en pruebas controladas |
-| Confiabilidad | Módulo de orientación médica (IA + RAG) | Genera una respuesta sin contar con suficiente contexto recuperado desde la base médica | Mecanismo de respuesta segura | Operación offline durante una emergencia | El sistema descarta la respuesta no sustentada y comunica la limitación en lugar de generar una indicación inventada | 0% de respuestas sin sustento entregadas al usuario final, validado en el 95% de los casos de prueba |
-| Seguridad | Proceso externo al contexto autorizado de la aplicación | Intenta acceder a fotografías o datos médicos almacenados localmente | Almacenamiento local (base de datos y archivos) | Dispositivo del ciudadano, en cualquier momento | El sistema impide el acceso mediante cifrado y restricciones del contexto autorizado | 100% de los datos sensibles almacenados cifrados; 0 accesos no autorizados exitosos en pruebas de penetración |
-| Disponibilidad / Tolerancia a fallos | Ciudadano o personal médico | El dispositivo recupera la conexión a internet tras haber estado offline con consultas pendientes | Servicio de sincronización bidireccional | Post-sismo, con red intermitente o débil | El sistema sincroniza automáticamente las consultas pendientes sin duplicarlas ni perderlas, reintentando ante fallos | El 100% de las consultas pendientes se sincronizan correctamente dentro de los 2 minutos posteriores a la recuperación de conexión, en el 95% de los casos |
-| Escalabilidad / Consistencia concurrente | Dos o más integrantes del personal médico | Intentan autoasignarse la misma consulta disponible al mismo tiempo | Servicio de gestión de casos (backend) | Emergencia masiva con múltiples profesionales conectados simultáneamente | El sistema acepta solo la primera solicitud válida y rechaza las demás sin generar estados inconsistentes | 0% de casos con doble asignación en pruebas de concurrencia con al menos 50 solicitudes simultáneas |
+<table>
+  <thead>
+    <tr>
+      <th>Atributo</th>
+      <th>Fuente</th>
+      <th>Estímulo</th>
+      <th>Artefacto</th>
+      <th>Entorno</th>
+      <th>Respuesta</th>
+      <th>Medida</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Alta disponibilidad</strong></td>
+      <td>Usuario de tipo ciudadano</td>
+      <td>Registra una consulta médica cuando no dispone de conexión a Internet.</td>
+      <td>On-Device AI Engine, Medical Knowledge Store y Local Database.</td>
+      <td>Escenario post-sismo sin conexión a internet</td>
+      <td>El sistema procesa la consulta localmente, muestra las indicaciones médicas y guarda la información en local.</td>
+      <td>Sin llamadas al backend externo y el 99.5% de las consultas de prueba finalizan satisfactoriamente.</td>
+    </tr>
+    <tr>
+      <td><strong>Alta disponibilidad</strong></td>
+      <td>Usuario de tipo personal médico</td>
+      <td>Autoasignación de un caso</td>
+      <td>Balanceador</td>
+      <td>Falla de una instancia del backend</td>
+      <td>Solicitud redirigida hacia las instancias disponibles y autosignación completada satisfactoriamente.</td>
+      <td>Solicitud redirigida en un máximo de 3 segundos y 99% de solicitudes completadas.</td>
+    </tr>
+    <tr>
+      <td><strong>Fiabilidad</strong></td>
+      <td>Usuario de tipo ciudadano</td>
+      <td>Envía una consulta con síntomas contemplados en la base de conocimientos médicos.</td>
+      <td>Medical Knowledge Service y Semantic Retriever</td>
+      <td>Escenario post-sismo sin conexión a internet</td>
+      <td>Información de base médica recuperada e indicaciones médicas coherentes generadas.</td>
+      <td>90% de las indicaciones generadas clasificadas como eficientes o muy eficientes.</td>
+    </tr>
+    <tr>
+      <td><strong>Fiabilidad</strong></td>
+      <td>On-Device AI Engine</td>
+      <td>No se encuentra información suficiente en la base de conocimientos médicos para responder a una consulta</td>
+      <td>Consultation Domain</td>
+      <td>Consulta offline después de un sismo</td>
+      <td>Mensaje de error seguro mostrado al usuario.</td>
+      <td>Cero indicaciones médicas no sustentadas mostradas al usuario.</td>
+    </tr>
+    <tr>
+      <td><strong>Performance</strong></td>
+      <td>Usuario de tipo ciudadano</td>
+      <td>Registra una consulta médica contando con conexión a Internet</td>
+      <td>Local Persistence</td>
+      <td>La conexión de internet se pierde y recupera durante el envío de la consulta</td>
+      <td>El sistema reintenta el envío de la consulta y la registra una sola vez en backend.</td>
+      <td>Cero consultas perdidas, duplicadas o corruptas en su envío al backend.</td>
+    </tr>
+    <tr>
+      <td><strong>Usabilidad</strong></td>
+      <td>Usuario de tipo ciudadano</td>
+      <td>Intenta registrar una emergencia mediante voz</td>
+      <td>User interface intuitivo</td>
+      <td>Poca iluminación y sin posibilidad de apoyo exteno</td>
+      <td>Ciudadano guiado por la interfaz intuitiva y consulta registrada satisfactoriamente.</td>
+      <td>El 90% de los usuarios logra completar una consulta en menos de dos minutos y sin ayuda externa.</td>
+    </tr>
+    <tr>
+      <td><strong>Performance</strong></td>
+      <td>Mil usuarios de tipo ciudadano</td>
+      <td>Mil dispositivos recuperan la conexión a internet y sincronizan su información</td>
+      <td>Broker y balanceador</td>
+      <td>Restablecimiento de las telecomunicaciones horas después de un sismo</td>
+      <td>Sincronizaciones encoladas y procesadas progresivamente hacia el backend.</td>
+      <td>Se pierden cero operaciones y el backlog es procesado menos de 10 minutos.</td>
+    </tr>
+  </tbody>
+</table>
 
 #### 4.1.2.3. Constraints
 
