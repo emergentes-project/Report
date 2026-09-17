@@ -1964,25 +1964,25 @@ Se pueden verificar las imagenes por medio del siguiente enlace de Miro: https:/
 
 #### Bounded Context Canvas: Consultation
 
-<img src="public/assets/images/chapter-4/BCC-Consultation.png" alt="BCC-Consultation">  
+<img src="public/assets/images/chapter-4/BCC-Consultation.jpg" alt="BCC-Consultation">  
 
 ---
 
 #### Bounded Context Canvas: Medical Bases
 
-<img src="public/assets/images/chapter-4/BCC-MedicalBases.png" alt="BCC-MedicalBases">  
+<img src="public/assets/images/chapter-4/BCC-MedicalBases.jpg" alt="BCC-MedicalBases">  
 
 ---
 
 #### Bounded Context Canvas: Case Management
 
-<img src="public/assets/images/chapter-4/BCC-CaseManagement.png" alt="BCC-CaseManagement">  
+<img src="public/assets/images/chapter-4/BCC-CaseManagement.jpg" alt="BCC-CaseManagement">  
 
 ---
 
 #### Bounded Context Canvas: IAM
 
-<img src="public/assets/images/chapter-4/BCC-IAM.png" alt="BCC-IAM">  
+<img src="public/assets/images/chapter-4/BCC-IAM.jpg" alt="BCC-IAM">  
 
 ---
 
