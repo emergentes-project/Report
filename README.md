@@ -2061,6 +2061,7 @@ Criterio de decisión: la contención esperada es baja o moderada, dado que resu
 
 Los drivers AD-16 a AD-21 no requirieron una iteración estructural propia, ya que quedan satisfechos por las decisiones adoptadas en las cinco iteraciones anteriores. La entrega de indicaciones claras y ordenadas (AD-16) y la recomendación de atención profesional ante señales de gravedad (AD-19) se resuelven mediante los *Safety / Policy Checks* y la plantilla de salida definidos en la segunda iteración, que regulan tanto el formato como el contenido de la respuesta antes de mostrarla al ciudadano. El cumplimiento de la Ley N° 29733 (AD-17) se sostiene en la ejecución local del flujo crítico decidida en la primera iteración, que evita transmitir datos de salud durante la emergencia, y en el cifrado del canal de sincronización establecido en la tercera. La usabilidad bajo estrés (AD-18) corresponde al diseño de la interfaz del cliente móvil y no altera la descomposición en módulos, por lo que se aborda en el nivel de diseño de detalle. Finalmente, el adjunto de fotografías (AD-20) y el registro de consultas mediante texto (AD-21) constituyen entradas del mismo flujo de orientación local, de modo que se apoyan en el procesamiento multimodal del *On-Device AI Engine* y en el patrón Outbox ya definido para su posterior sincronización.
 
+De esta manera, los 21 drivers del backlog quedan cubiertos por el conjunto de decisiones arquitectónicas documentadas, y la arquitectura resultante se materializa en los diagramas de contenedores y componentes presentados en las secciones 4.3.3 y 4.3.5.
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
@@ -2854,3 +2855,21 @@ Seliana, I., Paripurno, E. T., Maharani, Y. N., Susanto, H., Rahmadinie, A., Aga
 Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national emergency telecommunication plans*. https://www.itu.int/en/ITU-D/Emergency-Telecommunications/Documents/2020/NETP-guidelines.pdf
 
 # Anexos
+
+
+**Anexo A — Repositorio del Project Report:** https://github.com/emergentes-project/Report
+
+**Anexo B — Lean UX Canvas:** https://canva.link/a0rosb44f3zycsg
+
+**Anexo C — Entrevistas**
+
+- Barbara Eliana Seminario Leon (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
+- Roberto Mauricio Huertas Romero (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+- Araceli Felicia Reyna Caicedo (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L
+- Andre Ramirez Pella (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
+- Katia Milagros Saavedra Saavedra (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
+- Kevin Franco Escobar Coca (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4
+
+**Anexo D — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
+
+**Anexo E — Bounded Context Canvases:** https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
