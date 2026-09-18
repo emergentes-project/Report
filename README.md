@@ -249,12 +249,12 @@ Link del project report: [https://github.com/emergentes-project/Report](https://
   </tr>
   <tr>
     <td>Comunica oralmente ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería.</td>
-    <td></td>
+    <td><strong>Solano Armas, Angelo Héctor</strong><br>Participé en el registro de entrevistas con ciudadanos y personal médico, lo que me exigió formular preguntas y consignar las respuestas de personas con perfiles distintos al de un estudiante de ingeniería de software. Además, presenté ante el equipo los diagramas de arquitectura de software (System Landscape, Context, Container, Deployment y Component) y el Design Purpose, explicando las decisiones tomadas para que el resto de integrantes pudiera alinear sus secciones del informe con la arquitectura propuesta.</td>
     <td></td>
   </tr>
   <tr>
     <td>Comunica de forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería.</td>
-    <td></td>
+    <td><strong>Solano Armas, Angelo Héctor</strong><br>Redacté la sección de antecedentes y problemática, incorporé la bibliografía del informe y elaboré las User Personas. Definí el Ubiquitous Language y el Design Purpose, y documenté por escrito los diagramas de arquitectura en los niveles System Landscape, Context, Container, Deployment y Component. Finalmente, redacté las conclusiones y recomendaciones del informe, sintetizando los hallazgos del diseño estratégico para un lector académico y técnico.</td>
     <td></td>
   </tr>
 </table>
