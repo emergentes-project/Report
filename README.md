@@ -1620,6 +1620,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Atributo</th>
       <th>Fuente</th>
       <th>Estímulo</th>
@@ -1631,6 +1632,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
   </thead>
   <tbody>
     <tr>
+      <td>QAS-01</td>
       <td><strong>Alta disponibilidad</strong></td>
       <td>Usuario de tipo ciudadano</td>
       <td>Registra una consulta médica cuando no dispone de conexión a Internet.</td>
@@ -1640,6 +1642,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td>Sin llamadas al backend externo y el 99.5% de las consultas de prueba finalizan satisfactoriamente.</td>
     </tr>
     <tr>
+      <td>QAS-02</td>
       <td><strong>Alta disponibilidad</strong></td>
       <td>Usuario de tipo personal médico</td>
       <td>Autoasignación de un caso</td>
@@ -1649,6 +1652,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td>Solicitud redirigida en un máximo de 3 segundos y 99% de solicitudes completadas.</td>
     </tr>
     <tr>
+      <td>QAS-03</td>
       <td><strong>Fiabilidad</strong></td>
       <td>Usuario de tipo ciudadano</td>
       <td>Envía una consulta con síntomas contemplados en la base de conocimientos médicos.</td>
@@ -1658,6 +1662,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td>90% de las indicaciones generadas clasificadas como eficientes o muy eficientes.</td>
     </tr>
     <tr>
+      <td>QAS-04</td>
       <td><strong>Fiabilidad</strong></td>
       <td>On-Device AI Engine</td>
       <td>No se encuentra información suficiente en la base de conocimientos médicos para responder a una consulta</td>
@@ -1667,6 +1672,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td>Cero indicaciones médicas no sustentadas mostradas al usuario.</td>
     </tr>
     <tr>
+      <td>QAS-05</td>
       <td><strong>Performance</strong></td>
       <td>Usuario de tipo ciudadano</td>
       <td>Registra una consulta médica contando con conexión a Internet</td>
@@ -1676,6 +1682,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td>Cero consultas perdidas, duplicadas o corruptas en su envío al backend.</td>
     </tr>
     <tr>
+      <td>QAS-06</td>
       <td><strong>Usabilidad</strong></td>
       <td>Usuario de tipo ciudadano</td>
       <td>Intenta registrar una emergencia mediante voz</td>
@@ -1685,6 +1692,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td>El 90% de los usuarios logra completar una consulta en menos de dos minutos y sin ayuda externa.</td>
     </tr>
     <tr>
+      <td>QAS-07</td>
       <td><strong>Performance</strong></td>
       <td>Mil usuarios de tipo ciudadano</td>
       <td>Mil dispositivos recuperan la conexión a internet y sincronizan su información</td>
@@ -1913,70 +1921,387 @@ Criterio de decisión: la contención esperada es baja-moderada (pocos médicos 
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
-En esta sección, el equipo especifica la relación de escenarios priorizados para atributos de calidad. Se retoman las decisiones tomadas al finalizar el proceso de Quality Attribute Workshop, colocando a continuación la versión final de los escenarios refinados en orden de prioridad.
+Al cerrar el *Quality Attribute Workshop*, el equipo confirmó que los atributos que realmente condicionan la arquitectura de Lifeline son la disponibilidad offline, la fiabilidad clínica de la orientación generada y la resiliencia de la sincronización cuando vuelve la señal. Esas tres preocupaciones fueron las que más se repitieron al revisar la problemática post-sismo del capítulo I y las entrevistas del capítulo II, y son las que sostienen las decisiones tomadas en la sección 4.1.4: IA on-device con RAG local, *Safety / Policy Checks* antes de mostrar cualquier indicación, y un esquema *offline-first* con Outbox e idempotencia respaldado por *Load Balancer*, *Message Broker* y *Async Workers* en el backend.
 
-**Scenario Refinement for Scenario N° 1**
+A partir de ello se refinaron los siete escenarios definidos en la sección 4.1.2.2, conservando sus identificadores (QAS-01 a QAS-07) y las medidas de respuesta ya acordadas, pero agregando el objetivo de negocio asociado, las preguntas abiertas que quedaron del taller y los *issues* que el equipo debe resolver durante la implementación. Los escenarios se presentan en el mismo orden de prioridad establecido en el Architectural Drivers Backlog de la sección 4.1.3: primero los que afectan la operación sin conexión y la seguridad clínica del ciudadano, luego los que garantizan que ninguna consulta se pierda al sincronizar, y finalmente los relacionados con la operación del personal médico y la usabilidad bajo estrés.
 
-|                                  |                                                                                                                                |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| **Scenario(s):**                 | QAS-01 — Disponibilidad offline de la orientación médica                                                                       |
-| **Business Goals:**              | Garantizar que los ciudadanos reciban asistencia médica inmediata incluso cuando las telecomunicaciones colapsen tras un sismo |
-| **Relevant Quality Attributes:** | Disponibilidad, Confiabilidad                                                                                                  |
-|                                  | **Stimulus:** El ciudadano registra una consulta médica sin conexión a internet                                                |
+<table>
+  <tbody>
+    <tr>
+      <td colspan="3"><strong>Scenario Refinement for Scenario N° 1</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="30%"><strong>Scenario(s):</strong></td>
+      <td width="70%">QAS-01 — Disponibilidad de la orientación médica sin conexión</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Business Goals:</strong></td>
+      <td>Garantizar que el ciudadano reciba orientación de primeros auxilios en el minuto crítico posterior a un sismo, aun cuando las telecomunicaciones hayan colapsado, cumpliendo la propuesta de valor de RescueBridge.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Relevant Quality Attributes:</strong></td>
+      <td>Disponibilidad, Fiabilidad</td>
+    </tr>
+    <tr>
+      <td width="12%"></td>
+      <td width="18%"><strong>Stimulus:</strong></td>
+      <td>El ciudadano registra una consulta médica cuando el dispositivo no dispone de conexión a Internet.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>Scenario Components</strong></td>
+      <td><strong>Stimulus Source:</strong></td>
+      <td>Usuario de tipo ciudadano afectado por el sismo.</td>
+    </tr>
+    <tr>
+      <td><strong>Environment:</strong></td>
+      <td>Escenario post-sismo sin cobertura de red móvil ni Wi-Fi.</td>
+    </tr>
+    <tr>
+      <td><strong>Artifact (if Known)</strong></td>
+      <td>On-Device AI Engine, Medical Knowledge Store y Local Database.</td>
+    </tr>
+    <tr>
+      <td><strong>Response:</strong></td>
+      <td>El sistema procesa la consulta localmente, muestra las indicaciones médicas y almacena la información en la base de datos del dispositivo sin invocar servicios externos.</td>
+    </tr>
+    <tr>
+      <td><strong>Response Measure:</strong></td>
+      <td>Cero llamadas al backend externo durante el flujo y 99.5% de las consultas de prueba finalizadas satisfactoriamente.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Questions:</strong></td>
+      <td>¿Qué ocurre si el modelo cuantizado o el índice RAG local no pueden cargarse por falta de espacio o por corrupción de archivos en el dispositivo?</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Issues:</strong></td>
+      <td>Definir el tamaño máximo aceptable del modelo para dispositivos de gama media sin sacrificar precisión clínica, y establecer una verificación de integridad del índice local al iniciar la aplicación.</td>
+    </tr>
+  </tbody>
+</table>
 
-**Scenario Components**
+<table>
+  <tbody>
+    <tr>
+      <td colspan="3"><strong>Scenario Refinement for Scenario N° 2</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="30%"><strong>Scenario(s):</strong></td>
+      <td width="70%">QAS-03 — Fiabilidad de las indicaciones sustentadas en la base médica</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Business Goals:</strong></td>
+      <td>Sostener la confianza del ciudadano y del personal médico asegurando que toda orientación entregada provenga de fuentes médicas autorizadas y no de contenido generado sin respaldo.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Relevant Quality Attributes:</strong></td>
+      <td>Fiabilidad, Precisión funcional</td>
+    </tr>
+    <tr>
+      <td width="12%"></td>
+      <td width="18%"><strong>Stimulus:</strong></td>
+      <td>El ciudadano envía una consulta con síntomas contemplados en la base de conocimientos médicos.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>Scenario Components</strong></td>
+      <td><strong>Stimulus Source:</strong></td>
+      <td>Usuario de tipo ciudadano.</td>
+    </tr>
+    <tr>
+      <td><strong>Environment:</strong></td>
+      <td>Escenario post-sismo sin conexión a Internet.</td>
+    </tr>
+    <tr>
+      <td><strong>Artifact (if Known)</strong></td>
+      <td>Medical Knowledge Service y Semantic Retriever del flujo RAG local.</td>
+    </tr>
+    <tr>
+      <td><strong>Response:</strong></td>
+      <td>El sistema recupera la información relevante de la base médica y genera indicaciones coherentes, ordenadas y trazables a la fuente consultada.</td>
+    </tr>
+    <tr>
+      <td><strong>Response Measure:</strong></td>
+      <td>90% de las indicaciones generadas clasificadas como eficientes o muy eficientes en la evaluación con personal médico.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Questions:</strong></td>
+      <td>¿Cómo se revalida la calidad clínica de las respuestas cada vez que se actualiza o amplía la base de conocimientos médicos?</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Issues:</strong></td>
+      <td>Definir la cantidad de fragmentos recuperados y el umbral de similitud que equilibre precisión clínica y tiempo de respuesta en dispositivos de gama media.</td>
+    </tr>
+  </tbody>
+</table>
 
-|                          |                                                                                                                           |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| **Stimulus Source:**     | Ciudadano en peligro                                                                                                      |
-| **Environment:**         | Escenario post-sismo, sin cobertura de red móvil ni Wi-Fi                                                                 |
-| **Artifact (if Known):** | Módulo de orientación médica (IA on-device + índice RAG local)                                                            |
-| **Response:**            | El sistema procesa la consulta localmente y entrega indicaciones sustentadas en la base médica                            |
-| **Response Measure:**    | 100% de las consultas se procesan sin conexión; éxito en al menos el 95% de los intentos en pruebas controladas           |
-| **Questions:**           | ¿Qué ocurre si el modelo o el índice local no pueden cargarse por falta de espacio o corrupción de archivos?              |
-| **Issues:**              | Definir el tamaño máximo aceptable del modelo cuantizado para dispositivos de gama media sin sacrificar precisión clínica |
+<table>
+  <tbody>
+    <tr>
+      <td colspan="3"><strong>Scenario Refinement for Scenario N° 3</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="30%"><strong>Scenario(s):</strong></td>
+      <td width="70%">QAS-04 — Respuesta segura ante contexto médico insuficiente</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Business Goals:</strong></td>
+      <td>Evitar que la aplicación exponga al ciudadano a indicaciones sin respaldo clínico, respetando los límites de alcance acordados con el personal médico entrevistado.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Relevant Quality Attributes:</strong></td>
+      <td>Fiabilidad, Seguridad de uso</td>
+    </tr>
+    <tr>
+      <td width="12%"></td>
+      <td width="18%"><strong>Stimulus:</strong></td>
+      <td>No se encuentra información suficiente en la base de conocimientos médicos para responder a la consulta registrada.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>Scenario Components</strong></td>
+      <td><strong>Stimulus Source:</strong></td>
+      <td>On-Device AI Engine durante la evaluación del contexto recuperado.</td>
+    </tr>
+    <tr>
+      <td><strong>Environment:</strong></td>
+      <td>Consulta realizada sin conexión después de un sismo.</td>
+    </tr>
+    <tr>
+      <td><strong>Artifact (if Known)</strong></td>
+      <td>Consultation Domain y componente de Safety / Policy Checks.</td>
+    </tr>
+    <tr>
+      <td><strong>Response:</strong></td>
+      <td>El sistema bloquea la entrega de la indicación no sustentada y muestra un mensaje seguro que recomienda buscar atención profesional.</td>
+    </tr>
+    <tr>
+      <td><strong>Response Measure:</strong></td>
+      <td>Cero indicaciones médicas no sustentadas mostradas al usuario.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Questions:</strong></td>
+      <td>¿Cómo se diferencia una consulta sin contexto suficiente de una consulta que está fuera del alcance clínico permitido por TS-C03?</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Issues:</strong></td>
+      <td>Calibrar el umbral de confianza que dispara la respuesta segura, de modo que proteja al usuario sin activarse con tanta frecuencia que la aplicación deje de ser útil.</td>
+    </tr>
+  </tbody>
+</table>
 
-**Scenario Refinement for Scenario N°2**
+<table>
+  <tbody>
+    <tr>
+      <td colspan="3"><strong>Scenario Refinement for Scenario N° 4</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="30%"><strong>Scenario(s):</strong></td>
+      <td width="70%">QAS-05 — Integridad de la consulta ante conexión intermitente</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Business Goals:</strong></td>
+      <td>Asegurar que ninguna consulta registrada se pierda ni se duplique, para que el personal médico trabaje siempre sobre la situación real reportada por el ciudadano.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Relevant Quality Attributes:</strong></td>
+      <td>Fiabilidad, Tolerancia a fallos</td>
+    </tr>
+    <tr>
+      <td width="12%"></td>
+      <td width="18%"><strong>Stimulus:</strong></td>
+      <td>La conexión a Internet se pierde y se recupera mientras la consulta está siendo enviada al backend.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>Scenario Components</strong></td>
+      <td><strong>Stimulus Source:</strong></td>
+      <td>Usuario de tipo ciudadano con conectividad inestable.</td>
+    </tr>
+    <tr>
+      <td><strong>Environment:</strong></td>
+      <td>Zona afectada con red intermitente o de baja calidad tras el sismo.</td>
+    </tr>
+    <tr>
+      <td><strong>Artifact (if Known)</strong></td>
+      <td>Local Persistence con patrón Outbox y Sync Service del dispositivo.</td>
+    </tr>
+    <tr>
+      <td><strong>Response:</strong></td>
+      <td>El sistema conserva la consulta como pendiente, reintenta el envío automáticamente y la registra una sola vez en el backend gracias al identificador idempotente.</td>
+    </tr>
+    <tr>
+      <td><strong>Response Measure:</strong></td>
+      <td>Cero consultas perdidas, duplicadas o corruptas en su envío al backend.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Questions:</strong></td>
+      <td>¿Cuántos reintentos deben ejecutarse antes de marcar la consulta como error persistente y notificar al ciudadano?</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Issues:</strong></td>
+      <td>Definir la política de backoff exponencial y el tiempo de vida de la clave de idempotencia almacenada en el backend.</td>
+    </tr>
+  </tbody>
+</table>
 
-|                                  |                                                                                                                                             |
-|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| **Scenario(s):**                 | QAS-02 — Rendimiento de la inferencia local                                                                                                 |
-| **Business Goals:**              | Minimizar el tiempo entre el registro de la consulta y la entrega de la orientación médica, dado que cada segundo importa en una emergencia |
-| **Relevant Quality Attributes:** | Rendimiento (Performance)                                                                                                                   |
-|                                  | **Stimulus:** El ciudadano envía una consulta multimodal (texto, foto o audio)                                                              |
+<table>
+  <tbody>
+    <tr>
+      <td colspan="3"><strong>Scenario Refinement for Scenario N° 5</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="30%"><strong>Scenario(s):</strong></td>
+      <td width="70%">QAS-07 — Escalabilidad de la sincronización masiva post-sismo</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Business Goals:</strong></td>
+      <td>Mantener operativo el servicio cuando la conectividad se restablece de forma simultánea en toda la zona afectada, para que el personal médico acceda a los casos sin demoras significativas.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Relevant Quality Attributes:</strong></td>
+      <td>Performance, Escalabilidad</td>
+    </tr>
+    <tr>
+      <td width="12%"></td>
+      <td width="18%"><strong>Stimulus:</strong></td>
+      <td>Mil dispositivos recuperan la conexión a Internet y sincronizan su información al mismo tiempo.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>Scenario Components</strong></td>
+      <td><strong>Stimulus Source:</strong></td>
+      <td>Mil usuarios de tipo ciudadano con consultas pendientes de envío.</td>
+    </tr>
+    <tr>
+      <td><strong>Environment:</strong></td>
+      <td>Restablecimiento de las telecomunicaciones horas después del sismo.</td>
+    </tr>
+    <tr>
+      <td><strong>Artifact (if Known)</strong></td>
+      <td>Load Balancer, Message Broker y Async Workers del backend.</td>
+    </tr>
+    <tr>
+      <td><strong>Response:</strong></td>
+      <td>Las sincronizaciones se encolan y se procesan progresivamente, sin bloquear las operaciones síncronas que realiza el personal médico sobre los casos.</td>
+    </tr>
+    <tr>
+      <td><strong>Response Measure:</strong></td>
+      <td>Cero operaciones perdidas y backlog de sincronización procesado en menos de 10 minutos.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Questions:</strong></td>
+      <td>¿Qué debe ocurrir si el broker acumula más mensajes de los que los workers pueden procesar dentro de la ventana esperada?</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Issues:</strong></td>
+      <td>Definir la política de autoescalado de los workers y el tamaño máximo de cola a partir del cual se aplica backpressure sobre los dispositivos.</td>
+    </tr>
+  </tbody>
+</table>
 
-**Scenario Components**
+<table>
+  <tbody>
+    <tr>
+      <td colspan="3"><strong>Scenario Refinement for Scenario N° 6</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="30%"><strong>Scenario(s):</strong></td>
+      <td width="70%">QAS-02 — Disponibilidad del backend durante la autoasignación de casos</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Business Goals:</strong></td>
+      <td>Permitir que el personal médico se haga cargo de los casos sin interrupciones, incluso ante fallas parciales de la infraestructura en la nube.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Relevant Quality Attributes:</strong></td>
+      <td>Disponibilidad</td>
+    </tr>
+    <tr>
+      <td width="12%"></td>
+      <td width="18%"><strong>Stimulus:</strong></td>
+      <td>El personal médico intenta autoasignarse un caso mientras una instancia del backend deja de responder.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>Scenario Components</strong></td>
+      <td><strong>Stimulus Source:</strong></td>
+      <td>Usuario de tipo personal médico validado.</td>
+    </tr>
+    <tr>
+      <td><strong>Environment:</strong></td>
+      <td>Falla de una instancia del backend durante la operación normal del sistema.</td>
+    </tr>
+    <tr>
+      <td><strong>Artifact (if Known)</strong></td>
+      <td>Load Balancer e instancias disponibles de la API de Case Management.</td>
+    </tr>
+    <tr>
+      <td><strong>Response:</strong></td>
+      <td>La solicitud es redirigida hacia una instancia disponible y la autoasignación se completa satisfactoriamente.</td>
+    </tr>
+    <tr>
+      <td><strong>Response Measure:</strong></td>
+      <td>Solicitud redirigida en un máximo de 3 segundos y 99% de solicitudes completadas.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Questions:</strong></td>
+      <td>¿Cómo se evita una doble asignación si la instancia falla justo después de haber escrito el nuevo estado del caso?</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Issues:</strong></td>
+      <td>Definir la frecuencia de los health checks y los timeouts del balanceador, y asegurar que el reintento sea idempotente bajo el esquema de concurrencia optimista adoptado.</td>
+    </tr>
+  </tbody>
+</table>
 
-|                          |                                                                                                |
-|--------------------------|------------------------------------------------------------------------------------------------|
-| **Stimulus Source:**     | Ciudadano en peligro                                                                           |
-| **Environment:**         | Modo offline, dispositivo Android de gama media                                                |
-| **Artifact (if Known):** | Pipeline de inferencia local (recuperación RAG + generación del modelo de IA)                  |
-| **Response:**            | El sistema recupera el contexto médico relevante y genera la respuesta completa                |
-| **Response Measure:**    | Respuesta entregada en menos de 15 segundos en el 90% de los casos                             |
-| **Questions:**           | ¿Cómo se comporta la latencia cuando la consulta incluye una fotografía de alta resolución?    |
-| **Issues:**              | Evaluar compresión de imágenes previa al procesamiento para no degradar el tiempo de respuesta |
-
-**Scenario Refinement for Scenario N°3**
-
-|                                  |                                                                                                                           |
-|----------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| **Scenario(s):**                 | QAS-06 — Sincronización tolerante a fallos                                                                                |
-| **Business Goals:**              | Asegurar que el personal médico reciba información oportuna y completa de los casos apenas se restablezca la conectividad |
-| **Relevant Quality Attributes:** | Disponibilidad, Tolerancia a fallos                                                                                       |
-|                                  | **Stimulus:** El dispositivo recupera conexión a internet con consultas pendientes de envío                               |
-
-**Scenario Components**
-
-|                          |                                                                                                                                  |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| **Stimulus Source:**     | Ciudadano o personal médico                                                                                                      |
-| **Environment:**         | Post-sismo, red intermitente o de baja calidad                                                                                   |
-| **Artifact (if Known):** | Servicio de sincronización bidireccional (cola local + backend)                                                                  |
-| **Response:**            | El sistema envía las consultas pendientes y recibe actualizaciones sin duplicar ni perder información                            |
-| **Response Measure:**    | 100% de las consultas pendientes sincronizadas dentro de 2 minutos, en el 95% de los casos                                       |
-| **Questions:**           | ¿Qué pasa si la conexión se pierde nuevamente a mitad de una sincronización en curso?                                            |
-| **Issues:**              | Definir la estrategia de reintentos (backoff exponencial) y el límite de intentos antes de marcar el caso como error persistente |
+<table>
+  <tbody>
+    <tr>
+      <td colspan="3"><strong>Scenario Refinement for Scenario N° 7</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" width="30%"><strong>Scenario(s):</strong></td>
+      <td width="70%">QAS-06 — Usabilidad del registro de consultas bajo estrés</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Business Goals:</strong></td>
+      <td>Lograr que cualquier persona sin formación médica pueda pedir ayuda desde la aplicación en condiciones adversas, ampliando el alcance real de la solución.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Relevant Quality Attributes:</strong></td>
+      <td>Usabilidad</td>
+    </tr>
+    <tr>
+      <td width="12%"></td>
+      <td width="18%"><strong>Stimulus:</strong></td>
+      <td>El ciudadano intenta registrar una emergencia mediante voz.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>Scenario Components</strong></td>
+      <td><strong>Stimulus Source:</strong></td>
+      <td>Usuario de tipo ciudadano sin conocimientos previos de primeros auxilios.</td>
+    </tr>
+    <tr>
+      <td><strong>Environment:</strong></td>
+      <td>Poca iluminación, situación de estrés y sin posibilidad de apoyo externo.</td>
+    </tr>
+    <tr>
+      <td><strong>Artifact (if Known)</strong></td>
+      <td>Interfaz de registro de consultas en modo voz.</td>
+    </tr>
+    <tr>
+      <td><strong>Response:</strong></td>
+      <td>La interfaz guía al ciudadano paso a paso y la consulta queda registrada satisfactoriamente.</td>
+    </tr>
+    <tr>
+      <td><strong>Response Measure:</strong></td>
+      <td>El 90% de los usuarios logra completar una consulta en menos de dos minutos y sin ayuda externa.</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Questions:</strong></td>
+      <td>¿Qué alternativa se ofrece cuando el ruido del entorno impide transcribir correctamente la descripción por voz?</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Issues:</strong></td>
+      <td>Definir el mecanismo de respaldo hacia texto o fotografía y programar pruebas de usabilidad con usuarios reales en condiciones simuladas de emergencia.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## 4.2. Strategic-Level Domain-Driven Design
