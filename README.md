@@ -80,13 +80,47 @@
 
 # Project Report Collaboration Insights
 
-## URL del repositorio del informe
+En esta sección se presenta la url del project report de GitHub en la organización del equipo. Además, se evidencia el registro de commits y la colaboración de todos los integrantes del equipo a través de Github.
+
+Link del project report: [https://github.com/emergentes-project/Report](https://github.com/emergentes-project/Report)
+
+
 
 ## Evidencias y comentarios por entrega
 
-| Integrante | Descripción de actividades | Evidencias |
-|---|---|---|
-|  |  |  |
+<table>
+  <tr>
+    <td colspan="2" align="center" style="font-weight: bold; font-size: 20px;">Evidencias y comentarios de la TB1</td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>Integrante</strong></td>
+    <td width="80%"><strong>Descripción de actividades</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Roman Cruz, Natalia Bertha</strong></td>
+    <td>Desarrollé la descripción de la startup y del producto, la identificación de los segmentos objetivo, el diseño y análisis de las entrevistas, y la especificación de las épicas y user stories. Asimismo, participé en la definición de la funcionalidad principal del producto y en el diseño estratégico mediante el EventStorming y el Candidate Context Discovery.</td>
+  </tr>
+  <tr>
+    <td><strong>Cacho Seminario, Diego Alonso</strong></td>
+    <td>Desarrollé los Lean UX Problem Statements, Assumptions, Hypothesis Statements y el Lean UX Canvas. También contribuí al registro y detalle de las entrevistas, así como a la elaboración de la User Task Matrix, los Empathy Maps y los escenarios As-is y To-Be. Finalmente, participé en la especificación de los Impact Maps y el Product Backlog, además de revisar y mejorar los Bounded Context Canvases del diseño estratégico.</td>
+  </tr>
+  <tr>
+    <td><strong>Paico Calderon, July Zelmira</strong></td>
+    <td>Realicé el análisis competitivo y definí las estrategias y tácticas frente a los competidores. Asimismo, desarrollé los Quality Attribute Scenarios, las restricciones, el Architectural Drivers Backlog, las decisiones de diseño arquitectónico y los refinamientos de los escenarios de atributos de calidad. También contribuí al Domain Message Flows Modeling, los Bounded Context Canvases y el Context Mapping, además de incorporar información de entrevistas y recursos gráficos de apoyo.</td>
+  </tr>
+  <tr>
+    <td><strong>Solano Armas, Angelo Héctor</strong></td>
+    <td>Contribuí a la elaboración de los antecedentes y la problemática, la bibliografía y las User Personas. Participé en el registro de entrevistas, la definición del Ubiquitous Language y el Design Purpose. Además, desarrollé los diagramas de arquitectura de software en los niveles System Landscape, Context, Container, Deployment y Component, y redacté las conclusiones y recomendaciones del informe.</td>
+  </tr>
+  <tr>
+    <td><strong>Conclusión</strong></td>
+    <td>En esta entrega, los integrantes del equipo participaron de manera activa y complementaria en la investigación, el análisis de usuarios, la especificación de requisitos y el diseño estratégico de la solución. La distribución de actividades permitió consolidar una propuesta coherente para Lifeline, desde la comprensión del problema y las necesidades de los segmentos objetivo hasta la definición de su arquitectura de software.</td>
+  </tr>
+  <tr>
+    <td><strong>Evidencia</strong></td>
+    <td><br><img src="public/assets/images/cover/github/tb1.png" alt="Evidencia de commits del equipo"><br></td>
+  </tr>
+</table>
 
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
