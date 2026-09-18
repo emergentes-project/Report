@@ -75,6 +75,7 @@
 | 1.15 | 12/09/2026 | Solano Armas, Angelo Héctor | Desarrollo de Conclusiones y recomendaciones |
 | 1.16 | 13/09/2026 | Cacho Seminario, Diego Alonso | Desarrollo de 3.3. Impact Mapping y 3.4. Product Backlog |
 | 1.17 | 16/09/2026 | Solano Armas, Angelo Héctor | Desarrollo de 4.3.5. Software Architecture Component Level Diagrams |
+| 1.18 | 17/09/2026 | Paico Calderon, July Zelmira | Actualización de 4.1.2.2. Quality Attribute Scenarios, 4.1.2.3. Constraints, 4.1.3. Architectural Drivers Backlog, 4.1.4. Architectural Design Decisions y 4.1.5. Quality Attribute Scenario Refinements |
 
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
@@ -449,7 +450,7 @@ En situaciones de desastre natural, como sismos de gran magnitud, los servicios 
 
 ## 1.3. Segmentos objetivo.
 
-Lifeline fue diseñada pensando en que la población en general logre contar con acceso inmediato a apoyo médico después de un sismo a través de indicaciones generadas por un modelo de inteligencia artifical que obtenga los datos de una base de conocimientos médicos provenientes de organizaciones o instituciones de renombre, de forma en que se pueda asegurar que estas indicaciones son seguras. A su vez, deseamos ayudar a que los servicios de emergencia estén informados de la situación vivida lo antes posible, así como buscamos conectar a las personas heridas con el personal médico. En ese sentido, estaremos tomando en cuenta estos dos segmentos objetivos.
+Lifeline fue diseñada pensando en que la población en general logre contar con acceso inmediato a apoyo médico después de un sismo a través de indicaciones generadas por un modelo de inteligencia artificial que obtenga los datos de una base de conocimientos médicos provenientes de organizaciones o instituciones de renombre, de forma en que se pueda asegurar que estas indicaciones son seguras. A su vez, deseamos ayudar a que los servicios de emergencia estén informados de la situación vivida lo antes posible, así como buscamos conectar a las personas heridas con el personal médico. En ese sentido, estaremos tomando en cuenta estos dos segmentos objetivos.
 
 __Ciudadanos__
 
@@ -643,7 +644,7 @@ Para ambos segmentos, se estarán solicitando los datos de nombre completo, edad
 3. Durante una emergencia con múltiples víctimas, ¿qué dificultades encuentra para obtener información confiable y localizar a quienes necesitan ayuda?
 4. ¿Cuál es la información mínima que necesita conocer para evaluar inicialmente la gravedad de un caso?
 5. ¿Qué datos utiliza para decidir qué casos deben atenderse primero y cuáles pueden esperar?
-6. ¿Qué opina de que, en una situación post sísmica en la que no han llegado los equipos de emergencia, un ciudadano reciba indicaciones de parte de una inteligencia artifical con conocimiento médico para atender a un familiar herido?
+6. ¿Qué opina de que, en una situación post sísmica en la que no han llegado los equipos de emergencia, un ciudadano reciba indicaciones de parte de una inteligencia artificial con conocimiento médico para atender a un familiar herido?
 7. ¿Cómo influiría en su atención recibir a un paciente que antes fue atentido por otr persona que seguía indicaciones generadas por una IAcon conocimiento médico? ¿Qué beneficios o riesgos identifica?
 8. ¿Qué necesitaría revisar para confiar en la información, indicaciones y recomendaciones generadas por una inteligencia artifial con conocimiento médico?
 9. ¿Qué conocimientos, protocolos y procedimientos de primeros auxilios considera que debería dominar una inteligencia artificial diseñada para orientar a personas después de un sismo?
@@ -1561,7 +1562,7 @@ Para lograrlo, el proceso de diseño se guía por Attribute-Driven Design (ADD) 
 
 #### 4.1.2.1. Primary Functionality (Primary User Stories)
 
-Dentro del sistema, si bien se contempla la implementación de numerosas user stories, se deben priorizar aquellas que cubren las funcionalidades principales de la aplicación. En este caso, se tomaran como las user stories principales aquellas centradas en el desarrollo de las respuestas con indicaciones médicas generadas por el modelo de inteligencia artifical, así como las que se centran en la gestión de los casos una vez que han sido lanzados hacia el backend.
+Dentro del sistema, si bien se contempla la implementación de numerosas user stories, se deben priorizar aquellas que cubren las funcionalidades principales de la aplicación. En este caso, se tomarán como user stories principales aquellas centradas en la generación de indicaciones médicas por parte del modelo de inteligencia artificial, así como las orientadas a la gestión de los casos una vez que estos han sido enviados hacia el backend.
 
 A continuación, presentamos las user stories seleccionadas:
 
@@ -1569,25 +1570,25 @@ __US07: Registro de una consulta mediante texto__
 
 Descripción: Como ciudadano, quiero describir una consulta médica mediante texto para comunicar la situación del paciente.
 
-Impacto: Esta user story requiere que se logre proporcionar el registro de consultas mediante texto y que el mismo sea enviado hacia el modelo de IA empleado para su procesamiento siguiendo el flujo planteado. Así, los ciuadanos logran registrar su consulta y pasan a contar con las indicaciones médicas proporcionadas. 
+Impacto: Esta user story requiere que se logre proporcionar el registro de consultas mediante texto y que el mismo sea enviado hacia el modelo de IA empleado para su procesamiento siguiendo el flujo planteado. Así, los ciudadanos logran registrar su consulta y pasan a contar con las indicaciones médicas proporcionadas.
 
 __US09: Adjunto de fotografías a una consulta__
 
 Descripción: Como ciudadano, quiero adjuntar fotografías a una consulta para complementar la descripción de la situación del paciente.
 
-Impacto: Esta user story requiere que la imagen se almacene de forma óptima localmente hasta lograr ser sincronizada hacia el backend, así como esta debe ser integrada con el procesamiento multimodal. En cuanto a negocio, permite que los ciuadanos puedan proporcionar mayor claridad sobre la emergencia médica por la que consultan.
+Impacto: Esta user story requiere que la imagen se almacene de forma óptima localmente hasta lograr ser sincronizada hacia el backend, así como esta debe ser integrada con el procesamiento multimodal. En cuanto a negocio, permite que los ciudadanos puedan proporcionar mayor claridad sobre la emergencia médica por la que consultan.
 
 __US13: Incorporación de fuentes médicas autorizadas__
 
 Descripción: Como desarrollador, quiero incorporar y validar fuentes autorizadas para sustentar la orientación generada por la aplicación.
 
-Impacto: Requiere que las fuentes recolectadas sean validadas, segmentadas e infexadas en un formato que el modelo pueda procesar con velocidad y precisión mediante el RAG aplicado. Además, incrementa la veracidad de las indicaciones que la IA brindará a los ciudadanos.
+Impacto: Requiere que las fuentes recolectadas sean validadas, segmentadas e indexadas en un formato que el modelo pueda procesar con velocidad y precisión mediante el RAG aplicado. Además, incrementa la veracidad de las indicaciones que la IA brindará a los ciudadanos.
 
 __US14: Obtención de indicaciones médicas sin conexión__
 
 Descripción: Como ciudadano, quiero obtener indicaciones médicas basadas en mi consulta sin conexión a internet para actuar ante la emergencia.
 
-Impacto: Esta user story contempla que el modelo de IA pueda ejecutarse localmente junto con el RAG y contando con acceso a la base médica, mientras se controla el rendimiento y los recursos del dispositivo para evitar fallos al generar respuestas. En cuanto a negocio, permite que las indicaciones médicas brindadas se sustentes en conocimientos de organizaciones oficiales sin necesidad de conexión a internet.
+Impacto: Esta user story contempla que el modelo de IA pueda ejecutarse localmente junto con el RAG y contando con acceso a la base médica, mientras se controla el rendimiento y los recursos del dispositivo para evitar fallos al generar respuestas. En cuanto a negocio, permite que las indicaciones médicas brindadas se sustenten en conocimientos de organizaciones oficiales sin necesidad de conexión a internet.
 
 __US15: Indicaciones médicas claras y ordenadas__
 
@@ -1611,11 +1612,11 @@ __US29: Autoasignación de una consulta disponible__
 
 Descripción: Como personal médico, quiero autoasignarme una consulta disponible para hacerme responsable de su atención.
 
-Impacto: Requiere control de concurrencia y consistencia para impedir que una consulta sea asignada por dos o más profesional al mismo tiempo. En cuanto a negocio, posee un gran impacto puesto que marca el inicio de la atención profesional de la consulta y su camino hacia lograr ser cerrada.
+Impacto: Requiere control de concurrencia y consistencia para impedir que una consulta sea asignada por dos o más profesionales al mismo tiempo. En cuanto a negocio, posee un gran impacto puesto que marca el inicio de la atención profesional de la consulta y su camino hacia lograr ser cerrada.
 
 #### 4.1.2.2. Quality Attribute Scenarios
 
-En esta sección se incluye la especificación de la primera versión de los escenarios de atributos de calidad que tienen mayor impacto en la arquitectura de la solución, los cuales sirven de input para el proceso de diseño. Dado el contexto de Lifeline, la cual es una aplicación que debe operar sin conexión durante una emergencia, generar orientación médica confiable y sincronizar información al recuperar señal,  se priorizaron los atributos de alta disponibilidad, perfomance, usabilidad, fiabilidad.
+En esta sección se incluye la especificación de la primera versión de los escenarios de atributos de calidad que tienen mayor impacto en la arquitectura de la solución, los cuales sirven de input para el proceso de diseño. Dado el contexto de Lifeline, la cual es una aplicación que debe operar sin conexión durante una emergencia, generar orientación médica confiable y sincronizar información al recuperar señal, se priorizaron los atributos de alta disponibilidad, fiabilidad, performance y usabilidad.
 
 <table>
   <thead>
@@ -1648,7 +1649,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td>Autoasignación de un caso</td>
       <td>Balanceador</td>
       <td>Falla de una instancia del backend</td>
-      <td>Solicitud redirigida hacia las instancias disponibles y autosignación completada satisfactoriamente.</td>
+      <td>Solicitud redirigida hacia las instancias disponibles y autoasignación completada satisfactoriamente.</td>
       <td>Solicitud redirigida en un máximo de 3 segundos y 99% de solicitudes completadas.</td>
     </tr>
     <tr>
@@ -1673,7 +1674,7 @@ En esta sección se incluye la especificación de la primera versión de los esc
     </tr>
     <tr>
       <td>QAS-05</td>
-      <td><strong>Performance</strong></td>
+      <td><strong>Fiabilidad</strong></td>
       <td>Usuario de tipo ciudadano</td>
       <td>Registra una consulta médica contando con conexión a Internet</td>
       <td>Local Persistence</td>
@@ -1686,8 +1687,8 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td><strong>Usabilidad</strong></td>
       <td>Usuario de tipo ciudadano</td>
       <td>Intenta registrar una emergencia mediante voz</td>
-      <td>User interface intuitivo</td>
-      <td>Poca iluminación y sin posibilidad de apoyo exteno</td>
+      <td>Interfaz de usuario del registro de consultas</td>
+      <td>Poca iluminación y sin posibilidad de apoyo externo</td>
       <td>Ciudadano guiado por la interfaz intuitiva y consulta registrada satisfactoriamente.</td>
       <td>El 90% de los usuarios logra completar una consulta en menos de dos minutos y sin ayuda externa.</td>
     </tr>
@@ -1699,14 +1700,14 @@ En esta sección se incluye la especificación de la primera versión de los esc
       <td>Broker y balanceador</td>
       <td>Restablecimiento de las telecomunicaciones horas después de un sismo</td>
       <td>Sincronizaciones encoladas y procesadas progresivamente hacia el backend.</td>
-      <td>Se pierden cero operaciones y el backlog es procesado menos de 10 minutos.</td>
+      <td>Se pierden cero operaciones y el backlog es procesado en menos de 10 minutos.</td>
     </tr>
   </tbody>
 </table>
 
 #### 4.1.2.3. Constraints
 
-En esta sección se especifican las restricciones que condicionan el diseño y la implementación de Lifeline. Estas restricciones provienen principalmente de la necesidad de operar después de un evento sísmico sin depender de las telecomunicaciones, de la seguridad requerida al proporcionar orientación de primeros auxilios, del tratamiento de información personal y médica, y del acceso controlado a los casos sincronizados. Así, se trabajará enfocandose en que el procesamiento crítico de la orientación debe realizarse localmente y asegurando que las respuestas proporcionadas sean seguras y vengan con un sustento verídico.
+En esta sección se especifican las restricciones que condicionan el diseño y la implementación de Lifeline. Estas restricciones provienen principalmente de la necesidad de operar después de un evento sísmico sin depender de las telecomunicaciones, de la seguridad requerida al proporcionar orientación de primeros auxilios, del tratamiento de información personal y médica, y del acceso controlado a los casos sincronizados. En consecuencia, el diseño se enfoca en que el procesamiento crítico de la orientación se realice localmente y en asegurar que las respuestas proporcionadas sean seguras y cuenten con un sustento verificable.
 
 <table>
   <thead>
@@ -1722,7 +1723,7 @@ En esta sección se especifican las restricciones que condicionan el diseño y l
     <tr>
       <td>TS-C01</td>
       <td>Ejecución local del flujo crítico de procesamiento de consultas médicas</td>
-      <td>Como desarrollador, debo garantizar que el modelo de IA y la persistencia local se ejecuten en el dispositivo sin depender del backend en la nube o servicios extersos, para que la orientación esté disponible cuando las telecomunicaciones colapsen.</td>
+      <td>Como desarrollador, debo garantizar que el modelo de IA y la persistencia local se ejecuten en el dispositivo sin depender del backend en la nube ni de servicios externos, para que la orientación esté disponible cuando las telecomunicaciones colapsen.</td>
       <td><strong>Escenario 1:</strong> Orientación médica sin conexión.<br><strong>Dado que</strong> el dispositivo no dispone de conexión a Internet y cuenta con los componentes locales instalados<br><strong>Cuando</strong> el ciudadano registra una consulta<br><strong>Entonces</strong> el sistema genera una orientación sustentada o una respuesta segura, almacena la consulta localmente y no realiza solicitudes a servicios externos.</td>
       <td>EP-02, EP-03, EP-04</td>
     </tr>
@@ -1750,14 +1751,14 @@ En esta sección se especifican las restricciones que condicionan el diseño y l
     <tr>
       <td>TS-C05</td>
       <td>Acceso exclusivo del personal médico validado a la gestión de casos</td>
-      <td>Como desarrollador, debo restringir la visualización, asignación y modificación de casos médicos a usuarios autenticados como personal médico para garantizar que quienes brinden apoyo sean profesional verídicos.</td>
+      <td>Como desarrollador, debo restringir la visualización, asignación y modificación de casos médicos a usuarios autenticados como personal médico para garantizar que quienes brinden apoyo sean profesionales verificados.</td>
       <td><strong>Escenario 1:</strong> Acceso autorizado del personal médico.<br><strong>Dado que</strong> el usuario mantiene una sesión válida y su identificación profesional registrada<br><strong>Cuando</strong> intenta visualizar o gestionar un caso<br><strong>Entonces</strong> el sistema permite únicamente las operaciones autorizadas para su rol.<br><br><strong>Escenario 2:</strong> Acceso no autorizado a un caso.<br><strong>Dado que</strong> el usuario no posee una sesión válida, tiene un rol diferente al de personal médico o su identificación profesional no ha sido validada<br><strong>Cuando</strong> intenta visualizar, autoasignarse, atender o cerrar un caso<br><strong>Entonces</strong> el sistema rechaza la operación.</td>
       <td>EP-01, EP-05</td>
     </tr>
     <tr>
       <td>TS-C06</td>
       <td>Sincronización diferida obligatoria de consultas</td>
-      <td>Como desarrollador, debo conservar las consultas registradas sin conexión y sincronizarlas automáticamente cuando se recupere la conectividad para que le personal médico pueda visualizar los casos registrados y ofrecer ayuda.</td>
+      <td>Como desarrollador, debo conservar las consultas registradas sin conexión y sincronizarlas automáticamente cuando se recupere la conectividad para que el personal médico pueda visualizar los casos registrados y ofrecer ayuda.</td>
       <td><strong>Escenario 1:</strong> Sincronización automática al recuperar la conexión.<br><strong>Dado que</strong> existe una consulta pendiente almacenada localmente<br><strong>Cuando</strong> el dispositivo recupera la conexión a Internet<br><strong>Entonces</strong> el sistema envía la consulta al backend y la marca como sincronizada después de recibir la confirmación.<br><br><strong>Escenario 2:</strong> Interrupción durante la sincronización.<br><strong>Dado que</strong> una consulta pendiente está siendo enviada al backend<br><strong>Cuando</strong> la conexión se interrumpe antes de recibir la confirmación<br><strong>Entonces</strong> el sistema conserva la consulta como pendiente y vuelve a intentar su envío al recuperar la conexión, sin crear un segundo caso con el mismo identificador.</td>
       <td>EP-04, EP-05</td>
     </tr>
@@ -1766,40 +1767,177 @@ En esta sección se especifican las restricciones que condicionan el diseño y l
 
 ### 4.1.3. Architectural Drivers Backlog
 
-El Architectural Drivers Backlog se armó con lo del capítulo II (entrevistas, personas y needfinding), la problemática post-sismo y los insumos de la sección 4.1.2. De ahí salieron tres tipos de drivers: los funcionales (user stories principales), los de calidad (escenarios QAS) y los constraints que no se pueden negociar.
+El Architectural Drivers Backlog se construyó a partir de los hallazgos del capítulo II (entrevistas, user personas y needfinding), del análisis de la problemática post-sismo desarrollado en el capítulo I y de los insumos consolidados en la sección 4.1.2. De este cruce se obtuvieron tres tipos de drivers: los funcionales, derivados de las user stories principales; los de calidad, derivados de los escenarios de atributos de calidad; y los constraints, que corresponden a condiciones no negociables del dominio.
 
-En el *Quality Attribute Workshop* (QAW) los priorizamos con dos criterios: importancia para stakeholders (ciudadano, personal médico y RescueBridge) e impacto en la complejidad técnica de la arquitectura. Los **High/High** quedaron arriba porque condicionan lo esencial de Lifeline: orientación offline con IA local y RAG, respuestas clínicamente confiables y sync al backend sin perder consultas. En total son 21 drivers (8 funcionales, 7 QAS-01 a QAS-07 y 6 TS-C01 a TS-C06), ordenados en la tabla siguiente de mayor a menor prioridad.
+Durante el *Quality Attribute Workshop* (QAW), el equipo priorizó estos drivers empleando dos criterios: la importancia para los stakeholders identificados (ciudadano, personal médico y RescueBridge) y el impacto sobre la complejidad técnica de la arquitectura. Los drivers calificados como **High/High** encabezan el backlog porque determinan las características esenciales de Lifeline, esto es, la generación de orientación médica sin conexión mediante IA local y RAG, la confiabilidad clínica de las respuestas entregadas y la sincronización con el backend sin pérdida de consultas. El backlog reúne 21 drivers en total (8 funcionales, 7 correspondientes a los escenarios QAS-01 a QAS-07 y 6 asociados a las restricciones TS-C01 a TS-C06), ordenados de mayor a menor prioridad según los criterios descritos.
 
-| Driver ID | Título de Driver | Descripción | Importancia para Stakeholders | Impacto en Architecture Technical Complexity |
-|---|---|---|---|---|
-| AD-01 | Orientación médica sin conexión (US14) | El ciudadano debe obtener indicaciones de primeros auxilios procesando la consulta localmente mediante IA on-device y RAG, sin depender de servicios en la nube durante la emergencia. | High | High |
-| AD-02 | Ejecución local del flujo crítico (TS-C01) | El procesamiento de consultas médicas (inferencia, recuperación RAG y persistencia) debe ejecutarse íntegramente en el dispositivo cuando no exista conectividad, sin llamadas a servicios externos. | High | High |
-| AD-03 | Disponibilidad offline de la orientación médica (QAS-01) | Ante la pérdida de internet post-sismo, el sistema debe procesar la consulta, generar indicaciones y almacenar la información localmente con una tasa de éxito superior al 99.5% en pruebas controladas. | High | High |
-| AD-04 | Fiabilidad de indicaciones sustentadas en base médica (QAS-03) | Las respuestas generadas deben recuperar contexto desde la Medical Knowledge Store y mantener coherencia clínica, alcanzando al menos 90% de indicaciones clasificadas como eficientes o muy eficientes. | High | High |
-| AD-05 | Respuesta segura ante contexto insuficiente (QAS-04) | Si el RAG no recupera evidencia médica suficiente, el sistema debe bloquear indicaciones no sustentadas y mostrar un mensaje seguro al ciudadano (0% de respuestas inventadas entregadas). | High | High |
-| AD-06 | Sincronización diferida obligatoria (TS-C06) | Toda consulta registrada offline debe conservarse localmente y enviarse automáticamente al backend cuando se recupere la conectividad, sin duplicar casos ante interrupciones de red. | High | High |
-| AD-07 | Sincronización automática de consultas y actualizaciones (US20) | Ciudadanos y personal médico deben contar con sincronización bidireccional en segundo plano que mantenga actualizada la información de casos entre dispositivo y backend. | High | High |
-| AD-08 | Idempotencia y tolerancia en sincronización intermitente (QAS-05) | Ante pérdida y recuperación de conexión durante el envío, el sistema debe reintentar la operación y registrar la consulta una sola vez en backend, sin pérdidas ni duplicados. | High | High |
-| AD-09 | Escalabilidad de sincronización masiva post-sismo (QAS-07) | Cuando miles de dispositivos recuperan señal simultáneamente, el backend debe encolar y procesar sincronizaciones progresivamente mediante broker y balanceador, sin pérdida de operaciones y con backlog procesado en menos de 10 minutos. | High | High |
-| AD-10 | Uso exclusivo de fuentes médicas autorizadas (TS-C02) | Solo documentos con procedencia y validación verificable pueden indexarse en la base de conocimientos; fuentes no autorizadas deben rechazarse antes de entrar al flujo RAG. | High | Medium |
-| AD-11 | Limitación del alcance clínico de la IA (TS-C03) | La IA debe limitarse a orientación inicial de primeros auxilios, bloqueando diagnósticos, prescripciones, automedicación y acciones clínicas fuera de alcance, e indicando derivación profesional ante señales de gravedad. | High | Medium |
-| AD-12 | Incorporación de fuentes médicas autorizadas (US13) | El equipo debe validar, segmentar e indexar fuentes oficiales en formato consumible por el índice RAG local para sustentar las indicaciones generadas. | High | Medium |
-| AD-13 | Autoasignación de consulta disponible (US29) | El personal médico debe poder autoasignarse un caso disponible de forma exclusiva, iniciando el ciclo de atención sin conflictos de concurrencia entre profesionales. | High | Medium |
-| AD-14 | Disponibilidad del backend en autoasignación (QAS-02) | Ante la caída de una instancia del backend, el balanceador debe redirigir la solicitud de autoasignación en menos de 3 segundos, completando el 99% de solicitudes exitosamente. | High | Medium |
-| AD-15 | Acceso exclusivo del personal médico validado (TS-C05) | Solo usuarios autenticados con rol de personal médico e identificación profesional validada pueden visualizar, autoasignarse, atender o cerrar casos sincronizados. | High | Medium |
-| AD-16 | Indicaciones médicas claras y ordenadas (US15) | Las indicaciones deben entregarse en pasos numerados, con lenguaje comprensible y validación de formato, para reducir errores de interpretación bajo estrés. | High | Medium |
-| AD-17 | Recomendación de atención profesional (US17) | El sistema debe detectar señales de gravedad configuradas y recomendar explícitamente solicitar atención médica especializada cuando corresponda. | High | Low |
-| AD-18 | Cumplimiento de la Ley N° 29733 (TS-C04) | Los datos de identidad, salud, fotografías, audios y ubicación deben tratarse conforme a la normativa peruana, aplicando principios de finalidad, minimización y protección en almacenamiento y transmisión. | High | Medium |
-| AD-19 | Usabilidad bajo estrés (QAS-06) | En condiciones de poca iluminación y sin apoyo externo, al menos el 90% de usuarios debe completar una consulta por voz en menos de 2 minutos mediante una interfaz guiada e intuitiva. | High | Medium |
-| AD-20 | Adjunto de fotografías a una consulta (US09) | El ciudadano debe poder adjuntar evidencia visual que se almacene localmente, se integre al procesamiento multimodal y se sincronice al backend cuando exista conectividad. | Medium | Medium |
-| AD-21 | Registro de consulta mediante texto (US07) | El ciudadano debe poder describir la emergencia médica mediante texto como mecanismo base de entrada al flujo de orientación offline. | Medium | Low |
+<table>
+  <thead>
+    <tr>
+      <th>Driver ID</th>
+      <th>Título de Driver</th>
+      <th>Descripción</th>
+      <th>Importancia para Stakeholders</th>
+      <th>Impacto en Architecture Technical Complexity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AD-01</td>
+      <td>Orientación médica sin conexión (US14)</td>
+      <td>El ciudadano debe obtener indicaciones de primeros auxilios procesando la consulta localmente mediante IA on-device y RAG, sin depender de servicios en la nube durante la emergencia.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-02</td>
+      <td>Ejecución local del flujo crítico (TS-C01)</td>
+      <td>El procesamiento de consultas médicas (inferencia, recuperación RAG y persistencia) debe ejecutarse íntegramente en el dispositivo cuando no exista conectividad, sin llamadas a servicios externos.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-03</td>
+      <td>Disponibilidad offline de la orientación médica (QAS-01)</td>
+      <td>Ante la pérdida de internet post-sismo, el sistema debe procesar la consulta, generar indicaciones y almacenar la información localmente, alcanzando el 99.5% de consultas finalizadas satisfactoriamente en pruebas controladas.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-04</td>
+      <td>Fiabilidad de indicaciones sustentadas en base médica (QAS-03)</td>
+      <td>Las respuestas generadas deben recuperar contexto desde la Medical Knowledge Store y mantener coherencia clínica, alcanzando al menos 90% de indicaciones clasificadas como eficientes o muy eficientes.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-05</td>
+      <td>Respuesta segura ante contexto insuficiente (QAS-04)</td>
+      <td>Si el RAG no recupera evidencia médica suficiente, el sistema debe bloquear indicaciones no sustentadas y mostrar un mensaje seguro al ciudadano, sin entregar respuestas carentes de respaldo.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-06</td>
+      <td>Sincronización diferida obligatoria (TS-C06)</td>
+      <td>Toda consulta registrada offline debe conservarse localmente y enviarse automáticamente al backend cuando se recupere la conectividad, sin duplicar casos ante interrupciones de red.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-07</td>
+      <td>Sincronización automática de consultas y actualizaciones (US20)</td>
+      <td>Ciudadanos y personal médico deben contar con sincronización bidireccional en segundo plano que mantenga actualizada la información de casos entre dispositivo y backend.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-08</td>
+      <td>Idempotencia y tolerancia en sincronización intermitente (QAS-05)</td>
+      <td>Ante pérdida y recuperación de conexión durante el envío, el sistema debe reintentar la operación y registrar la consulta una sola vez en backend, sin pérdidas ni duplicados.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-09</td>
+      <td>Escalabilidad de sincronización masiva post-sismo (QAS-07)</td>
+      <td>Cuando miles de dispositivos recuperan señal simultáneamente, el backend debe encolar y procesar sincronizaciones progresivamente mediante broker y balanceador, sin pérdida de operaciones y con backlog procesado en menos de 10 minutos.</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>AD-10</td>
+      <td>Uso exclusivo de fuentes médicas autorizadas (TS-C02)</td>
+      <td>Solo documentos con procedencia y validación verificable pueden indexarse en la base de conocimientos; las fuentes no autorizadas deben rechazarse antes de entrar al flujo RAG.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-11</td>
+      <td>Limitación del alcance clínico de la IA (TS-C03)</td>
+      <td>La IA debe limitarse a orientación inicial de primeros auxilios, bloqueando diagnósticos, prescripciones, automedicación y acciones clínicas fuera de alcance, e indicando derivación profesional ante señales de gravedad.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-12</td>
+      <td>Incorporación de fuentes médicas autorizadas (US13)</td>
+      <td>El equipo debe validar, segmentar e indexar fuentes oficiales en un formato consumible por el índice RAG local para sustentar las indicaciones generadas.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-13</td>
+      <td>Autoasignación de consulta disponible (US29)</td>
+      <td>El personal médico debe poder autoasignarse un caso disponible de forma exclusiva, iniciando el ciclo de atención sin conflictos de concurrencia entre profesionales.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-14</td>
+      <td>Disponibilidad del backend en autoasignación (QAS-02)</td>
+      <td>Ante la caída de una instancia del backend, el balanceador debe redirigir la solicitud de autoasignación en menos de 3 segundos, completando el 99% de solicitudes exitosamente.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-15</td>
+      <td>Acceso exclusivo del personal médico validado (TS-C05)</td>
+      <td>Solo usuarios autenticados con rol de personal médico e identificación profesional validada pueden visualizar, autoasignarse, atender o cerrar casos sincronizados.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-16</td>
+      <td>Indicaciones médicas claras y ordenadas (US15)</td>
+      <td>Las indicaciones deben entregarse en pasos numerados, con lenguaje comprensible y validación de formato, para reducir errores de interpretación bajo estrés.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-17</td>
+      <td>Cumplimiento de la Ley N° 29733 (TS-C04)</td>
+      <td>Los datos de identidad, salud, fotografías, audios y ubicación deben tratarse conforme a la normativa peruana, aplicando principios de finalidad, minimización y protección en almacenamiento y transmisión.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-18</td>
+      <td>Usabilidad bajo estrés (QAS-06)</td>
+      <td>En condiciones de poca iluminación y sin apoyo externo, al menos el 90% de usuarios debe completar una consulta por voz en menos de 2 minutos mediante una interfaz guiada e intuitiva.</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-19</td>
+      <td>Recomendación de atención profesional (US17)</td>
+      <td>El sistema debe detectar señales de gravedad configuradas y recomendar explícitamente solicitar atención médica especializada cuando corresponda.</td>
+      <td>High</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>AD-20</td>
+      <td>Adjunto de fotografías a una consulta (US09)</td>
+      <td>El ciudadano debe poder adjuntar evidencia visual que se almacene localmente, se integre al procesamiento multimodal y se sincronice al backend cuando exista conectividad.</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>AD-21</td>
+      <td>Registro de consulta mediante texto (US07)</td>
+      <td>El ciudadano debe poder describir la emergencia médica mediante texto como mecanismo base de entrada al flujo de orientación offline.</td>
+      <td>Medium</td>
+      <td>Low</td>
+    </tr>
+  </tbody>
+</table>
 
-A continuación, un breve sustento de por qué quedaron priorizados así los drivers del backlog:
+A continuación, se sustentan los criterios que determinaron el orden de priorización del backlog:
 
-- Lo primero que nos marcó el capítulo I y las entrevistas con ciudadanos (capítulo II) es que, después de un sismo, muchas veces no hay internet justo cuando alguien necesita orientación de primeros auxilios. Por eso la operación offline con IA local quedó arriba en la tabla.
-- En las entrevistas con personal médico salió claro que la IA puede ayudar a orientar, pero no puede inventar indicaciones ni reemplazar una evaluación profesional. Eso justifica priorizar respuestas sustentadas en fuentes médicas, bloquear respuestas sin respaldo y limitar el alcance clínico de la orientación.
-- También consideramos el escenario real de muchos celulares reconectándose a la vez cuando vuelve la señal. Ahí la sync no puede perder consultas ni duplicar casos, y el backend tiene que aguantar la carga con cola y balanceador.
-- Por último, los constraints de la sección 4.1.2.3 no los tratamos como “nice to have”: cumplir la Ley N° 29733, usar solo fuentes autorizadas y restringir la gestión de casos a personal médico validado son condiciones del dominio que la arquitectura debe respetar desde el diseño.
+- El análisis de la problemática desarrollado en el capítulo I y las entrevistas realizadas a ciudadanos en el capítulo II coinciden en que, tras un sismo de magnitud considerable, la conectividad suele interrumpirse precisamente cuando la orientación de primeros auxilios resulta más necesaria. Por ello, la operación sin conexión mediante IA local encabeza el backlog.
+- Las entrevistas con personal médico evidenciaron que la inteligencia artificial puede cumplir un rol orientador, pero no debe generar indicaciones carentes de respaldo ni sustituir la evaluación de un profesional. Este hallazgo justifica priorizar las respuestas sustentadas en fuentes médicas autorizadas, el bloqueo de indicaciones sin evidencia suficiente y la delimitación explícita del alcance clínico de la solución.
+- Asimismo, se consideró el comportamiento esperado del sistema cuando un número elevado de dispositivos recupera la señal de manera simultánea. En ese escenario, la sincronización no puede perder ni duplicar consultas, y el backend debe sostener la carga mediante un esquema de encolamiento y balanceo.
+- Finalmente, las restricciones definidas en la sección 4.1.2.3 no fueron tratadas como requisitos opcionales. El cumplimiento de la Ley N° 29733, el uso exclusivo de fuentes autorizadas y la restricción de la gestión de casos al personal médico validado constituyen condiciones del dominio que la arquitectura debe respetar desde su concepción.
 
 ### 4.1.4. Architectural Design Decisions
 
@@ -1819,7 +1957,7 @@ Drivers considerados: fiabilidad de indicaciones sustentadas (AD-04), respuesta 
 
 Patrones evaluados: **RAG local + reglas de validación clínica**, **LLM sin retrieval** y **base de conocimiento remota**.
 
-Criterio de decisión: las entrevistas con personal médico dejaron claro que la IA no puede inventar indicaciones. Se descartó el LLM solo porque aumenta alucinaciones; la KB remota falla offline. Se eligió **RAG on-device** sobre fuentes validadas, complementado con **Safety / Policy Checks** que bloquean respuestas sin sustento o fuera de alcance clínico.
+Criterio de decisión: las entrevistas con personal médico evidenciaron que la inteligencia artificial no debe generar indicaciones carentes de respaldo. Se descartó el uso de un modelo sin recuperación de contexto porque incrementa el riesgo de alucinaciones clínicas, mientras que la base de conocimiento remota resulta inoperante sin conectividad. Se optó por **RAG on-device** sobre fuentes previamente validadas, complementado con **Safety / Policy Checks** que bloquean toda respuesta sin sustento o fuera del alcance clínico permitido.
 
 **Iteración 3 — Sincronización resiliente device → cloud**
 
@@ -1843,7 +1981,7 @@ Drivers considerados: autoasignación de consulta (AD-13) y acceso exclusivo del
 
 Patrones evaluados: **concurrencia optimista** sobre el estado del caso, **bloqueo pesimista distribuido** y **autoasignación sin control de colisiones**.
 
-Criterio de decisión: la contención esperada es baja-moderada (pocos médicos compitiendo por el mismo caso). El bloqueo pesimista agrega complejidad operativa innecesaria; sin control de colisiones se duplicarían asignaciones. Se eligió **concurrencia optimista (compare-and-swap)** en Case Management, con **IAM** validando rol e identificación profesional antes de permitir la operación.
+Criterio de decisión: la contención esperada es baja o moderada, dado que resulta poco frecuente que varios profesionales intenten tomar el mismo caso de forma simultánea. El bloqueo pesimista introduce una complejidad operativa que no se justifica en ese contexto, mientras que la ausencia de control de colisiones permitiría asignaciones duplicadas. Se optó por **concurrencia optimista (compare-and-swap)** en Case Management, con **IAM** validando el rol y la identificación profesional antes de autorizar la operación.
 
 **Candidate Pattern Evaluation Matrix**
 
@@ -1918,6 +2056,11 @@ Criterio de decisión: la contención esperada es baja-moderada (pocos médicos 
     </tr>
   </tbody>
 </table>
+
+**Cobertura de los drivers de prioridad media**
+
+Los drivers AD-16 a AD-21 no requirieron una iteración estructural propia, ya que quedan satisfechos por las decisiones adoptadas en las cinco iteraciones anteriores. La entrega de indicaciones claras y ordenadas (AD-16) y la recomendación de atención profesional ante señales de gravedad (AD-19) se resuelven mediante los *Safety / Policy Checks* y la plantilla de salida definidos en la segunda iteración, que regulan tanto el formato como el contenido de la respuesta antes de mostrarla al ciudadano. El cumplimiento de la Ley N° 29733 (AD-17) se sostiene en la ejecución local del flujo crítico decidida en la primera iteración, que evita transmitir datos de salud durante la emergencia, y en el cifrado del canal de sincronización establecido en la tercera. La usabilidad bajo estrés (AD-18) corresponde al diseño de la interfaz del cliente móvil y no altera la descomposición en módulos, por lo que se aborda en el nivel de diseño de detalle. Finalmente, el adjunto de fotografías (AD-20) y el registro de consultas mediante texto (AD-21) constituyen entradas del mismo flujo de orientación local, de modo que se apoyan en el procesamiento multimodal del *On-Device AI Engine* y en el patrón Outbox ya definido para su posterior sincronización.
+
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
