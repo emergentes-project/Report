@@ -1758,48 +1758,158 @@ En esta sección se especifican las restricciones que condicionan el diseño y l
 
 ### 4.1.3. Architectural Drivers Backlog
 
-En esta sección se establece el conjunto de Architectural Drivers acordados por el equipo, resultado del proceso iterativo de Quality Attribute Workshop. El backlog incluye los Functional Drivers seleccionados (user stories principales), los Quality Attribute Drivers (derivados de los QAS) y todos los Constraints. Los drivers se ordenan colocando primero aquellos de alta importancia para Stakeholders y alto impacto en Architecture Technical Complexity.
+El Architectural Drivers Backlog se armó con lo del capítulo II (entrevistas, personas y needfinding), la problemática post-sismo y los insumos de la sección 4.1.2. De ahí salieron tres tipos de drivers: los funcionales (user stories principales), los de calidad (escenarios QAS) y los constraints que no se pueden negociar.
 
-| Driver ID | Título de Driver                                       | Descripción                                                                                           | Importancia para Stakeholders | Impacto en Architecture Technical Complexity |
-|---|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------|----------------------------------------------|
-| AD-01 | Orientación médica sin conexión (US14)                 | El sistema debe generar indicaciones médicas confiables ejecutando IA y RAG localmente, sin internet. | High                          | High                                         |
-| AD-02 | Sincronización automática de consultas (US20)          | Las consultas y sus actualizaciones deben sincronizarse automáticamente al recuperar conexión.        | High                          | High                                         |
-| AD-03 | Disponibilidad offline del sistema (QAS-01)            | La aplicación debe mantener su funcionalidad completa sin acceso a internet.                          | High                          | High                                         |
-| AD-04 | Rendimiento de la inferencia local (QAS-02)            | Las respuestas de IA deben generarse con baja latencia en dispositivos de gama media.                 | High                          | High                                         |
-| AD-05 | Confiabilidad de las respuestas médicas (QAS-04)       | El sistema no debe generar indicaciones sin sustento en la base médica.                               | High                          | High                                         |
-| AD-06 | Tolerancia a fallos en la sincronización (QAS-06)      | El envío y recepción de datos debe ser resiliente a conexiones débiles o intermitentes.               | High                          | High                                         |
-| AD-07 | Ejecución de IA sin conexión a internet (TS-C01)       | Restricción técnica: el modelo y el RAG deben correr 100% on-device.                                  | High                          | High                                         |
-| AD-08 | Incorporación de fuentes médicas autorizadas (US13)    | El contenido que sustenta las respuestas debe provenir de fuentes validadas e indexadas.              | High                          | Medium                                       |
-| AD-09 | Indicaciones médicas claras y ordenadas (US15)         | La orientación generada debe presentarse en pasos comprensibles y sin jerga médica.                   | High                          | Medium                                       |
-| AD-10 | Compatibilidad con dispositivos de gama media (TS-C02) | Restricción de hardware: el modelo debe operar dentro de límites de memoria y batería definidos.      | High                          | Medium                                       |
-| AD-11 | Uso obligatorio de fuentes médicas validadas (TS-C04)  | Restricción: prohibido generar contenido clínico no sustentado.                                       | High                          | Medium                                       |
-| AD-12 | Seguridad de los datos médicos locales (QAS-05)        | Los datos médicos y fotografías deben protegerse mediante cifrado y control de acceso.                | High                          | Medium                                       |
-| AD-13 | Autoasignación de una consulta disponible (US29)       | El personal médico debe poder tomar responsabilidad de un caso sin conflictos de concurrencia.        | High                          | Medium                                       |
-| AD-14 | Recomendación de atención profesional (US17)           | El sistema debe identificar señales de gravedad y sugerir apoyo profesional.                          | High                          | Low                                          |
-| AD-15 | Cumplimiento de la Ley N° 29733 (TS-C03)               | Restricción legal sobre el tratamiento de datos personales y médicos.                                 | High                          | Low                                          |
-| AD-16 | Adjunto de fotografías a una consulta (US09)           | El ciudadano debe poder complementar su consulta con evidencia visual.                                | Medium                        | Medium                                       |
-| AD-17 | Consistencia concurrente en gestión de casos (QAS-07)  | El sistema debe evitar asignaciones duplicadas de un mismo caso.                                      | Medium                        | Medium                                       |
-| AD-18 | Registro de una consulta mediante texto (US07)         | Funcionalidad base para el ingreso de una consulta médica.                                            | Medium                        | Low                                          |
-| AD-19 | Usabilidad bajo estrés (QAS-03)                        | La interfaz debe permitir consultas rápidas mediante voz y cámara.                                    | High                          | Medium                                       |
-| AD-20 | Entrega dentro del cronograma académico (TS-C05)       | Restricción de negocio/académica sobre los tiempos de entrega del proyecto.                           | Medium                        | Low                                          |
+En el *Quality Attribute Workshop* (QAW) los priorizamos con dos criterios: importancia para stakeholders (ciudadano, personal médico y RescueBridge) e impacto en la complejidad técnica de la arquitectura. Los **High/High** quedaron arriba porque condicionan lo esencial de Lifeline: orientación offline con IA local y RAG, respuestas clínicamente confiables y sync al backend sin perder consultas. En total son 21 drivers (8 funcionales, 7 QAS-01 a QAS-07 y 6 TS-C01 a TS-C06), ordenados en la tabla siguiente de mayor a menor prioridad.
+
+| Driver ID | Título de Driver | Descripción | Importancia para Stakeholders | Impacto en Architecture Technical Complexity |
+|---|---|---|---|---|
+| AD-01 | Orientación médica sin conexión (US14) | El ciudadano debe obtener indicaciones de primeros auxilios procesando la consulta localmente mediante IA on-device y RAG, sin depender de servicios en la nube durante la emergencia. | High | High |
+| AD-02 | Ejecución local del flujo crítico (TS-C01) | El procesamiento de consultas médicas (inferencia, recuperación RAG y persistencia) debe ejecutarse íntegramente en el dispositivo cuando no exista conectividad, sin llamadas a servicios externos. | High | High |
+| AD-03 | Disponibilidad offline de la orientación médica (QAS-01) | Ante la pérdida de internet post-sismo, el sistema debe procesar la consulta, generar indicaciones y almacenar la información localmente con una tasa de éxito superior al 99.5% en pruebas controladas. | High | High |
+| AD-04 | Fiabilidad de indicaciones sustentadas en base médica (QAS-03) | Las respuestas generadas deben recuperar contexto desde la Medical Knowledge Store y mantener coherencia clínica, alcanzando al menos 90% de indicaciones clasificadas como eficientes o muy eficientes. | High | High |
+| AD-05 | Respuesta segura ante contexto insuficiente (QAS-04) | Si el RAG no recupera evidencia médica suficiente, el sistema debe bloquear indicaciones no sustentadas y mostrar un mensaje seguro al ciudadano (0% de respuestas inventadas entregadas). | High | High |
+| AD-06 | Sincronización diferida obligatoria (TS-C06) | Toda consulta registrada offline debe conservarse localmente y enviarse automáticamente al backend cuando se recupere la conectividad, sin duplicar casos ante interrupciones de red. | High | High |
+| AD-07 | Sincronización automática de consultas y actualizaciones (US20) | Ciudadanos y personal médico deben contar con sincronización bidireccional en segundo plano que mantenga actualizada la información de casos entre dispositivo y backend. | High | High |
+| AD-08 | Idempotencia y tolerancia en sincronización intermitente (QAS-05) | Ante pérdida y recuperación de conexión durante el envío, el sistema debe reintentar la operación y registrar la consulta una sola vez en backend, sin pérdidas ni duplicados. | High | High |
+| AD-09 | Escalabilidad de sincronización masiva post-sismo (QAS-07) | Cuando miles de dispositivos recuperan señal simultáneamente, el backend debe encolar y procesar sincronizaciones progresivamente mediante broker y balanceador, sin pérdida de operaciones y con backlog procesado en menos de 10 minutos. | High | High |
+| AD-10 | Uso exclusivo de fuentes médicas autorizadas (TS-C02) | Solo documentos con procedencia y validación verificable pueden indexarse en la base de conocimientos; fuentes no autorizadas deben rechazarse antes de entrar al flujo RAG. | High | Medium |
+| AD-11 | Limitación del alcance clínico de la IA (TS-C03) | La IA debe limitarse a orientación inicial de primeros auxilios, bloqueando diagnósticos, prescripciones, automedicación y acciones clínicas fuera de alcance, e indicando derivación profesional ante señales de gravedad. | High | Medium |
+| AD-12 | Incorporación de fuentes médicas autorizadas (US13) | El equipo debe validar, segmentar e indexar fuentes oficiales en formato consumible por el índice RAG local para sustentar las indicaciones generadas. | High | Medium |
+| AD-13 | Autoasignación de consulta disponible (US29) | El personal médico debe poder autoasignarse un caso disponible de forma exclusiva, iniciando el ciclo de atención sin conflictos de concurrencia entre profesionales. | High | Medium |
+| AD-14 | Disponibilidad del backend en autoasignación (QAS-02) | Ante la caída de una instancia del backend, el balanceador debe redirigir la solicitud de autoasignación en menos de 3 segundos, completando el 99% de solicitudes exitosamente. | High | Medium |
+| AD-15 | Acceso exclusivo del personal médico validado (TS-C05) | Solo usuarios autenticados con rol de personal médico e identificación profesional validada pueden visualizar, autoasignarse, atender o cerrar casos sincronizados. | High | Medium |
+| AD-16 | Indicaciones médicas claras y ordenadas (US15) | Las indicaciones deben entregarse en pasos numerados, con lenguaje comprensible y validación de formato, para reducir errores de interpretación bajo estrés. | High | Medium |
+| AD-17 | Recomendación de atención profesional (US17) | El sistema debe detectar señales de gravedad configuradas y recomendar explícitamente solicitar atención médica especializada cuando corresponda. | High | Low |
+| AD-18 | Cumplimiento de la Ley N° 29733 (TS-C04) | Los datos de identidad, salud, fotografías, audios y ubicación deben tratarse conforme a la normativa peruana, aplicando principios de finalidad, minimización y protección en almacenamiento y transmisión. | High | Medium |
+| AD-19 | Usabilidad bajo estrés (QAS-06) | En condiciones de poca iluminación y sin apoyo externo, al menos el 90% de usuarios debe completar una consulta por voz en menos de 2 minutos mediante una interfaz guiada e intuitiva. | High | Medium |
+| AD-20 | Adjunto de fotografías a una consulta (US09) | El ciudadano debe poder adjuntar evidencia visual que se almacene localmente, se integre al procesamiento multimodal y se sincronice al backend cuando exista conectividad. | Medium | Medium |
+| AD-21 | Registro de consulta mediante texto (US07) | El ciudadano debe poder describir la emergencia médica mediante texto como mecanismo base de entrada al flujo de orientación offline. | Medium | Low |
+
+A continuación, un breve sustento de por qué quedaron priorizados así los drivers del backlog:
+
+- Lo primero que nos marcó el capítulo I y las entrevistas con ciudadanos (capítulo II) es que, después de un sismo, muchas veces no hay internet justo cuando alguien necesita orientación de primeros auxilios. Por eso la operación offline con IA local quedó arriba en la tabla.
+- En las entrevistas con personal médico salió claro que la IA puede ayudar a orientar, pero no puede inventar indicaciones ni reemplazar una evaluación profesional. Eso justifica priorizar respuestas sustentadas en fuentes médicas, bloquear respuestas sin respaldo y limitar el alcance clínico de la orientación.
+- También consideramos el escenario real de muchos celulares reconectándose a la vez cuando vuelve la señal. Ahí la sync no puede perder consultas ni duplicar casos, y el backend tiene que aguantar la carga con cola y balanceador.
+- Por último, los constraints de la sección 4.1.2.3 no los tratamos como “nice to have”: cumplir la Ley N° 29733, usar solo fuentes autorizadas y restringir la gestión de casos a personal médico validado son condiciones del dominio que la arquitectura debe respetar desde el diseño.
 
 ### 4.1.4. Architectural Design Decisions
 
-El equipo siguió el proceso iterativo del *Quality Attribute Workshop* (ADD), evaluando en cada iteración los drivers de mayor prioridad (High/High) del backlog antes de continuar con los de prioridad media. En la **Iteración 1** se abordaron los drivers relacionados con la ejecución de IA sin conexión y el rendimiento de la inferencia local (AD-01, AD-04, AD-07, AD-10), dado que estos condicionan la viabilidad completa del producto: si el modelo no puede ejecutarse eficientemente en el dispositivo, ninguna otra funcionalidad tiene sentido. Se evaluaron patrones de despliegue de IA (edge inference vs. cloud vs. híbrido) y se seleccionó una arquitectura de **IA on-device** con modelo cuantizado y motor de inferencia embebido, complementada con un índice local de RAG.
+Con el Architectural Drivers Backlog ya priorizado, el equipo aplicó el proceso iterativo de *Attribute-Driven Design* (ADD) sobre los drivers **High/High** antes de pasar a los de prioridad media. Cada iteración cerró una decisión estructural que después se reflejó en los diagramas C2 y C3.
 
-En la **Iteración 2** se trabajaron los drivers de sincronización y confiabilidad de datos (AD-02, AD-03, AD-06, AD-12), evaluando patrones de persistencia y sincronización offline-first, seleccionando el patrón **Outbox** junto con reintentos automáticos y control de idempotencia para evitar duplicados.
+**Iteración 1 — Orientación offline con IA local**
 
-En la **Iteración 3** se abordó la consistencia concurrente en la gestión de casos (AD-13, AD-17), comparando mecanismos de control de concurrencia optimista y pesimista, seleccionando **control de concurrencia optimista** dado que la contención esperada (número de profesionales médicos autoasignándose simultáneamente el mismo caso) es baja-moderada.
+Drivers considerados: orientación médica sin conexión (AD-01), ejecución local del flujo crítico (AD-02) y disponibilidad offline de la orientación (AD-03).
+
+Patrones evaluados: inferencia **on-device**, inferencia en **nube** e inferencia **híbrida** (local con fallback cloud).
+
+Criterio de decisión: TS-C01 y la problemática post-sismo exigen que la orientación funcione sin internet en el minuto crítico. Se descartó la nube pura porque deja al ciudadano sin ayuda cuando caen las telecomunicaciones; el híbrido tampoco resuelve ese escenario si no hay señal. Se eligió **IA on-device con modelo cuantizado** y **Medical Knowledge Store local** para sostener el flujo offline.
+
+**Iteración 2 — Fiabilidad clínica de las respuestas**
+
+Drivers considerados: fiabilidad de indicaciones sustentadas (AD-04), respuesta segura ante contexto insuficiente (AD-05), uso exclusivo de fuentes autorizadas (AD-10), limitación del alcance clínico (AD-11) e incorporación de fuentes médicas (AD-12).
+
+Patrones evaluados: **RAG local + reglas de validación clínica**, **LLM sin retrieval** y **base de conocimiento remota**.
+
+Criterio de decisión: las entrevistas con personal médico dejaron claro que la IA no puede inventar indicaciones. Se descartó el LLM solo porque aumenta alucinaciones; la KB remota falla offline. Se eligió **RAG on-device** sobre fuentes validadas, complementado con **Safety / Policy Checks** que bloquean respuestas sin sustento o fuera de alcance clínico.
+
+**Iteración 3 — Sincronización resiliente device → cloud**
+
+Drivers considerados: sincronización diferida obligatoria (AD-06), sincronización automática (AD-07) e idempotencia ante red intermitente (AD-08).
+
+Patrones evaluados: **Offline-first + Outbox**, **sync síncrona directa al reconectar** y **sync event-driven remota sin cola local**.
+
+Criterio de decisión: QAS-05 exige cero consultas perdidas o duplicadas si la conexión se corta a mitad del envío. La sync directa bloquea al usuario y no tolera intermitencia; la remota sin Outbox pierde datos offline. Se eligió **Local Database + Outbox** con reintentos automáticos e **idempotencia** por identificador de consulta.
+
+**Iteración 4 — Escala de sincronización post-sismo**
+
+Drivers considerados: escalabilidad de sync masiva (AD-09) y disponibilidad del backend en autoasignación (AD-14).
+
+Patrones evaluados: **procesamiento síncrono masivo en API**, **Load Balancer + Message Broker + Async Workers** y **única instancia monolítica sin balanceo**.
+
+Criterio de decisión: QAS-07 plantea miles de dispositivos reconectándose a la vez; una API síncrona saturaría el backend y afectaría operaciones inmediatas del personal médico. Se eligió **Load Balancer** frente a la API y **Message Broker + Async Workers** para procesar el backlog de sync sin bloquear las operaciones síncronas de casos.
+
+**Iteración 5 — Gestión de casos por personal médico**
+
+Drivers considerados: autoasignación de consulta (AD-13) y acceso exclusivo del personal médico validado (AD-15).
+
+Patrones evaluados: **concurrencia optimista** sobre el estado del caso, **bloqueo pesimista distribuido** y **autoasignación sin control de colisiones**.
+
+Criterio de decisión: la contención esperada es baja-moderada (pocos médicos compitiendo por el mismo caso). El bloqueo pesimista agrega complejidad operativa innecesaria; sin control de colisiones se duplicarían asignaciones. Se eligió **concurrencia optimista (compare-and-swap)** en Case Management, con **IAM** validando rol e identificación profesional antes de permitir la operación.
 
 **Candidate Pattern Evaluation Matrix**
 
-| Driver ID     | Título de Driver             | Patrón 1                                                                                         |                                                         | Patrón 2                                               |                                                               | Patrón 3                                                                           |                                                                           |
-|---------------|------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-|               |                              | **Pro**                                                                                          | **Con**                                                 | **Pro**                                                | **Con**                                                       | **Pro**                                                                            | **Con**                                                                   |
-| AD-01 / AD-07 | Ejecución de IA sin conexión | **On-device inference** (modelo cuantizado embebido): funciona 100% offline, sin latencia de red | Consumo de batería/memoria; limita el tamaño del modelo | **Cloud inference**: modelos más grandes y precisos    | Inutilizable sin conexión, viola constraint principal         | **Híbrido** (on-device + fallback cloud): balance entre precisión y disponibilidad | Mayor complejidad; el fallback no sirve en el escenario crítico sin señal |
-| AD-02 / AD-06 | Sincronización de consultas  | **Offline-first + Outbox**: garantiza entrega eventual sin pérdida ni duplicados                 | Requiere lógica adicional de reconciliación             | **Sincronización síncrona directa** al recuperar señal | Bloquea la UI; falla si la conexión es intermitente           | **Event-driven vía cola de mensajes remota**                                       | Depende de infraestructura de mensajería adicional; mayor costo operativo |
-| AD-13 / AD-17 | Autoasignación de casos      | **Concurrencia optimista** (compare-and-swap sobre estado del caso) — simple, bajo overhead      | Requiere reintento si hay colisión                      | **Bloqueo pesimista** (locks distribuidos)             | Mayor complejidad operativa y menor throughput                | —                                                                                  | —                                                                         |
-| AD-12         | Seguridad de datos locales   | **Cifrado a nivel de SO** (Keystore/Keychain) — aprovecha mecanismos ya certificados             | Dependencia de la plataforma (Android/iOS)              | **Cifrado propio** (librería custom)                   | Mayor control, pero mayor riesgo de errores de implementación | —                                                                                  | —                                                                         |
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Driver ID</th>
+      <th rowspan="2">Título de Driver</th>
+      <th colspan="2">Patrón 1</th>
+      <th colspan="2">Patrón 2</th>
+      <th colspan="2">Patrón 3</th>
+    </tr>
+    <tr>
+      <th>Pro</th>
+      <th>Con</th>
+      <th>Pro</th>
+      <th>Con</th>
+      <th>Pro</th>
+      <th>Con</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AD-01 / AD-02 / AD-03</td>
+      <td>Orientación offline con IA local</td>
+      <td><strong>On-device inference + RAG local:</strong> funciona sin red, baja latencia percibida, cumple TS-C01</td>
+      <td>Mayor consumo de batería/memoria; limita tamaño del modelo</td>
+      <td><strong>Cloud inference:</strong> modelos más grandes y actualizables</td>
+      <td>Inutilizable sin conexión; incumple el escenario post-sismo</td>
+      <td><strong>Híbrido on-device + fallback cloud:</strong> mayor precisión cuando hay red</td>
+      <td>El fallback no sirve en el minuto crítico sin señal; mayor complejidad</td>
+    </tr>
+    <tr>
+      <td>AD-04 / AD-05</td>
+      <td>Fiabilidad clínica de respuestas</td>
+      <td><strong>RAG local + Safety Checks:</strong> respuestas sustentadas; bloquea indicaciones sin contexto (0% inventadas)</td>
+      <td>Requiere indexación y mantenimiento de fuentes validadas</td>
+      <td><strong>LLM sin retrieval:</strong> implementación más simple</td>
+      <td>Mayor riesgo de alucinaciones clínicas; incumple expectativas del personal médico</td>
+      <td><strong>Knowledge base remota:</strong> catálogo centralizado siempre actualizado</td>
+      <td>Depende de conectividad; no usable offline</td>
+    </tr>
+    <tr>
+      <td>AD-06 / AD-07 / AD-08</td>
+      <td>Sincronización resiliente</td>
+      <td><strong>Offline-first + Outbox + idempotencia:</strong> no pierde consultas; tolera red intermitente</td>
+      <td>Lógica extra de reconciliación y estados pending/synced</td>
+      <td><strong>Sync síncrona directa al reconectar:</strong> flujo simple de implementar</td>
+      <td>Bloquea UI; falla con cortes mid-flight; riesgo de duplicados</td>
+      <td><strong>Sync remota sin cola local:</strong> menos estado en dispositivo</td>
+      <td>Pierde consultas si falla antes de confirmación; no cumple TS-C06</td>
+    </tr>
+    <tr>
+      <td>AD-09 / AD-14</td>
+      <td>Escala y disponibilidad cloud</td>
+      <td><strong>LB + Broker + Async Workers:</strong> absorbe picos post-sismo; API sigue respondiendo operaciones síncronas</td>
+      <td>Mayor costo e infraestructura cloud</td>
+      <td><strong>API síncrona masiva sin cola:</strong> menos componentes</td>
+      <td>Saturación del backend; incumple QAS-07 (&lt;10 min backlog)</td>
+      <td><strong>Instancia única sin balanceo:</strong> despliegue simple</td>
+      <td>Single point of failure; incumple QAS-02 de redirección &lt;3 s</td>
+    </tr>
+    <tr>
+      <td>AD-13 / AD-15</td>
+      <td>Autoasignación de casos médicos</td>
+      <td><strong>Concurrencia optimista + IAM:</strong> bajo overhead; solo médico validado asigna</td>
+      <td>Reintento manual o automático si hay colisión</td>
+      <td><strong>Bloqueo pesimista distribuido:</strong> evita colisiones de forma estricta</td>
+      <td>Mayor complejidad operativa y menor throughput</td>
+      <td><strong>Sin control de concurrencia:</strong> implementación mínima</td>
+      <td>Riesgo de doble asignación del mismo caso</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
