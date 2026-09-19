@@ -2733,3 +2733,5 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 **Anexo D — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
 
 **Anexo E — Bounded Context Canvases:** https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
+
+**Anexo F — Video de exposición TB1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQBNFWEp0eu-Tq5JqPx6zMy0Af61bR_jIWZgAegB6poM8xQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MV8loY
