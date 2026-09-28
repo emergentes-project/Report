@@ -2824,7 +2824,11 @@ La paleta de colores de Lifeline equilibra la urgencia médica con la necesidad 
 
 - **Clinical White (`#F8FAFC`) y Dark Slate (`#0F172A`):** Fondos claros y textos de muy alto contraste que aseguran una lectura inmediata sin deslumbramiento.
 
-*(Espacio sugerido para insertar la captura de la paleta generada en Coolors con los códigos: `0D3B4C` - `1CA3C8` - `F59E0B` - `DC2626` - `F8FAFC` - `0F172A`)*
+**Ejemplo Paleta de Colores**
+
+<p align="center">
+  <img src="public/assets/images/chapter-6/ColorPalette-LifeLine.png" alt="LifeLine Color Palette">
+</p>
 
 **Spacing**
 
