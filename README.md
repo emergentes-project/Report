@@ -2709,6 +2709,112 @@ A continuación se presentan los diagramas de componentes (C3) por bounded conte
   <img src="public/assets/images/chapter-4/C3-IAM.png" alt="C3 - Component Level Diagram - IAM">
 </p>
 
+# Capítulo V: Tactical-Level Software Design
+
+## 5.1. Bounded Context: IAM
+
+### 5.1.1. Domain Layer.
+
+### 5.1.2. Interface Layer.
+
+### 5.1.3. Application Layer.
+
+### 5.1.4. Infrastructure Layer.
+
+### 5.1.5. Bounded Context Software Architecture Component Level Diagrams.
+
+### 5.1.6. Bounded Context Software Architecture Code Level Diagrams.
+
+#### 5.1.6.1. Bounded Context Domain Layer Class Diagrams.
+
+#### 5.1.6.2. Bounded Context Database Design Diagram.
+
+## 5.2. Bounded Context: Consultation
+
+### 5.2.1. Domain Layer.
+
+### 5.2.2. Interface Layer.
+
+### 5.2.3. Application Layer.
+
+### 5.2.4. Infrastructure Layer.
+
+### 5.2.5. Bounded Context Software Architecture Component Level Diagrams.
+
+### 5.2.6. Bounded Context Software Architecture Code Level Diagrams.
+
+#### 5.2.6.1. Bounded Context Domain Layer Class Diagrams.
+
+#### 5.2.6.2. Bounded Context Database Design Diagram.
+
+## 5.3. Bounded Context: Medical Bases
+
+### 5.3.1. Domain Layer.
+
+### 5.3.2. Interface Layer.
+
+### 5.3.3. Application Layer.
+
+### 5.3.4. Infrastructure Layer.
+
+### 5.3.5. Bounded Context Software Architecture Component Level Diagrams.
+
+### 5.3.6. Bounded Context Software Architecture Code Level Diagrams.
+
+#### 5.3.6.1. Bounded Context Domain Layer Class Diagrams.
+
+#### 5.3.6.2. Bounded Context Database Design Diagram.
+
+## 5.4. Bounded Context: IAM
+
+### 5.4.1. Domain Layer.
+
+### 5.4.2. Interface Layer.
+
+### 5.4.3. Application Layer.
+
+### 5.4.4. Infrastructure Layer.
+
+### 5.4.5. Bounded Context Software Architecture Component Level Diagrams.
+
+### 5.4.6. Bounded Context Software Architecture Code Level Diagrams.
+
+#### 5.4.6.1. Bounded Context Domain Layer Class Diagrams.
+
+#### 5.4.6.2. Bounded Context Database Design Diagram.
+
+# Capítulo VI: UX/UI Design
+
+## 6.1. Style Guidelines.
+
+### 6.1.1. General Style Guidelines.
+
+### 6.1.2. Web, Mobile & Devices Style Guidelines.
+
+## 6.2. Information Architecture.
+
+### 6.2.2. Labeling Systems.
+
+### 6.2.3. Searching Systems.
+
+### 6.2.4. SEO Tags and Meta Tags.
+
+### 6.2.5. Navigation Systems.
+
+## 6.3. Landing Page UI Design.
+
+### 6.3.1. Landing Page Wireframe.
+
+### 6.3.2. Landing Page Mock-up.
+
+## 6.4. Applications UX/UI Design.
+
+### 6.4.1. Applications Wireframes.
+
+### 6.4.2. Applications Wireflow Diagrams.
+
+
+
 # Conclusiones y recomendaciones
 
 ## Conclusiones
