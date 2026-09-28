@@ -2789,7 +2789,60 @@ A continuación se presentan los diagramas de componentes (C3) por bounded conte
 
 ### 6.1.1. General Style Guidelines.
 
+**Branding**
+
+El branding de **Lifeline** (desarrollado por la startup *RescueBridge*) está diseñado para transmitir serenidad, respaldo clínico y resiliencia en situaciones críticas de supervivencia post-sismo. La identidad visual evita la saturación gráfica y se apoya en formas limpias, escudos de protección y elementos de conexión que reflejan tanto el auxilio inmediato al ciudadano afectado como el puente de información hacia los equipos médicos de rescate. El objetivo es proyectar una imagen de alta confiabilidad técnica e institucional, fundamental para que el usuario confíe en las indicaciones generadas por la inteligencia artificial local cuando las telecomunicaciones colapsan.
+
+**Typography**
+
+La tipografía de Lifeline fue seleccionada priorizando la legibilidad extrema en pantallas móviles bajo condiciones adversas, tales como poca iluminación, polvo en el ambiente o lectura rápida con manos temblorosas producto del estrés post-sismo. Utilizamos la fuente **Montserrat** (en sus pesos *Bold* y *SemiBold*) para los títulos, encabezados de emergencia y botones de llamada a la acción, lo que permite jerarquizar visualmente las alertas y los pasos numerados con firmeza. Para el cuerpo del texto, descripciones de primeros auxilios y formularios, empleamos la fuente **Inter** (o *Roboto* como fallback nativo), una tipografía *sans-serif* optimizada para interfaces digitales que garantiza una lectura clara, sin fatiga visual y de rápida comprensión incluso en tamaños reducidos.
+
+**Ejemplo Montserrat**
+
+<p align="center">
+  <img src="public/assets/images/chapter-6/MontserratWikipedia.png" alt="Montserrat Font Example">
+</p>
+
+
+**Ejemplo Inter**
+
+<p align="center">
+  <img src="public/assets/images/chapter-6/InterWikipedia.png" alt="Inter Font Example">
+</p>
+
+**Colors**
+
+La paleta de colores de Lifeline equilibra la urgencia médica con la necesidad psicológica de mantener la calma durante un desastre natural. Se utilizan tonos azules profundos y cianes clínicos para transmitir seguridad, profesionalismo e innovación tecnológica (asociados al motor de IA *on-device*), complementados con colores semánticos de alto contraste (ámbar y rojo) tomados de los estándares internacionales de triaje médico para advertir peligros, señalar estados de conexión y priorizar casos críticos.
+
+- **Deep Rescue Teal (`#0D3B4C`):** Color primario de marca; transmite solidez, autoridad médica y confianza.
+
+- **Lifeline Cyan (`#1CA3C8`):** Color de acento e interactividad; representa la asistencia de la IA local y acciones principales de navegación.
+
+- **Alert Amber (`#F59E0B`):** Color semántico de advertencia; utilizado para indicar el funcionamiento en *Modo Offline*, consultas pendientes en la cola local (*Outbox*) o casos de prioridad media.
+
+- **Emergency Red (`#DC2626`):** Color semántico crítico; reservado exclusivamente para señales de gravedad clínica, bloqueos de seguridad y solicitudes urgentes de apoyo profesional.
+
+- **Clinical White (`#F8FAFC`) y Dark Slate (`#0F172A`):** Fondos claros y textos de muy alto contraste que aseguran una lectura inmediata sin deslumbramiento.
+
+*(Espacio sugerido para insertar la captura de la paleta generada en Coolors con los códigos: `0D3B4C` - `1CA3C8` - `F59E0B` - `DC2626` - `F8FAFC` - `0F172A`)*
+
+**Spacing**
+
+Se ha implementado un sistema de espaciado amplio y estructurado (basado en una grilla de **8dp**) en toda la interfaz móvil para eliminar la sobrecarga visual y reducir la carga cognitiva del usuario en peligro. Los márgenes generosos entre tarjetas, los pasos numerados de primeros auxilios bien separados y las áreas táctiles amplias (mínimo **48x48dp** por botón) están diseñados específicamente para prevenir toques accidentales cuando el ciudadano opera el teléfono bajo altos niveles de ansiedad o movimiento.
+
+**Tono de Comunicación**
+
+El tono de comunicación de Lifeline es **empático, directo, respetuoso y sereno**, adaptándose a las exigencias emocionales de nuestros dos segmentos objetivo:
+
+- **Serio y Sereno (no alarmista):** Frente al ciudadano herido o asustado, el sistema evita el pánico utilizando oraciones cortas, imperativas pero calmadas, guiándolo paso a paso sin emplear jerga médica compleja.
+
+- **Formal y Objetivo:** Frente al personal médico, la aplicación presenta los reportes sincronizados, los síntomas y la geolocalización con un lenguaje clínico estructurado y conciso, facilitando el triaje rápido sin pretender reemplazar el criterio del profesional de la salud.
+
+- **Transparente y Prudente:** La aplicación comunica claramente sus limitaciones cuando no cuenta con contexto suficiente en la base médica local y ordena de forma taxativa buscar ayuda profesional ante signos de gravedad.
+
 ### 6.1.2. Web, Mobile & Devices Style Guidelines.
+
+
 
 ## 6.2. Information Architecture.
 
