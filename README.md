@@ -2846,7 +2846,29 @@ El tono de comunicación de Lifeline es **empático, directo, respetuoso y seren
 
 ### 6.1.2. Web, Mobile & Devices Style Guidelines.
 
+Dado que **Lifeline** está realizada arquitectónicamente como una solución móvil *offline-first* con procesamiento de inteligencia artificial *on-device*, los lineamientos de diseño de interfaz se concentran íntegramente en el entorno de dispositivos móviles (**Android e iOS**). El objetivo es ofrecer una experiencia de usuario (UX) intuitiva, de mínima fricción y adaptada a las convenciones operativas móviles para garantizar que cualquier persona pueda actuar en menos de dos minutos durante una emergencia sísmica.
 
+**Estructura y Navegación**
+
+- **Móvil (Android e iOS):** Se prioriza el diseño centrado en la ergonomía a una sola mano (*thumb-friendly zone*), ubicando los controles principales en la mitad inferior de la pantalla. Se implementa una barra de navegación inferior (*Bottom Navigation Bar* basada en *Material Design 3* para Android y *Tab Bar* en iOS) que divide claramente las vistas según el rol autenticado: acceso inmediato a "Nueva Consulta", "Historial Local / Outbox" y "Perfil" para el ciudadano; y acceso a "Casos Disponibles", "Mis Asignaciones" e "Historial" para el personal médico.
+
+- **Visibilidad del Estado del Sistema:** En la parte superior de todas las pantallas se mantiene un indicador persistente y no intrusivo que informa al usuario si la aplicación está operando en **Modo Offline (IA Local Activa)** o **Conectado (Sincronizando con la nube)**, brindando certeza operativa en todo momento. Las transiciones entre pantallas son rápidas y lineales, eliminando menús ocultos o animaciones pesadas que retrasen la atención de una herida.
+
+**Tipografía y Espaciado**
+
+Para garantizar la máxima legibilidad en escenarios de desastre (baja luminosidad o lectura en movimiento), se respeta una jerarquía visual estricta mediante márgenes amplios que aíslan cada instrucción médica. Las respuestas generadas por el flujo RAG no se muestran como bloques densos de texto, sino que se estructuran en tarjetas secuenciales numeradas a modo de *checklist*. Asimismo, las fuentes se configuran con escalado dinámico (*sp* en Android y *Dynamic Type* en iOS) para adaptarse a las preferencias de accesibilidad visual del sistema operativo sin romper la estructura de las vistas.
+
+**Elementos Visuales**
+
+- **Iconografía y Controles Multimodales:** Se utilizan íconos vectoriales minimalistas, de trazo grueso y universalmente reconocibles (*Material Symbols* y *SF Symbols*) acompañados siempre de etiquetas de texto claras. Dado que escribir texto resulta difícil bajo estado de shock, la pantalla de registro de consultas destaca controles multimodales de gran tamaño para la **grabación de voz** y la **captura fotográfica de heridas**.
+
+- **Componentes de Triaje y Gestión:** Para el personal médico, la información se organiza mediante *Chips* de filtrado rápido por estado (`Disponible`, `Asignado`, `En progreso`, `Cerrado`), insignias (*Badges*) de color que resaltan las consultas que solicitan apoyo profesional urgente, y paneles desplegables inferiores (*Bottom Sheets*) para visualizar las coordenadas de ubicación y registrar las observaciones de cierre sin perder el contexto de la lista principal.
+
+**Interacción**
+
+- **Botones:** Siguen un patrón de ubicación inferior de fácil alcance para el pulgar, utilizando botones elevados (*Elevated / Filled Buttons*) de alto contraste para las acciones críticas como *"Obtener Orientación Médica"*, *"Solicitar Apoyo Profesional"* o *"Autoasignar Caso"*. Se aplica estrictamente la teoría del color para diferenciar acciones constructivas (azul/cian), advertencias de emergencia (rojo) y acciones secundarias o de cancelación (gris neutro).
+
+- **Validación de Procesos y Feedback:** Para operaciones críticas —como confirmar la solicitud de rescate médico, autoasignarse la responsabilidad de un paciente o cerrar formalmente un caso clínico—, el sistema exige una confirmación explícita mediante cuadros de diálogo breves (*Modal Dialogs*) o *Bottom Sheets* de seguridad, previniendo errores involuntarios en campo.
 
 ## 6.2. Information Architecture.
 
