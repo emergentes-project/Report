@@ -2659,11 +2659,15 @@ Se aprecia este cuadro con la relación estructural final entre los cuatro bound
 
 ### 4.3.1. Software Architecture System Landscape Diagram
 
+El landscape sitúa a Lifeline frente a sus dos actores —ciudadano y personal médico— y al único sistema externo de la solución: **Cloudinary**, servicio de almacenamiento, transformación y entrega de evidencias fotográficas. El ciudadano solicita orientación y consulta el estado de sus casos; el personal médico gestiona y atiende los casos sincronizados. Lifeline almacena y entrega las evidencias fotográficas en Cloudinary mediante HTTPS/REST cuando existe conectividad; la captura de la fotografía permanece en el dispositivo.
+
 <p align="center">
   <img src="public/assets/images/chapter-4/Landscape Diagram.png" alt="System Landscape Diagram - Lifeline">
 </p>
 
 ### 4.3.2. Software Architecture Context Level Diagrams
+
+El diagrama de contexto (C1) mantiene el mismo recorte: Lifeline es la plataforma móvil *offline-first* con IA on-device y RAG, y sincroniza casos con un backend modular cuando hay red. Cloudinary aparece como sistema de software externo; no hay otros sistemas vecinos en esta versión.
 
 <p align="center">
   <img src="public/assets/images/chapter-4/Context Level Diagrams.png" alt="C1 - Software Architecture Context Level Diagram - Lifeline">
@@ -2671,11 +2675,15 @@ Se aprecia este cuadro con la relación estructural final entre los cuatro bound
 
 ### 4.3.3. Software Architecture Container Level Diagrams
 
+En el nivel de contenedores (C2) se separa lo que corre en el dispositivo de lo que corre en la nube. La *Mobile App* (Flutter/Dart) usa la cámara local, persiste consultas y evidencias en *Local Database* (SQLite) y recupera conocimiento del *Medical Knowledge Store* para RAG. La sincronización sale por el *Load Balancer* hacia el *Backend Modular API* (Spring Boot). Ese backend es el único contenedor que se relaciona con **Cloudinary**: almacena y entrega las evidencias fotográficas ya sincronizadas. El *Message Broker* y los *Async Workers* absorben el trabajo secundario, y *Cloud Database* (PostgreSQL) queda como fuente de verdad de identidades, roles, casos e historial.
+
 <p align="center">
   <img src="public/assets/images/chapter-4/Container Level Diagrams.png" alt="C2 - Software Architecture Container Level Diagram - Lifeline">
 </p>
 
 ### 4.3.4. Software Architecture Deployment Diagrams
+
+El despliegue distingue el *Smartphone* (app, SQLite e índice médico local) de *Microsoft Azure* (ingress, pool de dos instancias del backend, mensajería, workers y PostgreSQL). **Cloudinary Cloud** se despliega fuera de Azure, como SaaS. Las instancias del *Backend Modular API* son las que publican y consultan evidencias fotográficas en Cloudinary; el teléfono no tiene esa dependencia, de modo que la consulta de emergencia sigue funcionando sin internet.
 
 <p align="center">
   <img src="public/assets/images/chapter-4/Deployment Diagrams.png" alt="Deployment - Software Architecture Deployment Diagram - Lifeline">
@@ -2683,9 +2691,11 @@ Se aprecia este cuadro con la relación estructural final entre los cuatro bound
 
 ### 4.3.5. Software Architecture Component Level Diagrams
 
-A continuación se presentan los diagramas de componentes (C3) por bounded context, desglosando la estructura interna de cada módulo definido en el nivel de contenedores.
+A continuación se presentan los diagramas de componentes (C3) por bounded context, desglosando la estructura interna de cada módulo definido en el nivel de contenedores. Consultation y Medical Bases viven en la *Mobile App*; IAM y Case Management viven en el *Backend Modular API*. Cloudinary solo aparece en Case Management, porque es el backend quien persiste las evidencias tras la sincronización.
 
 **Consultation**
+
+El ciudadano describe la emergencia en *Emergency Consultation UI* (texto, voz o fotografía tomada con la cámara del dispositivo). *Consultation Service* orquesta el flujo, pide contexto a *Medical Knowledge API*, ejecuta inferencia en *On-Device AI Engine* y aplica reglas en *Consultation Domain*. *Local Persistence and Sync* guarda la consulta y las evidencias en SQLite y, al recuperar señal, sincroniza el pendiente hacia el *Load Balancer*. No hay conexión desde este contexto hacia Cloudinary.
 
 <p align="center">
   <img src="public/assets/images/chapter-4/C3-Consultation.png" alt="C3 - Component Level Diagram - Consultation">
@@ -2693,17 +2703,23 @@ A continuación se presentan los diagramas de componentes (C3) por bounded conte
 
 **Medical Bases**
 
+*Consultation Service* solicita contexto médico a *Medical Knowledge API* (OHS / Published Language). *Medical Knowledge Service* coordina la recuperación sobre fuentes validadas; *Semantic Retriever* selecciona fragmentos para RAG y *Knowledge Repository* consulta el *Medical Knowledge Store* local.
+
 <p align="center">
   <img src="public/assets/images/chapter-4/C3-Medical Bases.png" alt="C3 - Component Level Diagram - Medical Bases">
 </p>
 
 **Case Management**
 
+El *Load Balancer* enruta operaciones de casos a *Case Management API* y autenticación a *IAM Interface*. *Case Management Service* aplica el ciclo de vida en *Case Domain*, persiste en *Case Repository* / *Cloud Database*, publica trabajo secundario vía *Async Event Publisher* y es el componente que **almacena y obtiene evidencias fotográficas en Cloudinary** tras la sincronización.
+
 <p align="center">
   <img src="public/assets/images/chapter-4/C3-Case Management.png" alt="C3 - Component Level Diagram - Case Management">
 </p>
 
 **IAM**
+
+*Case Management Service* consulta identidad y rol del profesional en *IAM Interface*. *IAM Service* aplica reglas de *Identity and Access Domain* y persiste usuarios, perfiles y roles mediante *IAM Repository* en *Cloud Database*.
 
 <p align="center">
   <img src="public/assets/images/chapter-4/C3-IAM.png" alt="C3 - Component Level Diagram - IAM">
@@ -2908,7 +2924,7 @@ Para garantizar la máxima legibilidad en escenarios de desastre (baja luminosid
 
 5. En ADD priorizamos drivers High/High ligados a IA sin conexión, rendimiento local y sync confiable. De ahí salió la decisión de inferencia on-device con RAG local, patrón Outbox para no perder consultas al sincronizar, y concurrencia optimista en la autoasignación de casos. Cloud queda para cuando hay red, no como dependencia del momento crítico.
 
-6. Con DDD quedaron cuatro bounded contexts: IAM, Consultation, Medical Bases y Case Management. El context mapping evita acoplar de más: OHS/ACL entre contextos y un Shared Kernel chico solo para datos mínimos del paciente entre Consultation y Case Management. La arquitectura C4 (landscape, context, containers, deployment) cierra esa decisión con un monolito modular offline-first y backend en la nube para la parte de sync y triaje.
+6. Con DDD quedaron cuatro bounded contexts: IAM, Consultation, Medical Bases y Case Management. El context mapping evita acoplar de más: OHS/ACL entre contextos y un Shared Kernel chico solo para datos mínimos del paciente entre Consultation y Case Management. La arquitectura C4 (landscape, context, containers, deployment) cierra esa decisión con un monolito modular offline-first y backend en la nube para la parte de sync y triaje. Las evidencias fotográficas se capturan con la cámara del dispositivo y se guardan en SQLite; Cloudinary queda como sistema externo ligado solo al backend, de modo que la orientación de emergencia no depende de ese servicio.
 
 
 ## Recomendaciones
