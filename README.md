@@ -2727,15 +2727,389 @@ El *Load Balancer* enruta operaciones de casos a *Case Management API* y autenti
 
 # Capítulo V: Tactical-Level Software Design
 
+Los elementos siguientes describen la estructura propuesta de Lifeline en cuanto a los Bounded Contexts considerando tanto en el backend desplegado en la nube como de forma local dentro de aplicación móvil. IAM y Case Management se implementan como módulos del mismo backend Spring Boot; Consultation y Medical Bases ejecutan su lógica en Flutter. Los nombres de clases y funciones se ajustan al diseño acordado y aún no representan código implementado.
+
 ## 5.1. Bounded Context: IAM
+
+IAM administra cuentas, roles y perfiles. Case Management verifica la habilitación de un profesional mediante una interfaz interna que solo devuelve un booleano.
 
 ### 5.1.1. Domain Layer.
 
+#### Aggregates
+
+**User**
+
+Representa la cuenta común del ciudadano o del profesional médico.
+
+- **Atributos**
+  - `id: UUID`
+  - `email: String`
+  - `password: String` (hash)
+  - `roleId: UUID`
+  - `firstName: String`
+  - `lastName: String`
+  - `phone: String?`
+  - `createdAt: Instant`
+  - `updatedAt: Instant`
+- **Funciones**
+  - `register(email, passwordHash, roleId, firstName, lastName, phone): User`
+  - `updatePersonalData(firstName, lastName, phone): void`
+
+**CitizenProfile**
+
+Agrupa la información relevante para ubicar y proveer atención a un ciudadano.
+
+- **Atributos**
+  - `id: UUID`
+  - `userId: UUID`
+  - `city: String`
+  - `district: String`
+  - `address: String`
+  - `dateOfBirth: LocalDate`
+  - `preExistingConditions: String?`
+  - `allergies: String?`
+  - `emergencyContact: EmergencyContact?`
+  - `createdAt: Instant`
+  - `updatedAt: Instant`
+- **Funciones**
+  - `updateHealthData(preExistingConditions, allergies): void`
+  - `updateContactAndAddress(city, district, address, emergencyContact): void`
+
+**MedicalProfile**
+
+Conserva las credenciales e información del profesional médico.
+
+- **Atributos**
+  - `id: UUID`
+  - `userId: UUID`
+  - `professionalCategory: ProfessionalCategory`
+  - `professionalLicenseNumber: String`
+  - `specialty: String?`
+  - `verificationStatus: String`
+  - `verifiedAt: Instant?`
+  - `createdAt: Instant`
+  - `updatedAt: Instant`
+- **Funciones**
+  - `updateProfessionalData(professionalCategory, professionalLicenseNumber, specialty): void`
+  - `verify(verifiedAt): void`
+  - `isEnabled(): boolean`
+
+#### Entities
+
+**Role**
+
+Lista los roles disponibles dentro de la aplicación.
+
+- **Atributos**
+  - `id: UUID`
+  - `code: RolesCode`
+  - `name: RolesName`
+- **Funciones**
+  - `create(code, name): Role`
+
+#### Value Objects
+
+**RolesCode**
+
+Expresa el código único de un rol, en este caso para los roles de `CITIZEN` y `MEDICAL_PROFESSIONAL`.
+
+- **Atributos**
+  - `value: String`
+- **Funciones**
+  - `RolesCode(value: String)`
+
+**RolesName**
+
+Expresa el nombre visible cada rol.
+
+- **Atributos**
+  - `value: String`
+- **Funciones**
+  - `RolesName(value: String)`
+
+**EmergencyContact**
+
+Agrupa nombre y teléfono del contacto de emergencia dentro de `CitizenProfile`.
+
+- **Atributos**
+  - `name: String`
+  - `phone: String`
+- **Funciones**
+  - `EmergencyContact(name: String, phone: String)`
+
+**ProfessionalCategory**
+
+Lista la categoría de profesional admitidos como personal médico en la aplicación.
+
+- **Atributos**
+  - `value: String`
+- **Funciones**
+  - `from(value: String): ProfessionalCategory`
+
+---
+
 ### 5.1.2. Interface Layer.
+
+#### Controllers
+
+**AuthController**
+
+Expone el registro y el inicio de sesión mediante recursos REST.
+
+- **Funciones**
+  - `registerCitizen(RegisterCitizenResource): AuthenticatedUserResource`.
+  - `registerMedicalProfessional(RegisterMedicalProfessionalResource): AuthenticatedUserResource`.
+  - `signIn(SignInResource): AuthenticatedUserResource`.
+
+**UsersController**
+
+Expone la lectura y actualización autorizada de datos personales y generales del usuario.
+
+- **Funciones**
+  - `getUserById(id: UUID): UserResource`.
+  - `updateUser(id: UUID, UpdateUserResource): UserResource`.
+
+**CitizenProfilesController**
+
+Expone y permite actualizar los datos específicos del ciudadano autenticado.
+
+- **Funciones**
+  - `getCitizenProfile(userId: UUID): CitizenProfileResource`.
+  - `updateCitizenProfile(userId: UUID, UpdateCitizenProfileResource): CitizenProfileResource`.
+
+**MedicalProfilesController**
+
+Expone el perfil de profesional médico y su verificación autorizada.
+
+- **Funciones**
+  - `getMedicalProfile(userId: UUID): MedicalProfileResource`.
+  - `updateMedicalProfile(userId: UUID, UpdateMedicalProfileResource): MedicalProfileResource`.
+  - `verifyMedicalProfile(userId: UUID, VerifyMedicalProfileResource): MedicalProfileResource`.
+
+**RoleController**
+
+Publica el catálogo de roles disponibles que necesita la interfaz de registro.
+
+- **Funciones**
+  - `getAllRoles(): List<RoleResource>`.
+
+#### Resources and Assemblers
+
+**RegisterCitizenResource**
+
+Recibe los datos públicos necesarios para crear `User` y `CitizenProfile` sin exponer la columna `password` cifrada.
+
+- **Atributos**: `email`, `password`, `firstName`, `lastName`, `phone`, `city`, `district`, `address`, `dateOfBirth`, `emergencyContact`.
+
+**RegisterMedicalProfessionalResource**
+
+Recibe los datos comunes de cuenta y los propios del profesional médico.
+
+- **Atributos**: `email`, `password`, `firstName`, `lastName`, `phone`, `professionalCategory`, `professionalLicenseNumber`, `specialty`.
+
+**RegisterCitizenCommandFromResourceAssembler**
+
+Traduce el registro de ciudadano al comado correspondiente.
+
+- **Funciones**: `toCommand(RegisterCitizenResource): RegisterCitizenCommand`.
+
+**RegisterMedicalProfessionalCommandFromResourceAssembler**
+
+Traduce el registro de profesional médico al comando correspondiente.
+
+- **Funciones**: `toCommand(RegisterMedicalProfessionalResource): RegisterMedicalProfessionalCommand`.
+
+**UserContextFacade**
+
+Publica hacia Case Management la verificación mínima de habilitación profesional dentro del mismo backend.
+
+- **Funciones**: `isEnabledMedicalProfessional(userId: UUID): boolean`.
+
+---
 
 ### 5.1.3. Application Layer.
 
+#### Commands
+
+**RegisterCitizenCommand**
+
+Solicita crear la cuenta y su perfil como ciudadano.
+
+- **Atributos**: `email`, `password`, `firstName`, `lastName`, `phone`, `city`, `district`, `address`, `dateOfBirth`, `emergencyContact`.
+
+**RegisterMedicalProfessionalCommand**
+
+Solicita crear la cuenta y su perfil como profesional médico.
+
+- **Atributos**: `email`, `password`, `firstName`, `lastName`, `phone`, `professionalCategory`, `professionalLicenseNumber`, `specialty`.
+
+**SignInUserCommand**
+
+Solicita autenticar una cuenta ya registrada.
+
+- **Atributos**: `email: String`, `password: String`.
+
+**UpdateUserCommand**
+
+Solicita modificar datos generales del usuario autorizado.
+
+- **Atributos**: `userId: UUID`, `firstName: String`, `lastName: String`, `phone: String?`.
+
+**UpdateCitizenProfileCommand**
+
+Solicita modificar datos personales y de salud del ciudadano.
+
+- **Atributos**: `userId: UUID`, `city`, `district`, `address`, `emergencyContact`, `preExistingConditions`, `allergies`.
+
+**UpdateMedicalProfileCommand**
+
+Solicita actualizar los datos profesionales del perfil médico.
+
+- **Atributos**: `userId: UUID`, `professionalCategory`, `professionalLicenseNumber`, `specialty`.
+
+**VerifyMedicalProfileCommand**
+
+Solicita registrar la verificación de un profesional médico.
+
+- **Atributos**: `userId: UUID`, `verifiedAt: Instant`.
+
+**SeedRolesCommand**
+
+Solicita crear los roles iniciales que aún no existan.
+
+No necesita atributos: el catálogo inicial se define en el servicio de IAM.
+
+#### Queries
+
+**GetUserByIdQuery**
+
+Recupera una cuenta por su identificador.
+
+- **Atributos**: `userId: UUID`.
+
+**GetCitizenProfileByUserIdQuery**
+
+Recupera el perfil de ciudadano asociado a una cuenta.
+
+- **Atributos**: `userId: UUID`.
+
+**GetMedicalProfileByUserIdQuery**
+
+Recupera el perfil de profesional médico asociado a una cuenta.
+
+- **Atributos**: `userId: UUID`.
+
+**GetAllRolesQuery**
+
+Solicita los roles disponibles en el catálogo.
+
+#### Services
+
+**UserCommandServiceImpl**
+
+Implementa `UserCommandService`
+
+- **Funciones**: `handle(RegisterCitizenCommand)`, `handle(RegisterMedicalProfessionalCommand)`, `handle(SignInUserCommand)`, `handle(UpdateUserCommand)`.
+
+**CitizenProfileCommandServiceImpl**
+
+Implementa `CitizenProfileCommandService`.
+
+- **Funciones**: `handle(UpdateCitizenProfileCommand): CitizenProfile`.
+
+**MedicalProfileCommandServiceImpl**
+
+Implementa `MedicalProfileCommandService`.
+
+- **Funciones**: `handle(UpdateMedicalProfileCommand)`, `handle(VerifyMedicalProfileCommand)`.
+
+**RoleCommandServiceImpl**
+
+Implementa la precarga idempotente del catálogo de roles.
+
+- **Funciones**: `handle(SeedRolesCommand): void`.
+
+**UserQueryServiceImpl**
+
+Implementa `UserQueryService`.
+
+- **Funciones**: `handle(GetUserByIdQuery): User`.
+
+**CitizenProfileQueryServiceImpl**
+
+Implementa `CitizenProfileQueryService` para leer perfiles ciudadanos.
+
+- **Funciones**: `handle(GetCitizenProfileByUserIdQuery): CitizenProfile`.
+
+**MedicalProfileQueryServiceImpl**
+
+Implementa `MedicalProfileQueryService` para leer perfiles médicos.
+
+- **Funciones**: `handle(GetMedicalProfileByUserIdQuery): MedicalProfile`.
+
+**RoleQueryServiceImpl**
+
+Implementa `RoleQueryService` para consultar el catálogo de roles.
+
+- **Funciones**: `handle(GetAllRolesQuery): List<Role>`.
+
+**ApplicationReadyEventHandler**
+
+Al iniciar Spring Boot, solicita a `RoleCommandService` la precarga de `CITIZEN` y `MEDICAL_PROFESSIONAL`.
+
+- **Funciones**: `onApplicationReady(ApplicationReadyEvent): void`.
+
+**UserContextFacadeImpl**
+
+Consulta internamente rol y verificación y devuelve a la ACL solo un booleano.
+
+- **Funciones**: `isEnabledMedicalProfessional(userId: UUID): boolean`.
+
+---
+
 ### 5.1.4. Infrastructure Layer.
+
+#### Repositories
+
+**UserRepository**
+
+Persiste el agregado `User` y permite hacer búsquedas de usuarios.
+
+- **Funciones**: `findById(UUID)`, `findByEmail(String)`, `save(User)`.
+
+**CitizenProfileRepository**
+
+Persiste `CitizenProfile` con una referencia por UUID a `User`.
+
+- **Funciones**: `findByUserId(UUID)`, `save(CitizenProfile)`.
+
+**MedicalProfileRepository**
+
+Persiste `MedicalProfile` con una referencia por UUID a `User`.
+
+- **Funciones**: `findByUserId(UUID)`, `save(MedicalProfile)`.
+
+**RoleRepository**
+
+Persiste y consulta el catálogo de roles.
+
+- **Funciones**: `findByCode(RolesCode): Optional<Role>`, `findAll(): List<Role>`, `save(Role): Role`.
+
+#### Security and Client Adapters
+
+**BCryptPasswordHasher**
+
+Implementa `PasswordHasher` para almacenar y comprobar `password` de `User` como hash.
+
+- **Funciones**: `hash(rawPassword: String): String`, `matches(rawPassword: String, storedHash: String): boolean`.
+
+**JwtAccessTokenIssuer**
+
+Implementa `AccessTokenIssuer` para emitir la credencial de una sesión autenticada.
+
+- **Funciones**: `issue(userId: UUID, role: RolesCode): String`.
+
+---
 
 ### 5.1.5. Bounded Context Software Architecture Component Level Diagrams.
 
@@ -2747,13 +3121,241 @@ El *Load Balancer* enruta operaciones de casos a *Case Management API* y autenti
 
 ## 5.2. Bounded Context: Consultation
 
+Consultation registra la emergencia y genera orientación con IA on-device, sin depender de internet ni de una sesión previa.
+
 ### 5.2.1. Domain Layer.
+
+#### Aggregates
+
+**Consultation**
+
+Es la raíz local de una consulta de emergencia que se crea en Flutter aun sin internet o sin sesión.
+
+- **Atributos**
+  - `id: UUID`
+  - `ownerUserId: UUID?`
+  - `inputText: String?`
+  - `photoLocalPath: String?`
+  - `photoStorageKey: String?`
+  - `helpRequested: boolean`
+  - `createdAt: DateTime`
+  - `updatedAt: DateTime`
+  - `serverAckAt: DateTime?`
+  - `patient: Patient?`
+  - `answer: ConsultationAnswer?`
+- **Funciones**
+  - `create(inputText, photoLocalPath, patient): Consultation`
+  - `requestHelp(): void`
+  - `recordServerAck(ackAt: DateTime): void`
+
+#### Entities
+
+**Patient**
+
+Describe a la persona afectada y el lugar del incidente.
+
+- **Atributos**
+  - `id: UUID`
+  - `consultationId: UUID`
+  - `name: String?`
+  - `ageYears: int?`
+  - `locationDescription: String?`
+  - `province: String?`
+  - `latitude: double?`
+  - `longitude: double?`
+
+`province` guarda el nombre de la provincia seleccionada; puede quedar vacío si no se conoce la ubicación.
+
+**ConsultationAnswer**
+
+Conserva la orientación que se mostró al usuario y las fuentes utilizadas.
+
+- **Atributos**
+  - `id: UUID`
+  - `consultationId: UUID`
+  - `guidanceText: String?`
+  - `guidanceStatus: GuidanceStatus`
+  - `preliminaryPriority: String?`
+  - `professionalHelpRecommended: boolean`
+  - `sourceReferences: List<Map<String, dynamic>>`
+  - `createdAt: DateTime`
+
+#### Models
+
+**EvidenceSnippet**
+
+Expresa una fuente médica recuperada en el lenguaje de Consultation, sin exponer las entidades de `Medical Bases`.
+
+- **Atributos**
+  - `text: String`
+  - `sourceReference: String`
+
+**GuidanceStatus**
+
+Representa el estado de la respuesta de orientación generada en el dispositivo.
+
+- **Atributos**
+  - `value: String`
+
+#### Services
+
+**GuidanceSafetyPolicy**
+
+Comprueba que la respuesta generada tenga sustento suficiente antes de presentarla como orientación.
+
+- **Funciones**: `evaluate(answer: ConsultationAnswer, evidence: List<EvidenceSnippet>): ConsultationAnswer`.
+
+---
 
 ### 5.2.2. Interface Layer.
 
+#### Controllers
+
+**ConsultationController**
+
+Coordina el estado de las pantallas y llama a los servicios de aplicación, sin leer SQLite ni ejecutar Gemma directamente.
+
+- **Funciones**: `createConsultation()`, `generateGuidance()`, `requestHelp()`, `showSyncStatus()`.
+
+---
+
 ### 5.2.3. Application Layer.
 
+#### Services
+
+**CreateConsultationService**
+
+Valida texto o fotografía y guarda la consulta con su paciente opcional.
+
+- **Funciones**: `create(inputText, photoLocalPath, patient): Consultation`.
+
+**GenerateGuidanceService**
+
+Obtiene evidencia desde Medical Bases, ejecuta la inferencia local y aplica `GuidanceSafetyPolicy`.
+
+- **Funciones**: `generate(consultationId: UUID): ConsultationAnswer`.
+
+**RequestHelpService**
+
+Marca la solicitud de atención y prepara la entrega pendiente.
+
+- **Funciones**: `request(consultationId: UUID): Consultation`.
+
+**SyncPendingConsultationsService**
+
+Reintenta las entregas pendientes con el mismo UUID e `idempotencyKey`, así como confirma la consulta solo al recibir respuesta del servidor.
+
+- **Funciones**: `syncPending(): void`.
+
+#### Ports
+
+**MedicalEvidencePort**
+
+Solicita fragmentos pertinentes de Medical Bases y los traduce a `EvidenceSnippet`.
+
+- **Funciones**: `search(inputText: String): List<EvidenceSnippet>`.
+
+**OnDeviceInferencePort**
+
+Abstrae la variante y el runtime de Gemma elegidos para el teléfono.
+
+- **Funciones**: `infer(consultation: Consultation, evidence: List<EvidenceSnippet>): ConsultationAnswer`.
+
+**CurrentUserPort**
+
+Proporciona el UUID de una sesión existente, si la hay, sin bloquear una consulta invitada.
+
+- **Funciones**: `currentUserId(): UUID?`.
+
+---
+
 ### 5.2.4. Infrastructure Layer.
+
+En Flutter, esta capa se implementa bajo el nombre de `data`.
+
+#### Local Persistence
+
+**ConsultationsDao**
+
+Guarda `consultations` en SQLite.
+
+- **Funciones**: `insert(ConsultationEntity)`, `findById(UUID)`, `update(ConsultationEntity)`.
+
+**PatientsDao**
+
+Guarda los datos del paciente en `patients`.
+
+- **Funciones**: `insert(PatientEntity)`, `findByConsultationId(UUID)`.
+
+**Provinces**
+
+Proporciona sin conexión los nombres seleccionables de las provincias para el formulario de consulta.
+
+- **Funciones**: `listProvinceNames(): List<String>`.
+
+**ConsultationAnswersDao**
+
+Guarda `consultation_answers` en SQLite.
+
+- **Funciones**: `insert(ConsultationAnswerEntity)`, `findByConsultationId(UUID)`.
+
+**SyncOutboxDao**
+
+Guarda el trabajo de sincronización, el vencimiento de su reserva y su confirmación.
+
+- **Funciones**: `enqueue(consultationId, idempotencyKey)`, `leasePending(now)`, `recordRetry(id, nextAttemptAt)`, `acknowledge(id, ackedAt)`.
+
+**ConsultationRepositoryImpl**
+
+Traduce las entidades SQLite hacia `ConsultationRepository`.
+
+- **Funciones**: `save(Consultation)`, `findById(UUID)`.
+
+**ConsultationSyncRepositoryImpl**
+
+Traduce los trabajos de `sync_outbox` hacia `ConsultationSyncRepository`.
+
+- **Funciones**: `enqueue(consultationId, idempotencyKey)`, `pendingSync()`.
+
+**PrivatePhotoStore**
+
+Conserva una sola fotografía por consulta en el almacenamiento privado del dispositivo mientras esté pendiente de carga.
+
+- **Funciones**: `save(consultationId, image): String`, `read(localPath): bytes`.
+
+#### AI and External Adapters
+
+**GemmaInferenceAdapter**
+
+Ejecuta la inferencia en el dispositivo a partir de la información ingresada por el usuario.
+
+- **Funciones**: `infer(Consultation, List<EvidenceSnippet>): ConsultationAnswer`.
+
+**MedicalBasesEvidenceAdapter**
+
+Es el ACL que transforma los resultados de Medical Bases en `EvidenceSnippet`.
+
+- **Funciones**: `search(inputText: String): List<EvidenceSnippet>`.
+
+**IamCurrentUserAdapter**
+
+Lee el identificador de la sesión local.
+
+- **Funciones**: `currentUserId(): UUID?`.
+
+**PhotoUploadApiService**
+
+Envía por HTTPS la fotografía a Spring Boot y recibe `photoStorageKey`.
+
+- **Funciones**: `uploadPhoto(consultationId, image): String`.
+
+**ConsultationApiService**
+
+Envía la consulta después de obtener la clave de foto con la misma clave de idempotencia en cada reintento.
+
+- **Funciones**: `submitConsultation(Consultation, idempotencyKey): serverAck`.
+
+---
 
 ### 5.2.5. Bounded Context Software Architecture Component Level Diagrams.
 
@@ -2765,13 +3367,146 @@ El *Load Balancer* enruta operaciones de casos a *Case Management API* y autenti
 
 ## 5.3. Bounded Context: Medical Bases
 
+Medical Bases conserva en la aplicación móvil las fuentes médicas validadas y un índice local para las consultas RAG sin internet.
+
 ### 5.3.1. Domain Layer.
+
+#### Aggregates
+
+**KnowledgePackage**
+
+Representa una versión del conocimiento médico incluida en la aplicación y disponible sin conexión.
+
+- **Atributos**
+  - `id: UUID`
+  - `version: String`
+  - `indexFilePath: String`
+  - `status: String`
+  - `installedAt: DateTime`
+- **Funciones**
+  - `activate(): void`
+  - `isActive(): bool`
+
+
+#### Entities
+
+**MedicalSource**
+
+Describe un documento revisado que pertenece a un paquete.
+
+- **Atributos**
+  - `id: UUID`
+  - `packageId: UUID`
+  - `title: String`
+  - `publisher: String`
+  - `sourceUrl: String?`
+  - `edition: String?`
+  - `validatedAt: DateTime`
+  - `license: String?`
+
+**MedicalChunk**
+
+Representa un fragmento de una fuente para la búsqueda RAG.
+
+- **Atributos**
+  - `id: UUID`
+  - `sourceId: UUID`
+  - `ordinal: int`
+  - `content: String`
+  - `indexKey: String`
+  - `tokenCount: int?`
+
+#### Repositories
+
+**MedicalKnowledgeRepository**
+
+Declara el acceso al paquete activo y a sus fuentes sin exponer SQLite a la aplicación.
+
+- **Funciones**: `getActivePackage(): KnowledgePackage?`, `getSources(packageId: UUID): List<MedicalSource>`, `getChunks(sourceId: UUID): List<MedicalChunk>`.
+
+---
 
 ### 5.3.2. Interface Layer.
 
+#### Pages
+
+**KnowledgeStatusPage**
+
+Muestra si el paquete médico incluido con la aplicación está instalado y listo para las consultas.
+
+- **Funciones**: `showStatus(KnowledgePackage?)`.
+
+Consultation consume la búsqueda mediante su `MedicalEvidencePort`.
+
+---
+
 ### 5.3.3. Application Layer.
 
+#### Services
+
+**GetActiveKnowledgePackageService**
+
+Obtiene la versión instalada que está habilitada para búsquedas.
+
+- **Funciones**: `getActive(): KnowledgePackage?`.
+
+**SearchMedicalKnowledgeService**
+
+Recupera fragmentos del paquete activo y conserva la referencia a su fuente para que Consultation pueda citarla.
+
+- **Funciones**: `search(query: String): List<MedicalChunk>`.
+
+**InstallKnowledgePackageService**
+
+Coordina la instalación del paquete incluido en una versión de la app y activa la nueva versión cuando datos e índice están listos.
+
+- **Funciones**: `installBundledPackage(): KnowledgePackage`.
+
+---
+
 ### 5.3.4. Infrastructure Layer.
+
+En Flutter, los adaptadores de infraestructura están bajo el nombre de `data` y los archivos del paquete se distribuyen en `assets/medical_bases`.
+
+#### Local Persistence and Index
+
+**KnowledgePackagesDao**
+
+Persiste `knowledge_packages` y permite encontrar el paquete activo.
+
+- **Funciones**: `insert(KnowledgePackageEntity)`, `findActive()`.
+
+**MedicalSourcesDao**
+
+Persiste las fuentes médicas de cada paquete.
+
+- **Funciones**: `insert(MedicalSourceEntity)`, `listByPackageId(UUID)`.
+
+**MedicalChunksDao**
+
+Persiste los fragmentos de cada fuente.
+
+- **Funciones**: `insert(MedicalChunkEntity)`, `listBySourceId(UUID)`.
+
+**MedicalIndexReader**
+
+Consulta el índice semántico local y enlaza sus resultados con `indexKey` de `MedicalChunk`.
+
+- **Funciones**: `search(indexFilePath, query): List<String>`.
+
+**KnowledgePackageInstaller**
+
+Copia al dispositivo las fuentes, fragmentos e índice empaquetados con la aplicación y comprueba que puedan leerse antes de activar el paquete.
+
+- **Funciones**: `install(bundlePath): KnowledgePackage`.
+
+**MedicalKnowledgeRepositoryImpl**
+
+Traduce registros SQLite y resultados del índice a `MedicalKnowledgeRepository`.
+
+- **Funciones**: `getActivePackage()`, `getSources(packageId)`, `getChunks(sourceId)`.
+
+---
 
 ### 5.3.5. Bounded Context Software Architecture Component Level Diagrams.
 
@@ -2783,13 +3518,378 @@ El *Load Balancer* enruta operaciones de casos a *Case Management API* y autenti
 
 ## 5.4. Bounded Context: Case Management
 
+Case Management recibe las consultas sincronizadas y gestiona la atención posterior dentro del backend.
+
 ### 5.4.1. Domain Layer.
+
+#### Aggregates
+
+**ConsultationSubmission**
+
+Representa la consulta recibida desde la aplicación móvil y conserva como identificador el UUID creado en el teléfono.
+
+- **Atributos**
+  - `id: UUID`
+  - `citizenUserId: UUID?`
+  - `inputText: String?`
+  - `photoStorageKey: String?`
+  - `helpRequested: boolean`
+  - `consultationRecordedAt: Instant`
+  - `receivedAt: Instant`
+  - `patient: Patient?`
+  - `answer: ConsultationAnswer?`
+- **Funciones**
+  - `receive(id: UUID, citizenUserId: UUID?, inputText: String?, photoStorageKey: String?, helpRequested: boolean, consultationRecordedAt: Instant, receivedAt: Instant, patient: Patient?, answer: ConsultationAnswer?): ConsultationSubmission`
+  - `hasTextOrPhoto(): boolean`
+
+**Case**
+
+Representa la atención profesional que se forma a partir de una consulta recibida.
+
+- **Atributos**
+  - `id: UUID`
+  - `consultationId: UUID`
+  - `status: CaseStatus`
+  - `observation: String?`
+  - `createdAt: Instant`
+  - `updatedAt: Instant`
+  - `closedAt: Instant?`
+  - `assignations: List<Assignation>`
+  - `statusHistory: List<CaseStatusHistory>`
+- **Funciones**
+  - `assign(professionalUserId: UUID): Assignation`
+  - `changeStatus(newStatus: CaseStatus, userId: UUID?): void`
+  - `close(observation: String, userId: UUID): void`
+
+#### Entities
+
+**Patient**
+
+Conserva los datos de la persona afectada y la ubicación del incidente recibidos con la consulta.
+
+- **Atributos**
+  - `id: UUID`
+  - `consultationId: UUID`
+  - `name: String?`
+  - `ageYears: Integer?`
+  - `locationDescription: String?`
+  - `province: String?`
+  - `latitude: Decimal?`
+  - `longitude: Decimal?`
+
+`province` conserva el nombre de provincia seleccionado en el móvil para filtrar las consultas recibidas.
+
+**ConsultationAnswer**
+
+Conserva la orientación generada en el móvil y sus fuentes médicas.
+
+- **Atributos**
+  - `id: UUID`
+  - `consultationId: UUID`
+  - `guidanceText: String?`
+  - `guidanceStatus: GuidanceStatus`
+  - `preliminaryPriority: PreliminaryPriority?`
+  - `professionalHelpRecommended: boolean`
+  - `sourceReferences: List<Map<String, Object>>`
+  - `createdAt: Instant`
+
+**Assignation**
+
+Registra una asignación histórica de un profesional a un caso.
+
+- **Atributos**
+  - `id: UUID`
+  - `caseId: UUID`
+  - `professionalUserId: UUID`
+  - `assignedAt: Instant`
+  - `closedAt: Instant?`
+- **Funciones**
+  - `close(closedAt: Instant): void`
+  - `isActive(): boolean`
+
+**CaseStatusHistory**
+
+Es la entidad que registra cada transición del estado del caso.
+
+- **Atributos**
+  - `id: UUID`
+  - `caseId: UUID`
+  - `fromStatus: CaseStatus?`
+  - `toStatus: CaseStatus`
+  - `actorType: String`
+  - `userId: UUID?`
+  - `occurredAt: Instant`
+
+#### Value Objects
+
+**CaseStatus**
+
+Restringe los estados válidos y sus transiciones.
+
+- **Atributos**
+  - `value: String`
+- **Funciones**
+  - `canTransitionTo(next: CaseStatus): boolean`
+
+**PreliminaryPriority**
+
+Representa la prioridad orientativa recibida del dispositivo.
+
+- **Atributos**
+  - `value: String`
+
+**GuidanceStatus**
+
+Representa el estado de la orientación recibida con la consulta.
+
+- **Atributos**
+  - `value: String`
+
+---
 
 ### 5.4.2. Interface Layer.
 
+#### Controllers
+
+**ConsultationSubmissionsController**
+
+Recibe consultas sincronizadas y publica la lectura filtrada de las que todavía no son casos.
+
+- **Funciones**: `receive(ReceiveConsultationSubmissionResource, idempotencyKey: UUID)`, `getById(id: UUID)`, `filter(province, helpRequested, page)`.
+
+**ConsultationPhotosController**
+
+Recibe una foto de emergencia y devuelve una clave de almacenamiento asociada al UUID de la consulta.
+
+- **Funciones**: `upload(consultationId: UUID, image): PhotoUploadResource`.
+
+**CasesController**
+
+Expone detalle, historial, autoasignación y cambios autorizados de los casos.
+
+- **Funciones**: `getById(id: UUID)`, `getCasesByFilter(status, assignmentRelation, page)`, `getMyCases()`, `assign(id: UUID)`, `changeStatus(id: UUID, ChangeCaseStatusResource)`, `close(id: UUID, CloseCaseResource)`, `getStatusHistory(id: UUID)`.
+
+**InternalCaseProcessingController**
+
+Recibe resultados del worker mediante una operación interna autenticada; la lógica del caso sigue en los servicios del backend.
+
+- **Funciones**: `processJob(jobId: UUID): void`.
+
+#### Resources and Assemblers
+
+**ReceiveConsultationSubmissionResource**
+
+Define el contrato de recepción con la información recibida del teléfono.
+
+- **Atributos**: `id`, `citizenUserId?`, `inputText?`, `photoStorageKey?`, `helpRequested`, `patient?`, `answer?`, `consultationRecordedAt`.
+
+**CaseResource**
+
+Devuelve al usuario autorizado el estado, la observación y la asignación visible del caso.
+
+- **Atributos**: `id`, `consultationId`, `status`, `observation?`, `assignedProfessional?`, `createdAt`, `updatedAt`.
+
+**PhotoUploadResource**
+
+Devuelve la clave del activo almacenado sin exponer credenciales de Cloudinary.
+
+- **Atributos**: `photoStorageKey: String`.
+
+**ChangeCaseStatusResource**
+
+Recibe el nuevo estado actualizado por el profesional médico autorizado.
+
+- **Atributos**: `newStatus: String`.
+
+**CloseCaseResource**
+
+Recibe la observación para cerrar el caso.
+
+- **Atributos**: `observation: String`.
+
+**ReceiveConsultationSubmissionCommandFromResourceAssembler**
+
+Traduce el recurso y la clave de idempotencia recibida hacia el comando.
+
+- **Funciones**: `toCommand(ReceiveConsultationSubmissionResource, idempotencyKey: UUID): ReceiveConsultationSubmissionCommand`.
+
+**CaseResourceFromEntityAssembler**
+
+Construye la respuesta autorizada de un caso a partir del aggregate.
+
+- **Funciones**: `toResource(Case): CaseResource`.
+
+---
+
 ### 5.4.3. Application Layer.
 
+#### Commands
+
+**ReceiveConsultationSubmissionCommand**
+
+Solicita guardar la consulta con datos opcionales de paciente y respuesta.
+
+- **Atributos**: `consultationId: UUID`, `citizenUserId: UUID?`, `inputText: String?`, `photoStorageKey: String?`, `helpRequested: boolean`, `patient?`, `answer?`, `consultationRecordedAt: Instant`, `idempotencyKey: UUID`.
+
+**UploadConsultationPhotoCommand**
+
+Solicita almacenar en Cloudinary una foto asociada a una consulta.
+
+- **Atributos**: `consultationId: UUID`, `image: bytes`, `contentType: String`.
+
+**CreateCaseFromSubmissionCommand**
+
+Solicita formar un caso a partir de una consulta recibida.
+
+- **Atributos**: `consultationId: UUID`.
+
+**AssignCaseCommand**
+
+Solicita la autoasignación de un caso disponible al profesional médico autenticado.
+
+- **Atributos**: `caseId: UUID`, `professionalUserId: UUID` obtenido de la sesión.
+
+**ChangeCaseStatusCommand**
+
+Solicita una transición de estado válida y su entrada de historial.
+
+- **Atributos**: `caseId: UUID`, `newStatus: CaseStatus`, `userId: UUID`.
+
+**CloseCaseCommand**
+
+Solicita cerrar el caso con observación.
+
+- **Atributos**: `caseId: UUID`, `observation: String`, `userId: UUID`.
+
+#### Queries
+
+**GetConsultationSubmissionByIdQuery**
+
+Solicita una consulta recibida por UUID.
+
+- **Atributos**: `consultationId: UUID`.
+
+**FilterConsultationSubmissionsQuery**
+
+Busca consultas aún sin caso, con filtros opcionales de provincia y solicitud de atención, aplicados por el servidor con paginación.
+
+- **Atributos**: `province: String?`, `helpRequested: boolean?`, `page`, `size`.
+
+**GetCasesByFilterQuery**
+
+Busca casos por estado y por relación de asignación con el profesional médico de la sesión.
+
+- **Atributos**: `status: CaseStatus?`, `assignmentRelation`, `currentProfessionalUserId: UUID`, `page`, `size`.
+
+**GetCaseByIdQuery**
+
+Solicita el detalle de un caso autorizado.
+
+- **Atributos**: `caseId: UUID`.
+
+**GetMyCasesQuery**
+
+Solicita los casos del ciudadano autenticado para su historial.
+
+- **Atributos**: `currentCitizenUserId: UUID`.
+
+**GetCaseStatusHistoryByCaseIdQuery**
+
+Solicita la secuencia de transiciones de un caso.
+
+- **Atributos**: `caseId: UUID`.
+
+#### Services
+
+**ConsultationSubmissionCommandServiceImpl**
+
+Implementa la recepción idempotente y la carga de imagen mediante `ImageStorageService`.
+
+- **Funciones**: `handle(ReceiveConsultationSubmissionCommand)`, `handle(UploadConsultationPhotoCommand)`.
+
+**ConsultationSubmissionQueryServiceImpl**
+
+Recupera consultas recibidas y ejecuta los filtros de pendientes.
+
+- **Funciones**: `handle(GetConsultationSubmissionByIdQuery)`, `handle(FilterConsultationSubmissionsQuery)`.
+
+**CaseCommandServiceImpl**
+
+Crea y modifica el agregado `Case`, así como registra asignaciones e historial dentro de una transacción.
+
+- **Funciones**: `handle(CreateCaseFromSubmissionCommand)`, `handle(AssignCaseCommand)`, `handle(ChangeCaseStatusCommand)`, `handle(CloseCaseCommand)`.
+
+**CaseQueryServiceImpl**
+
+Ejecuta consultas paginadas y aplica los límites de acceso del usuario autenticado.
+
+- **Funciones**: `handle(GetCasesByFilterQuery)`, `handle(GetCaseByIdQuery)`, `handle(GetMyCasesQuery)`.
+
+**CaseStatusHistoryQueryServiceImpl**
+
+Lee el historial generado por `CaseCommandService`.
+
+- **Funciones**: `handle(GetCaseStatusHistoryByCaseIdQuery): List<CaseStatusHistory>`.
+
+**ExternalUserService**
+
+Es la ACL de Case Management hacia IAM. Consulta la habilitación profesional con un UUID y recibe un booleano sin importar agregados o repositorios IAM.
+
+- **Funciones**: `isEnabledMedicalProfessional(userId: UUID): boolean`.
+
+**ImageStorageService**
+
+Es el puerto compartido de aplicación que permite cargar la imagen sin acoplar Case Management al SDK de Cloudinary.
+
+- **Funciones**: `store(consultationId: UUID, image: bytes): String`.
+
+---
+
 ### 5.4.4. Infrastructure Layer.
+
+#### Repositories
+
+**ConsultationSubmissionRepository**
+
+Persiste `consultation_submissions`, `patients` y `consultation_answers`
+
+- **Funciones**: `findById(UUID)`, `save(ConsultationSubmission)`.
+
+**CaseRepository**
+
+Persiste los registros de `¿cases`, `assignations` y `case_status_history`.
+
+- **Funciones**: `findById(UUID)`, `findByConsultationId(UUID)`, `save(Case)`.
+
+**OutboxEventRepository**
+
+Guarda eventos técnicos en la misma transacción que los cambios de negocio para su publicación posterior.
+
+- **Funciones**: `save(OutboxEvent)`, `claimPending(batchSize)`.
+
+#### Persistence Entities
+
+**OutboxEvent**
+
+Es una entidad técnica de persistencia en `outbox_events`.
+
+- **Atributos**: `id: UUID`, `aggregateId: UUID`, `eventType: String`, `payload: JSONB`, `status: String`, `attempts: int`, `nextAttemptAt: Instant?`, `createdAt: Instant`, `publishedAt: Instant?`.
+
+#### Storage and Messaging
+
+**CloudinaryService**
+
+Implementa `ImageStorageService` con la configuración del backend. Guarda la foto como activo protegido y devuelve su `public_id` para `photo_storage_key` en vez de una URL pública.
+
+- **Funciones**: `store(consultationId: UUID, image: bytes): String`.
+
+**OutboxPublisher**
+
+Reclama eventos pendientes de PostgreSQL de manera coordinada entre las dos instancias del backend.
+
+- **Funciones**: `publishPending()`.
+
+---
 
 ### 5.4.5. Bounded Context Software Architecture Component Level Diagrams.
 
