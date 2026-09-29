@@ -210,7 +210,7 @@ Link del project report: [https://github.com/emergentes-project/Report](https://
     - [5.3.6. Bounded Context Software Architecture Code Level Diagrams.](#536-bounded-context-software-architecture-code-level-diagrams)
       - [5.3.6.1. Bounded Context Domain Layer Class Diagrams.](#5361-bounded-context-domain-layer-class-diagrams)
       - [5.3.6.2. Bounded Context Database Design Diagram.](#5362-bounded-context-database-design-diagram)
-  - [5.4. Bounded Context: IAM](#54-bounded-context-iam)
+  - [5.4. Bounded Context: Case Management](#54-bounded-case-management)
     - [5.4.1. Domain Layer.](#541-domain-layer)
     - [5.4.2. Interface Layer.](#542-interface-layer)
     - [5.4.3. Application Layer.](#543-application-layer)
@@ -2781,7 +2781,7 @@ El *Load Balancer* enruta operaciones de casos a *Case Management API* y autenti
 
 #### 5.3.6.2. Bounded Context Database Design Diagram.
 
-## 5.4. Bounded Context: IAM
+## 5.4. Bounded Context: Case Management
 
 ### 5.4.1. Domain Layer.
 
