@@ -2502,7 +2502,7 @@ __Step 8: External Systems__
 
 <img src="public/assets/images/chapter-4/step8.png" alt="event storming">
 
-Al realizar el paso ocho, notamos que no usaríamos sistemas externos puesto que, al tener como requisito que a aplicación logre funcionar sin conexión a internet, no sería conveniente depender de una conexión externa. Los aspectos como el modelo de IA empleado y la ubicación serán trabajados localmente dentro de la aplicación móvil.
+Al realizar el paso ocho, notamos que era necesario guardar las imágenes en la nube cuando se hiciera la sincronización para que estas sean correctamente almacenados y accesibles por parte tanto de los ciudadanos como del personal médico que atiende los casos.
 
 __Step 9: Aggregates__
 
