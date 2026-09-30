@@ -1,0 +1,217 @@
+@startuml
+!pragma layout elk
+left to right direction
+title IAM - Domain Layer
+
+package "Aggregates" {
+  class User <<Aggregate>> {
+    id: UUID
+    email: String
+    password: String [hash]
+    roleId: UUID
+    firstName: String
+    lastName: String
+    phone: String?
+    createdAt: Instant
+    updatedAt: Instant
+    --
+    + register(email, passwordHash, roleId, firstName, lastName, phone): User
+    + updatePersonalData(firstName, lastName, phone): void
+  }
+
+  class CitizenProfile <<Aggregate>> {
+    id: UUID
+    userId: UUID
+    city: String
+    district: String
+    address: String
+    dateOfBirth: LocalDate
+    preExistingConditions: String?
+    allergies: String?
+    emergencyContact: EmergencyContact?
+    createdAt: Instant
+    updatedAt: Instant
+    --
+    + updateHealthData(preExistingConditions, allergies): void
+    + updateContactAndAddress(city, district, address, emergencyContact): void
+  }
+
+  class MedicalProfile <<Aggregate>> {
+    id: UUID
+    userId: UUID
+    professionalCategory: ProfessionalCategory
+    professionalLicenseNumber: String
+    specialty: String?
+    verificationStatus: String
+    verifiedAt: Instant?
+    createdAt: Instant
+    updatedAt: Instant
+    --
+    + updateProfessionalData(professionalCategory, professionalLicenseNumber, specialty): void
+    + verify(verifiedAt): void
+    + isEnabled(): boolean
+  }
+}
+
+package "Entities" {
+  class Role <<Entity>> {
+    id: UUID
+    code: RolesCode
+    name: RolesName
+    --
+    + create(code, name): Role
+  }
+}
+
+package "Value Objects" {
+  class RolesCode <<Value Object>> {
+    value: String
+    --
+    + RolesCode(value: String)
+  }
+
+  class RolesName <<Value Object>> {
+    value: String
+    --
+    + RolesName(value: String)
+  }
+
+  class EmergencyContact <<Value Object>> {
+    name: String
+    phone: String
+    --
+    + EmergencyContact(name: String, phone: String)
+  }
+
+  class ProfessionalCategory <<Value Object>> {
+    value: String
+    --
+    + from(value: String): ProfessionalCategory
+  }
+}
+
+package "Domain Service Contracts" {
+  interface UserCommandService {
+    + handle(RegisterCitizenCommand)
+    + handle(RegisterMedicalProfessionalCommand)
+    + handle(SignInUserCommand)
+    + handle(UpdateUserCommand)
+  }
+
+  interface UserQueryService {
+    + handle(GetUserByIdQuery): User
+  }
+
+  interface CitizenProfileCommandService {
+    + handle(UpdateCitizenProfileCommand): CitizenProfile
+  }
+
+  interface CitizenProfileQueryService {
+    + handle(GetCitizenProfileByUserIdQuery): CitizenProfile
+  }
+
+  interface MedicalProfileCommandService {
+    + handle(UpdateMedicalProfileCommand)
+    + handle(VerifyMedicalProfileCommand)
+  }
+
+  interface MedicalProfileQueryService {
+    + handle(GetMedicalProfileByUserIdQuery): MedicalProfile
+  }
+
+  interface RoleCommandService {
+    + handle(SeedRolesCommand): void
+  }
+
+  interface RoleQueryService {
+    + handle(GetAllRolesQuery): List<Role>
+  }
+}
+
+package "Domain Commands" {
+  class RegisterCitizenCommand <<Command>> {
+    email
+    password
+    firstName
+    lastName
+    phone
+    city
+    district
+    address
+    dateOfBirth
+    emergencyContact
+  }
+
+  class RegisterMedicalProfessionalCommand <<Command>> {
+    email
+    password
+    firstName
+    lastName
+    phone
+    professionalCategory
+    professionalLicenseNumber
+    specialty
+  }
+
+  class SignInUserCommand <<Command>> {
+    email: String
+    password: String
+  }
+
+  class UpdateUserCommand <<Command>> {
+    userId: UUID
+    firstName: String
+    lastName: String
+    phone: String?
+  }
+
+  class UpdateCitizenProfileCommand <<Command>> {
+    userId: UUID
+    city
+    district
+    address
+    emergencyContact
+    preExistingConditions
+    allergies
+  }
+
+  class UpdateMedicalProfileCommand <<Command>> {
+    userId: UUID
+    professionalCategory
+    professionalLicenseNumber
+    specialty
+  }
+
+  class VerifyMedicalProfileCommand <<Command>> {
+    userId: UUID
+    verifiedAt: Instant
+  }
+
+  class SeedRolesCommand <<Command>>
+}
+
+package "Domain Queries" {
+  class GetUserByIdQuery <<Query>> {
+    userId: UUID
+  }
+
+  class GetCitizenProfileByUserIdQuery <<Query>> {
+    userId: UUID
+  }
+
+  class GetMedicalProfileByUserIdQuery <<Query>> {
+    userId: UUID
+  }
+
+  class GetAllRolesQuery <<Query>>
+}
+
+Role "1" -- "0..*" User : roleId: UUID
+User "1" -- "0..1" CitizenProfile : userId: UUID
+User "1" -- "0..1" MedicalProfile : userId: UUID
+
+Role "1" *-- "1" RolesCode : code
+Role "1" *-- "1" RolesName : name
+CitizenProfile "1" *-- "0..1" EmergencyContact : emergencyContact
+MedicalProfile "1" *-- "1" ProfessionalCategory : professionalCategory
+@enduml

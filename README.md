@@ -3117,6 +3117,8 @@ Implementa `AccessTokenIssuer` para emitir la credencial de una sesión autentic
 
 #### 5.1.6.1. Bounded Context Domain Layer Class Diagrams.
 
+![Diagrama de clases de la capa de dominio de IAM](public/assets/images/chapter-5/iam-domain-layer.svg)
+
 #### 5.1.6.2. Bounded Context Database Design Diagram.
 
 ## 5.2. Bounded Context: Consultation
@@ -3363,6 +3365,8 @@ Envía la consulta después de obtener la clave de foto con la misma clave de id
 
 #### 5.2.6.1. Bounded Context Domain Layer Class Diagrams.
 
+![Diagrama de clases de la capa de dominio de Consultation](public/assets/images/chapter-5/consultation-domain-layer.svg)
+
 #### 5.2.6.2. Bounded Context Database Design Diagram.
 
 ## 5.3. Bounded Context: Medical Bases
@@ -3513,6 +3517,8 @@ Traduce registros SQLite y resultados del índice a `MedicalKnowledgeRepository`
 ### 5.3.6. Bounded Context Software Architecture Code Level Diagrams.
 
 #### 5.3.6.1. Bounded Context Domain Layer Class Diagrams.
+
+![Diagrama de clases de la capa de dominio de Medical Bases](public/assets/images/chapter-5/medical-bases-domain-layer.svg)
 
 #### 5.3.6.2. Bounded Context Database Design Diagram.
 
@@ -3896,6 +3902,8 @@ Reclama eventos pendientes de PostgreSQL de manera coordinada entre las dos inst
 ### 5.4.6. Bounded Context Software Architecture Code Level Diagrams.
 
 #### 5.4.6.1. Bounded Context Domain Layer Class Diagrams.
+
+![Diagrama de clases de la capa de dominio de Case Management](public/assets/images/chapter-5/case-management-domain-layer.svg)
 
 #### 5.4.6.2. Bounded Context Database Design Diagram.
 

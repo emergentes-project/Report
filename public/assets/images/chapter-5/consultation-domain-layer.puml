@@ -1,0 +1,84 @@
+@startuml
+left to right direction
+title Consultation - Domain Layer
+
+package "Aggregate" {
+  class Consultation <<Aggregate Root>> {
+    id: UUID
+    ownerUserId: UUID?
+    inputText: String?
+    photoLocalPath: String?
+    photoStorageKey: String?
+    helpRequested: boolean
+    createdAt: DateTime
+    updatedAt: DateTime
+    serverAckAt: DateTime?
+    patient: Patient?
+    answer: ConsultationAnswer?
+    --
+    + create(inputText, photoLocalPath, patient): Consultation
+    + requestHelp(): void
+    + recordServerAck(ackAt: DateTime): void
+  }
+}
+
+package "Entities" {
+  class Patient <<Entity>> {
+    id: UUID
+    consultationId: UUID
+    name: String?
+    ageYears: int?
+    locationDescription: String?
+    province: String?
+    latitude: double?
+    longitude: double?
+  }
+
+  class ConsultationAnswer <<Entity>> {
+    id: UUID
+    consultationId: UUID
+    guidanceText: String?
+    guidanceStatus: GuidanceStatus
+    preliminaryPriority: String?
+    professionalHelpRecommended: boolean
+    sourceReferences: List<Map<String, dynamic>>
+    createdAt: DateTime
+  }
+}
+
+package "Domain Models" {
+  class EvidenceSnippet <<Model>> {
+    text: String
+    sourceReference: String
+  }
+
+  class GuidanceStatus <<Model>> {
+    value: String
+  }
+}
+
+package "Domain Service and Repository Contracts" {
+  class GuidanceSafetyPolicy <<Domain Service>> {
+    + evaluate(answer: ConsultationAnswer, evidence: List<EvidenceSnippet>): ConsultationAnswer
+  }
+
+  interface ConsultationRepository <<Repository>> {
+    + save(Consultation)
+    + findById(UUID)
+  }
+
+  interface ConsultationSyncRepository <<Repository>> {
+    + enqueue(consultationId, idempotencyKey)
+    + pendingSync()
+  }
+}
+
+Consultation "1" *-- "0..1" Patient : patient
+Consultation "1" *-- "0..1" ConsultationAnswer : answer
+ConsultationAnswer "1" -- "1" GuidanceStatus : guidanceStatus
+
+GuidanceSafetyPolicy ..> ConsultationAnswer : evaluate
+GuidanceSafetyPolicy ..> EvidenceSnippet : evidence 0..*
+ConsultationRepository ..> Consultation : save / find
+ConsultationSyncRepository ..> Consultation : consultationId: UUID
+@enduml

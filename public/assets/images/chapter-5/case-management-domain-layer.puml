@@ -1,0 +1,229 @@
+@startuml
+title Case Management — Domain Layer
+top to bottom direction
+skinparam ranksep 8
+skinparam nodesep 8
+
+package "Agregados y entidades" {
+  class ConsultationSubmission <<aggregate root>> {
+    id: UUID
+    citizenUserId: UUID?
+    inputText: String?
+    photoStorageKey: String?
+    helpRequested: boolean
+    consultationRecordedAt: Instant
+    receivedAt: Instant
+    patient: Patient?
+    answer: ConsultationAnswer?
+    --
+    +receive(\n id: UUID, citizenUserId: UUID?,\n inputText: String?, photoStorageKey: String?,\n helpRequested: boolean,\n consultationRecordedAt: Instant, receivedAt: Instant,\n patient: Patient?, answer: ConsultationAnswer?\n): ConsultationSubmission
+    +hasTextOrPhoto(): boolean
+  }
+
+  class Case <<aggregate root>> {
+    id: UUID
+    consultationId: UUID
+    status: CaseStatus
+    observation: String?
+    createdAt: Instant
+    updatedAt: Instant
+    closedAt: Instant?
+    assignations: List<Assignation>
+    statusHistory: List<CaseStatusHistory>
+    --
+    +assign(professionalUserId: UUID): Assignation
+    +changeStatus(newStatus: CaseStatus, userId: UUID?): void
+    +close(observation: String, userId: UUID): void
+  }
+
+  class Patient <<entity>> {
+    id: UUID
+    consultationId: UUID
+    name: String?
+    ageYears: Integer?
+    locationDescription: String?
+    province: String?
+    latitude: Decimal?
+    longitude: Decimal?
+  }
+
+  class ConsultationAnswer <<entity>> {
+    id: UUID
+    consultationId: UUID
+    guidanceText: String?
+    guidanceStatus: GuidanceStatus
+    preliminaryPriority: PreliminaryPriority?
+    professionalHelpRecommended: boolean
+    sourceReferences: List<Map<String, Object>>
+    createdAt: Instant
+  }
+
+  class Assignation <<entity>> {
+    id: UUID
+    caseId: UUID
+    professionalUserId: UUID
+    assignedAt: Instant
+    closedAt: Instant?
+    --
+    +close(closedAt: Instant): void
+    +isActive(): boolean
+  }
+
+  class CaseStatusHistory <<entity>> {
+    id: UUID
+    caseId: UUID
+    fromStatus: CaseStatus?
+    toStatus: CaseStatus
+    actorType: String
+    userId: UUID?
+    occurredAt: Instant
+  }
+}
+
+package "Objetos de valor" {
+  class CaseStatus <<value object>> {
+    value: String
+    --
+    +canTransitionTo(next: CaseStatus): boolean
+  }
+
+  class PreliminaryPriority <<value object>> {
+    value: String
+  }
+
+  class GuidanceStatus <<value object>> {
+    value: String
+  }
+}
+
+package "Servicios de dominio — contratos" {
+  interface ConsultationSubmissionCommandService {
+    +handle(ReceiveConsultationSubmissionCommand)
+    +handle(UploadConsultationPhotoCommand)
+  }
+
+  interface ConsultationSubmissionQueryService {
+    +handle(GetConsultationSubmissionByIdQuery)
+    +handle(FilterConsultationSubmissionsQuery)
+  }
+
+  interface CaseCommandService {
+    +handle(CreateCaseFromSubmissionCommand)
+    +handle(AssignCaseCommand)
+    +handle(ChangeCaseStatusCommand)
+    +handle(CloseCaseCommand)
+  }
+
+  interface CaseQueryService {
+    +handle(GetCasesByFilterQuery)
+    +handle(GetCaseByIdQuery)
+    +handle(GetMyCasesQuery)
+  }
+
+  interface CaseStatusHistoryQueryService {
+    +handle(GetCaseStatusHistoryByCaseIdQuery): List<CaseStatusHistory>
+  }
+}
+
+package "Comandos de domain/model" {
+  class ReceiveConsultationSubmissionCommand <<command>> {
+    consultationId: UUID
+    citizenUserId: UUID?
+    inputText: String?
+    photoStorageKey: String?
+    helpRequested: boolean
+    patient: Patient?
+    answer: ConsultationAnswer?
+    consultationRecordedAt: Instant
+    idempotencyKey: UUID
+  }
+
+  class UploadConsultationPhotoCommand <<command>> {
+    consultationId: UUID
+    image: bytes
+    contentType: String
+  }
+
+  class CreateCaseFromSubmissionCommand <<command>> {
+    consultationId: UUID
+  }
+
+  class AssignCaseCommand <<command>> {
+    caseId: UUID
+    professionalUserId: UUID
+  }
+
+  class ChangeCaseStatusCommand <<command>> {
+    caseId: UUID
+    newStatus: CaseStatus
+    userId: UUID
+  }
+
+  class CloseCaseCommand <<command>> {
+    caseId: UUID
+    observation: String
+    userId: UUID
+  }
+}
+
+package "Consultas de domain/model" {
+  class GetConsultationSubmissionByIdQuery <<query>> {
+    consultationId: UUID
+  }
+
+  class FilterConsultationSubmissionsQuery <<query>> {
+    province: String?
+    helpRequested: boolean?
+    page: int
+    size: int
+  }
+
+  class GetCasesByFilterQuery <<query>> {
+    status: CaseStatus?
+    assignmentRelation: String
+    currentProfessionalUserId: UUID
+    page: int
+    size: int
+  }
+
+  class GetCaseByIdQuery <<query>> {
+    caseId: UUID
+  }
+
+  class GetMyCasesQuery <<query>> {
+    currentCitizenUserId: UUID
+  }
+
+  class GetCaseStatusHistoryByCaseIdQuery <<query>> {
+    caseId: UUID
+  }
+}
+
+ConsultationSubmission "1" *-- "0..1" Patient : contiene
+ConsultationSubmission "1" *-- "0..1" ConsultationAnswer : contiene
+Case "1" *-- "0..*" Assignation : historial; máximo 1 activa
+Case "1" *-- "0..*" CaseStatusHistory : historial de estados
+Case ..> ConsultationSubmission : consultationId: UUID
+Case ..> CaseStatus
+CaseStatusHistory ..> CaseStatus
+ConsultationAnswer ..> GuidanceStatus
+ConsultationAnswer ..> PreliminaryPriority
+ConsultationSubmission -[hidden]down- CaseStatus
+Case -[hidden]right- ConsultationSubmissionCommandService
+ConsultationSubmissionCommandService -[hidden]down- ReceiveConsultationSubmissionCommand
+ReceiveConsultationSubmissionCommand -[hidden]down- GetConsultationSubmissionByIdQuery
+ConsultationSubmissionCommandService -[hidden]right- ConsultationSubmissionQueryService
+ConsultationSubmissionQueryService -[hidden]right- CaseCommandService
+CaseCommandService -[hidden]right- CaseQueryService
+CaseQueryService -[hidden]right- CaseStatusHistoryQueryService
+ReceiveConsultationSubmissionCommand -[hidden]right- UploadConsultationPhotoCommand
+UploadConsultationPhotoCommand -[hidden]right- CreateCaseFromSubmissionCommand
+CreateCaseFromSubmissionCommand -[hidden]right- AssignCaseCommand
+AssignCaseCommand -[hidden]right- ChangeCaseStatusCommand
+ChangeCaseStatusCommand -[hidden]right- CloseCaseCommand
+GetConsultationSubmissionByIdQuery -[hidden]right- FilterConsultationSubmissionsQuery
+FilterConsultationSubmissionsQuery -[hidden]right- GetCasesByFilterQuery
+GetCasesByFilterQuery -[hidden]right- GetCaseByIdQuery
+GetCaseByIdQuery -[hidden]right- GetMyCasesQuery
+GetMyCasesQuery -[hidden]right- GetCaseStatusHistoryByCaseIdQuery
+@enduml

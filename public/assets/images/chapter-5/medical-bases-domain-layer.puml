@@ -1,0 +1,52 @@
+@startuml
+title Medical Bases — Domain Layer
+left to right direction
+
+package "Modelo de dominio" {
+  class KnowledgePackage <<aggregate root>> {
+    id: UUID
+    version: String
+    indexFilePath: String
+    status: String
+    installedAt: DateTime
+    --
+    +activate(): void
+    +isActive(): bool
+  }
+
+  class MedicalSource <<entity>> {
+    id: UUID
+    packageId: UUID
+    title: String
+    publisher: String
+    sourceUrl: String?
+    edition: String?
+    validatedAt: DateTime
+    license: String?
+  }
+
+  class MedicalChunk <<entity>> {
+    id: UUID
+    sourceId: UUID
+    ordinal: int
+    content: String
+    indexKey: String
+    tokenCount: int?
+  }
+}
+
+package "Contrato de repositorio de dominio" {
+  interface MedicalKnowledgeRepository {
+    +getActivePackage(): KnowledgePackage?
+    +getSources(packageId: UUID): List<MedicalSource>
+    +getChunks(sourceId: UUID): List<MedicalChunk>
+  }
+}
+
+KnowledgePackage "1" *-- "1..*" MedicalSource : contiene
+MedicalSource "1" *-- "1..*" MedicalChunk : divide en
+
+MedicalKnowledgeRepository ..> KnowledgePackage : consulta
+MedicalKnowledgeRepository ..> MedicalSource
+MedicalKnowledgeRepository ..> MedicalChunk
+@enduml
