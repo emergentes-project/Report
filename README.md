@@ -4170,6 +4170,112 @@ La landing no indexa consultas ni casos. El visitante no busca datos clínicos.
 
 ### 6.2.4. SEO Tags and Meta Tags.
 
+Los SEO Tags, Meta Tags y elementos ASO de Lifeline sirven para que un visitante encuentre la landing de RescueBridge y descargue la app. No indexan consultas, casos ni datos de salud. El producto clínico es nativo (Android e iOS). No hay una web application pública del flujo de emergencia. Un panel web autenticado, si existiera después, iría con `noindex`.
+
+La URL canónica prevista es `https://rescuebridge.pe`. El informe en GitHub Pages no es la landing de producto.
+
+**SEO Tags de la landing**
+
+El Title aparece en la pestaña y en Google. La Description resume la oferta. Keywords y Author cubren el mínimo pedido. H1 a H3 marcan la jerarquía de la página de inicio.
+
+```html
+<title>Lifeline | Primeros auxilios post-sismo sin internet</title>
+<meta name="description" content="Lifeline, de RescueBridge, da orientación de primeros auxilios con IA en el teléfono cuando un sismo deja sin red. El ciudadano recibe pasos claros. El personal médico ve los casos al volver la señal." />
+<meta name="keywords" content="primeros auxilios, sismo, terremoto, emergencia, IA on-device, app offline, Lima, Perú, triaje, RescueBridge, Lifeline" />
+<meta name="author" content="RescueBridge" />
+```
+
+**Header Tags**
+
+```html
+<h1>Orientación de primeros auxilios aunque no haya internet</h1>
+<h2>IA en el teléfono para ciudadanos y casos para el personal médico</h2>
+<h3>Pasos claros, foto o voz, y envío cuando vuelve la señal</h3>
+```
+
+**Meta Tags técnicos**
+
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0D3B4C" />
+<link rel="canonical" href="https://rescuebridge.pe" />
+```
+
+**Páginas principales del sitio estático**
+
+Cada página pública tiene Title, Description, Keywords y Author. El contenido de salud no se indexa.
+
+**Inicio (`/`)**
+
+```html
+<title>Lifeline | Primeros auxilios post-sismo sin internet</title>
+<meta name="description" content="App peruana de RescueBridge para primeros auxilios tras un sismo. Funciona sin red, con IA local y fuentes médicas en el teléfono." />
+<meta name="keywords" content="Lifeline, RescueBridge, primeros auxilios, sismo Perú, app emergencia offline" />
+<meta name="author" content="RescueBridge" />
+<link rel="canonical" href="https://rescuebridge.pe" />
+```
+
+**Descargar (`/descargar`)**
+
+```html
+<title>Descargar Lifeline | Android e iOS</title>
+<meta name="description" content="Descarga Lifeline para Android e iOS. Obtén orientación de primeros auxilios en el dispositivo y sincroniza casos cuando haya señal." />
+<meta name="keywords" content="descargar Lifeline, app primeros auxilios, Google Play, App Store, emergencia sismo" />
+<meta name="author" content="RescueBridge" />
+<link rel="canonical" href="https://rescuebridge.pe/descargar" />
+```
+
+**Cómo funciona (`/como-funciona`)**
+
+```html
+<title>Cómo funciona Lifeline | IA local y envío de casos</title>
+<meta name="description" content="El ciudadano describe la emergencia con texto, voz o foto. Lifeline responde en el teléfono. Al volver internet, el caso llega al personal médico." />
+<meta name="keywords" content="cómo funciona Lifeline, IA local, primeros auxilios, sincronización casos" />
+<meta name="author" content="RescueBridge" />
+<link rel="canonical" href="https://rescuebridge.pe/como-funciona" />
+```
+
+**Privacidad (`/privacidad`)**
+
+```html
+<title>Privacidad | Lifeline RescueBridge</title>
+<meta name="description" content="Lifeline guarda la consulta en el teléfono durante la emergencia. La foto y los datos se envían después, cifrados, cuando hay conexión." />
+<meta name="keywords" content="privacidad Lifeline, datos de salud, Ley 29733" />
+<meta name="author" content="RescueBridge" />
+<link rel="canonical" href="https://rescuebridge.pe/privacidad" />
+<meta name="robots" content="index, follow" />
+```
+
+Rutas de sesión o de casos, si se publicaran en web, usarían `<meta name="robots" content="noindex, nofollow" />`. No son puerta de descubrimiento.
+
+**ASO (Google Play y App Store)**
+
+Lifeline se descubre sobre todo en las tiendas. Los elementos respetan límites de caracteres y el mismo lenguaje de 6.2.2.
+
+**App Title** (máx. 30) — `Lifeline: Auxilio post-sismo`
+
+**App subtitle** (App Store, máx. 30) — `Primeros auxilios sin red`
+
+**App keywords** (App Store, máx. 100, separadas por coma) — `primeros auxilios,sismo,terremoto,emergencia,offline,IA,triaje,RCP,Lima,Perú,rescate,heridas`
+
+**Short description** (Google Play, máx. 80) — `Primeros auxilios con IA en tu teléfono, aun sin internet, tras un sismo.`
+
+**App description** (ambas tiendas, texto completo):
+
+Lifeline, de RescueBridge, te guía en los minutos posteriores a un sismo aunque no haya señal.
+
+Si eres ciudadano, abre **Nueva consulta**, describe qué ocurrió con texto, voz o foto y pulsa **Obtener orientación**. Los pasos salen en el teléfono, con fuentes médicas locales. Si la situación es grave, la app te indica **Busca ayuda profesional** y puedes **Solicitar apoyo**.
+
+Tus consultas quedan en **Pendientes** hasta que vuelve la red. Entonces se envían solas.
+
+Si eres personal médico, con conexión ves **Casos disponibles**, te **Autoasignas** y sigues el caso hasta **Cerrar caso**.
+
+Lifeline no reemplaza a un profesional. Te ayuda a actuar ya y a pasar el caso cuando hay señal.
+
+Disponible en Android e iOS. Sin cuenta se puede pedir orientación. La cuenta sirve para historial y para el trabajo médico.
+
 ### 6.2.5. Navigation Systems.
 
 ## 6.3. Landing Page UI Design.
