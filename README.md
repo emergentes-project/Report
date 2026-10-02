@@ -4019,6 +4019,93 @@ Para garantizar la máxima legibilidad en escenarios de desastre (baja luminosid
 
 ### 6.2.2. Labeling Systems.
 
+El sistema de etiquetado de Lifeline está pensado para dos públicos que leen la misma aplicación en condiciones distintas. El ciudadano lo usa con prisa, miedo o poca luz, a menudo sin formación médica. El personal médico lo usa para triaje cuando ya hay señal. En ambos casos las etiquetas son cortas, en español de Perú y iguales en Android e iOS. No se muestra jerga de arquitectura. Palabras como Outbox, RAG, SQLite, Cloudinary o *backend* no aparecen en la interfaz.
+
+**Principios generales**
+
+Se nombra lo que la persona ve, no lo que el sistema hace por dentro. En lugar de "cola de salida" se usa **Pendientes**. En lugar de "inferencia on-device" se usa **Orientación**. En lugar de "photo storage key" se usa **Foto**.
+
+Los verbos son de acción y caben en un botón. **Nueva consulta**, **Obtener orientación**, **Solicitar apoyo**, **Autoasignar**, **Cerrar caso**.
+
+Una misma idea tiene una sola etiqueta en toda la app. Si el caso se llama Caso en la lista, también se llama Caso en el detalle y en el historial.
+
+Cada conjunto de información lleva texto. El ícono acompaña, no reemplaza.
+
+**Conjuntos de información y asociaciones**
+
+La información se agrupa en pocos conjuntos, ligados entre sí para que el usuario no tenga que adivinar el recorrido.
+
+**Consulta** es el registro de la emergencia. Reúne texto, voz, foto y, si se indica, datos de la **Persona afectada**. De esa consulta sale la **Orientación**, una secuencia numerada de pasos. Si el ciudadano pide ayuda, la consulta queda marcada como **Solicita apoyo**. Cuando hay red, esa misma consulta se envía y, en el lado médico, nace un **Caso**. El caso tiene **Estado**, **Asignación** e **Historial de estados**. El **Perfil** identifica si quien usa el teléfono es ciudadano o personal médico y no mezcla esas vistas.
+
+La asociación se lee en una línea: Consulta → Orientación → Pendiente de envío → Caso → Asignación → Cierre. Ninguna pantalla inventa un nombre nuevo para el mismo objeto.
+
+**Secciones principales**
+
+Las etiquetas de la barra inferior cambian según el rol, con tres destinos como máximo.
+
+Para el **ciudadano**:
+
+- **Nueva consulta** — registrar la emergencia con texto, voz o foto.
+- **Pendientes** — consultas guardadas en el teléfono que aún no se enviaron o que esperan confirmación.
+- **Perfil** — cuenta, rol y aviso de si las fuentes médicas del teléfono están listas.
+
+Para el **personal médico**:
+
+- **Casos disponibles** — casos sin profesional asignado, listos para autoasignar.
+- **Mis asignaciones** — casos que el profesional autenticado ya tomó.
+- **Historial** — casos cerrados y consultas propias del ciudadano cuando inicia sesión.
+
+Otras etiquetas de pantalla, también de pocas palabras:
+
+- **Orientación** — pasos mostrados después de obtener ayuda en el dispositivo.
+- **Persona afectada** — nombre, edad, provincia y lugar del incidente.
+- **Fuentes médicas** — aviso de que el paquete local está instalado. No se habla de índice ni de embeddings.
+- **Iniciar sesión** / **Crear cuenta** — acceso. No se usa "IAM" ni "autenticación".
+
+**Estados y etiquetas de conexión**
+
+El estado de red se ve arriba, sin tapar la acción principal.
+
+- **Sin conexión** — la orientación sigue disponible en el teléfono (indicador ámbar `#F59E0B`).
+- **Enviando** — hay pendientes en camino (indicador ámbar).
+- **Enviado** — el servidor confirmó la consulta (indicador cian `#1CA3C8`).
+
+La orientación al ciudadano usa dos etiquetas, nunca un código interno:
+
+- **Lista** — hay pasos para seguir (texto sereno, sin alarma).
+- **Busca ayuda profesional** — la evidencia local no basta o hay signos de gravedad (indicador rojo `#DC2626`).
+
+Los casos del personal médico usan nomenclatura de triaje, con color e ícono:
+
+- **Disponible** — sin profesional asignado (cian).
+- **Asignado** — un profesional ya lo tomó (ámbar).
+- **En atención** — el profesional está actuando (teal `#0D3B4C`).
+- **Cerrado** — hay observación de cierre (gris de texto sobre fondo clínico).
+
+La prioridad recibida del teléfono, si existe, se muestra como **Prioridad** con valores **Baja**, **Media** o **Alta**. No se expone el nombre técnico *preliminaryPriority*.
+
+**Formularios y acciones**
+
+Los campos del ciudadano usan palabras cotidianas: **Qué ocurrió**, **Foto**, **Voz**, **Nombre**, **Edad**, **Provincia**, **Lugar**. Se evita "latitud", "longitud" y "payload" en pantalla. La ubicación se lee como **Lugar** o **Provincia**.
+
+Los campos del profesional usan **Estado**, **Observación**, **Persona afectada** y **Pasos dados**. La foto se llama **Foto**, no "evidencia Cloudinary".
+
+Acciones de confirmación: **Guardar**, **Enviar**, **Confirmar**, **Autoasignar**, **Cerrar caso**.
+
+Acciones de salida o destrucción: **Cancelar**, **Salir**. **Solicitar apoyo** pide confirmación porque avisa a un profesional. **Autoasignar** y **Cerrar caso** también piden confirmación. No hay "Eliminar consulta" en el flujo de emergencia, para no borrar un registro bajo estrés.
+
+**Iconografía**
+
+Los íconos refuerzan la etiqueta para quien lee poco o ve mal el brillo de la pantalla. Se usan *Material Symbols* en Android y *SF Symbols* en iOS, siempre junto al texto.
+
+- Nueva consulta: cruz o estetoscopio simplificado más la palabra **Consulta**.
+- Foto y voz: cámara y micrófono más **Foto** y **Voz**.
+- Pendientes: reloj o nube con flecha más **Pendientes**.
+- Solicita apoyo: distintivo rojo más **Solicita apoyo**.
+- Estados de caso: punto de color más el nombre del estado.
+
+Nunca se deja un ícono solo en una acción crítica.
+
 ### 6.2.3. Searching Systems.
 
 ### 6.2.4. SEO Tags and Meta Tags.
