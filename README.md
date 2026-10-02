@@ -3912,13 +3912,21 @@ Reclama eventos pendientes de PostgreSQL de manera coordinada entre las dos inst
 
 ### 5.4.5. Bounded Context Software Architecture Component Level Diagrams.
 
+El *Component Diagram* del bounded context Case Management muestra cómo se descompone el contenedor *Backend Modular API* cuando se recibe una consulta sincronizada y se atiende el caso. Lo elaboramos con Structurizr DSL y sigue las cuatro capas de Clean Architecture. *Case Management API* pertenece a Interface y expone sincronización, asignación, cambio de estado y cierre. *Case Management Service* vive en Application y coordina el ciclo de vida con autorización del profesional. Las reglas de estado, asignación e historial quedan en *Case Domain*. *Case Repository* está en Infrastructure y persiste el modelo. *Async Event Publisher* descarga trabajo secundario hacia el *Message Broker*. Hacia afuera, el *Load Balancer* dirige el tráfico HTTPS. *Cloud Database* en PostgreSQL guarda envíos, casos e historial. Este contexto es el que almacena y recupera evidencias en Cloudinary. IAM queda *upstream* y solo responde si el profesional está habilitado.
+
 ### 5.4.6. Bounded Context Software Architecture Code Level Diagrams.
+
+<p align="center">
+  <img src="public/assets/images/chapter-4/C3-Case Management.png" alt="C3 - Component Level Diagram - Case Management">
+</p>
 
 #### 5.4.6.1. Bounded Context Domain Layer Class Diagrams.
 
 ![Diagrama de clases de la capa de dominio de Case Management](public/assets/images/chapter-5/case-management-domain-layer.svg)
 
 #### 5.4.6.2. Bounded Context Database Design Diagram.
+
+![Diagrama de diseño de base de datos de Case Management](public/assets/images/chapter-5/case-management-database-design.svg)
 
 # Capítulo VI: UX/UI Design
 
