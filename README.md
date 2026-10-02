@@ -4108,6 +4108,66 @@ Nunca se deja un ícono solo en una acción crítica.
 
 ### 6.2.3. Searching Systems.
 
+El sistema de búsqueda de Lifeline no está pensado para explorar un catálogo grande. Está pensado para que nadie se pierda entre consultas, pendientes y casos cuando hay poco tiempo. El ciudadano casi no busca. Registra, recibe orientación y mira lo que aún no se envió. El personal médico sí filtra, porque al volver la red pueden acumularse muchos casos. Las opciones usan las mismas etiquetas de la sección 6.2.2. No hay un buscador de lenguaje natural sobre casos. El campo **Qué ocurrió** alimenta la orientación, no una lista.
+
+**Principios generales**
+
+Cada búsqueda queda dentro del contexto de quien usa el teléfono. El ciudadano solo ve sus consultas locales y, si inició sesión, sus casos enviados. El profesional solo ve casos que la API le autoriza. Nadie recorre datos de otro usuario.
+
+Si no hay coincidencias, la lista se reemplaza por un mensaje explícito. No se deja una pantalla en blanco.
+
+Los filtros son *chips* en Android y controles segmentados o selectores en iOS. Van sobre la lista, al alcance del pulgar.
+
+Sin conexión, el ciudadano sigue filtrando lo que está en el teléfono. El profesional necesita señal para filtrar en el servidor. Si no hay red, se indica **Sin conexión** y no se finge un listado vacío de casos.
+
+**Pendientes del ciudadano**
+
+Es la única búsqueda del flujo de emergencia. En **Pendientes** el ciudadano distingue lo guardado de lo ya confirmado por el servidor.
+
+Filtros, con chips: **Sin enviar**, **Enviando**, **Enviado**. Se pueden combinar con **Solicita apoyo**.
+
+Los resultados son tarjetas. Cada una muestra un recorte de **Qué ocurrió**, si hay **Foto**, la hora y el punto de color del envío. Un distintivo rojo marca **Solicita apoyo**. El orden es el más reciente arriba.
+
+Si no hay ítems, el mensaje es **No hay consultas pendientes**. Si el filtro es demasiado estrecho, el mensaje es **Ninguna consulta coincide**. Desde ahí se puede ir a **Nueva consulta**.
+
+**Historial del ciudadano**
+
+Con sesión iniciada, **Historial** lista los casos propios que ya existen en la nube (`GetMyCasesQuery`). El filtro es el **Estado**: **Asignado**, **En atención**, **Cerrado**.
+
+Cada tarjeta muestra estado, fecha de envío y un recorte de la orientación. Al abrirla se ve la **Persona afectada** y el **Historial de estados**, de más reciente a más antiguo. Si aún no hay casos, el mensaje es **Aún no tienes casos enviados**.
+
+**Casos disponibles**
+
+Es la búsqueda principal del personal médico. Recorre consultas recibidas que todavía no son caso, o casos en estado **Disponible**, según la vista. El servidor pagina el resultado.
+
+Filtros: **Provincia** (lista de nombres, la misma del formulario), **Solicita apoyo** (sí o todas) y **Prioridad** (**Alta**, **Media**, **Baja**). No hay caja de texto libre sobre síntomas. El triaje no depende de que el médico recuerde una palabra exacta.
+
+Los resultados son tarjetas con provincia, distintivo de **Solicita apoyo**, prioridad y hora de recepción. Arriba quedan las de prioridad alta y las que solicitan apoyo. El ícono de **Casos disponibles** muestra un *badge* con la cantidad nueva para no abrir el módulo a ciegas.
+
+Si el filtro no da resultados, el mensaje es **No hay casos con esos filtros**. Si no hay red, **Sin conexión. No se pueden cargar casos**.
+
+**Mis asignaciones**
+
+El filtro de relación ya está en la pestaña. Aquí el profesional solo ve lo que tomó.
+
+Filtros de estado: **Asignado**, **En atención**, **Cerrado**. El valor por defecto es **En atención**.
+
+Las tarjetas muestran estado con color, nombre o edad de la **Persona afectada** si existe, y provincia. Al tocarlas se abre el detalle con foto, pasos dados, mapa o lugar, y acciones **Autoasignar** no aplica aquí. Sí aplican cambiar estado y **Cerrar caso**.
+
+Lista vacía: **No tienes asignaciones en este estado**.
+
+**Historial de un caso**
+
+Dentro del detalle, el **Historial de estados** es una búsqueda temporal. No hay campo de texto. El orden es cronológico. Cada fila muestra de qué estado se pasó, a cuál, quién actuó y cuándo.
+
+Si el caso recién se creó, hay al menos el paso a **Disponible**. No se muestra un vacío técnico.
+
+**Qué no se busca en pantalla**
+
+Las **Fuentes médicas** no se ofrecen como buscador al usuario. El índice local lo usa la app al pulsar **Obtener orientación**. Mezclar esa recuperación con un buscador de casos confundiría al ciudadano y al médico.
+
+La landing no indexa consultas ni casos. El visitante no busca datos clínicos.
+
 ### 6.2.4. SEO Tags and Meta Tags.
 
 ### 6.2.5. Navigation Systems.
