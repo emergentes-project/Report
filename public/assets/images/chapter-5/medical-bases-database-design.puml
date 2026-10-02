@@ -1,0 +1,48 @@
+@startuml
+left to right direction
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+title Medical Bases - Database Design Diagram
+
+package "Packages" {
+  class knowledge_packages <<Table>> {
+    id : UUID <<PK>>
+    --
+    version : VARCHAR(40) <<UK>>
+    index_file_path : VARCHAR(512)
+    status : VARCHAR(20)
+    installed_at : TIMESTAMPTZ
+  }
+}
+
+package "Sources" {
+  class medical_sources <<Table>> {
+    id : UUID <<PK>>
+    --
+    package_id : UUID <<FK>>
+    title : VARCHAR(255)
+    publisher : VARCHAR(150)
+    source_url : VARCHAR(512)
+    edition : VARCHAR(80)
+    validated_at : TIMESTAMPTZ
+    license : VARCHAR(120)
+  }
+}
+
+package "Chunks" {
+  class medical_chunks <<Table>> {
+    id : UUID <<PK>>
+    --
+    source_id : UUID <<FK>>
+    ordinal : INTEGER
+    content : TEXT
+    index_key : VARCHAR(120) <<UK>>
+    token_count : INTEGER
+  }
+}
+
+knowledge_packages "1" -- "1..*" medical_sources : package_id
+medical_sources "1" -- "1..*" medical_chunks : source_id
+
+@enduml

@@ -3519,13 +3519,21 @@ Traduce registros SQLite y resultados del índice a `MedicalKnowledgeRepository`
 
 ### 5.3.5. Bounded Context Software Architecture Component Level Diagrams.
 
+El *Component Diagram* del bounded context Medical Bases muestra cómo se descompone el contenedor *Mobile App* cuando se recupera conocimiento médico validado para el RAG. Lo elaboramos con Structurizr DSL y sigue las cuatro capas de Clean Architecture. *Medical Knowledge API* pertenece a Interface y es el contrato abierto que consume Consultation. *Medical Knowledge Service* vive en Application y coordina la búsqueda sobre el paquete activo. La selección semántica queda en *Semantic Retriever*. *Knowledge Repository* está en Infrastructure y lee fuentes, fragmentos e índice local. Hacia afuera, *Medical Knowledge Store* conserva el paquete instalado en el dispositivo. Consultation queda *downstream* y solo recibe fragmentos citados. Este contexto no sale a internet ni a Cloudinary.
+
 ### 5.3.6. Bounded Context Software Architecture Code Level Diagrams.
+
+<p align="center">
+  <img src="public/assets/images/chapter-4/C3-Medical Bases.png" alt="C3 - Component Level Diagram - Medical Bases">
+</p>
 
 #### 5.3.6.1. Bounded Context Domain Layer Class Diagrams.
 
 ![Diagrama de clases de la capa de dominio de Medical Bases](public/assets/images/chapter-5/medical-bases-domain-layer.svg)
 
 #### 5.3.6.2. Bounded Context Database Design Diagram.
+
+![Diagrama de diseño de base de datos de Medical Bases](public/assets/images/chapter-5/medical-bases-database-design.svg)
 
 ## 5.4. Bounded Context: Case Management
 
