@@ -4278,6 +4278,167 @@ Disponible en Android e iOS. Sin cuenta se puede pedir orientación. La cuenta s
 
 ### 6.2.5. Navigation Systems.
 
+Los sistemas de navegación de Lifeline están pensados para que el ciudadano llegue a la **Orientación** en pocos toques, incluso sin cuenta y sin red, y para que el personal médico recorra **Casos disponibles** → detalle → **Autoasignar** cuando hay señal. No hay menús ocultos ni un panel web clínico. La landing convence y descarga. La app ejecuta.
+
+El recorrido usa las mismas etiquetas de 6.2.2. Android usa *Bottom Navigation* (Material 3). iOS usa *Tab Bar*. El contenido crítico queda en la zona del pulgar.
+
+**Recorridos principales**
+
+**Visitante, landing** — Navbar → ancla de valor → **Descargar App** → tienda.
+
+**Ciudadano, emergencia** — Abre la app en **Nueva consulta** → texto, **Voz** o **Foto** → **Obtener orientación** → pasos numerados. Si hace falta, **Solicitar apoyo**. La consulta pasa a **Pendientes**. No hace falta iniciar sesión.
+
+**Ciudadano, después** — **Pendientes** para ver envío. Con cuenta, **Historial** en **Perfil** o en la pestaña de historial según el rol.
+
+**Personal médico** — Inicia sesión → **Casos disponibles** → filtros → detalle → **Autoasignar** → **Mis asignaciones** → **En atención** → **Cerrar caso**.
+
+**App móvil — Ciudadano**
+
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Cómo guía</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Barra inferior</td>
+      <td>Tres destinos: <strong>Nueva consulta</strong>, <strong>Pendientes</strong>, <strong>Perfil</strong>. Visible en las pantallas raíz. Se oculta en la orientación a pantalla completa para no tapar los pasos.</td>
+    </tr>
+    <tr>
+      <td>Destino inicial</td>
+      <td>Al abrir, <strong>Nueva consulta</strong>. La meta es actuar, no explorar.</td>
+    </tr>
+    <tr>
+      <td>Navegación jerárquica</td>
+      <td>Consulta → <strong>Orientación</strong> → confirmación de <strong>Solicitar apoyo</strong>. Atrás del sistema o gesto iOS vuelve a la consulta sin perder el texto.</td>
+    </tr>
+    <tr>
+      <td>Indicador de red</td>
+      <td>Fijo arriba: <strong>Sin conexión</strong>, <strong>Enviando</strong> o <strong>Enviado</strong>. No es un menú. Evita que el ciudadano busque un ajuste de “modo offline”.</td>
+    </tr>
+    <tr>
+      <td>Badge en Pendientes</td>
+      <td>Número de consultas <strong>Sin enviar</strong> o <strong>Enviando</strong>.</td>
+    </tr>
+    <tr>
+      <td>CTA inferiores</td>
+      <td><strong>Obtener orientación</strong> (cian) y <strong>Solicitar apoyo</strong> (rojo), al alcance del pulgar.</td>
+    </tr>
+    <tr>
+      <td>Controles multimodales</td>
+      <td>Cámara y micrófono en la misma pantalla de consulta. No hay un FAB de chat.</td>
+    </tr>
+    <tr>
+      <td>Bottom sheet</td>
+      <td>Confirma <strong>Solicitar apoyo</strong>. El gesto de cierre o <strong>Cancelar</strong> vuelve sin enviar el aviso.</td>
+    </tr>
+    <tr>
+      <td>Retroalimentación</td>
+      <td>El tab activo usa <strong>Lifeline Cyan</strong>. Ícono y texto juntos.</td>
+    </tr>
+    <tr>
+      <td>Gestos</td>
+      <td>Scroll de los pasos. Swipe atrás. No hay swipe entre tabs, para no cambiar de módulo por error bajo estrés.</td>
+    </tr>
+  </tbody>
+</table>
+
+**App móvil — Personal médico**
+
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Cómo guía</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Barra inferior</td>
+      <td><strong>Casos disponibles</strong>, <strong>Mis asignaciones</strong>, <strong>Historial</strong>. Tres destinos, distinto set que el ciudadano.</td>
+    </tr>
+    <tr>
+      <td>Destino inicial</td>
+      <td><strong>Casos disponibles</strong>, con <em>badge</em> de casos nuevos o que <strong>Solicitan apoyo</strong>.</td>
+    </tr>
+    <tr>
+      <td>Navegación jerárquica</td>
+      <td>Lista → detalle del <strong>Caso</strong> → <strong>Historial de estados</strong>.</td>
+    </tr>
+    <tr>
+      <td>Navegación contextual</td>
+      <td>En el detalle, <strong>Autoasignar</strong>, cambio de <strong>Estado</strong> y <strong>Cerrar caso</strong> van junto a la <strong>Persona afectada</strong> y la <strong>Foto</strong>. No hay un menú hamburguesa.</td>
+    </tr>
+    <tr>
+      <td>Chips de filtro</td>
+      <td>Sobre la lista: <strong>Provincia</strong>, <strong>Solicita apoyo</strong>, <strong>Prioridad</strong> y <strong>Estado</strong>. Reducen recorrido sin una pantalla extra de búsqueda.</td>
+    </tr>
+    <tr>
+      <td>Bottom sheet</td>
+      <td>Mapa o <strong>Lugar</strong>, y el cierre con <strong>Observación</strong>, sin salir de la lista o del detalle.</td>
+    </tr>
+    <tr>
+      <td>Indicadores de color</td>
+      <td>Punto de <strong>Disponible</strong>, <strong>Asignado</strong>, <strong>En atención</strong> o <strong>Cerrado</strong> en cada tarjeta.</td>
+    </tr>
+    <tr>
+      <td>Sesión</td>
+      <td>Sin login no hay tabs médicos. <strong>Iniciar sesión</strong> está en <strong>Perfil</strong> si el dispositivo se usó como invitado.</td>
+    </tr>
+    <tr>
+      <td>Gestos</td>
+      <td>Scroll de la lista paginada. Pull to refresh cuando hay red. Swipe atrás desde el detalle.</td>
+    </tr>
+    <tr>
+      <td>Sin conexión</td>
+      <td>Las tabs médicas muestran el aviso <strong>Sin conexión. No se pueden cargar casos</strong>. No se inventa un listado.</td>
+    </tr>
+  </tbody>
+</table>
+
+No hay aplicación web de gestión. Un menú lateral tipo VacApp rompería el diseño <em>offline-first</em> y duplicaría Case Management en el navegador. El médico trabaja en el mismo binario Flutter, con otra barra inferior.
+
+**Landing page — Público general**
+
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Cómo guía</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Navbar fijo</td>
+      <td>Enlaces: <strong>Inicio</strong>, <strong>Cómo funciona</strong>, <strong>Para ciudadanos</strong>, <strong>Para personal médico</strong>, <strong>Descargar</strong>. Sigue visible al hacer scroll.</td>
+    </tr>
+    <tr>
+      <td>Anclas</td>
+      <td><code>#como-funciona</code>, <code>#ciudadanos</code>, <code>#medicos</code>, <code>#descargar</code>. El visitante recorre una sola página larga.</td>
+    </tr>
+    <tr>
+      <td>CTA de marca</td>
+      <td><strong>Descargar App</strong> en teal <code>#0D3B4C</code> y cian <code>#1CA3C8</code>, en el hero y al final. Lleva a <code>/descargar</code> o a la tienda según el dispositivo.</td>
+    </tr>
+    <tr>
+      <td>Jerarquía visual</td>
+      <td>H1 del valor (auxilio sin internet), H2 de los dos roles, H3 de pasos. Coincide con los Header Tags de 6.2.4.</td>
+    </tr>
+    <tr>
+      <td>Footer</td>
+      <td><strong>Privacidad</strong>, contacto de RescueBridge y redes. Acceso secundario, no de emergencia.</td>
+    </tr>
+    <tr>
+      <td>Sin buscador clínico</td>
+      <td>El visitante no navega consultas ni casos. Eso queda en la app, con sesión.</td>
+    </tr>
+  </tbody>
+</table>
+
+La navegación es corta a propósito. El ciudadano recorre una línea: consulta, orientación, pendientes. El médico recorre otra: disponibles, asignación, cierre. La landing solo empuja a **Descargar**. Misma paleta, mismas palabras, mismos estados de color en todos los puntos.
+
 ## 6.3. Landing Page UI Design.
 
 ### 6.3.1. Landing Page Wireframe.
