@@ -4457,34 +4457,39 @@ La navegación es corta a propósito. El ciudadano recorre una línea: consulta,
 
 ## Conclusiones
 
-1. La problemática queda bastante clara con lo trabajado en el Capítulo I. Tras un sismo, la gente necesita orientación de primeros auxilios en los primeros minutos, pero muchas apps médicas dejan de servir si se cae internet. Fuentes como IGP, INDECI, OMS y UIT respaldan ese escenario: respuesta saturada, telecomunicaciones frágiles y poco conocimiento previo en la población.
+1. Como primera conclusión, después de un sismo la gente necesita saber qué hacer en los primeros minutos. Muchas aplicaciones médicas dejan de servir si se cae el internet. Eso no es una impresión nuestra. Lo respaldan el IGP, INDECI, la OMS y la UIT. La ayuda se satura, las redes fallan y gran parte de la población no tiene práctica en primeros auxilios.
 
-2. En las entrevistas con ciudadanos salió algo más concreto que “no saben qué hacer”. Les cuesta decidir el primer paso, se ponen nerviosos y prefieren describir la emergencia con texto, audio o fotos. También piden indicaciones cortas, numeradas y con apoyo visual. Confían más si la respuesta cita fuentes médicas reales y si, ante gravedad, el sistema les dice que llamen a un profesional.
+2. Como segunda conclusión, al hablar con ciudadanos vimos algo más concreto que “no saben qué hacer”. Se traban en el primer paso, se ponen nerviosos y prefieren contar lo que pasó con texto, voz o una foto. Quieren instrucciones cortas, numeradas y fáciles de mirar. Confían más si la app cita fuentes médicas reales y, si la situación es grave, si les dice con claridad que busquen a un profesional.
 
-3. El personal médico no rechaza la IA, pero la pone condiciones. Sirve para orientar y para un triaje preliminar por colores o prioridad, no para reemplazar evaluación clínica. En las entrevistas alertaron sobre errores comunes de la gente (sacar objetos incrustados, dar agua a alguien inconsciente) y sobre la necesidad de cubrir protocolos básicos como RCP. También coinciden en que no debe sugerirse automedicación ni mover al herido, salvo peligro inminente.
+3. Como tercera conclusión, los médicos y paramédicos no rechazan la inteligencia artificial. La aceptan para orientar y para un primer orden de prioridad, no para reemplazar su criterio. Nos pidieron que no se sugiera automedicación, que no se quite un objeto clavado y que no se dé agua a alguien inconsciente. También pidieron cubrir lo básico, como la reanimación. La app ayuda. No opera.
 
-4. El needfinding (personas, matriz de tareas, empathy maps) ayudó a separar bien los dos segmentos. El ciudadano necesita actuar offline bajo estrés. El médico necesita, cuando vuelve la red, ubicación, estado del caso y una forma ordenada de asignarse trabajo. Eso después se tradujo en user stories de consulta multimodal, orientación offline y gestión de casos.
+4. Como cuarta conclusión, quedó claro que hay dos públicos distintos. Quien está en la emergencia necesita actuar sin señal y con poco tiempo. Quien atiende necesita, cuando vuelve la red, saber dónde está la persona, cómo está y poder tomar el caso sin pelearse con otra gente por el mismo paciente.
 
-5. En ADD priorizamos drivers High/High ligados a IA sin conexión, rendimiento local y sync confiable. De ahí salió la decisión de inferencia on-device con RAG local, patrón Outbox para no perder consultas al sincronizar, y concurrencia optimista en la autoasignación de casos. Cloud queda para cuando hay red, no como dependencia del momento crítico.
+5. Como quinta conclusión, Lifeline responde primero en el teléfono. La orientación no espera a la nube. La foto se toma con la cámara y se queda en el aparato hasta que hay señal. Recién entonces se envía. Así no se pierde una consulta a mitad de camino y nadie depende de un servicio externo para recibir los pasos.
 
-6. Con DDD quedaron cuatro bounded contexts: IAM, Consultation, Medical Bases y Case Management. El context mapping evita acoplar de más: OHS/ACL entre contextos y un Shared Kernel chico solo para datos mínimos del paciente entre Consultation y Case Management. La arquitectura C4 (landscape, context, containers, deployment) cierra esa decisión con un monolito modular offline-first y backend en la nube para la parte de sync y triaje. Las evidencias fotográficas se capturan con la cámara del dispositivo y se guardan en SQLite; Cloudinary queda como sistema externo ligado solo al backend, de modo que la orientación de emergencia no depende de ese servicio.
+6. Como sexta conclusión, el sistema quedó en cuatro partes que se entienden por separado: cuentas, consulta de emergencia, fuentes médicas y casos. Ciudadano y personal médico usan la misma aplicación en el celular. En el servidor se guardan las cuentas y los casos. No hay una página web para el triaje. Inventarla ahora solo repetiría lo que ya hace el teléfono.
 
+7. Como séptima conclusión, en el diseño de detalle armamos cómo se guarda cada cosa y cómo se ve cada módulo por dentro. Lo de la emergencia y las fuentes médicas vive en el teléfono. Lo de las cuentas y los casos vive en la nube. El médico no cambia de herramienta. Entra a Lifeline con otro perfil y ve los casos.
+
+8. Como octava conclusión, acordamos cómo se habla en la pantalla. No decimos palabras de ingeniería. Decimos Pendientes, Orientación y Foto. Quien llega a la web de RescueBridge entiende de qué va el producto y puede descargarlo. Quien abre la app recorre poco. El ciudadano consulta, recibe pasos y mira lo que falta enviar. El médico toma un caso, lo atiende y lo cierra.
 
 ## Recomendaciones
 
-1. Armar un set cerrado de fuentes médicas autorizadas y un protocolo de actualización del índice RAG antes de ampliar el modelo. Sin eso, la confianza que pidieron en entrevistas se cae rápido.
+1. Como primera recomendación, hay que cuidar con rigor las fuentes médicas que usa la app. Antes de agrandar el modelo hay que saber qué documentos entran, quién los valida y cómo se actualizan. Si eso se suelta, se pierde la confianza que pidieron en las entrevistas.
 
-2. Definir métricas simples de calidad de respuesta (precisión frente a casos de prueba, tasa de derivación a profesional, respuestas peligrosas bloqueadas). En las entrevistas pedían aval y resultados medibles; no alcanza con decir que la IA “está certificada”.
+2. Como segunda recomendación, hay que medir si las indicaciones sirven. No basta con decir que la inteligencia artificial “está certificada”. Hay que ver, con casos de prueba, si acierta, si deriva a un profesional cuando debe y si bloquea consejos peligrosos.
 
-3. En el diseño táctico e implementación, fijar reglas duras de seguridad clínica: no sugerir automedicación, no retirar objetos incrustados, no dar líquidos a inconscientes, y forzar llamada a ayuda cuando haya shock o signos graves.
+3. Como tercera recomendación, al construir la app no hay que aflojar las reglas de seguridad. Nada de medicinas por cuenta propia, nada de sacar objetos incrustados, nada de líquidos a una persona inconsciente. Si hay signos graves, el mensaje tiene que ser buscar ayuda profesional.
 
-4. Probar el flujo offline en celulares de gama media-baja (batería, memoria, tiempo de respuesta). Es el riesgo de negocio que ya asumimos en Lean UX; si el modelo no corre bien en dispositivo real, el resto del diseño no sirve en sismo.
+4. Como cuarta recomendación, hay que probar Lifeline en celulares comunes, no solo en equipos nuevos. Si en un teléfono de gama media se calienta, se queda sin batería o tarda demasiado, en un sismo real no va a servir.
 
-5. En UX, diseñar pantallas pensadas para estrés: pocos campos, pasos numerados, audio/foto como entrada rápida y lenguaje sin tecnicismos. Validarlo después con ciudadanos, no solo con el equipo.
+5. Como quinta recomendación, hay que terminar las pantallas dibujadas con los nombres y los recorridos que ya fijamos. Después hay que mostrarlas a ciudadanos y a personal médico. El equipo no puede ser el único juez de si se entiende.
 
-6. Para personal médico, dejar el triaje y la sincronización como vista preliminar editable. El médico debe poder reclasificar el caso; la etiqueta de la app no puede quedar como verdad clínica.
+6. Como sexta recomendación, hay que dejar que el médico cambie la prioridad si no está de acuerdo. Lo que muestra la app es una ayuda para ordenar, no un diagnóstico.
 
-7. En una siguiente etapa de validación, volver a entrevistar ambos segmentos con un prototipo o build temprana. Comparar si entienden las indicaciones, si confían en las fuentes mostradas y si la sincronización de casos ayuda realmente en la priorización. Hasta no tener esa evidencia, estas conclusiones siguen siendo parciales al cierre del diseño estratégico.
+7. Como séptima recomendación, no conviene armar ahora un sitio web para gestionar casos. El diseño ya pone esa tarea en el celular. Si más adelante hace falta un escritorio, habría que pensarlo como algo nuevo, no como un atajo de última hora.
+
+8. Como octava recomendación, hay que volver a hablar con ambos públicos cuando haya un prototipo que se pueda tocar. Preguntar si entienden los pasos, si creen en las fuentes y si recibir los casos de verdad les ahorra tiempo. Hasta esa prueba, esto es un diseño bien armado. Todavía no es una prueba de campo.
 
 # Video About-the-Team
 
