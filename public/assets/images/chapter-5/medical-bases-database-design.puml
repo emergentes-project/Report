@@ -5,7 +5,6 @@ skinparam classAttributeIconSize 0
 skinparam shadowing false
 title Medical Bases - Database Design Diagram
 
-package "Packages" {
   class knowledge_packages <<Table>> {
     id : UUID <<PK>>
     --
@@ -14,9 +13,7 @@ package "Packages" {
     status : VARCHAR(20)
     installed_at : TIMESTAMPTZ
   }
-}
 
-package "Sources" {
   class medical_sources <<Table>> {
     id : UUID <<PK>>
     --
@@ -28,9 +25,7 @@ package "Sources" {
     validated_at : TIMESTAMPTZ
     license : VARCHAR(120)
   }
-}
 
-package "Chunks" {
   class medical_chunks <<Table>> {
     id : UUID <<PK>>
     --
@@ -39,7 +34,6 @@ package "Chunks" {
     content : TEXT
     index_key : VARCHAR(120) <<UK>>
     token_count : INTEGER
-  }
 }
 
 knowledge_packages "1" -- "1..*" medical_sources : package_id

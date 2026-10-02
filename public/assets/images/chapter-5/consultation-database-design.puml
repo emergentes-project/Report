@@ -5,13 +5,10 @@ skinparam classAttributeIconSize 0
 skinparam shadowing false
 title Consultation - Database Design Diagram
 
-package "Catalog" {
   class provinces <<Table>> {
     name : VARCHAR(120) <<PK>>
   }
-}
 
-package "Consultations" {
   class consultations <<Table>> {
     id : UUID <<PK>>
     --
@@ -24,9 +21,7 @@ package "Consultations" {
     updated_at : TIMESTAMPTZ
     server_ack_at : TIMESTAMPTZ
   }
-}
 
-package "Patients" {
   class patients <<Table>> {
     id : UUID <<PK>>
     --
@@ -38,9 +33,7 @@ package "Patients" {
     latitude : DOUBLE
     longitude : DOUBLE
   }
-}
 
-package "Answers" {
   class consultation_answers <<Table>> {
     id : UUID <<PK>>
     --
@@ -52,9 +45,7 @@ package "Answers" {
     source_references : TEXT
     created_at : TIMESTAMPTZ
   }
-}
 
-package "Sync" {
   class sync_outbox <<Table>> {
     id : UUID <<PK>>
     --
@@ -65,7 +56,6 @@ package "Sync" {
     attempt_count : INTEGER
     acked_at : TIMESTAMPTZ
     created_at : TIMESTAMPTZ
-  }
 }
 
 consultations "1" -- "0..1" patients : consultation_id

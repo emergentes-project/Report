@@ -5,16 +5,13 @@ skinparam classAttributeIconSize 0
 skinparam shadowing false
 title IAM - Database Design Diagram
 
-package "Catalog" {
   class roles <<Table>> {
     id : UUID <<PK>>
     --
     code : VARCHAR(32) <<UK>>
     name : VARCHAR(80) <<UK>>
   }
-}
 
-package "Accounts" {
   class users <<Table>> {
     id : UUID <<PK>>
     --
@@ -27,9 +24,7 @@ package "Accounts" {
     created_at : TIMESTAMPTZ
     updated_at : TIMESTAMPTZ
   }
-}
 
-package "Profiles" {
   class citizen_profiles <<Table>> {
     id : UUID <<PK>>
     --
@@ -57,7 +52,6 @@ package "Profiles" {
     verified_at : TIMESTAMPTZ
     created_at : TIMESTAMPTZ
     updated_at : TIMESTAMPTZ
-  }
 }
 
 roles "1" -- "0..*" users : role_id

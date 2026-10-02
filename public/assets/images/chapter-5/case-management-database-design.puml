@@ -5,90 +5,84 @@ skinparam classAttributeIconSize 0
 skinparam shadowing false
 title Case Management - Database Design Diagram
 
-package "Submissions" {
-  class consultation_submissions <<Table>> {
-    id : UUID <<PK>>
-    --
-    citizen_user_id : UUID
-    input_text : TEXT
-    photo_storage_key : VARCHAR(255)
-    help_requested : BOOLEAN
-    consultation_recorded_at : TIMESTAMPTZ
-    received_at : TIMESTAMPTZ
-    idempotency_key : UUID <<UK>>
-  }
-
-  class patients <<Table>> {
-    id : UUID <<PK>>
-    --
-    consultation_id : UUID <<UK, FK>>
-    name : VARCHAR(150)
-    age_years : INTEGER
-    location_description : VARCHAR(255)
-    province : VARCHAR(120)
-    latitude : NUMERIC(9,6)
-    longitude : NUMERIC(9,6)
-  }
-
-  class consultation_answers <<Table>> {
-    id : UUID <<PK>>
-    --
-    consultation_id : UUID <<UK, FK>>
-    guidance_text : TEXT
-    guidance_status : VARCHAR(40)
-    preliminary_priority : VARCHAR(40)
-    professional_help_recommended : BOOLEAN
-    source_references : JSONB
-    created_at : TIMESTAMPTZ
-  }
+class consultation_submissions <<Table>> {
+  id : UUID <<PK>>
+  --
+  citizen_user_id : UUID
+  input_text : TEXT
+  photo_storage_key : VARCHAR(255)
+  help_requested : BOOLEAN
+  consultation_recorded_at : TIMESTAMPTZ
+  received_at : TIMESTAMPTZ
+  idempotency_key : UUID <<UK>>
 }
 
-package "Cases" {
-  class cases <<Table>> {
-    id : UUID <<PK>>
-    --
-    consultation_id : UUID <<UK, FK>>
-    status : VARCHAR(32)
-    observation : TEXT
-    created_at : TIMESTAMPTZ
-    updated_at : TIMESTAMPTZ
-    closed_at : TIMESTAMPTZ
-  }
-
-  class assignations <<Table>> {
-    id : UUID <<PK>>
-    --
-    case_id : UUID <<FK>>
-    professional_user_id : UUID
-    assigned_at : TIMESTAMPTZ
-    closed_at : TIMESTAMPTZ
-  }
-
-  class case_status_history <<Table>> {
-    id : UUID <<PK>>
-    --
-    case_id : UUID <<FK>>
-    from_status : VARCHAR(32)
-    to_status : VARCHAR(32)
-    actor_type : VARCHAR(40)
-    user_id : UUID
-    occurred_at : TIMESTAMPTZ
-  }
+class patients <<Table>> {
+  id : UUID <<PK>>
+  --
+  consultation_id : UUID <<UK, FK>>
+  name : VARCHAR(150)
+  age_years : INTEGER
+  location_description : VARCHAR(255)
+  province : VARCHAR(120)
+  latitude : NUMERIC(9,6)
+  longitude : NUMERIC(9,6)
 }
 
-package "Outbox" {
-  class outbox_events <<Table>> {
-    id : UUID <<PK>>
-    --
-    aggregate_id : UUID
-    event_type : VARCHAR(80)
-    payload : JSONB
-    status : VARCHAR(20)
-    attempts : INTEGER
-    next_attempt_at : TIMESTAMPTZ
-    created_at : TIMESTAMPTZ
-    published_at : TIMESTAMPTZ
-  }
+class consultation_answers <<Table>> {
+  id : UUID <<PK>>
+  --
+  consultation_id : UUID <<UK, FK>>
+  guidance_text : TEXT
+  guidance_status : VARCHAR(40)
+  preliminary_priority : VARCHAR(40)
+  professional_help_recommended : BOOLEAN
+  source_references : JSONB
+  created_at : TIMESTAMPTZ
+}
+
+class cases <<Table>> {
+  id : UUID <<PK>>
+  --
+  consultation_id : UUID <<UK, FK>>
+  status : VARCHAR(32)
+  observation : TEXT
+  created_at : TIMESTAMPTZ
+  updated_at : TIMESTAMPTZ
+  closed_at : TIMESTAMPTZ
+}
+
+class assignations <<Table>> {
+  id : UUID <<PK>>
+  --
+  case_id : UUID <<FK>>
+  professional_user_id : UUID
+  assigned_at : TIMESTAMPTZ
+  closed_at : TIMESTAMPTZ
+}
+
+class case_status_history <<Table>> {
+  id : UUID <<PK>>
+  --
+  case_id : UUID <<FK>>
+  from_status : VARCHAR(32)
+  to_status : VARCHAR(32)
+  actor_type : VARCHAR(40)
+  user_id : UUID
+  occurred_at : TIMESTAMPTZ
+}
+
+class outbox_events <<Table>> {
+  id : UUID <<PK>>
+  --
+  aggregate_id : UUID
+  event_type : VARCHAR(80)
+  payload : JSONB
+  status : VARCHAR(20)
+  attempts : INTEGER
+  next_attempt_at : TIMESTAMPTZ
+  created_at : TIMESTAMPTZ
+  published_at : TIMESTAMPTZ
 }
 
 consultation_submissions "1" -- "0..1" patients : consultation_id
