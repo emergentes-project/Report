@@ -81,9 +81,9 @@
 
 # Project Report Collaboration Insights
 
-En esta sección se presenta la url del project report de GitHub en la organización del equipo. Además, se evidencia el registro de commits y la colaboración de todos los integrantes del equipo a través de Github.
+En esta sección se presenta el repositorio del project report de GitHub en la organización del equipo. Además, se evidencia el registro de commits y la colaboración de todos los integrantes del equipo a través de Github.
 
-Link del project report: [https://github.com/emergentes-project/Report](https://github.com/emergentes-project/Report)
+Repositorio del informe: [GitHub — emergentes-project/Report](https://github.com/emergentes-project/Report)
 
 
 
@@ -444,7 +444,8 @@ En situaciones de desastre natural, como sismos de gran magnitud, los servicios 
 - **Creemos que** al enviar notificaciones automáticas con información de las consultas una vez recuperada la conexión, lograremos colaborar efectivamente con el personal de asistencia médica. **Sabremos que hemos tenido éxito cuando** el personal médico reciba alertas precisas de triaje y ubicación, reduciendo su tiempo de localización de víctimas simuladas en un 30% utilizando nuestros reportes.
 
 #### 1.2.3.4. Lean UX Canvas.
-[Enlace al Lean UX Canvas.](https://canva.link/a0rosb44f3zycsg)
+
+El canvas colaborativo se encuentra en [Canva — Lean UX Canvas de Lifeline](https://canva.link/a0rosb44f3zycsg).
 
 <p align="center">
   <img src="public/assets/images/chapter-1/LeanUXCanvas-Lifeline.png" alt="Lean UX Canvas Lifeline">
@@ -673,9 +674,7 @@ Entrevistado N°1: Barbara Eliana Seminario Leon
 
   Para Barbara, enfrentar una emergencia médica post-sismo es una situación delicada y potencialmente frustrante, tal como lo experimentó al tener que evacuar cuidadosamente a una persona con el pie torcido. Su principal barrera actual es la incapacidad de comunicarse con servicios de emergencia o buscar información de primeros auxilios sin acceso a internet, lo que complica el manejo de heridas complejas o situaciones donde el paciente no puede ser movilizado. Frente a estos problemas, encuentra una gran oportunidad en una aplicación que le permita describir la emergencia combinando fotos y texto, recibiendo a cambio indicaciones médicas claras, concisas y ordenadas a modo de checklist. Para confiar plenamente en esta herramienta, recalca que la inteligencia artificial debe basarse en información verificada y no "alucinar", considerándola excelente para un triaje o descarte inicial, aunque manteniendo el deseo de una eventual interacción humana y mostrándose completamente dispuesta a compartir la información personal o de ubicación que sea necesaria para facilitar el rescate.
 
-- Enlace a la entrevista:
-
-  https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
+- Enlace a la entrevista: [Ver entrevista de Barbara Eliana Seminario Leon](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX)
 
 Entrevistado N°2: Roberto Mauricio Huertas Romero
 
@@ -693,9 +692,7 @@ Entrevistado N°2: Roberto Mauricio Huertas Romero
 - Resumen:
 
   Para Roberto, su experiencia cercana con una emergencia post-sismo ocurrió cuando su primita se cayó de las escaleras al asustarse por el movimiento. Aunque las heridas fueron leves y sin mayor gravedad, el evento le dejó claro lo difícil que puede resultar actuar sin conocimientos médicos. En una situación similar, indica que primero revisaría los ojos y la cabeza, por considerarla la zona más frágil, y luego observaría el comportamiento de la persona para detectar signos de desorientación. Reconoce que lo más complicado sería determinar cómo ayudar correctamente, ya que no cuenta con preparación médica y teme realizar alguna acción inadecuada. Además, señala que los nervios y la ansiedad por querer ayudar podrían afectar su capacidad para seguir instrucciones de forma correcta. Respecto a la gravedad, considera que a veces es necesario actuar con rapidez, pero si la persona pierde el conocimiento buscaría ayuda profesional de inmediato. Sin internet, afirma que le resultaría muy difícil buscar información de primeros auxilios y preferiría acudir directamente a un profesional. En una emergencia, le resultaría más fácil explicar la situación hablando y tomando fotografías. Le gustaría que las indicaciones médicas se presenten paso a paso, con imágenes y textos precisos, y que estén avaladas para poder confiar plenamente en ellas. También considera útil que la inteligencia artificial sugiera si es necesario solicitar apoyo médico profesional, precisamente porque él no tiene formación en el área. Finalmente, estaría dispuesto a compartir información personal y médica en una emergencia, como el tipo de sangre o posibles alergias a medicamentos, porque considera que esos datos pueden facilitar una atención más segura.
-- Enlace a la entrevista:
-
-  https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+- Enlace a la entrevista: [Ver entrevista de Roberto Mauricio Huertas Romero](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 Entrevistada N°3: Araceli Felicia Reyna Caicedo
 
@@ -714,9 +711,7 @@ Entrevistada N°3: Araceli Felicia Reyna Caicedo
 
   Araceli no ha vivido una urgencia médica durante un sismo, pero al no contar con conocimientos en primeros auxilios, siente que sin internet no tendría una fuente de información. En una situación post sismo, siente que lo más difícil es no saber cuál sería el primer paso para tratar a un paciente. Siente que para comunicar una situación de emergencia, más fácil le parece a través de un audio porque simplifica el tiempo, y considera que tomar fotos ayudaría en la descripción. Al momento de recibir indicaciones valoraría la forma escrita y numerada de pasos, con imágenes adjuntas. Siente que confiaría más en las indicaciones de la ia, si éstas referencian a portales médicos o instituciones y sí está dispuesta a compartir su información personal. 
 
-- Enlace a la entrevista:
-
-  https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L
+- Enlace a la entrevista: [Ver entrevista de Araceli Felicia Reyna Caicedo](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L)
 
 **Segmento objetivo 2: Personal médico**
 
@@ -736,9 +731,7 @@ Entrevistado N°1: Andre Ramirez Pella
 
   Para Andre, la alarmante falta de conocimientos en primeros auxilios por parte de la población representa un riesgo crítico, ya que la mayoría desconoce cómo realizar una evaluación inicial o aplicar maniobras básicas para salvar vidas. A esta barrera se le suma la gran dificultad que tienen los equipos médicos para localizar víctimas durante desastres con derrumbes. En este contexto, considera que recibir orientación de una inteligencia artificial sería una herramienta sumamente útil para empoderar a los ciudadanos, agilizando el proceso de atención y reduciendo riesgos antes de que llegue la ayuda. Para que el sistema sea confiable y seguro, la IA debe basarse en fuentes verificadas, realizar preguntas clave (como medir el pulso, nivel de conciencia, sangrados o fracturas) e identificar rápidamente si la situación requiere atención profesional inmediata. Finalmente, hace hincapié en que la aplicación nunca debe sugerir la automedicación ni indicar movimientos o tratamientos complejos que requieran entrenamiento previo, ya que un mal análisis o una ejecución incorrecta podrían empeorar gravemente el estado del paciente.
 
-- Enlace a la entrevista:
-
-  https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
+- Enlace a la entrevista: [Ver entrevista de Andre Ramirez Pella](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds)
 
 Entrevistado N°2: Katia Milagros Saavedra Saavedra
 
@@ -756,9 +749,7 @@ Entrevistado N°2: Katia Milagros Saavedra Saavedra
 
   Para Katia, médica reumatóloga, la falta de una cultura de primeros auxilios y de acceso a capacitaciones representa un riesgo importante, pues muchas personas no saben reconocer señales de alarma ni actuar mientras llega la ayuda profesional. Considera que una inteligencia artificial podría ser útil para orientar a ciudadanos sin experiencia durante una emergencia posísmica, ayudándolos a evaluar la respiración y el pulso, recopilar información sobre el accidente y clasificar a las víctimas según su gravedad. Para brindar recomendaciones confiables, la IA debería preguntar por el mecanismo de la lesión, los síntomas, el tipo y la ubicación del dolor, el tiempo transcurrido y los antecedentes médicos, además de analizar signos vitales como la frecuencia cardíaca, la frecuencia respiratoria, la presión arterial y la temperatura, idealmente mediante sensores. Sin embargo, enfatiza que la IA no puede detectar con precisión problemas internos, como una hemorragia, ni reemplazar la evaluación clínica y la experiencia del personal médico. Finalmente, señala que nunca debería recomendar mover a un paciente sin la presencia de un profesional o paramédico, excepto cuando permanezca en una zona de peligro inminente, y siempre debe advertir que su función es únicamente orientar, acelerar la atención y facilitar la priorización de las personas con mayor riesgo.
 
-- Enlace a la entrevista:
-
-  https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
+- Enlace a la entrevista: [Ver entrevista de Katia Milagros Saavedra Saavedra](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ)
 
 Entrevistado N°3: Kevin Franco Escobar Coca
 
@@ -776,9 +767,7 @@ Entrevistado N°3: Kevin Franco Escobar Coca
 
   Para Kevin, enfermero especializado en el área de emergencias, la falta de conocimientos médicos en la población general representa un grave riesgo ante accidentes o desastres sísmicos, debido a que las personas suelen incurrir en prácticas perjudiciales como retirar objetos incrustados de una herida, dar agua a personas inconscientes o precipitarse a conclusiones sin una valoración previa. Señala que lo primero que debe evaluarse en una víctima es su estado neurológico y nivel de orientación (verificar si se encuentra desorientada o desconcertada), así como la presencia de contusiones y traumatismos. Explica además que, para gestionar la atención cuando hay múltiples heridos, se debe aplicar un triaje por colores y examinar signos visibles como hematomas para determinar con rapidez quiénes requieren auxilio inmediato. Respecto al uso de una inteligencia artificial en primeros auxilios, opina que representa tanto un beneficio como una amenaza latente: si bien puede ser de gran utilidad, indicaciones imprecisas o mal formuladas podrían complicar severamente el cuadro clínico del paciente y dificultar la labor posterior del equipo médico. Por ello, considera indispensable que la solución esté formalmente avalada y respaldada por métricas y resultados clínicos demostrables. En cuanto a las capacidades del sistema, resalta la necesidad de dominar protocolos fundamentales como RCP y soporte respiratorio, además de realizar un interrogatorio activo sobre el estado general del paciente (por ejemplo, detectar oportunamente si se encuentra en shock u otra condición crítica) para evitar equivocaciones. Finalmente, enfatiza que si un paciente se encuentra en estado grave, la aplicación debe ordenar de manera taxativa e inmediata la llamada a un profesional de la salud, recordando que la preservación de la vida es primordial.
 
-- Enlace a la entrevista:
-
-  https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4
+- Enlace a la entrevista: [Ver entrevista de Kevin Franco Escobar Coca](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4)
 
 
 ### 2.2.3. Análisis de entrevistas
@@ -2516,7 +2505,7 @@ __Step 10: Bounded Context__
 
 Para el último paso, conectamos nuestros Bounded Contexts formados, considerando las funcionalidades a las quw tendría acceso cada tipo de usuario, así como el flujo que se seguiría y la dependencia que existía de uno a otro. Por ejemplo, existe una conexión directa entre Consultation y Medical Bases puesto que el modelo de IA debe recuperar información de la base de conocimientos médicos cada vez que se le realice una consulta.
 
-[Enlace al Event Storming](https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a)
+El tablero colaborativo se encuentra en [Lucidchart — EventStorming de Lifeline](https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a).
 
 ### 4.2.2. Candidate Context Discovery
 
@@ -2592,7 +2581,7 @@ En este flujo se puede ver como el personal médico recibe acceso a los casos pr
 
 En esta sección el equipo diseña los candidate bounded contexts identificados durante el EventStorming (IAM, Consultation, Medical Bases y Case Management), siguiendo el proceso iterativo del Bounded Context Canvas: Context Overview Definition, Business Rules Distillation & Ubiquitous Language Capture, Capability Analysis, Capability Layering, Dependencies Capture y Design Critique. Se priorizó **Consultation** por ser el core domain del producto, seguido de **Case Management**, **Medical Bases** e **IAM**.
 
-Se pueden verificar las imagenes por medio del siguiente enlace de Miro: https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
+Los canvases colaborativos se encuentran en [Miro — Bounded Context Canvases de Lifeline](https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853).
 
 #### Bounded Context Canvas: Consultation
 
@@ -4077,22 +4066,21 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 
 # Anexos
 
+**Anexo A — Repositorio del Project Report:** [GitHub — emergentes-project/Report](https://github.com/emergentes-project/Report)
 
-**Anexo A — Repositorio del Project Report:** https://github.com/emergentes-project/Report
-
-**Anexo B — Lean UX Canvas:** https://canva.link/a0rosb44f3zycsg
+**Anexo B — Lean UX Canvas:** [Canva — Lean UX Canvas de Lifeline](https://canva.link/a0rosb44f3zycsg)
 
 **Anexo C — Entrevistas**
 
-- Barbara Eliana Seminario Leon (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
-- Roberto Mauricio Huertas Romero (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
-- Araceli Felicia Reyna Caicedo (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L
-- Andre Ramirez Pella (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
-- Katia Milagros Saavedra Saavedra (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
-- Kevin Franco Escobar Coca (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4
+- Barbara Eliana Seminario Leon (ciudadanos): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX)
+- Roberto Mauricio Huertas Romero (ciudadanos): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+- Araceli Felicia Reyna Caicedo (ciudadanos): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L)
+- Andre Ramirez Pella (personal médico): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds)
+- Katia Milagros Saavedra Saavedra (personal médico): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ)
+- Kevin Franco Escobar Coca (personal médico): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4)
 
-**Anexo D — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
+**Anexo D — EventStorming:** [Lucidchart — EventStorming de Lifeline](https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a)
 
-**Anexo E — Bounded Context Canvases:** https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
+**Anexo E — Bounded Context Canvases:** [Miro — Bounded Context Canvases de Lifeline](https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853)
 
-**Anexo F — Video de exposición TB1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQBNFWEp0eu-Tq5JqPx6zMy0Af61bR_jIWZgAegB6poM8xQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MV8loY
+**Anexo F — Video de exposición TB1:** [Ver video de exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQBNFWEp0eu-Tq5JqPx6zMy0Af61bR_jIWZgAegB6poM8xQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MV8loY)
