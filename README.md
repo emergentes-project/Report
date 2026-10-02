@@ -3358,13 +3358,21 @@ Envía la consulta después de obtener la clave de foto con la misma clave de id
 
 ### 5.2.5. Bounded Context Software Architecture Component Level Diagrams.
 
+El *Component Diagram* del bounded context Consultation muestra cómo se descompone el contenedor *Mobile App* cuando se registra una emergencia y se genera orientación en el dispositivo. Lo elaboramos con Structurizr DSL y sigue las cuatro capas de Clean Architecture. *Emergency Consultation UI* pertenece a Interface y recibe texto, voz o una fotografía tomada con la cámara local. *Consultation Service* vive en Application y orquesta la consulta, la evidencia y la inferencia. Las reglas de la consulta y de seguridad de la orientación quedan en *Consultation Domain*. *Local Persistence and Sync* está en Infrastructure y guarda el agregado en SQLite junto con el trabajo pendiente de entrega. *On-Device AI Engine* ejecuta el modelo en el teléfono. Hacia Medical Bases, *Medical Knowledge API* expone la búsqueda local que alimenta el RAG. Al recuperar señal, la sincronización sale hacia el *Load Balancer*. Este contexto no habla con Cloudinary.
+
 ### 5.2.6. Bounded Context Software Architecture Code Level Diagrams.
+
+<p align="center">
+  <img src="public/assets/images/chapter-4/C3-Consultation.png" alt="C3 - Component Level Diagram - Consultation">
+</p>
 
 #### 5.2.6.1. Bounded Context Domain Layer Class Diagrams.
 
 ![Diagrama de clases de la capa de dominio de Consultation](public/assets/images/chapter-5/consultation-domain-layer.svg)
 
 #### 5.2.6.2. Bounded Context Database Design Diagram.
+
+![Diagrama de diseño de base de datos de Consultation](public/assets/images/chapter-5/consultation-database-design.svg)
 
 ## 5.3. Bounded Context: Medical Bases
 
