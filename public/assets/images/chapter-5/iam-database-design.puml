@@ -1,0 +1,67 @@
+@startuml
+left to right direction
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+title IAM - Database Design Diagram
+
+package "Catalog" {
+  class roles <<Table>> {
+    id : UUID <<PK>>
+    --
+    code : VARCHAR(32) <<UK>>
+    name : VARCHAR(80) <<UK>>
+  }
+}
+
+package "Accounts" {
+  class users <<Table>> {
+    id : UUID <<PK>>
+    --
+    email : VARCHAR(255) <<UK>>
+    password_hash : VARCHAR(255)
+    role_id : UUID <<FK>>
+    first_name : VARCHAR(100)
+    last_name : VARCHAR(100)
+    phone : VARCHAR(30)
+    created_at : TIMESTAMPTZ
+    updated_at : TIMESTAMPTZ
+  }
+}
+
+package "Profiles" {
+  class citizen_profiles <<Table>> {
+    id : UUID <<PK>>
+    --
+    user_id : UUID <<UK, FK>>
+    city : VARCHAR(120)
+    district : VARCHAR(120)
+    address : VARCHAR(255)
+    date_of_birth : DATE
+    pre_existing_conditions : TEXT
+    allergies : TEXT
+    emergency_contact_name : VARCHAR(150)
+    emergency_contact_phone : VARCHAR(30)
+    created_at : TIMESTAMPTZ
+    updated_at : TIMESTAMPTZ
+  }
+
+  class medical_profiles <<Table>> {
+    id : UUID <<PK>>
+    --
+    user_id : UUID <<UK, FK>>
+    professional_category : VARCHAR(80)
+    professional_license_number : VARCHAR(50) <<UK>>
+    specialty : VARCHAR(120)
+    verification_status : VARCHAR(20)
+    verified_at : TIMESTAMPTZ
+    created_at : TIMESTAMPTZ
+    updated_at : TIMESTAMPTZ
+  }
+}
+
+roles "1" -- "0..*" users : role_id
+users "1" -- "0..1" citizen_profiles : user_id
+users "1" -- "0..1" medical_profiles : user_id
+
+@enduml

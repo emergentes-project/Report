@@ -3102,13 +3102,21 @@ Implementa `AccessTokenIssuer` para emitir la credencial de una sesión autentic
 
 ### 5.1.5. Bounded Context Software Architecture Component Level Diagrams.
 
+El *Component Diagram* del bounded context IAM muestra cómo se descompone el contenedor *Backend Modular API* cuando se trata de cuentas, perfiles, roles y autorización del personal médico. Lo elaboramos con Structurizr DSL y sigue las cuatro capas de Clean Architecture. *IAM Interface* pertenece a Interface y ofrece tanto los endpoints REST como el contrato interno que usa Case Management. *IAM Service* vive en Application y coordina el registro, la sesión y la validación de rol. Las reglas de usuario y autorización quedan en *Identity and Access Domain*. *IAM Repository* está en Infrastructure y se encarga de persistir ese modelo. Hacia afuera, el *Load Balancer* dirige el tráfico HTTPS a la interfaz. *Cloud Database* en PostgreSQL guarda identidades, perfiles y roles. Case Management queda *downstream* y solo pregunta por la identidad y el rol del profesional. No llega al modelo interno de IAM.
+
 ### 5.1.6. Bounded Context Software Architecture Code Level Diagrams.
+
+<p align="center">
+  <img src="public/assets/images/chapter-4/C3-IAM.png" alt="C3 - Component Level Diagram - IAM">
+</p>
 
 #### 5.1.6.1. Bounded Context Domain Layer Class Diagrams.
 
 ![Diagrama de clases de la capa de dominio de IAM](public/assets/images/chapter-5/iam-domain-layer.svg)
 
 #### 5.1.6.2. Bounded Context Database Design Diagram.
+
+![Diagrama de diseño de base de datos de IAM](public/assets/images/chapter-5/iam-database-design.svg)
 
 ## 5.2. Bounded Context: Consultation
 
