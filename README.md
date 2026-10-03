@@ -4189,7 +4189,7 @@ Filtros de estado: **Asignado**, **En atención**, **Cerrado**. El valor por def
 
 Las tarjetas muestran estado con color, nombre o edad de la **Persona afectada** si existe, y provincia. Al tocarlas se abre el detalle con foto, pasos dados, mapa o lugar, y acciones **Autoasignar** no aplica aquí. Sí aplican cambiar estado y **Cerrar caso**.
 
-Lista vacía: **No tienes asignaciones en este estado**.
+Lista vacía: No tienes asignaciones en este estado.
 
 **Historial de un caso**
 
