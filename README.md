@@ -4501,6 +4501,8 @@ Los títulos y botones utilizan Montserrat en pesos Bold y SemiBold, y el cuerpo
 
 Esta sección presenta el diseño de la interfaz de la aplicación móvil de Lifeline, que es la única aplicación dentro del alcance y atiende a dos roles autenticados: el ciudadano (representado por la persona Adriana Rojas) y el personal médico (representado por Luis Mendoza). El diseño parte del Product Backlog y de las General Style Guidelines del capítulo, y se presenta en dos niveles: los wireframes de cada pantalla (6.4.1) y los wireflows que muestran cómo se recorren las pantallas para cumplir cada User goal (6.4.2).
 
+El diseño completo puede consultarse en [Figma — Diseño de la aplicación Lifeline](https://www.figma.com/design/CRiupyF7Y7lgMrmHATV1up/Landing---Application-wieframes?node-id=30-46&t=enQlztgjAvrXmFMz-1).
+
 ### 6.4.1. Applications Wireframes.
 
 Los wireframes de la aplicación móvil representan la estructura de cada pantalla, sin color ni identidad visual definitiva. Se elaboraron 18 pantallas, que cubren las historias de usuario de interfaz del Product Backlog (US01 a US32, sin las historias técnicas).
@@ -4682,21 +4684,23 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 
 # Anexos
 
-**Anexo A — Repositorio del Project Report:** [GitHub — emergentes-project/Report](https://github.com/emergentes-project/Report)
+**Anexo A — Repositorio del Project Report:** https://github.com/emergentes-project/Report
 
-**Anexo B — Lean UX Canvas:** [Canva — Lean UX Canvas de Lifeline](https://canva.link/a0rosb44f3zycsg)
+**Anexo B — Lean UX Canvas:** https://canva.link/a0rosb44f3zycsg
 
 **Anexo C — Entrevistas**
 
-- Barbara Eliana Seminario Leon (ciudadanos): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX)
-- Roberto Mauricio Huertas Romero (ciudadanos): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
-- Araceli Felicia Reyna Caicedo (ciudadanos): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L)
-- Andre Ramirez Pella (personal médico): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds)
-- Katia Milagros Saavedra Saavedra (personal médico): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ)
-- Kevin Franco Escobar Coca (personal médico): [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4)
+- Barbara Eliana Seminario Leon (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
+- Roberto Mauricio Huertas Romero (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+- Araceli Felicia Reyna Caicedo (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211d760_upc_edu_pe/IQDxWcXxxfLaTbVmJ0Re6ROyAVkQNEzOLj5AVEb6OsR-4u8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=s5gC7L
+- Andre Ramirez Pella (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
+- Katia Milagros Saavedra Saavedra (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
+- Kevin Franco Escobar Coca (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4
 
-**Anexo D — EventStorming:** [Lucidchart — EventStorming de Lifeline](https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a)
+**Anexo D — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
 
-**Anexo E — Bounded Context Canvases:** [Miro — Bounded Context Canvases de Lifeline](https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853)
+**Anexo E — Bounded Context Canvases:** https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
 
-**Anexo F — Video de exposición TB1:** [Ver video de exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQBNFWEp0eu-Tq5JqPx6zMy0Af61bR_jIWZgAegB6poM8xQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MV8loY)
+**Anexo F — Video de exposición TB1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQBNFWEp0eu-Tq5JqPx6zMy0Af61bR_jIWZgAegB6poM8xQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MV8loY
+
+**Anexo G — Diseño de la aplicación en Figma:** https://www.figma.com/design/CRiupyF7Y7lgMrmHATV1up/Landing---Application-wieframes?node-id=30-46&t=enQlztgjAvrXmFMz-1
