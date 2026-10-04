@@ -4478,6 +4478,15 @@ La navegación es corta a propósito. El ciudadano recorre una línea: consulta,
 
 ### 6.3.1. Landing Page Wireframe.
 
+La landing page de Lifeline es el punto de entrada web del producto de RescueBridge. Su finalidad es dar a conocer la aplicación y motivar su descarga antes de que ocurra una emergencia, ya que tras un sismo las telecomunicaciones pueden colapsar y no sería posible instalar una aplicación nueva. Por ello, el diseño comunica con claridad tres ideas: qué hace Lifeline (indicaciones de primeros auxilios post-sismo mediante IA local basada en fuentes médicas verificadas), en qué se diferencia (funciona sin conexión a internet) y cómo obtenerla.
+
+El diseño sigue las General Style Guidelines definidas en la sección 6.1: la paleta Deep Rescue Teal, Lifeline Cyan, Alert Amber y Emergency Red, la tipografía Montserrat para títulos y Inter para el cuerpo, y un tono empático, sereno y no alarmista. En esta sección se presentan el wireframe, que define la estructura y jerarquía del contenido, y el mock-up, que aplica sobre esa estructura la identidad visual de la marca.
+
+![landing_wireframe_1.png](public/assets/images/chapter-6/landing_wireframe_1.png)
+![landing_wireframe_2.png](public/assets/images/chapter-6/landing_wireframe_2.png)
+![landing_wireframe_3.png](public/assets/images/chapter-6/landing_wireframe_3.png)
+
+
 ### 6.3.2. Landing Page Mock-up.
 
 ## 6.4. Applications UX/UI Design.
