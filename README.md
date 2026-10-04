@@ -4558,7 +4558,7 @@ Wireflow W-01: Crear cuenta e iniciar sesión
 
 User Persona: Adriana Rojas · User goal: Como ciudadano, quiero crear una cuenta o iniciar sesión para acceder a la aplicación.
 
-![](public/assets/images/chapter-6/wireflows/W-01_acceder-a-la-app-ciudadano 1.png)
+![crear cuenta e iniciar sesión ciudadano](public/assets/images/chapter-6/wireflows/W-01_acceder-a-la-app-ciudadano.png)
 
 Explicación: Adriana toca «Crear cuenta» en A-01, completa el formulario en A-02 y accede a C-01. Si ya tiene cuenta, inicia sesión desde A-01 y entra directamente a C-01.
 
@@ -4566,7 +4566,7 @@ Wireflow W-02: Obtener orientación sin conexión
 
 User Persona: Adriana Rojas · User goal: Como ciudadano, quiero describir la emergencia y recibir indicaciones claras sin conexión, para actuar a tiempo.
 
-![](public/assets/images/chapter-6/wireflows/W-02_obtener-orientacion-sin-conexion 1.png)
+![orientacion sin conexion](public/assets/images/chapter-6/wireflows/W-02_obtener-orientacion-sin-conexion.png)
 
 Explicación: Adriana describe la situación en C-01 con texto, voz o foto y solicita la orientación. C-03 la procesa en el dispositivo, sin internet, y C-04 muestra la prioridad, los pasos numerados y las fuentes médicas. Si no hay información suficiente, se muestra C-05 (ver W-03).
 
@@ -4574,7 +4574,7 @@ Wireflow W-03: Respuesta segura ante información insuficiente
 
 User Persona: Adriana Rojas · User goal: Como ciudadano, quiero ser informado cuando no hay información suficiente, para evitar acciones inseguras.
 
-![respuesta segura](public/assets/images/chapter-6/wireflows/W-03_respuesta-segura-informacion-insuficiente 1.png)
+![respuesta segura](public/assets/images/chapter-6/wireflows/W-03_respuesta-segura-informacion-insuficiente.png)
 
 Explicación: C-05 avisa que no se puede dar una orientación confiable. Adriana edita su consulta en C-01, agrega más detalles y la reenvía; con la información ampliada, C-04 muestra la orientación.
 
@@ -4582,7 +4582,7 @@ Wireflow W-04: Solicitar apoyo profesional
 
 User Persona: Adriana Rojas · User goal: Como ciudadano, quiero solicitar apoyo profesional para el paciente, aun sin conexión.
 
-![solicitar apoyo](public/assets/images/chapter-6/wireflows/W-04_solicitar-apoyo-profesional 1.png)
+![solicitar apoyo](public/assets/images/chapter-6/wireflows/W-04_solicitar-apoyo-profesional.png)
 
 Explicación: Adriana activa «Necesito apoyo profesional» en C-01, registra los datos del paciente en C-02, revisa la orientación en C-04 y confirma la solicitud en C-06. Sin conexión, la consulta queda en el Outbox (C-07) como pendiente de sincronizar.
 
@@ -4592,7 +4592,7 @@ Wireflow W-05: Crear cuenta e iniciar sesión
 
 User Persona: Luis Mendoza · User goal: Como personal médico, quiero registrarme validando mi identificación profesional (o iniciar sesión) para acceder a mi rol.
 
-![crear cuenta e iniciar sesion](public/assets/images/chapter-6/wireflows/W-05_acceder-a-la-app-personal-medico 1.png)
+![crear cuenta e iniciar sesion](public/assets/images/chapter-6/wireflows/W-05_acceder-a-la-app-personal-medico.png)
 
 Explicación: Luis elige «Personal médico» en el registro (A-02 a A-03), completa su categoría profesional y su número de identificación, y accede a M-01. Si ya tiene cuenta, inicia sesión desde A-01.
 
@@ -4600,7 +4600,7 @@ Wireflow W-06: Asumir un caso disponible
 
 User Persona: Luis Mendoza · User goal: Como personal médico, quiero revisar los casos disponibles y asumir uno para atenderlo.
 
-![asumir_caso_disponible](public/assets/images/chapter-6/wireflows/W-06_asumir-un-caso-disponible 1.png)
+![asumir_caso_disponible](public/assets/images/chapter-6/wireflows/W-06_asumir-un-caso-disponible.png)
 
 Explicación: Luis filtra los casos en M-01 y abre uno en M-02 para revisar paciente, foto, orientación y ubicación. Lo autoasigna y confirma en M-03; el caso aparece como «Asignado» en M-04.
 
@@ -4608,7 +4608,7 @@ Wireflow W-07: Atender y cerrar un caso
 
 User Persona: Luis Mendoza · User goal: Como personal médico, quiero atender un caso asignado y cerrarlo con observaciones.
 
-![atender y cerrar un caso](public/assets/images/chapter-6/wireflows/W-07_atender-y-cerrar-un-caso 1.png)
+![atender y cerrar un caso](public/assets/images/chapter-6/wireflows/W-07_atender-y-cerrar-un-caso.png)
 
 Explicación: Luis inicia la atención en M-04 y, al terminar, toca «Cerrar caso». En M-05 escribe las observaciones y confirma; el caso queda «Cerrado» en el historial (M-06).
 
@@ -4616,7 +4616,7 @@ Wireflow W-08: Actualizar perfil y cerrar sesión
 
 User Persona: Luis Mendoza · User goal: Como personal médico, quiero actualizar mis datos profesionales y cerrar sesión.
 
-![perfil y cierre sesión medico](public/assets/images/chapter-6/wireflows/W-08_perfil-y-cierre-de-sesion-personal-medico 1.png)
+![perfil y cierre sesión medico](public/assets/images/chapter-6/wireflows/W-08_perfil-y-cierre-de-sesion-personal-medico.png)
 
 Explicación: Luis abre su perfil desde el avatar (M-07), edita sus datos profesionales y guarda. Luego cierra sesión y la app regresa a A-01.
 
