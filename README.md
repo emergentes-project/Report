@@ -128,6 +128,40 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
   </tr>
 </table>
 
+<table>
+  <tr>
+    <td colspan="2" align="center" style="font-weight: bold; font-size: 20px;">Evidencias y comentarios del TP1</td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>Integrante</strong></td>
+    <td width="80%"><strong>Descripción de actividades</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Roman Cruz, Natalia Bertha</strong></td>
+    <td>Desarrollé la documentación del diseño táctico de los bounded contexts IAM, Consultation, Medical Bases y Case Management, detallando sus capas Domain, Interface, Application e Infrastructure. Definí los elementos de cada capa, sus atributos, funciones y responsabilidades, y elaboré los Domain Layer Class Diagrams de los cuatro contextos. Asimismo, actualicé el EventStorming para reflejar los flujos acordados para la aplicación.</td>
+  </tr>
+  <tr>
+    <td><strong>Cacho Seminario, Diego Alonso</strong></td>
+    <td>Desarrollé las General Style Guidelines y las Web, Mobile & Devices Style Guidelines de Lifeline, documentando la identidad visual, la paleta de colores, la tipografía y los criterios de presentación para las interfaces web y móviles. Incorporé los recursos gráficos que respaldan estas pautas y actualicé la tabla de contenido para organizar las nuevas secciones del informe.</td>
+  </tr>
+  <tr>
+    <td><strong>Paico Calderon, July Zelmira</strong></td>
+    <td>Elaboré los wireframes y el mock-up de la landing page, así como los Applications Wireframes para los flujos de acceso, ciudadanos y personal médico. También desarrollé los Applications Wireflow Diagrams para representar la navegación y las acciones de los usuarios, desde el ingreso a la aplicación y la solicitud de orientación hasta la atención y el cierre de casos. Incorporé las imágenes y descripciones correspondientes en el informe.</td>
+  </tr>
+  <tr>
+    <td><strong>Solano Armas, Angelo Héctor</strong></td>
+    <td>Actualicé los diagramas de arquitectura C4 e incorporé Cloudinary como sistema externo. Documenté los Component Level Diagrams y los Database Design Diagrams de los bounded contexts IAM, Consultation, Medical Bases y Case Management. Además, desarrollé las secciones Labeling Systems, Searching Systems, SEO Tags and Meta Tags y Navigation Systems de la arquitectura de información, y actualicé las conclusiones y recomendaciones del informe.</td>
+  </tr>
+  <tr>
+    <td><strong>Conclusión</strong></td>
+    <td>En esta entrega, el equipo avanzó en el diseño táctico y la experiencia de usuario de Lifeline mediante la definición de las capas y los modelos de cada bounded context, los diagramas de arquitectura y base de datos, y las pautas visuales y de navegación. La colaboración entre los integrantes permitió relacionar los flujos de la aplicación con sus responsabilidades técnicas y sus interfaces, dejando una base documentada para la implementación.</td>
+  </tr>
+  <tr>
+    <td><strong>Evidencia</strong></td>
+    <td><br><img src="public/assets/images/cover/github/tp1.png" alt="Evidencia de commits del equipo"><br></td>
+  </tr>
+</table>
+
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
 # Contenido
