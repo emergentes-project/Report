@@ -4499,7 +4499,38 @@ Los títulos y botones utilizan Montserrat en pesos Bold y SemiBold, y el cuerpo
 
 ## 6.4. Applications UX/UI Design.
 
+Esta sección presenta el diseño de la interfaz de la aplicación móvil de Lifeline, que es la única aplicación dentro del alcance y atiende a dos roles autenticados: el ciudadano (representado por la persona Adriana Rojas) y el personal médico (representado por Luis Mendoza). El diseño parte del Product Backlog y de las General Style Guidelines del capítulo, y se presenta en dos niveles: los wireframes de cada pantalla (6.4.1) y los wireflows que muestran cómo se recorren las pantallas para cumplir cada User goal (6.4.2).
+
 ### 6.4.1. Applications Wireframes.
+
+Los wireframes de la aplicación móvil representan la estructura de cada pantalla, sin color ni identidad visual definitiva. Se elaboraron 19 pantallas, que cubren las historias de usuario de interfaz del Product Backlog (US01 a US32, sin las historias técnicas).
+
+Los wireframes de la aplicación móvil representan la estructura de cada pantalla, sin color ni identidad visual definitiva. Se elaboraron 19 pantallas, que cubren las historias de usuario de interfaz del Product Backlog (US01 a US32, sin las historias técnicas). Cada pantalla se identifica con un código y las historias que cubre: A para el acceso, C para el ciudadano y M para el personal médico.
+
+#### Acceso (A-01 a A-03). 
+
+A-01 permite iniciar sesión, crear una cuenta o abrir una consulta de emergencia sin cuenta. A-02 y A-03 corresponden al registro de ciudadano y de personal médico, que se alternan con un selector de rol. El registro de ciudadano pide nombres, apellidos, correo, teléfono opcional, ciudad, distrito, dirección, fecha de nacimiento y contraseña. El de personal médico pide además la categoría profesional y el N.º de identificación profesional, y deja la especialidad como dato opcional.
+
+![application_wireframe_1](public/assets/images/chapter-6/application_wireframe_1.png)
+
+#### Ciudadano (C-01 a C-09).
+
+C-01 Nueva consulta: campo de descripción, controles grandes de voz y foto, ubicación GPS registrada y el interruptor «Necesito apoyo profesional».
+C-02 Datos del paciente: nombre, edad, provincia, referencia de ubicación y mapa.
+C-03 Procesamiento: muestra el avance del análisis en el dispositivo.
+C-04 Orientación médica: prioridad preliminar, señales de gravedad, pasos numerados y fuentes utilizadas.
+C-05 Respuesta segura: aparece cuando no hay información suficiente.
+C-06 Confirmación: cuadro de confirmación de la solicitud de apoyo profesional.
+
+![application_wireframe_2](public/assets/images/chapter-6/application_wireframe_2.png)
+
+C-07 Historial local / Outbox: consultas con su estado de sincronización.
+C-08 Detalle de consulta: progreso de la atención.
+C-09 Perfil: datos de la cuenta.
+
+![application_wireframe_3](public/assets/images/chapter-6/application_wireframe_3.png) 
+
+
 
 ### 6.4.2. Applications Wireflow Diagrams.
 
