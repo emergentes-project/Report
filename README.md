@@ -265,6 +265,7 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>Paico Calderon, July Zelmira</strong><br>
       <strong>TB1:</strong><br>
       Participé en las reuniones del equipo explicando las estrategias frente a los competidores, los escenarios de calidad y las principales decisiones arquitectónicas. Esto permitió comunicar con claridad los criterios técnicos utilizados y coordinar su integración con las demás secciones del proyecto.
+      <br><br><strong>TP1:</strong><br>Presenté al equipo los wireframes de la aplicación móvil, los wireflows de cada User goal y la landing page, explicando cómo cada decisión de interfaz respondía a las General Style Guidelines, a las User Personas y a las historias de usuario. Adapté el mensaje según quién escuchaba: lenguaje sencillo para describir el recorrido del ciudadano en una emergencia, y lenguaje técnico para explicar al equipo los estados de pantalla, el modo sin conexión y la relación entre el diseño y la arquitectura, de modo que las demás secciones y el desarrollo se alinearan con el diseño propuesto.  
     </td>
     <td>
       <strong>TB1:</strong><br>
@@ -288,6 +289,7 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>Paico Calderon, July Zelmira</strong><br>
       <strong>TB1:</strong><br>
       Documenté las estrategias frente a competidores, los escenarios y restricciones de calidad, el backlog de drivers y las decisiones arquitectónicas. También contribuí al modelado de flujos de dominio, los Bounded Context Canvases y el Context Mapping, presentando los resultados con un lenguaje técnico claro y ordenado.
+      <br><br><strong>TP1:</strong><br>Documenté los wireframes, wireflows y la landing page, explicando cómo las decisiones de interfaz respondían a las General Style Guidelines, User Personas e historias de usuario. Adapté el lenguaje y nivel de detalle según el público, utilizando una redacción sencilla para describir el recorrido del ciudadano y una redacción técnica para documentar los estados de pantalla, el modo sin conexión y su relación con la arquitectura, facilitando la alineación del equipo y el desarrollo.
     </td>
     <td>
       <strong>TB1:</strong><br>
