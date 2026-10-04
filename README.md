@@ -4503,9 +4503,7 @@ Esta sección presenta el diseño de la interfaz de la aplicación móvil de Lif
 
 ### 6.4.1. Applications Wireframes.
 
-Los wireframes de la aplicación móvil representan la estructura de cada pantalla, sin color ni identidad visual definitiva. Se elaboraron 19 pantallas, que cubren las historias de usuario de interfaz del Product Backlog (US01 a US32, sin las historias técnicas).
-
-Los wireframes de la aplicación móvil representan la estructura de cada pantalla, sin color ni identidad visual definitiva. Se elaboraron 19 pantallas, que cubren las historias de usuario de interfaz del Product Backlog (US01 a US32, sin las historias técnicas). Cada pantalla se identifica con un código y las historias que cubre: A para el acceso, C para el ciudadano y M para el personal médico.
+Los wireframes de la aplicación móvil representan la estructura de cada pantalla, sin color ni identidad visual definitiva. Se elaboraron 18 pantallas, que cubren las historias de usuario de interfaz del Product Backlog (US01 a US32, sin las historias técnicas).
 
 **Acceso (A-01 a A-03).**
 
@@ -4530,7 +4528,21 @@ Los wireframes de la aplicación móvil representan la estructura de cada pantal
 * C-09 Perfil: datos de la cuenta.
 
 ![application_wireframe_3](public/assets/images/chapter-6/application_wireframe_3.png) 
-**Personal Médico**
+
+**Personal Médico (M-01 a M-07).**
+
+* M-01 Casos disponibles: filtros por estado e insignias para los casos de apoyo urgente.
+* M-02 Detalle del caso: paciente, descripción, foto, orientación generada y ubicación en el mapa.
+* M-03 Autoasignación: cuadro de confirmación.
+
+![application_wireframe_med1.png](public/assets/images/chapter-6/application_wireframe_med1.png)
+
+* M-04 Mis asignaciones: casos asignados y en progreso, con las acciones de iniciar atención y cerrar caso.
+* M-05 Cierre de caso: panel inferior para registrar observaciones.
+* M-06 Historial: casos atendidos.
+* M-07 Perfil: categoría profesional, N.º de identificación, especialidad y estado de verificación; se abre desde el avatar del encabezado.
+
+![application_wireframe_med2.png](public/assets/images/chapter-6/application_wireframe_med2.png)
 
 
 
