@@ -4489,6 +4489,14 @@ El diseño sigue las General Style Guidelines definidas en la sección 6.1: la p
 
 ### 6.3.2. Landing Page Mock-up.
 
+El mock-up traslada el wireframe a un diseño de alta fidelidad con la identidad visual de Lifeline. Se emplea Deep Rescue Teal en el encabezado, los títulos y los fondos principales para transmitir serenidad y respaldo institucional. Lifeline Cyan se reserva para los botones de descarga y las acciones principales. Alert Amber y Emergency Red se usan solo para destacar mensajes críticos, como el funcionamiento sin conexión o el apoyo profesional urgente, siguiendo su significado semántico dentro de la aplicación.
+
+Los títulos y botones utilizan Montserrat en pesos Bold y SemiBold, y el cuerpo de texto Inter, para mantener la legibilidad en pantallas de distintos tamaños. Se conservaron márgenes amplios, formas limpias y [capturas de la aplicación en teléfonos] que muestran al visitante cómo se verá Lifeline en uso, de modo que la página adelante la experiencia de la app y genere confianza antes de la descarga.
+
+![landing_mockup_1](public/assets/images/chapter-6/landing_mockup_1.png)
+![landing_mockup_2](public/assets/images/chapter-6/landing_mockup_2.png)
+![landing_mockup_3](public/assets/images/chapter-6/landing_mockup_3.png)
+
 ## 6.4. Applications UX/UI Design.
 
 ### 6.4.1. Applications Wireframes.
