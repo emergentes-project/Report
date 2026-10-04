@@ -49,7 +49,7 @@
 </table>
 
 <br>
-<p align="center">Setiembre 2026</p>
+<p align="center">Octubre 2026</p>
 
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
@@ -262,14 +262,19 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>Cacho Seminario, Diego Alonso</strong><br>
       <strong>TB1:</strong><br>
       Participé activamente en las reuniones de equipo sustentando los artefactos de Lean UX, como los Empathy Maps y Scenario Maps, para alinear la visión del producto. Asimismo, argumenté y expuse las decisiones de diseño estratégico para el Impact Mapping y los retoques de los Bounded Context Canvases, asegurando que todos los miembros del equipo comprendieran la relación entre las necesidades de los usuarios y la arquitectura de la solución propuesta.<br><br>
+      <strong>TP1:</strong><br>
+      Expuse ante el equipo los avances documentales correspondientes a este entregable, detallando las correcciones implementadas tras las revisiones previas. Además, dirigí la presentación de los avances de las diapositivas y expuse los guiones de presentación diseñados para la sustentación (con énfasis en módulos como Lifeline), asegurando que el mensaje técnico y de diseño arquitectónico sea transmitido de manera clara, fluida y objetiva para el momento de la exposición.<br><br>
       <strong>Paico Calderon, July Zelmira</strong><br>
       <strong>TB1:</strong><br>
-      Participé en las reuniones del equipo explicando las estrategias frente a los competidores, los escenarios de calidad y las principales decisiones arquitectónicas. Esto permitió comunicar con claridad los criterios técnicos utilizados y coordinar su integración con las demás secciones del proyecto.
-      <br><br><strong>TP1:</strong><br>Presenté al equipo los wireframes de la aplicación móvil, los wireflows de cada User goal y la landing page, explicando cómo cada decisión de interfaz respondía a las General Style Guidelines, a las User Personas y a las historias de usuario. Adapté el mensaje según quién escuchaba: lenguaje sencillo para describir el recorrido del ciudadano en una emergencia, y lenguaje técnico para explicar al equipo los estados de pantalla, el modo sin conexión y la relación entre el diseño y la arquitectura, de modo que las demás secciones y el desarrollo se alinearan con el diseño propuesto.  
+      Participé en las reuniones del equipo explicando las estrategias frente a los competidores, los escenarios de calidad y las principales decisiones arquitectónicas. Esto permitió comunicar con claridad los criterios técnicos utilizados y coordinar su integración con las demás secciones del proyecto.<br><br>
+      <strong>TP1:</strong><br>
+      Presenté al equipo los wireframes de la aplicación móvil, los wireflows de cada User goal y la landing page, explicando cómo cada decisión de interfaz respondía a las General Style Guidelines, a las User Personas y a las historias de usuario. Adapté el mensaje según quién escuchaba: lenguaje sencillo para describir el recorrido del ciudadano en una emergencia, y lenguaje técnico para explicar al equipo los estados de pantalla, el modo sin conexión y la relación entre el diseño y la arquitectura, de modo que las demás secciones y el desarrollo se alinearan con el diseño propuesto.  
     </td>
     <td>
       <strong>TB1:</strong><br>
-      Como equipo, logramos comunicar oralmente nuestras ideas y resultados de manera clara, objetiva y ordenada. Las entrevistas, reuniones de coordinación y exposiciones internas nos permitieron adaptar el mensaje a personas con distintos perfiles, cumpliendo con lo esperado para la presentación de nuestro proyecto.
+      Como equipo, logramos comunicar oralmente nuestras ideas y resultados de manera clara, objetiva y ordenada. Las entrevistas, reuniones de coordinación y exposiciones internas nos permitieron adaptar el mensaje a personas con distintos perfiles, cumpliendo con lo esperado para la presentación de nuestro proyecto.<br><br>
+      <strong>TP1:</strong><br>
+      Durante esta fase, el equipo logró coordinar eficientemente las correcciones y avances, estructurando las presentaciones orales y guiones de sustentación de manera objetiva para exponer el estado actual de la arquitectura y diseño con total claridad.
     </td>
   </tr>
   <tr>
@@ -286,17 +291,23 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>Cacho Seminario, Diego Alonso</strong><br>
       <strong>TB1:</strong><br>
       Me encargué de redactar y estructurar las secciones de Lean UX Assumptions y la User Task Matrix. Documenté por escrito los Empathy Maps y los Scenario Maps (As-Is y To-Be) para los segmentos de Ciudadanos y Personal Médico. Además, elaboré el Impact Map y el Product Backlog del proyecto, y retoqué la documentación detallada de los Bounded Context Canvases y el Context Mapping, traduciendo los requerimientos del negocio a especificaciones técnicas legibles para el resto del equipo.<br><br>
+      <strong>TP1:</strong><br>
+      Documenté los avances del proyecto y redacté las justificaciones de las correcciones aplicadas a los entregables y especificaciones de diseño anteriores. Asimismo, me encargué de estructurar por escrito el contenido de las diapositivas y de redactar los guiones de presentación, sintetizando la complejidad de la arquitectura y las especificaciones para garantizar que la documentación de apoyo sea profesional y fácilmente asimilable por el público evaluador.<br><br>
       <strong>Paico Calderon, July Zelmira</strong><br>
       <strong>TB1:</strong><br>
-      Documenté las estrategias frente a competidores, los escenarios y restricciones de calidad, el backlog de drivers y las decisiones arquitectónicas. También contribuí al modelado de flujos de dominio, los Bounded Context Canvases y el Context Mapping, presentando los resultados con un lenguaje técnico claro y ordenado.
-      <br><br><strong>TP1:</strong><br>Documenté los wireframes, wireflows y la landing page, explicando cómo las decisiones de interfaz respondían a las General Style Guidelines, User Personas e historias de usuario. Adapté el lenguaje y nivel de detalle según el público, utilizando una redacción sencilla para describir el recorrido del ciudadano y una redacción técnica para documentar los estados de pantalla, el modo sin conexión y su relación con la arquitectura, facilitando la alineación del equipo y el desarrollo.
+      Documenté las estrategias frente a competidores, los escenarios y restricciones de calidad, el backlog de drivers y las decisiones arquitectónicas. También contribuí al modelado de flujos de dominio, los Bounded Context Canvases y el Context Mapping, presentando los resultados con un lenguaje técnico claro y ordenado.<br><br>
+      <strong>TP1:</strong><br>
+      Documenté los wireframes, wireflows y la landing page, explicando cómo las decisiones de interfaz respondían a las General Style Guidelines, User Personas e historias de usuario. Adapté el lenguaje y nivel de detalle según el público, utilizando una redacción sencilla para describir el recorrido del ciudadano y una redacción técnica para documentar los estados de pantalla, el modo sin conexión y su relación con la arquitectura, facilitando la alineación del equipo y el desarrollo.
     </td>
     <td>
       <strong>TB1:</strong><br>
-      Como equipo, logramos comunicar por escrito las ideas, decisiones y resultados del proyecto de forma objetiva y comprensible. La documentación elaborada integra los aportes de todos los miembros y presenta la propuesta con un lenguaje adecuado tanto para lectores técnicos como para públicos de otras especialidades.
+      Como equipo, logramos comunicar por escrito las ideas, decisiones y resultados del proyecto de forma objetiva y comprensible. La documentación elaborada integra los aportes de todos los miembros y presenta la propuesta con un lenguaje adecuado tanto para lectores técnicos como para públicos de otras especialidades.<br><br>
+      <strong>TP1:</strong><br>
+      El equipo mantuvo la rigurosidad en la documentación escrita de los nuevos avances y las correcciones, logrando además plasmar el trabajo en diapositivas estructuradas con un nivel de redacción preciso, accesible y profesional según el público objetivo.
     </td>
   </tr>
 </table>
+
 
 # Capítulo I: Introducción
 
