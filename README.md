@@ -76,6 +76,11 @@
 | 1.16 | 13/09/2026 | Cacho Seminario, Diego Alonso | Desarrollo de 3.3. Impact Mapping y 3.4. Product Backlog |
 | 1.17 | 16/09/2026 | Solano Armas, Angelo Héctor | Desarrollo de 4.3.5. Software Architecture Component Level Diagrams |
 | 1.18 | 17/09/2026 | Paico Calderon, July Zelmira | Actualización de 4.1.2.2. Quality Attribute Scenarios, 4.1.2.3. Constraints, 4.1.3. Architectural Drivers Backlog, 4.1.4. Architectural Design Decisions y 4.1.5. Quality Attribute Scenario Refinements |
+| 2.1 | 28/09/2026 | Cacho Seminario, Diego Alonso | Desarrollo de 6.1.1. General Style Guidelines. y 6.1.2. Web, Mobile & Devices Style Guidelines. |
+| 2.2 | 29/09/2026 | Roman Cruz, Natalia Bertha | Desarrollo de Domain Layer para los bounded contexts IAM, Consultation, Medical Bases y Case Management; Interface Layer para los bounded contexts IAM, Consultation, Medical Bases y Case Management; Application Layer para los bounded contexts IAM, Consultation, Medical Bases y Case Management; Infrastructure Layer para los bounded contexts IAM, Consultation, Medical Bases y Case Management; y Bounded Context Domain Layer Class Diagrams para los bounded contexts IAM, Consultation, Medical Bases y Case Management |
+| 2.3 | 02/10/2026 | Solano Armas, Angelo Héctor | Desarrollo de Bounded Context Software Architecture Component Level Diagrams para los bounded contexts IAM, Consultation, Medical Bases y Case Management; Bounded Context Database Design Diagram para los bounded contexts IAM, Consultation, Medical Bases y Case Management; y 6.2.2. Labeling Systems., 6.2.3. Searching Systems., 6.2.4. SEO Tags and Meta Tags. y 6.2.5. Navigation Systems. |
+| 2.4 | 03/10/2026 | Paico Calderon, July Zelmira | Desarrollo de 6.3.1. Landing Page Wireframe., 6.3.2. Landing Page Mock-up. y 6.4.1. Applications Wireframes. |
+| 2.5 | 04/10/2026 | Paico Calderon, July Zelmira | Desarrollo de 6.4.2. Applications Wireflow Diagrams. |
 
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
@@ -259,6 +264,8 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>Roman Cruz, Natalia Bertha</strong><br>
       <strong>TB1:</strong><br>
       Participé en las reuniones para la planificación, coordinación y discusión de acuerdos respecto a la elaboración del trabajo, así como me encargué de dirigir el EventStorming para formar los bounded contexts de la aplicación. Además, me encargué de parte del registro de entrevistas.<br><br>
+      <strong>TP1:</strong><br>
+      Convercé y llegué a acuerdos con mis compañeros mediante reuninoes en cuanto a los flujos que la aplicación debía seguir para los roles planteados, así como sobre la arquitectura que tendría la aplicación internamente tanto a nivel local como en el backend desplegado en la nube. Adicionalmente, expusé los artefactos que implementaríamos y la función que tendría cada uno, así como donde debía ser desplegado más adelante.<br><br>
       <strong>Cacho Seminario, Diego Alonso</strong><br>
       <strong>TB1:</strong><br>
       Participé activamente en las reuniones de equipo sustentando los artefactos de Lean UX, como los Empathy Maps y Scenario Maps, para alinear la visión del producto. Asimismo, argumenté y expuse las decisiones de diseño estratégico para el Impact Mapping y los retoques de los Bounded Context Canvases, asegurando que todos los miembros del equipo comprendieran la relación entre las necesidades de los usuarios y la arquitectura de la solución propuesta.<br><br>
@@ -288,6 +295,8 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>Roman Cruz, Natalia Bertha</strong><br>
       <strong>TB1:</strong><br>
       Me encargué de la redacción del startup profile y del planteamiento del caso y solución que queríamos abordar. Además, redacté las user stories junto con sus criterios de aceptación, así como realicé el diseño y análisis de las entrevistas. Por último, me encargué de la documentación del EventStorming y justificación de los bounded contexts definidos.<br><br>
+      <strong>TP1:</strong><br>
+      Dentro del informé, colaboré junto a mis compañeros para el planteamiento de los diagramas de clases y bases de datos tanro a nivel local como la que se desplegaría para el backend en la nube. Asimismo, me encargué de la definición y registro de las capas de dominio, interface, aplicación e infraestructura, marcando la función de cada elemento y la jerarquía entre los mismos usando, a la vez, buenas prácticas y siguiendo la estructura de Domain Driven Design para facilitar la fase de implementación más adelante.<br><br>
       <strong>Cacho Seminario, Diego Alonso</strong><br>
       <strong>TB1:</strong><br>
       Me encargué de redactar y estructurar las secciones de Lean UX Assumptions y la User Task Matrix. Documenté por escrito los Empathy Maps y los Scenario Maps (As-Is y To-Be) para los segmentos de Ciudadanos y Personal Médico. Además, elaboré el Impact Map y el Product Backlog del proyecto, y retoqué la documentación detallada de los Bounded Context Canvases y el Context Mapping, traduciendo los requerimientos del negocio a especificaciones técnicas legibles para el resto del equipo.<br><br>
