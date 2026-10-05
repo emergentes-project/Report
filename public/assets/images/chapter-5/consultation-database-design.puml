@@ -5,10 +5,6 @@ skinparam classAttributeIconSize 0
 skinparam shadowing false
 title Consultation - Database Design Diagram
 
-  class provinces <<Table>> {
-    name : VARCHAR(120) <<PK>>
-  }
-
   class consultations <<Table>> {
     id : UUID <<PK>>
     --
@@ -29,7 +25,7 @@ title Consultation - Database Design Diagram
     name : VARCHAR(150)
     age_years : INTEGER
     location_description : VARCHAR(255)
-    province : VARCHAR(120) <<FK>>
+    province : VARCHAR(120)
     latitude : DOUBLE
     longitude : DOUBLE
   }
@@ -61,6 +57,5 @@ title Consultation - Database Design Diagram
 consultations "1" -- "0..1" patients : consultation_id
 consultations "1" -- "0..1" consultation_answers : consultation_id
 consultations "1" -- "0..1" sync_outbox : consultation_id
-provinces "0..1" -- "0..*" patients : province
 
 @enduml
