@@ -63,7 +63,7 @@ workspace "Lifeline" "Arquitectura C4 de Lifeline (RescueBridge): orientacion de
                 caseManagementService = component "Case Management Service" "Coordina el ciclo de vida de los casos, la sincronizacion idempotente y la autorizacion de las operaciones realizadas por el personal medico." "Spring Service" {
                     tags "Service"
                 }
-                asyncPublisher = component "Async Event Publisher" "Publica tareas secundarias en el Message Broker sin bloquear la solicitud HTTP principal." "RabbitMQ Adapter" {
+                asyncPublisher = component "Async Event Publisher" "Publica tareas secundarias en el Message Broker sin bloquear la solicitud HTTP principal." "ActiveMQ Artemis Adapter" {
                     tags "Infra"
                 }
                 caseRepository = component "Case Repository" "Implementa la persistencia y recuperacion de casos y su historial de cambios." "Spring Data JPA" {
@@ -86,11 +86,11 @@ workspace "Lifeline" "Arquitectura C4 de Lifeline (RescueBridge): orientacion de
                 }
             }
 
-            messageBroker = container "Message Broker" "Descarga tareas secundarias y absorbe picos de sincronizacion mediante procesamiento asincrono." "RabbitMQ" {
+            messageBroker = container "Message Broker" "Descarga tareas secundarias y absorbe picos de sincronizacion mediante procesamiento asincrono." "ActiveMQ Artemis" {
                 tags "Broker"
             }
 
-            asyncWorkers = container "Async Workers" "Procesan tareas asincronas consumiendo desde RabbitMQ sin mantener ocupados los recursos HTTP del backend." "Spring Boot / RabbitMQ" {
+            asyncWorkers = container "Async Workers" "Procesan tareas asincronas consumiendo desde ActiveMQ Artemis sin mantener ocupados los recursos HTTP del backend." "Spring Boot / ActiveMQ Artemis" {
                 tags "Worker"
             }
 
@@ -109,10 +109,10 @@ workspace "Lifeline" "Arquitectura C4 de Lifeline (RescueBridge): orientacion de
         mobileApp -> localDb "Persiste consultas, evidencias, estado local y Outbox" "SQL"
         mobileApp -> medicalStore "Recupera conocimiento medico local para RAG"
         loadBalancer -> backend "Distribuye solicitudes hacia instancias saludables" "HTTPS"
-        backend -> messageBroker "Publica trabajos secundarios" "AMQP"
+        backend -> messageBroker "Publica trabajos secundarios" "JMS"
         backend -> cloudDb "Lee y actualiza identidades, casos y estados" "SQL/TLS"
         backend -> cloudinary "Almacena y entrega evidencias fotograficas sincronizadas" "HTTPS/REST"
-        messageBroker -> asyncWorkers "Entrega trabajos secundarios" "AMQP"
+        messageBroker -> asyncWorkers "Entrega trabajos secundarios" "JMS"
         asyncWorkers -> cloudDb "Persiste resultados del procesamiento asincrono" "SQL/TLS"
 
         ciudadano -> emergencyUi "Describe la emergencia mediante texto, voz o fotografia"
@@ -138,7 +138,7 @@ workspace "Lifeline" "Arquitectura C4 de Lifeline (RescueBridge): orientacion de
         caseManagementService -> caseDomain "Aplica reglas y transiciones del ciclo de vida"
         caseManagementService -> iamInterface "Consulta identidad y rol del profesional" "Internal Contract"
         caseManagementService -> cloudinary "Almacena y obtiene evidencias fotograficas del caso" "HTTPS/REST"
-        asyncPublisher -> messageBroker "Publica trabajo sin bloquear la solicitud principal" "AMQP"
+        asyncPublisher -> messageBroker "Publica trabajo sin bloquear la solicitud principal" "JMS"
         caseRepository -> cloudDb "Lee y escribe casos e historial" "SQL/TLS"
 
         iamInterface -> iamService "Solicita autenticacion, perfil o validacion de rol"
@@ -167,7 +167,7 @@ workspace "Lifeline" "Arquitectura C4 de Lifeline (RescueBridge): orientacion de
                     }
                 }
 
-                deploymentNode "Messaging" "Cola de trabajos secundarios y picos de sincronizacion" "Azure / RabbitMQ" {
+                deploymentNode "Messaging" "Cola de trabajos secundarios y picos de sincronizacion" "Azure / ActiveMQ Artemis" {
                     containerInstance messageBroker
                 }
 
