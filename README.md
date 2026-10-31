@@ -258,7 +258,7 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
     - [5.4.6. Bounded Context Software Architecture Code Level Diagrams.](#546-bounded-context-software-architecture-code-level-diagrams)
       - [5.4.6.1. Bounded Context Domain Layer Class Diagrams.](#5461-bounded-context-domain-layer-class-diagrams)
       - [5.4.6.2. Bounded Context Database Design Diagram.](#5462-bounded-context-database-design-diagram)
-- [Capítulo VI: UX/UI Design](#capítulo-vi-uxui-design)
+- [Capítulo VI: Solution UX Design](#capítulo-vi-solution-ux-design)
   - [6.1. Style Guidelines.](#61-style-guidelines)
     - [6.1.1. General Style Guidelines.](#611-general-style-guidelines)
     - [6.1.2. Web, Mobile & Devices Style Guidelines.](#612-web-mobile--devices-style-guidelines)
@@ -273,6 +273,30 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
   - [6.4. Applications UX/UI Design.](#64-applications-uxui-design)
     - [6.4.1. Applications Wireframes.](#641-applications-wireframes)
     - [6.4.2. Applications Wireflow Diagrams.](#642-applications-wireflow-diagrams)
+    - [6.4.3. Applications Mock-ups.](#643-applications-mock-ups)
+    - [6.4.4. Applications User Flow Diagrams.](#644-applications-user-flow-diagrams)
+  - [6.5. Applications Prototyping.](#65-applications-prototyping)
+- [Capítulo VII: Product Implementation, Validation & Deployment](#capítulo-vii-product-implementation-validation--deployment)
+  - [7.1. Software Configuration Management.](#71-software-configuration-management)
+    - [7.1.1. Software Development Environment Configuration.](#711-software-development-environment-configuration)
+    - [7.1.2. Source Code Management.](#712-source-code-management)
+    - [7.1.3. Source Code Style Guide & Conventions.](#713-source-code-style-guide--conventions)
+    - [7.1.4. Software Deployment Configuration.](#714-software-deployment-configuration)
+  - [7.2. Solution Implementation.](#72-solution-implementation)
+    - [7.2.1. Sprint 1](#721-sprint-1)
+      - [7.2.1.1. Sprint Planning 1.](#7211-sprint-planning-1)
+      - [7.2.1.2. Sprint Backlog 1.](#7212-sprint-backlog-1)
+      - [7.2.1.3. Development Evidence for Sprint Review.](#7213-development-evidence-for-sprint-review)
+      - [7.2.1.4. Testing Suite Evidence for Sprint Review.](#7214-testing-suite-evidence-for-sprint-review)
+      - [7.2.1.5. Execution Evidence for Sprint Review.](#7215-execution-evidence-for-sprint-review)
+      - [7.2.1.6. Services Documentation Evidence for Sprint Review.](#7216-services-documentation-evidence-for-sprint-review)
+      - [7.2.1.7. Software Deployment Evidence for Sprint Review.](#7217-software-deployment-evidence-for-sprint-review)
+      - [7.2.1.8. Team Collaboration Insights during Sprint.](#7218-team-collaboration-insights-during-sprint)
+  - [7.3. Validation Interviews.](#73-validation-interviews)
+    - [7.3.1. Diseño de Entrevistas.](#731-diseño-de-entrevistas)
+    - [7.3.2. Registro de Entrevistas.](#732-registro-de-entrevistas)
+    - [7.3.3. Evaluaciones según heurísticas.](#733-evaluaciones-según-heurísticas)
+  - [7.4. Video About-the-Product.](#74-video-about-the-product)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
@@ -4019,7 +4043,7 @@ El *Component Diagram* del bounded context Case Management muestra cómo se desc
 
 ![Diagrama de diseño de base de datos de Case Management](public/assets/images/chapter-5/case-management-database-design.svg)
 
-# Capítulo VI: UX/UI Design
+# Capítulo VI: Solution UX Design
 
 ## 6.1. Style Guidelines.
 
@@ -4602,8 +4626,6 @@ Los wireframes de la aplicación móvil representan la estructura de cada pantal
 
 ![application_wireframe_med2.png](public/assets/images/chapter-6/application_wireframe_med2.png)
 
-
-
 ### 6.4.2. Applications Wireflow Diagrams.
 
 La aplicación móvil de Lifeline atiende a dos User Personas: Adriana Rojas (ciudadano) y Luis Mendoza (personal médico). Se presenta un Wireflow por cada User goal principal, con su Task Flow numerado en el diagrama y una breve explicación. Las zonas resaltadas indican lo que toca el usuario y los pasos marcados como «Nuevo estado» muestran la pantalla tras la interacción.
@@ -4675,6 +4697,54 @@ User Persona: Luis Mendoza · User goal: Como personal médico, quiero actualiza
 ![perfil y cierre sesión medico](public/assets/images/chapter-6/wireflows/W-08_perfil-y-cierre-de-sesion-personal-medico.png)
 
 Explicación: Luis abre su perfil desde el avatar (M-07), edita sus datos profesionales y guarda. Luego cierra sesión y la app regresa a A-01.
+
+### 6.4.3. Applications Mock-ups.
+
+### 6.4.4. Applications User Flow Diagrams.
+
+## 6.5. Applications Prototyping.
+
+# Capítulo VII: Product Implementation, Validation & Deployment
+
+## 7.1. Software Configuration Management.
+
+### 7.1.1. Software Development Environment Configuration.
+
+### 7.1.2. Source Code Management.
+
+### 7.1.3. Source Code Style Guide & Conventions.
+
+### 7.1.4. Software Deployment Configuration.
+
+## 7.2. Solution Implementation.
+
+### 7.2.1. Sprint 1
+
+#### 7.2.1.1. Sprint Planning 1.
+
+#### 7.2.1.2. Sprint Backlog 1.
+
+#### 7.2.1.3. Development Evidence for Sprint Review.
+
+#### 7.2.1.4. Testing Suite Evidence for Sprint Review.
+
+#### 7.2.1.5. Execution Evidence for Sprint Review.
+
+#### 7.2.1.6. Services Documentation Evidence for Sprint Review.
+
+#### 7.2.1.7. Software Deployment Evidence for Sprint Review.
+
+#### 7.2.1.8. Team Collaboration Insights during Sprint.
+
+## 7.3. Validation Interviews.
+
+### 7.3.1. Diseño de Entrevistas.
+
+### 7.3.2. Registro de Entrevistas.
+
+### 7.3.3. Evaluaciones según heurísticas.
+
+## 7.4. Video About-the-Product.
 
 # Conclusiones y recomendaciones
 
