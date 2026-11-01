@@ -4722,7 +4722,1619 @@ Explicación: Luis abre su perfil desde el avatar (M-07), edita sus datos profes
 
 #### 7.2.1.1. Sprint Planning 1.
 
+<table border="1" cellpadding="6" cellspacing="0">
+  <tbody>
+    <tr><th>Sprint #</th><td>1</td></tr>
+    <tr><th colspan="2" align="center">Sprint Planning Background</th></tr>
+    <tr><td>Date</td><td>19/10/2026</td></tr>
+    <tr><td>Time</td><td>09:00 AM</td></tr>
+    <tr><td>Location</td><td>Reunión virtual mediante la aplicación Discord</td></tr>
+    <tr><td>Prepared By</td><td>Natalia Roman</td></tr>
+    <tr><td>Attendees (to planning meeting)</td><td>Natalia Roman, Angelo Solano, July Paico y Diego Cacho</td></tr>
+    <tr><td>Sprint 0 Review Summary</td><td>Se realizaron las actividades previas a la implementación como la creación de los repositorios, división de tareas y configuración de herrmientas, así como se llegaron a acuerdos en cuanto a la continuidad de las reuniones y las tecnologías a emplear. Aquí podemos resaltar que el equipo mostró una disposición y organización para colaborar mutuamente, así como ofrecer revisiones entre compañeros considerando los tiempos de todos.</td></tr>
+    <tr><td>Sprint 0 Retrospective Summary</td><td>El equipo destacó por la colaboracón mutua y la efectividad de la comunicación, así como por la motivación por iniciar la implementación y el compromiso con el seguimiento.</td></tr>
+    <tr><th colspan="2" align="center">Sprint Goal &amp; User Stories</th></tr>
+    <tr><td>Sprint 1 Goal</td><td>Entregar el flujo principal de la solución para ciudadanos y personal médico considerando acceso y perfiles, registro de consultas con texto, voz e imágenes, orientación médica sin conexión basada en RAG, persistencia y sincronización local, e historial y gestión de casos.</td></tr>
+    <tr><td>Sprint 1 Velocity</td><td>192</td></tr>
+    <tr><td>Sum of Story Points</td><td>192</td></tr>
+  </tbody>
+</table>
+
 #### 7.2.1.2. Sprint Backlog 1.
+
+Durante este sprint se desarrolló el flujo principal de la solución, siendo este el registro y acceso de ciudadanos y personal médico, la creación de consultas con texto, voz, fotografías y ubicación, y la generación de orientación médica sin conexión mediante una base de conocimiento y RAG. También se abordaron el almacenamiento local, la sincronización de consultas, el historial y la gestión de casos por profesionales. El Sprint Backlog 1 reúne las 51 historias de usuario y técnicas consideradas implementadas para esta entrega.
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr><th>Sprint #</th><th colspan="7">Sprint 1</th></tr>
+    <tr><th colspan="2">User Story / Technical Story</th><th colspan="6">Work-Item / Task</th></tr>
+    <tr><th>Id</th><th>Title</th><th>Id</th><th>Title</th><th>Description</th><th>Estimation<br>(Hours)</th><th>Assigned To</th><th>Status<br>(To-do / In Progress / Done)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">US01</td>
+      <td rowspan="3">Registro de una cuenta como ciudadano</td>
+      <td>T001</td>
+      <td>Construir formulario de registro ciudadano</td>
+      <td>Definir campos de identidad, contacto y contraseña con mensajes claros para datos obligatorios y formatos inválidos.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T002</td>
+      <td>Conectar registro con IAM</td>
+      <td>Enviar los datos al endpoint de ciudadanos y abrir la sesión después de confirmar la creación de la cuenta.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T003</td>
+      <td>Validar datos y confirmación del registro</td>
+      <td>Comprobar campos obligatorios, formatos y respuesta de alta antes de mostrar al ciudadano que su cuenta quedó disponible.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US02</td>
+      <td rowspan="4">Registro de una cuenta como personal médico</td>
+      <td>T004</td>
+      <td>Construir formulario de registro profesional</td>
+      <td>Capturar categoría, número de colegiatura y especialidad junto con los datos personales requeridos para crear la cuenta.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T005</td>
+      <td>Validar identificación profesional</td>
+      <td>Comprobar el formato y obligatoriedad de la colegiatura y especialidad antes de enviar el registro del personal médico.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T006</td>
+      <td>Integrar habilitación profesional</td>
+      <td>Conectar el registro con IAM y mostrar el estado de verificación que determina el acceso a gestión de casos.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T007</td>
+      <td>Mostrar resultado de habilitación</td>
+      <td>Presentar al profesional el estado recibido desde IAM y explicar las funciones disponibles mientras se verifica su cuenta.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US03</td>
+      <td rowspan="3">Inicio de sesión</td>
+      <td>T008</td>
+      <td>Implementar acceso por credenciales</td>
+      <td>Enviar correo y contraseña al servicio de autenticación y presentar errores comprensibles cuando el acceso sea rechazado.</td>
+      <td>5</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T009</td>
+      <td>Restaurar sesión según rol</td>
+      <td>Conservar la sesión válida y dirigir a ciudadanos y profesionales a los recorridos correspondientes de la aplicación.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T010</td>
+      <td>Informar errores de acceso</td>
+      <td>Distinguir credenciales inválidas de fallos de conexión y permitir repetir el intento sin perder el correo ingresado.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US04</td>
+      <td rowspan="3">Consulta del perfil personal</td>
+      <td>T011</td>
+      <td>Presentar perfil personal</td>
+      <td>Consultar los datos de la cuenta autenticada y mostrar la información propia de cada rol en una pantalla legible.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T012</td>
+      <td>Integrar consulta de perfiles</td>
+      <td>Obtener desde IAM el perfil ciudadano o profesional y representar el estado de habilitación cuando corresponda.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T013</td>
+      <td>Mostrar datos según el rol</td>
+      <td>Ocultar campos ajenos al ciudadano y presentar categoría y habilitación únicamente cuando la cuenta pertenece a personal médico.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US05</td>
+      <td rowspan="3">Actualización de datos personales</td>
+      <td>T014</td>
+      <td>Editar datos de la cuenta</td>
+      <td>Preparar formularios de edición con validaciones para los campos personales y profesionales permitidos a cada usuario.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T015</td>
+      <td>Validar y confirmar edición</td>
+      <td>Comprobar valores editables, informar errores del servidor y mostrar los datos actualizados después de una respuesta correcta.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T016</td>
+      <td>Persistir cambios del perfil</td>
+      <td>Enviar las actualizaciones a IAM y reflejar los valores confirmados por el servidor en la vista del perfil.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US06</td>
+      <td rowspan="2">Cierre de sesión</td>
+      <td>T017</td>
+      <td>Implementar acción de cierre de sesión</td>
+      <td>Agregar una opción visible para salir desde las pantallas de cuenta y volver al acceso inicial.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T018</td>
+      <td>Revocar y limpiar sesión</td>
+      <td>Solicitar el cierre al backend, retirar las credenciales locales y conservar las consultas pendientes de sincronización.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS01</td>
+      <td rowspan="4">Protección de la sesión almacenada en el dispositivo</td>
+      <td>T019</td>
+      <td>Proteger credenciales locales</td>
+      <td>Guardar el token y la información de sesión mediante almacenamiento seguro del dispositivo.</td>
+      <td>5</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T020</td>
+      <td>Aislar credenciales por cuenta</td>
+      <td>Impedir que una sesión restaurada reutilice tokens o datos de perfil correspondientes a otra cuenta en el dispositivo.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T021</td>
+      <td>Controlar expiración y salida</td>
+      <td>Rechazar credenciales vencidas y limpiar la sesión almacenada al cerrar la cuenta.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T022</td>
+      <td>Verificar sesión al reabrir la aplicación</td>
+      <td>Comprobar vigencia y rol del token antes de recuperar pantallas protegidas después de cerrar y volver a abrir la aplicación.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US07</td>
+      <td rowspan="2">Registro de una consulta mediante texto</td>
+      <td>T023</td>
+      <td>Capturar descripción escrita</td>
+      <td>Incorporar un campo de texto para describir el incidente y validar que la consulta tenga una entrada utilizable.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T024</td>
+      <td>Conservar texto de consulta</td>
+      <td>Pasar la descripción al procesamiento local y guardarla con el mismo borrador que luego se sincroniza.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US08</td>
+      <td rowspan="4">Registro de una consulta mediante voz</td>
+      <td>T025</td>
+      <td>Grabar descripción hablada</td>
+      <td>Conectar el permiso del micrófono y los controles de inicio, parada y nuevo intento de grabación.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T026</td>
+      <td>Indicar estado de grabación</td>
+      <td>Mostrar cuándo el micrófono está activo y cuándo terminó la captura para evitar enviar una descripción de voz vacía.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T027</td>
+      <td>Incorporar transcripción a consulta</td>
+      <td>Mostrar el texto reconocido para revisión del ciudadano antes de usarlo como descripción del caso.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T028</td>
+      <td>Gestionar grabaciones sin contenido</td>
+      <td>Detectar capturas vacías o demasiado breves e indicar al ciudadano que debe grabar una descripción antes de continuar.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS02</td>
+      <td rowspan="4">Conversión local de voz a texto</td>
+      <td>T029</td>
+      <td>Preparar recursos de reconocimiento sin red</td>
+      <td>Incluir y cargar los recursos requeridos por el motor de transcripción desde el almacenamiento disponible en el dispositivo.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T030</td>
+      <td>Integrar motor de voz local</td>
+      <td>Preparar los modelos y la lectura de audio para transcribir sin depender de internet.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T031</td>
+      <td>Conectar transcripción y borrador</td>
+      <td>Entregar el texto reconocido al formulario de consulta y conservarlo para que el ciudadano pueda revisarlo o corregirlo.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T032</td>
+      <td>Controlar fallos de transcripción</td>
+      <td>Descartar resultados incompletos y ofrecer un nuevo intento cuando el motor no pueda procesar la grabación.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US09</td>
+      <td rowspan="3">Adjunto de fotografías a una consulta</td>
+      <td>T033</td>
+      <td>Adjuntar imagen a consulta</td>
+      <td>Permitir elegir cámara o galería y mostrar la foto seleccionada dentro del formulario de emergencia.</td>
+      <td>5</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T034</td>
+      <td>Conservar referencia de fotografía</td>
+      <td>Copiar la imagen al espacio local de la aplicación y asociar su ruta a la consulta pendiente.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T035</td>
+      <td>Mostrar vista previa y eliminación</td>
+      <td>Permitir revisar la fotografía elegida y quitarla de la consulta antes de guardar o enviar los datos del caso.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US10</td>
+      <td rowspan="3">Ingreso de datos del paciente</td>
+      <td>T036</td>
+      <td>Capturar datos del paciente</td>
+      <td>Construir los campos de nombre, edad y datos relevantes que acompañan una solicitud de apoyo profesional.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T037</td>
+      <td>Validar información mínima del paciente</td>
+      <td>Solicitar los campos necesarios para la atención profesional y señalar los datos faltantes antes de completar la consulta.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T038</td>
+      <td>Enviar datos del paciente</td>
+      <td>Guardar la información junto con la consulta y transformarla al contrato esperado por Case Management.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US11</td>
+      <td rowspan="3">Registro de la ubicación de la consulta</td>
+      <td>T039</td>
+      <td>Registrar ubicación disponible</td>
+      <td>Solicitar permiso de ubicación y ofrecer campos manuales para provincia y descripción del lugar del paciente.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T040</td>
+      <td>Manejar falta de permiso de ubicación</td>
+      <td>Explicar por qué no se obtuvo la ubicación y permitir continuar con la información disponible sin bloquear el registro.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T041</td>
+      <td>Integrar ubicación en el caso</td>
+      <td>Persistir coordenadas y datos escritos y mostrarlos en el detalle autorizado que consulta el profesional.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US12</td>
+      <td rowspan="2">Elección de solicitud de apoyo profesional</td>
+      <td>T042</td>
+      <td>Añadir solicitud de apoyo</td>
+      <td>Incorporar una opción explícita para pedir asistencia profesional durante el recorrido de consulta.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T043</td>
+      <td>Vincular apoyo con recepción</td>
+      <td>Guardar la elección y enviarla al backend para activar el procesamiento que convierte la consulta en caso.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US13</td>
+      <td rowspan="4">Incorporación de fuentes médicas autorizadas</td>
+      <td>T044</td>
+      <td>Preparar fuentes médicas autorizadas</td>
+      <td>Registrar institución, edición y referencia de las fichas médicas seleccionadas para el paquete local.</td>
+      <td>5</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T045</td>
+      <td>Registrar origen de cada fuente</td>
+      <td>Conservar título, procedencia y tipo de procedimiento de cada documento aceptado para rastrear el sustento de las indicaciones.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T046</td>
+      <td>Revisar cobertura de procedimientos</td>
+      <td>Comprobar que las fuentes incorporadas cubran los procedimientos previstos y señalar documentos ausentes antes de generar el índice.</td>
+      <td>3</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T047</td>
+      <td>Asociar fuentes a orientación</td>
+      <td>Conservar identificadores de procedencia en los fragmentos recuperados y mostrarlos junto con la respuesta.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="5">TS05</td>
+      <td rowspan="5">Procesamiento e indexación de documentos médicos por tipo de procedimiento</td>
+      <td>T048</td>
+      <td>Normalizar texto de documentos</td>
+      <td>Extraer texto utilizable, corregir caracteres y conservar encabezados de procedimiento antes de fragmentar las fichas médicas.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T049</td>
+      <td>Fragmentar fichas médicas</td>
+      <td>Organizar contenido autorizado por procedimiento y conservar texto, origen e identificador de cada fragmento.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T050</td>
+      <td>Asociar metadatos a fragmentos</td>
+      <td>Guardar documento de origen y tipo de procedimiento junto con cada fragmento para recuperar evidencia identificable en la búsqueda.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T051</td>
+      <td>Generar índice reproducible</td>
+      <td>Construir el paquete de fuentes y fragmentos con validaciones para datos vacíos o incompatibles.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T052</td>
+      <td>Comprobar resultados del índice</td>
+      <td>Ejecutar consultas representativas y verificar que los fragmentos devueltos correspondan al procedimiento solicitado y conserven su referencia.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS06</td>
+      <td rowspan="4">Almacenamiento local del índice médico</td>
+      <td>T053</td>
+      <td>Versionar recursos del índice</td>
+      <td>Identificar la versión de la base médica instalada para evitar búsquedas con archivos incompatibles después de una actualización.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T054</td>
+      <td>Resolver rutas locales del índice</td>
+      <td>Cargar los archivos del índice desde el almacenamiento de la aplicación y comprobar su disponibilidad antes de ejecutar búsquedas.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T055</td>
+      <td>Instalar índice local</td>
+      <td>Cargar el paquete versionado en SQLite del dispositivo y activar una versión de consulta.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T056</td>
+      <td>Manejar índice no disponible</td>
+      <td>Detener la búsqueda con un estado controlado si falta el paquete o no puede leerse correctamente.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="5">TS08</td>
+      <td rowspan="5">Integración del modelo de IA local</td>
+      <td>T057</td>
+      <td>Preparar carga del modelo</td>
+      <td>Ubicar los archivos de Gemma y configurar la inicialización local sin depender de una petición al servidor.</td>
+      <td>5</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T058</td>
+      <td>Integrar Gemma en Android</td>
+      <td>Preparar el modelo empaquetado y el canal nativo que ejecuta inferencia directamente en el teléfono.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T059</td>
+      <td>Ejecutar inferencia desde Flutter</td>
+      <td>Conectar la entrada y salida del modelo con el flujo de consulta para mostrar el resultado dentro de la aplicación.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T060</td>
+      <td>Controlar recursos durante inferencia</td>
+      <td>Liberar recursos al terminar o cancelar el procesamiento y evitar que una segunda petición deje bloqueada la interfaz.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T061</td>
+      <td>Controlar disponibilidad del modelo</td>
+      <td>Verificar instalación y carga antes de generar texto y comunicar fallos mediante el flujo seguro.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="5">TS09</td>
+      <td rowspan="5">Implementación del flujo de recuperación aumentada por generación</td>
+      <td>T062</td>
+      <td>Construir consulta de búsqueda médica</td>
+      <td>Usar la descripción y datos disponibles del caso para formular la búsqueda de fragmentos pertinentes en la base local.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T063</td>
+      <td>Seleccionar evidencia relevante</td>
+      <td>Filtrar resultados insuficientes y preparar un contexto limitado con los fragmentos más útiles para la generación de indicaciones.</td>
+      <td>5</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T064</td>
+      <td>Conectar recuperación e inferencia</td>
+      <td>Buscar fichas pertinentes y entregar al modelo el contexto disponible del caso.</td>
+      <td>5</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T065</td>
+      <td>Estructurar salida RAG</td>
+      <td>Interpretar la selección del modelo y devolver medidas, prioridad y referencias asociadas a las fichas.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T066</td>
+      <td>Vincular respuesta con fuentes</td>
+      <td>Devolver junto a la orientación las referencias de los fragmentos utilizados para que la aplicación pueda mostrar su procedencia.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS10</td>
+      <td rowspan="4">Diseño del prompt de orientación médica</td>
+      <td>T067</td>
+      <td>Definir contexto de entrada</td>
+      <td>Organizar síntoma, antecedentes disponibles y fragmentos recuperados en variables separadas para construir mensajes consistentes para el modelo.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T068</td>
+      <td>Diseñar prompt de orientación</td>
+      <td>Incluir relato, comprobaciones iniciales y fichas candidatas con instrucciones para evitar suposiciones clínicas.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T069</td>
+      <td>Restringir formato de respuesta</td>
+      <td>Pedir una salida estructurada que seleccione evidencia literal y no invente instrucciones ajenas a las fuentes.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T070</td>
+      <td>Revisar límites del prompt</td>
+      <td>Comprobar que el prompt solicite orientación general, evite diagnósticos concluyentes y mantenga una salida fácil de presentar.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS11</td>
+      <td rowspan="4">Validación del sustento de las respuestas en la base médica</td>
+      <td>T071</td>
+      <td>Validar selección de fichas</td>
+      <td>Aceptar únicamente identificadores presentes entre los resultados recuperados y respaldados por el relato.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T072</td>
+      <td>Comparar respuesta y referencias</td>
+      <td>Revisar que las recomendaciones generadas puedan relacionarse con los fragmentos recuperados antes de presentarlas al ciudadano.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T073</td>
+      <td>Descartar indicaciones sin evidencia</td>
+      <td>Presentar pautas de fragmentos admitidos y activar respuesta segura si ninguna ficha queda sustentada.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T074</td>
+      <td>Registrar evidencia insuficiente</td>
+      <td>Marcar consultas sin respaldo suficiente y dirigirlas al mensaje de seguridad definido para evitar indicaciones sin sustento.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US14</td>
+      <td rowspan="4">Obtención de indicaciones médicas sin conexión</td>
+      <td>T075</td>
+      <td>Habilitar orientación sin red</td>
+      <td>Cargar el modelo y el conocimiento instalados en el teléfono antes de procesar la consulta.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T076</td>
+      <td>Mostrar progreso del proceso local</td>
+      <td>Indicar que la consulta sigue procesándose en el dispositivo y evitar envíos repetidos mientras se genera la orientación.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T077</td>
+      <td>Ejecutar consulta sin conectividad</td>
+      <td>Recorrer el ingreso de datos, búsqueda local e inferencia con la red desactivada para confirmar que el resultado se entregue.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T078</td>
+      <td>Presentar resultado local</td>
+      <td>Mostrar medidas y fuentes generadas sin llamar a un servicio remoto durante la orientación inicial.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US15</td>
+      <td rowspan="3">Indicaciones médicas claras y ordenadas</td>
+      <td>T079</td>
+      <td>Organizar indicaciones en pantalla</td>
+      <td>Separar medidas, indicaciones médicas y recomendación profesional en bloques fáciles de seguir.</td>
+      <td>5</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T080</td>
+      <td>Mostrar procedencia de cada respuesta</td>
+      <td>Presentar fichas y referencias junto a la orientación para que el ciudadano identifique su sustento.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T081</td>
+      <td>Separar pasos y señales de alerta</td>
+      <td>Presentar las acciones sugeridas en orden y destacar las advertencias que requieran atención inmediata dentro del resultado.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US16</td>
+      <td rowspan="3">Respuesta segura ante información insuficiente</td>
+      <td>T082</td>
+      <td>Detectar información insuficiente</td>
+      <td>Comprobar la descripción y los fragmentos recuperados antes de presentar una pauta médica como confiable.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T083</td>
+      <td>Ofrecer recuperación del flujo</td>
+      <td>Mostrar una respuesta segura y permitir ampliar el relato o repetir el procesamiento sin conservar indicaciones parciales.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T084</td>
+      <td>Solicitar detalles adicionales</td>
+      <td>Explicar qué información falta y permitir volver a la descripción para completarla antes de intentar generar otra orientación.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS13</td>
+      <td rowspan="4">Mecanismos de respuesta segura ante fallos</td>
+      <td>T085</td>
+      <td>Manejar error de búsqueda o modelo</td>
+      <td>Devolver mensajes controlados cuando falte el índice, falle la carga o la inferencia no responda.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T086</td>
+      <td>Preparar mensaje de contingencia</td>
+      <td>Definir una salida segura cuando la recuperación o la inferencia fallen, sin presentar una respuesta médica incompleta como válida.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T087</td>
+      <td>Conservar consulta ante fallo</td>
+      <td>Mantener texto y adjuntos del ciudadano disponibles para repetir el procesamiento sin tener que registrar de nuevo el caso.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T088</td>
+      <td>Permitir nuevo procesamiento</td>
+      <td>Evitar resultados parciales y mantener disponible la opción de corregir o repetir la consulta.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS15</td>
+      <td rowspan="4">Reglas de identificación de señales de gravedad</td>
+      <td>T089</td>
+      <td>Catalogar señales de gravedad</td>
+      <td>Definir términos y condiciones que indiquen peligro en las entradas de texto o transcripción utilizadas por la consulta.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T090</td>
+      <td>Aplicar señales de gravedad</td>
+      <td>Evaluar respuesta, respiración y sangrado junto con fichas que requieren atención inmediata.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T091</td>
+      <td>Vincular gravedad y recomendación</td>
+      <td>Asignar prioridad preliminar y mostrar ayuda profesional cuando una señal configurada lo requiera.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T092</td>
+      <td>Revisar prioridad de alertas</td>
+      <td>Comprobar que una señal grave se refleje en la recomendación aun cuando existan otras indicaciones generales menos urgentes.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US17</td>
+      <td rowspan="3">Recomendación de atención profesional</td>
+      <td>T093</td>
+      <td>Mostrar recomendación profesional</td>
+      <td>Combinar las señales iniciales de gravedad y la prioridad preliminar para decidir cuándo sugerir ayuda.</td>
+      <td>5</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T094</td>
+      <td>Explicar prioridad al ciudadano</td>
+      <td>Presentar la recomendación y su motivo sin afirmar que una solicitud profesional ya fue enviada.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T095</td>
+      <td>Facilitar solicitud de apoyo</td>
+      <td>Ofrecer desde la recomendación una acción clara para solicitar revisión profesional cuando las señales del caso lo justifiquen.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="5">TS16</td>
+      <td rowspan="5">Implementación de la base de datos local</td>
+      <td>T096</td>
+      <td>Definir relaciones y restricciones</td>
+      <td>Relacionar consultas, pacientes, fotos y estados locales mediante claves y restricciones que permitan reconstruir cada caso.</td>
+      <td>5</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T097</td>
+      <td>Crear esquema SQLite de consultas</td>
+      <td>Persistir relato, paciente, orientación, identificadores y estado de envío en el dispositivo.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T098</td>
+      <td>Preparar inicialización del esquema</td>
+      <td>Crear las tablas y versiones necesarias al instalar o actualizar la aplicación sin perder los registros existentes.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T099</td>
+      <td>Recuperar datos tras reinicio</td>
+      <td>Abrir la base existente y reconstruir consultas completas manteniendo sus identificadores y estados previos.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T100</td>
+      <td>Verificar lectura de datos guardados</td>
+      <td>Comprobar que consultas y adjuntos puedan recuperarse después de reiniciar la aplicación y mantener sus asociaciones.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US18</td>
+      <td rowspan="4">Guardado de una consulta pendiente de sincronización</td>
+      <td>T101</td>
+      <td>Guardar consulta sin conexión</td>
+      <td>Persistir la consulta y sus identificadores estables cuando el backend no esté disponible.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T102</td>
+      <td>Guardar datos y adjuntos relacionados</td>
+      <td>Persistir descripción, paciente, ubicación y referencias a fotografías con la consulta local antes de marcarla como pendiente.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T103</td>
+      <td>Marcar envío pendiente</td>
+      <td>Mantener el estado local para que el mismo registro pueda enviarse más tarde sin duplicarse.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T104</td>
+      <td>Confirmar guardado al ciudadano</td>
+      <td>Mostrar que la consulta quedó registrada en el dispositivo y que será enviada cuando se recupere la conectividad.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="5">TS18</td>
+      <td rowspan="5">Implementación de una cola local de consultas pendientes</td>
+      <td>T105</td>
+      <td>Organizar cola de pendientes</td>
+      <td>Guardar cada consulta con estado pendiente y clave de idempotencia estable para su envío posterior.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T106</td>
+      <td>Persistir estado e intentos de cola</td>
+      <td>Guardar fecha, estado y cantidad de intentos de cada elemento para reanudar su envío después de reinicios.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T107</td>
+      <td>Separar pendientes por usuario</td>
+      <td>Limitar el procesamiento de la cola a la cuenta activa y conservar los registros de otras cuentas sin mezclarlos.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T108</td>
+      <td>Evitar entradas pendientes duplicadas</td>
+      <td>Reconocer una consulta ya encolada por su identificador local y no agregar una segunda copia durante reintentos.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T109</td>
+      <td>Retirar elementos confirmados</td>
+      <td>Marcar la entrega después de la confirmación del backend y excluir esos registros de nuevos intentos.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US19</td>
+      <td rowspan="3">Visualización de consultas almacenadas localmente</td>
+      <td>T110</td>
+      <td>Listar consultas guardadas</td>
+      <td>Construir un historial local con fecha, descripción y estado de cada consulta del usuario.</td>
+      <td>5</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T111</td>
+      <td>Distinguir estados de entrega</td>
+      <td>Mostrar cuáles consultas están pendientes o confirmadas y permitir abrir el detalle conservado en el dispositivo.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T112</td>
+      <td>Abrir detalle de consulta local</td>
+      <td>Permitir acceder desde el listado a la descripción y los datos guardados aunque el dispositivo permanezca sin conexión.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS21</td>
+      <td rowspan="4">Detección de la recuperación de la conexión a internet</td>
+      <td>T113</td>
+      <td>Escuchar cambios de conectividad</td>
+      <td>Registrar el retorno de una conexión utilizable y evitar iniciar el envío solo por un cambio momentáneo de señal.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T114</td>
+      <td>Detectar retorno de conectividad</td>
+      <td>Observar el restablecimiento de conexión y comprobar que el backend vuelve a estar accesible.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T115</td>
+      <td>Evitar sincronizaciones simultáneas</td>
+      <td>Impedir que varios eventos de red lancen ejecuciones paralelas sobre el mismo conjunto de consultas pendientes.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T116</td>
+      <td>Activar sincronización pendiente</td>
+      <td>Iniciar el procesamiento al recuperar red y conservar pendientes cuando exista conexión sin acceso al servidor.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="5">TS22</td>
+      <td rowspan="5">Sincronización bidireccional en segundo plano</td>
+      <td>T117</td>
+      <td>Enviar consultas pendientes</td>
+      <td>Transmitir registros locales y adjuntos al backend conservando un identificador estable para reconocer cada envío.</td>
+      <td>5</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T118</td>
+      <td>Descargar cambios de casos</td>
+      <td>Consultar los estados y observaciones confirmados por el servidor y reflejarlos en el historial guardado del dispositivo.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T119</td>
+      <td>Sincronizar en segundo plano</td>
+      <td>Enviar consultas locales y recuperar actualizaciones remotas sin interrumpir el recorrido principal.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T120</td>
+      <td>Conciliar versiones local y remota</td>
+      <td>Comparar la última actualización disponible y aplicar el estado confirmado sin sobrescribir cambios más recientes.</td>
+      <td>5</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T121</td>
+      <td>Conciliar respuestas repetidas</td>
+      <td>Usar UUID e idempotencia para reconocer registros existentes y actualizar el historial del usuario.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US20</td>
+      <td rowspan="4">Sincronización automática de consultas y actualizaciones</td>
+      <td>T122</td>
+      <td>Sincronizar consultas y cambios</td>
+      <td>Enviar automáticamente los registros pendientes cuando vuelve la conexión con el UUID y la clave originales.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T123</td>
+      <td>Indicar progreso de sincronización</td>
+      <td>Mostrar al ciudadano cuándo una consulta está pendiente, enviándose o confirmada después de recuperar la conexión.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T124</td>
+      <td>Recibir actualizaciones de atención</td>
+      <td>Conciliar los cambios confirmados del servidor con la copia local de la cuenta correspondiente.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T125</td>
+      <td>Actualizar historial tras confirmación</td>
+      <td>Refrescar los listados y detalles locales cuando el servidor acepte una consulta o devuelva cambios de atención.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS23</td>
+      <td rowspan="4">Reintentos automáticos ante fallos de sincronización</td>
+      <td>T126</td>
+      <td>Registrar causa del último fallo</td>
+      <td>Conservar el error y el momento del intento para decidir cuándo volver a procesar una consulta pendiente.</td>
+      <td>3</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T127</td>
+      <td>Aplicar espera entre reintentos</td>
+      <td>Programar un nuevo intento después de fallos temporales sin saturar el servicio con solicitudes continuas.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T128</td>
+      <td>Programar reintentos de envío</td>
+      <td>Reprocesar consultas después de fallos temporales de conectividad manteniendo sus identificadores originales y archivos adjuntos.</td>
+      <td>5</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T129</td>
+      <td>Conservar pendientes agotados</td>
+      <td>Mantener el estado pendiente tras varios intentos y retomarlo en un ciclo posterior.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS24</td>
+      <td rowspan="4">Tolerancia a fallos del servicio de sincronización</td>
+      <td>T130</td>
+      <td>Guardar progreso antes de enviar</td>
+      <td>Conservar los datos y el estado del elemento antes de iniciar la solicitud para facilitar su recuperación si el proceso se interrumpe.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T131</td>
+      <td>Recuperar servicio interrumpido</td>
+      <td>Preservar consulta y foto cuando el backend o la red dejan de responder durante el envío.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T132</td>
+      <td>Reanudar tras reiniciar el servicio</td>
+      <td>Volver a cargar elementos pendientes después de un cierre inesperado y continuar sin crear casos duplicados en el backend.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T133</td>
+      <td>Evitar pérdidas y duplicados</td>
+      <td>Reanudar desde el estado confirmado y aplicar la misma clave de idempotencia al repetir solicitudes.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS26</td>
+      <td rowspan="4">Mantenimiento de una copia local actualizada del historial.</td>
+      <td>T134</td>
+      <td>Actualizar proyección local</td>
+      <td>Guardar estado de atención y profesional asignado cuando llega una actualización del caso.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T135</td>
+      <td>Registrar fecha de actualización remota</td>
+      <td>Conservar la marca de tiempo del último estado confirmado para distinguir datos recientes de una copia local anterior.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T136</td>
+      <td>Refrescar vistas desde datos locales</td>
+      <td>Actualizar el historial y el detalle cuando la proyección local cambie sin exigir una nueva conexión al servidor.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T137</td>
+      <td>Consultar última versión sin red</td>
+      <td>Mostrar desde el historial la información confirmada más reciente aun después de perder conectividad.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US22</td>
+      <td rowspan="3">Consulta del historial de consultas realizadas</td>
+      <td>T138</td>
+      <td>Construir historial ciudadano</td>
+      <td>Mostrar las consultas conservadas para la cuenta actual y ordenar sus registros de forma comprensible.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T139</td>
+      <td>Abrir consulta histórica</td>
+      <td>Permitir revisar el relato, la orientación y el estado de envío de cada registro seleccionado.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T140</td>
+      <td>Ordenar historial por fecha</td>
+      <td>Mostrar primero las consultas recientes y mantener visibles su estado y fecha para que el ciudadano ubique cada caso.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US23</td>
+      <td rowspan="3">Visualización del detalle actualizado de una consulta</td>
+      <td>T141</td>
+      <td>Actualizar detalle de consulta</td>
+      <td>Consultar el estado vigente del caso asociado cuando el servidor esté disponible.</td>
+      <td>5</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T142</td>
+      <td>Presentar cambios de atención</td>
+      <td>Mostrar el estado actualizado, el profesional asignado y las observaciones disponibles en el detalle de la consulta.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T143</td>
+      <td>Conservar último estado conocido</td>
+      <td>Presentar la información confirmada de atención y mantener una vista local útil cuando no haya conexión.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US24</td>
+      <td rowspan="3">Visualización de consultas que solicitan apoyo profesional</td>
+      <td>T144</td>
+      <td>Listar solicitudes de apoyo</td>
+      <td>Mostrar al profesional los casos disponibles cuya consulta pidió atención y aún requiere una respuesta.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T145</td>
+      <td>Identificar prioridad en el listado</td>
+      <td>Mostrar estado y datos esenciales de cada solicitud para que el profesional pueda decidir cuál abrir primero.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T146</td>
+      <td>Conectar listado con backend</td>
+      <td>Obtener los casos autorizados y permitir entrar al detalle para evaluar cada solicitud.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US25</td>
+      <td rowspan="3">Filtrado de consultas por estado</td>
+      <td>T147</td>
+      <td>Añadir filtros de casos</td>
+      <td>Incorporar el filtro por estado junto con las opciones de provincia y prioridad en el listado profesional.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T148</td>
+      <td>Aplicar criterios al listado</td>
+      <td>Enviar o aplicar los parámetros seleccionados y actualizar los resultados sin perder el contexto de navegación.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T149</td>
+      <td>Conservar selección de filtros</td>
+      <td>Mantener el criterio elegido cuando el profesional vuelve del detalle al listado y actualizar los resultados visibles.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US26</td>
+      <td rowspan="3">Visualización de consultas autoasignadas</td>
+      <td>T150</td>
+      <td>Mostrar casos propios</td>
+      <td>Preparar una vista de casos asignados al profesional autenticado con sus estados principales.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T151</td>
+      <td>Consultar asignaciones vigentes</td>
+      <td>Filtrar la respuesta del servidor por responsable y mantener visible el acceso al detalle de cada caso.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T152</td>
+      <td>Actualizar listado tras asignación</td>
+      <td>Agregar el caso recién autoasignado a la vista de casos propios y reflejar su estado confirmado.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US27</td>
+      <td rowspan="4">Consulta del detalle completo de un caso</td>
+      <td>T153</td>
+      <td>Construir detalle del caso</td>
+      <td>Presentar paciente, relato, orientación, prioridad, foto disponible y datos de contacto autorizados.</td>
+      <td>5</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T154</td>
+      <td>Presentar antecedentes del caso</td>
+      <td>Mostrar descripción, datos del paciente, fotografías y recomendaciones previas disponibles para apoyar la revisión profesional.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T155</td>
+      <td>Mostrar responsable y estado actual</td>
+      <td>Incluir profesional asignado, etapa de atención y fecha de cambio en el detalle consultado por personal autorizado.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T156</td>
+      <td>Incorporar historial de atención</td>
+      <td>Cargar las transiciones registradas y las acciones permitidas según estado y responsable actual.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US28</td>
+      <td rowspan="3">Visualización de la ubicación del paciente</td>
+      <td>T157</td>
+      <td>Mostrar ubicación del paciente</td>
+      <td>Presentar provincia, descripción y coordenadas disponibles dentro del detalle del caso para orientar la atención.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T158</td>
+      <td>Conservar ubicación de origen</td>
+      <td>Transformar los datos de localización recibidos con la consulta para su consulta por personal autorizado.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T159</td>
+      <td>Mostrar alternativa sin coordenadas</td>
+      <td>Presentar la provincia o descripción registrada cuando no haya coordenadas precisas, sin mostrar un mapa vacío.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS27</td>
+      <td rowspan="4">Consistencia concurrente de los casos</td>
+      <td>T160</td>
+      <td>Comprobar versión antes de asignar</td>
+      <td>Validar el estado y la versión del caso al aceptar una asignación para impedir que dos profesionales lo tomen.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T161</td>
+      <td>Bloquear cambios concurrentes</td>
+      <td>Reclamar el caso con control de concurrencia antes de aceptar asignaciones simultáneas.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T162</td>
+      <td>Rechazar transición incompatible</td>
+      <td>Comprobar estado y responsable actuales y devolver conflicto sin generar asignaciones contradictorias.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T163</td>
+      <td>Informar conflictos al cliente</td>
+      <td>Devolver un error claro cuando otro profesional modificó el caso y actualizar la vista con el estado confirmado.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US29</td>
+      <td rowspan="4">Autoasignación de una consulta disponible</td>
+      <td>T164</td>
+      <td>Implementar autoasignación</td>
+      <td>Añadir la acción de asumir un caso disponible y confirmar la intención del profesional.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T165</td>
+      <td>Aplicar asignación exclusiva</td>
+      <td>Validar en backend el estado actual bajo control concurrente y devolver el caso confirmado o un conflicto claro.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T166</td>
+      <td>Mostrar confirmación de asignación</td>
+      <td>Informar al profesional que el caso quedó a su cargo y abrirlo desde la sección de casos propios.</td>
+      <td>2</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T167</td>
+      <td>Gestionar asignación rechazada</td>
+      <td>Mostrar un mensaje si el caso ya fue tomado y quitar la opción de autoasignarlo tras refrescar los datos.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS28</td>
+      <td rowspan="4">Trazabilidad de asignaciones y cambios de estado</td>
+      <td>T168</td>
+      <td>Registrar cambios de estado</td>
+      <td>Persistir actor, fecha y transición de cada asignación, inicio y cierre de caso.</td>
+      <td>5</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T169</td>
+      <td>Guardar actor y momento del cambio</td>
+      <td>Registrar quién ejecutó cada transición y cuándo ocurrió para reconstruir la atención del caso en orden.</td>
+      <td>4</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T170</td>
+      <td>Vincular eventos con el caso</td>
+      <td>Asociar asignación, inicio y cierre al identificador de la consulta para consultar su trazabilidad completa.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T171</td>
+      <td>Exponer historial ordenado</td>
+      <td>Consultar los movimientos vinculados al caso y presentarlos en secuencia temporal al profesional autorizado.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US30</td>
+      <td rowspan="3">Inicio de la atención de una consulta</td>
+      <td>T172</td>
+      <td>Restringir inicio a caso asignado</td>
+      <td>Habilitar la acción de iniciar atención únicamente para el profesional asignado y cuando el estado del caso lo permita.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T173</td>
+      <td>Iniciar atención de caso</td>
+      <td>Mostrar la acción de inicio solamente al profesional asignado a un caso en estado compatible.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T174</td>
+      <td>Registrar transición a atención</td>
+      <td>Persistir responsable y hora del cambio y actualizar el detalle con el estado confirmado por el servidor.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">TS29</td>
+      <td rowspan="4">Tolerancia a fallos en la gestión de casos</td>
+      <td>T175</td>
+      <td>Registrar fallos transitorios de operación</td>
+      <td>Identificar respuestas interrumpidas durante asignación, inicio o cierre para consultar el resultado antes de repetir la petición.</td>
+      <td>4</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T176</td>
+      <td>Recuperar operación de caso fallida</td>
+      <td>Mantener transacciones consistentes ante interrupciones de red durante la asignación, el inicio o el cierre del caso.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T177</td>
+      <td>Revalidar estado antes de reintentar</td>
+      <td>Consultar el estado vigente del caso y repetir la operación solo cuando continúe siendo válida para ese profesional.</td>
+      <td>4</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T178</td>
+      <td>Reconciliar estado tras conflicto</td>
+      <td>Volver a consultar el caso confirmado y permitir repetir solo una operación todavía válida.</td>
+      <td>3</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="4">US31</td>
+      <td rowspan="4">Cierre de una consulta con observaciones</td>
+      <td>T179</td>
+      <td>Validar observaciones de cierre</td>
+      <td>Solicitar observaciones antes de confirmar el cierre e informar al profesional si falta información necesaria.</td>
+      <td>2</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T180</td>
+      <td>Cerrar caso con observaciones</td>
+      <td>Solicitar las observaciones al profesional responsable antes de confirmar el cierre del caso.</td>
+      <td>4</td>
+      <td>July Paico</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T181</td>
+      <td>Persistir cierre e historial</td>
+      <td>Guardar la transición y sus notas, rechazando operaciones de otros profesionales o desde estados incompatibles.</td>
+      <td>3</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T182</td>
+      <td>Actualizar listados al cerrar</td>
+      <td>Retirar el caso de los pendientes y mostrarlo en el historial con sus observaciones y estado final.</td>
+      <td>3</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td rowspan="3">US32</td>
+      <td rowspan="3">Consulta del historial de casos atendidos</td>
+      <td>T183</td>
+      <td>Consultar casos atendidos</td>
+      <td>Mostrar los casos vinculados al profesional y permitir filtrar los que ya se cerraron.</td>
+      <td>5</td>
+      <td>Angelo Solano</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T184</td>
+      <td>Presentar historial vacío o disponible</td>
+      <td>Conservar acceso al detalle y mostrar un mensaje útil cuando no existan atenciones registradas.</td>
+      <td>2</td>
+      <td>Diego Cacho</td>
+      <td>Done</td>
+    </tr>
+    <tr>
+      <td>T185</td>
+      <td>Ordenar casos atendidos</td>
+      <td>Presentar los casos cerrados en orden de atención y permitir abrir su detalle desde el historial profesional.</td>
+      <td>2</td>
+      <td>Natalia Roman</td>
+      <td>Done</td>
+    </tr>
+  </tbody>
+</table>
 
 #### 7.2.1.3. Development Evidence for Sprint Review.
 
