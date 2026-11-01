@@ -6352,6 +6352,37 @@ Durante este sprint se desarrolló el flujo principal de la solución, siendo es
 
 ### 7.3.1. Diseño de Entrevistas.
 
+Las entrevistas de validación buscan conocer cómo perciben los posibles usuarios las funcionalidades de Lifeline después de recorrer la aplicación con un caso simulado. Se les pedirá que expliquen qué les resultó útil o difícil, qué cambiarían y qué impacto esperan en una situación posterior a un sismo, para lo cual, el entrevistador solicitará ejemplos concretos y registrará también las dudas o críticas que surjan durante el recorrido.
+
+**Segmento objetivo 1: Ciudadanos**
+
+1. Al terminar el recorrido, ¿qué parte de la aplicación entendió de inmediato y en cuál necesitó ayuda?
+2. ¿Qué funcionalidad le gustó más y qué la hizo valiosa para usted?
+3. ¿Qué funcionalidad le gustó menos o le resultó incómoda? ¿Qué cambiaría de ella?
+4. Para describir una emergencia, ¿cuál de las opciones entre texto, voz y fotografía usaría primero? ¿Por qué?
+5. ¿Qué datos del paciente y de la ubicación le parecieron fáciles o difíciles de registrar en una situación de apuro?
+6. ¿Cómo percibió la claridad y el orden de las indicaciones recibidas? ¿En qué paso podría dudar?
+7. ¿Qué elementos de las indicaciones y de sus fuentes médicas le generaron confianza o desconfianza?
+8. ¿Qué entendió sobre el guardado de la consulta sin internet y su posterior sincronización?
+9. ¿Cómo fue su experiencia al buscar una consulta anterior y reconocer su estado actual?
+10. ¿En qué circunstancias solicitaría apoyo profesional desde la aplicación y qué esperaría que ocurra después?
+11. Si tuviera que usar la aplicación después de un sismo real, ¿qué impacto cree que tendría en sus primeras decisiones?
+12. ¿Qué mejoras priorizaría antes de recomendar la aplicación a otras personas y por qué?
+
+**Segmento objetivo 2: Personal médico**
+
+1. Después de revisar un caso, ¿qué funcionalidad le resultó más útil y por qué?
+2. ¿Qué funcionalidad le gustó menos o interrumpió su trabajo? ¿Qué cambiaría de ella?
+3. Al revisar el listado y los filtros, ¿qué información le ayudó a identificar los casos que atendería primero?
+4. ¿Qué datos faltaron o sobraron en el detalle del caso, incluidas las fotografías y la ubicación?
+5. ¿Qué tan cómodo sientió el flujo de localizar una solicitud de apoyo y asignársela? ¿En qué parte tuvo dudas?
+6. ¿Cómo evalúa los pasos para iniciar la atención y cerrar un caso con observaciones?
+7. Al revisar la orientación mostrada al ciudadano, ¿qué le inspiró confianza y qué le preocupó?
+8. ¿En qué situaciones consultaría el historial de un caso y qué datos esperaría encontrar allí?
+9. ¿Qué dificultades prevé cuando una consulta se registra sin conexión y llega al sistema después de sincronizarse?
+10. En un evento con múltiples afectados, ¿qué impacto cree que tendría la aplicación?
+11. Si pudiera solicitar una mejora antes de usarla en su trabajo, ¿cuál sería y por qué?
+
 ### 7.3.2. Registro de Entrevistas.
 
 ### 7.3.3. Evaluaciones según heurísticas.
