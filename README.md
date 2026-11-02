@@ -4710,6 +4710,99 @@ Explicación: Luis abre su perfil desde el avatar (M-07), edita sus datos profes
 
 ### 7.1.1. Software Development Environment Configuration.
 
+El equipo usa el mismo conjunto de herramientas para planear, diseñar, programar, probar, desplegar y documentar Lifeline. Las que se abren en el navegador se indican con su sitio. Las que se instalan en la computadora se indican con la página de descarga.
+
+<table>
+  <thead>
+    <tr>
+      <th>Actividad</th>
+      <th>Imagen</th>
+      <th>Producto</th>
+      <th>Propósito en el proyecto</th>
+      <th>Referencia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Project Management y Requirements Management</td>
+      <td><img src="public/assets/images/chapter-7/Trello.jpg" alt="Trello" width="120"></td>
+      <td>Trello</td>
+      <td>Tablero del equipo. Ahí se ordenan las historias, el backlog y el avance de cada sprint.</td>
+      <td><a href="https://trello.com">trello.com</a></td>
+    </tr>
+    <tr>
+      <td>Product Design</td>
+      <td><img src="public/assets/images/chapter-7/Figma.svg" alt="Figma" width="120"></td>
+      <td>Figma</td>
+      <td>Diseño de las pantallas de la aplicación móvil y de la landing.</td>
+      <td><a href="https://www.figma.com">figma.com</a></td>
+    </tr>
+    <tr>
+      <td>Software Development</td>
+      <td><img src="public/assets/images/chapter-7/flutter.png" alt="Flutter" width="120"></td>
+      <td>Flutter</td>
+      <td>Aplicación móvil del ciudadano y del personal médico.</td>
+      <td><a href="https://docs.flutter.dev/get-started/install">docs.flutter.dev</a></td>
+    </tr>
+    <tr>
+      <td>Software Development</td>
+      <td><img src="public/assets/images/chapter-7/Angular.png" alt="Angular" width="120"></td>
+      <td>Angular</td>
+      <td>Landing page de RescueBridge, donde el visitante conoce el producto y descarga la app.</td>
+      <td><a href="https://angular.dev/installation">angular.dev</a></td>
+    </tr>
+    <tr>
+      <td>Software Development</td>
+      <td><img src="public/assets/images/chapter-7/java.jpg" alt="Java" width="120"></td>
+      <td>Java Development Kit (Eclipse Temurin)</td>
+      <td>Lenguaje y runtime del backend Spring Boot, de los workers y del broker en local.</td>
+      <td><a href="https://adoptium.net">adoptium.net</a></td>
+    </tr>
+    <tr>
+      <td>Software Development</td>
+      <td><img src="public/assets/images/chapter-7/Visual Studio Code.png" alt="Visual Studio Code" width="120"></td>
+      <td>Visual Studio Code</td>
+      <td>Editor con el que el equipo escribe el código de la app, la landing y el backend.</td>
+      <td><a href="https://code.visualstudio.com/download">code.visualstudio.com</a></td>
+    </tr>
+    <tr>
+      <td>Software Development</td>
+      <td><img src="public/assets/images/chapter-7/activemq.png" alt="ActiveMQ" width="120"></td>
+      <td>ActiveMQ Artemis</td>
+      <td>Broker de la cola de trabajos del backend. En local se levanta con Docker.</td>
+      <td><a href="https://activemq.apache.org/components/artemis/download">activemq.apache.org</a></td>
+    </tr>
+    <tr>
+      <td>Software Testing</td>
+      <td><img src="public/assets/images/chapter-7/postman.png" alt="Postman" width="120"></td>
+      <td>Postman</td>
+      <td>Pruebas manuales de los endpoints del backend antes de integrarlos con la app.</td>
+      <td><a href="https://www.postman.com/downloads/">postman.com</a></td>
+    </tr>
+    <tr>
+      <td>Software Deployment</td>
+      <td><img src="public/assets/images/chapter-7/Docker.png" alt="Docker" width="120"></td>
+      <td>Docker Desktop</td>
+      <td>Ejecuta en la computadora del equipo los servicios de apoyo, empezando por ActiveMQ.</td>
+      <td><a href="https://www.docker.com/products/docker-desktop/">docker.com</a></td>
+    </tr>
+    <tr>
+      <td>Software Deployment</td>
+      <td><img src="public/assets/images/chapter-7/azure.png" alt="Microsoft Azure" width="120"></td>
+      <td>Microsoft Azure</td>
+      <td>Nube donde se despliegan el backend, PostgreSQL, el broker y los workers.</td>
+      <td><a href="https://azure.microsoft.com">azure.microsoft.com</a></td>
+    </tr>
+    <tr>
+      <td>Software Documentation y Source Code Management</td>
+      <td><img src="public/assets/images/chapter-7/Github.png" alt="GitHub" width="120"></td>
+      <td>GitHub</td>
+      <td>Repositorios del equipo, revisión de cambios y publicación de este informe y de los README.</td>
+      <td><a href="https://github.com/emergentes-project">github.com/emergentes-project</a></td>
+    </tr>
+  </tbody>
+</table>
+
 ### 7.1.2. Source Code Management.
 
 ### 7.1.3. Source Code Style Guide & Conventions.
