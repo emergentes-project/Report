@@ -4883,6 +4883,224 @@ Cada commit sigue Conventional Commits: tipo(alcance): descripción. Los tipos q
 
 ### 7.1.3. Source Code Style Guide & Conventions.
 
+Lifeline escribe todo el código en inglés. Clases, métodos, variables, archivos, rutas, ramas y commits van en inglés. El texto que ve el usuario y la documentación funcional pueden ir en español. Las reglas de abajo se muestran con IAM y Case Management, y se aplican igual a Consultation y Medical Bases.
+
+<table>
+  <thead>
+    <tr>
+      <th>Lenguaje</th>
+      <th>Referencia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Java / Spring Boot</td>
+      <td>Google Java Style Guide</td>
+    </tr>
+    <tr>
+      <td>Dart / Flutter</td>
+      <td>Effective Dart</td>
+    </tr>
+    <tr>
+      <td>TypeScript / Angular</td>
+      <td>Angular Style Guide</td>
+    </tr>
+    <tr>
+      <td>Gherkin / archivos feature</td>
+      <td>Cucumber Gherkin Reference</td>
+    </tr>
+  </tbody>
+</table>
+
+**Java / Spring Boot**
+
+El backend y el worker se escriben en Java. No se usa el prefijo I de C# en las interfaces.
+
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Convención</th>
+      <th>Ejemplo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Clases</td>
+      <td>PascalCase</td>
+      <td>CasesController, CaseCommandServiceImpl</td>
+    </tr>
+    <tr>
+      <td>Interfaces</td>
+      <td>PascalCase, sin prefijo I</td>
+      <td>CaseRepository, ImageStorageService</td>
+    </tr>
+    <tr>
+      <td>Métodos, parámetros y variables</td>
+      <td>camelCase</td>
+      <td>findById, consultationId, savedCase</td>
+    </tr>
+    <tr>
+      <td>Constantes</td>
+      <td>UPPER_SNAKE_CASE</td>
+      <td>MAX_PAGE_SIZE</td>
+    </tr>
+    <tr>
+      <td>Paquetes</td>
+      <td>minúsculas</td>
+      <td>pe.upc.rescuebridge.lifeline.iam</td>
+    </tr>
+    <tr>
+      <td>Recursos HTTP</td>
+      <td>sufijo Resource</td>
+      <td>CaseResource, PhotoUploadResource</td>
+    </tr>
+    <tr>
+      <td>Comandos y consultas</td>
+      <td>sufijo Command o Query</td>
+      <td>AssignCaseCommand, GetCaseByIdQuery</td>
+    </tr>
+  </tbody>
+</table>
+
+Los bounded contexts se nombran en inglés: iam, consultation, medicalbases y casemanagement. Un controller termina en Controller. Un servicio de escritura termina en CommandService y uno de lectura en QueryService. Un repositorio termina en Repository. No se usan abreviaturas como cmd, svc o repoImpl. El controller no repite la regla de negocio. Esa regla vive en el dominio.
+
+Cada módulo se parte en cuatro capas. Domain guarda agregados, comandos, consultas y contratos. Application orquesta los casos de uso. Infrastructure implementa persistencia, mensajería y Cloudinary. Interfaces expone controllers, resources y assemblers. Domain no importa Infrastructure ni controllers. Application no arma respuestas HTTP.
+
+**Dart / Flutter**
+
+La aplicación móvil sigue Effective Dart. Los archivos van en snake_case. Las clases van en PascalCase. Métodos y variables van en camelCase. En Dart las constantes también van en camelCase, no en mayúsculas.
+
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Convención</th>
+      <th>Ejemplo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Archivos</td>
+      <td>snake_case</td>
+      <td>consultation_controller.dart</td>
+    </tr>
+    <tr>
+      <td>Clases</td>
+      <td>PascalCase</td>
+      <td>Consultation, CreateConsultationService</td>
+    </tr>
+    <tr>
+      <td>Pantallas</td>
+      <td>sufijo Page</td>
+      <td>ConsultationPage, PendingPage</td>
+    </tr>
+    <tr>
+      <td>Funciones y variables</td>
+      <td>camelCase</td>
+      <td>requestHelp, photoLocalPath</td>
+    </tr>
+  </tbody>
+</table>
+
+La carpeta domain no habla con SQLite. La carpeta data implementa los repositorios y los daos. La interfaz no lee la base ni llama al modelo de IA. Los nombres de archivo y de clase van en inglés aunque la etiqueta de la pantalla esté en español.
+
+**TypeScript / Angular**
+
+La landing usa Angular. No es la aplicación de emergencias. Se sigue la guía de estilo de Angular.
+
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Convención</th>
+      <th>Ejemplo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Archivos</td>
+      <td>kebab-case con sufijo</td>
+      <td>download-app.component.ts</td>
+    </tr>
+    <tr>
+      <td>Clases de componente</td>
+      <td>PascalCase y sufijo Component</td>
+      <td>DownloadAppComponent</td>
+    </tr>
+    <tr>
+      <td>Servicios</td>
+      <td>sufijo Service</td>
+      <td>LandingContentService</td>
+    </tr>
+    <tr>
+      <td>Selectores</td>
+      <td>prefijo app y kebab-case</td>
+      <td>app-download-app</td>
+    </tr>
+  </tbody>
+</table>
+
+Un componente no arma URLs a mano si ya existe un servicio para ese contenido. Los textos visibles de la landing pueden estar en español. El nombre del archivo y de la clase, no.
+
+**Gherkin**
+
+Los archivos feature describen comportamiento, no pantallas. El nombre del archivo va en inglés y en kebab-case, por ejemplo receive-consultation.feature y assign-case.feature. Los pasos pueden redactarse en español. Feature, Scenario, Given, When y Then se mantienen. Given es el contexto, When es la acción y Then es el resultado visible. Un escenario cubre una sola conducta. No se escriben clics, nombres de botones ni códigos HTTP dentro del paso.
+
+**Endpoints REST**
+
+La ruta usa sustantivos en inglés y en plural. El verbo HTTP dice la acción. El patrón, con los recursos de Lifeline, es este.
+
+<table>
+  <thead>
+    <tr>
+      <th>Método</th>
+      <th>Ruta</th>
+      <th>Propósito</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>POST</td>
+      <td>/api/v1/consultation-submissions</td>
+      <td>Recibir una consulta sincronizada</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/api/v1/consultation-photos</td>
+      <td>Recibir la foto de una consulta</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/api/v1/cases</td>
+      <td>Listar casos según el filtro autorizado</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/api/v1/cases/{id}</td>
+      <td>Ver el detalle de un caso</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/api/v1/cases/{id}/assignation</td>
+      <td>Autoasignar un caso disponible</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/api/v1/users</td>
+      <td>Registrar una cuenta</td>
+    </tr>
+  </tbody>
+</table>
+
+Los códigos se usan igual en todos los módulos. 201 cuando se crea un recurso. 200 cuando una lectura o una actualización sale bien. 400 cuando el pedido está incompleto. 401 cuando no hay sesión. 404 cuando el recurso no existe. 409 cuando la misma consulta llega otra vez con la misma clave de idempotencia.
+
+**Pruebas**
+
+La clase de prueba se llama como la clase probada más el sufijo Tests. Por ejemplo CaseCommandServiceImplTests. El método dice el resultado y la condición, en camelCase: shouldRejectSecondAssignationWhenCaseIsAlreadyTaken. El mock respeta el tipo real del contrato. Una prueba unitaria no usa PostgreSQL ni ActiveMQ reales.
+
+Los commits ya están definidos en 7.1.2. El mensaje va en inglés, con Conventional Commits. No se aceptan textos como cambios o arreglos.
+
 ### 7.1.4. Software Deployment Configuration.
 
 ## 7.2. Solution Implementation.
