@@ -4805,6 +4805,82 @@ El equipo usa el mismo conjunto de herramientas para planear, diseñar, programa
 
 ### 7.1.2. Source Code Management.
 
+GitHub es el control de versiones de Lifeline. El código y este informe viven en la organización <a href="https://github.com/emergentes-project">emergentes-project</a>. Cada producto digital tiene su propio repositorio.
+
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Repositorio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Informe</td>
+      <td><a href="https://github.com/emergentes-project/Report">github.com/emergentes-project/Report</a></td>
+    </tr>
+    <tr>
+      <td>Aplicación móvil</td>
+      <td><a href="https://github.com/emergentes-project/lifeline-mobile">github.com/emergentes-project/lifeline-mobile</a></td>
+    </tr>
+    <tr>
+      <td>Landing page</td>
+      <td><a href="https://github.com/emergentes-project/lifeline-landing-page">github.com/emergentes-project/lifeline-landing-page</a></td>
+    </tr>
+    <tr>
+      <td>Backend</td>
+      <td><a href="https://github.com/emergentes-project/lifeline-backend">github.com/emergentes-project/lifeline-backend</a></td>
+    </tr>
+    <tr>
+      <td>Broker</td>
+      <td><a href="https://github.com/emergentes-project/lifeline-broker">github.com/emergentes-project/lifeline-broker</a></td>
+    </tr>
+    <tr>
+      <td>Worker</td>
+      <td><a href="https://github.com/emergentes-project/lifeline-worker">github.com/emergentes-project/lifeline-worker</a></td>
+    </tr>
+    <tr>
+      <td>Load balancer</td>
+      <td><a href="https://github.com/emergentes-project/lifeline-load-balancer">github.com/emergentes-project/lifeline-load-balancer</a></td>
+    </tr>
+  </tbody>
+</table>
+
+El backend incluye el proyecto y los archivos `.feature` de las pruebas del servicio. El worker hace lo mismo con las pruebas de los trabajos que consume de la cola.
+
+<table>
+  <thead>
+    <tr>
+      <th>Integrante</th>
+      <th>Usuario de GitHub</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Solano Armas, Angelo Héctor</td>
+      <td><a href="https://github.com/Angelo5214">Angelo5214</a></td>
+    </tr>
+    <tr>
+      <td>Cacho Seminario, Diego Alonso</td>
+      <td><a href="https://github.com/Memesitos">Memesitos</a></td>
+    </tr>
+    <tr>
+      <td>Roman Cruz, Natalia Bertha</td>
+      <td><a href="https://github.com/natRC2005">natRC2005</a></td>
+    </tr>
+    <tr>
+      <td>Paico Calderon, July Zelmira</td>
+      <td><a href="https://github.com/u20211d760">u20211d760</a></td>
+    </tr>
+  </tbody>
+</table>
+
+El trabajo paralelo sigue GitFlow. main guarda lo publicado. develop integra el sprint. Cada historia sale de develop en una rama feature/ y el nombre va en minúsculas, separado por guiones, por ejemplo feature/sync-consultation. Una versión se prepara en release/x.y.z, por ejemplo release/1.2.0. Una corrección de lo ya publicado sale de main en hotfix/x.y.z, por ejemplo hotfix/1.2.1, y vuelve a main y a develop.
+
+El número x.y.z sigue Semantic Versioning 2.0.0. x sube cuando el cambio rompe algo que la aplicación ya usaba. y sube cuando hay una función nueva compatible. z sube cuando el cambio solo corrige un error.
+
+Cada commit sigue Conventional Commits: tipo(alcance): descripción. Los tipos que usa el equipo son feat, fix, docs, test, refactor y chore. Un ejemplo es feat(consultation): receive offline consultation.
+
 ### 7.1.3. Source Code Style Guide & Conventions.
 
 ### 7.1.4. Software Deployment Configuration.
