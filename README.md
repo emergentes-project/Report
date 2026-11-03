@@ -6789,15 +6789,15 @@ Se presentan las evidencias del avance en la implementación de los artefactos s
 
 | Repository | Branch | Commit ID | Commit Message | Committed on Date |
 |---|---|---|---|---|
-| lifeline-mobile | main |  |  |  |
-| lifeline-mobile | mian |  |  |  |
-| lifeline-mobile | main |  |  |  |
-| lifeline-backend | main |  |  |  |
-| lifeline-landing-page | main |  |  |  |
-| lifeline-broker | main |  |  |  |
+| lifeline-mobile | main | 0c1da023ed10ad84f4d861ba8d26fa42ab08785f | create flutter project | 23-10-26 |
+| lifeline-mobile | main | 82628f28bd7f49012f998479ca5477c3c0c3422b | apply cases filter and improve design | 28-10-26 |
+| lifeline-mobile | main | dcaa451041a4024f0b81fa90fb916b94147653a2 | sincronizacion correcion | 01-11-26 |
+| lifeline-backend | main | 2a4fb81a354086ea0a2f5cfdf6a6a9d7a5cbf540 | Document patient phone schema update [skip ci] | 30-10-26 |
+| lifeline-landing-page | main | 8a7f2b8475c2f50b4eefd78a5021fba7b8fd859b | implement landing page sections, routing and style guidelines | 28-10-26 |
+| lifeline-broker | main | 0ed98aa5c5b92aa1a3d9dd29f8347bb158e18e38 | Conservar la instancia del broker y las colas de casos. | 27-10-26 |
 | lifeline-load-balancer | main |  |  |  |
-| lifeline-worker | main |  |  |  |
-| Report | main |  |  |  |
+| lifeline-worker | main | dd38ba89986145c4cbec57d1be6d007e3c05e05c | consumir los trabajos de casi y llamar al backend | 27-10-26 |
+| Report | main | 267eb56c422c8ab78eff93ac76ab02dff6acf3a5 | docs: Add chapter 7 Testing Suite Evidence for Sprint Review | 03-11-26 |
 
 #### 7.2.1.4. Testing Suite Evidence for Sprint Review.
 
