@@ -5157,7 +5157,11 @@ La aplicación Flutter se entrega como APK de Android, versión 1.0.0, desde el 
 
 **Base de datos**
 
-La base de datos en la nube de esta entrega corresponde a Supabase. La captura de su configuración se agregará en este espacio.
+La base de datos en la nube es Supabase, en el proyecto Lifeline-Emergentes, sobre la rama main marcada como producción. El motor es PostgreSQL 17.11 y la base activa se llama postgres. La consulta de verificación devolvió esa versión y la fecha de ejecución en el servidor.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-supabase.png" alt="Verificación de PostgreSQL 17.11 en Supabase">
+</p>
 
 ## 7.2. Solution Implementation.
 
@@ -6788,6 +6792,96 @@ Durante este sprint se desarrolló el flujo principal de la solución, siendo es
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review.
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review.
+
+El sprint cierra con los cuatro productos digitales publicados. La landing responde en GitHub Pages, el backend queda en Azure App Service, el broker y el worker siguen activos en la máquina virtual, y la aplicación móvil se instaló en un teléfono. La base de datos de esta entrega es Supabase.
+
+**Landing page**
+
+El flujo Deploy landing to GitHub Pages se dispara con cada push a main. El trabajo de construcción usa Node.js 24, instala las dependencias y genera el sitio con la ruta base de GitHub Pages. Después copia las rutas de la landing para que los enlaces directos no fallen y sube la carpeta del navegador.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-landing-workflow-1.png" alt="Inicio del flujo que publica la landing">
+</p>
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-landing-workflow-2.png" alt="Construcción y carga del sitio de la landing">
+</p>
+
+La ejecución del sprint terminó en éxito. El trabajo build duró 19 segundos y el trabajo deploy, 8 segundos. El sitio publicado es https://emergentes-project.github.io/lifeline-landing-page/.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-landing-actions.png" alt="Ejecución exitosa del despliegue de la landing">
+</p>
+
+El sitio en línea muestra el mensaje de la marca, la navegación acordada y la vista de la consulta en el teléfono.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-landing-home.png" alt="Landing publicada, sección de inicio">
+</p>
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-landing-problem.png" alt="Landing publicada, sección del problema">
+</p>
+
+**Backend**
+
+El flujo Build and deploy JAR app to Azure Web App se dispara con un push a main. Prepara Java 21, compila con Maven y publica el JAR en el App Service backend-lifeline, en el espacio Production.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-backend-workflow-1.png" alt="Flujo del backend, preparación de Java y Maven">
+</p>
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-backend-workflow-2.png" alt="Flujo del backend, publicación en Azure">
+</p>
+
+La ejecución push correccion número 5 terminó en éxito. La construcción tomó 1 minuto 34 segundos y la publicación, 48 segundos.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-backend-actions.png" alt="Ejecución exitosa del despliegue del backend">
+</p>
+
+En Azure el recurso sigue en ejecución, con pila Java 21, estado de tiempo de ejecución correcto y proveedor de implementación GitHub Actions.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-backend-appservice.png" alt="App Service backend-lifeline en ejecución">
+</p>
+
+**Broker y worker**
+
+La máquina virtual vm-lifeline permanece en ejecución en Canadá Central, con la IP pública 52.139.32.116.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-vm.png" alt="Máquina virtual del broker y del worker">
+</p>
+
+En esa máquina el contenedor lifeline-broker sigue en marcha con ActiveMQ Artemis 2.40.0. El servicio lifeline-worker está active y running, y ejecuta el JAR del worker.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-broker-worker.png" alt="Broker y worker activos en la máquina virtual">
+</p>
+
+**Base de datos**
+
+Supabase responde en el proyecto Lifeline-Emergentes. La consulta de verificación confirma la base postgres y PostgreSQL 17.11.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-supabase.png" alt="Consulta de verificación en Supabase">
+</p>
+
+**Aplicación móvil**
+
+El README del repositorio lifeline-mobile publica el APK 1.0.0. El archivo incluye el modelo local y se descarga desde el OneDrive de la universidad.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-mobile-apk.png" alt="Enlace de descarga del APK 1.0.0">
+</p>
+
+El paquete quedó instalado en un teléfono. La pantalla de ingreso confirma que la aplicación abre y que la consulta de emergencia sigue disponible sin internet.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/sprint-mobile-device.png" alt="Aplicación Lifeline instalada en un teléfono">
+</p>
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint.
 
