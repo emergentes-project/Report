@@ -6785,7 +6785,20 @@ Durante este sprint se desarrolló el flujo principal de la solución, siendo es
 
 #### 7.2.1.3. Development Evidence for Sprint Review.
 
+Se presentan las evidencias del avance en la implementación de los artefactos según el alcance del sprint 1 a través de commits relevantes en los repositorios del proyecto.
+
+| Repository | Branch | Commit ID | Commit Message | Committed on Date |
+|---|---|---|---|---|
+| lifeline-mobile | main |  |  |  |
+| lifeline-mobile | mian |  |  |  |
+| lifeline-mobile | main |  |  |  |
+| lifeline-backend | main |  |  |  |
+| lifeline-worker | main |  |  |  |
+| Report | main |  |  |  |
+
 #### 7.2.1.4. Testing Suite Evidence for Sprint Review.
+
+
 
 #### 7.2.1.5. Execution Evidence for Sprint Review.
 
