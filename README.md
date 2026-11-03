@@ -6945,6 +6945,69 @@ Las entrevistas de validación buscan conocer cómo perciben los posibles usuari
 
 ### 7.3.3. Evaluaciones según heurísticas.
 
+**SITE o APP A EVALUAR:** Lifeline (RescueBridge)
+
+**TAREAS A EVALUAR:**
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Registro de una consulta médica de primeros auxilios mediante texto o voz
+2. Obtención y lectura de indicaciones médicas generadas por IA on-device
+3. Solicitud de apoyo profesional durante la emergencia
+4. Visualización de consultas pendientes de sincronización local (Outbox)
+
+**ESCALA DE SEVERIDAD:**
+*Los errores serán puntuados tomando en cuenta la siguiente escala de severidad*
+
+| Nivel | Descripción |
+| --- | --- |
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario u ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+**TABLA RESUMEN:**
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+| --- | --- | --- | --- |
+| 1 | El botón de "Solicitar apoyo profesional" carece de confirmación explícita. | 3 | Usability: Prevención de errores |
+| 2 | La lectura de los pasos médicos requiere scroll manual continuo durante la emergencia. | 2 | Usability: Flexibilidad y eficiencia de uso |
+| 3 | Ausencia de retroalimentación visual clara mientras el modelo IA on-device genera la respuesta. | 3 | Usability: Visibilidad del estado del sistema |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+PROBLEMA #1:
+
+Severidad: 3
+
+Heurística violada: Usabilidad - Prevención de errores.
+
+Problema: En una situación de alto estrés y pánico post-sismo, el usuario podría presionar accidentalmente el botón rojo de "Solicitar apoyo profesional" con un solo toque, enviando alertas de rescate involuntarias que saturarían al personal médico.
+
+Recomendación: Implementar un Bottom Sheet (Modal de diálogo) de seguridad que exija una confirmación explícita (ej. "¿Está seguro de notificar a los rescatistas?") o utilizar un botón de deslizamiento (*swipe-to-confirm*) antes de registrar la solicitud de apoyo.
+
+
+PROBLEMA #2:
+
+Severidad: 2
+
+Heurística violada: Usabilidad - Flexibilidad y eficiencia de uso.
+
+Problema: El usuario recibe las instrucciones de primeros auxilios numeradas en texto. Si el ciudadano está aplicando presión sobre una herida o inmovilizando al paciente, le resultará difícil interactuar con la pantalla para hacer *scroll* y leer el siguiente paso.
+
+Recomendación: Integrar un control accesible de "Lectura en voz alta" (mediante Text-to-Speech nativo) que dicte los pasos médicos de manera continua, permitiendo al usuario actuar sin tener que mirar o tocar constantemente la pantalla.
+
+
+PROBLEMA #3:
+
+Severidad: 3
+
+Heurística violada: Usabilidad - Visibilidad del estado del sistema.
+
+Problema: El procesamiento de la consulta mediante el modelo de IA on-device puede tomar varios segundos en dispositivos de gama media. Sin una animación o texto de progreso evidente, el usuario bajo estrés asume que la aplicación se congeló y podría forzar el cierre.
+
+Recomendación: Incorporar un indicador de progreso dinámico (spinner o esqueleto de carga) acompañado de un texto tranquilizador como "Analizando la situación y consultando bases médicas locales..." para mantener al usuario informado y en calma.
+
+
 ## 7.4. Video About-the-Product.
 
 # Conclusiones y recomendaciones
