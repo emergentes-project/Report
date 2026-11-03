@@ -5103,6 +5103,62 @@ Los commits ya están definidos en 7.1.2. El mensaje va en inglés, con Conventi
 
 ### 7.1.4. Software Deployment Configuration.
 
+Esta sección precisa dónde queda publicado cada producto digital de Lifeline en la presente entrega. La landing se publica como sitio estático. El backend se publica como aplicación web en Azure y se actualiza desde GitHub. El broker y el worker comparten una máquina virtual. La aplicación móvil se distribuye como APK. La evidencia de la base de datos en Supabase se reserva al final de la sección.
+
+**Landing page**
+
+La landing, construida con Angular, se publica con GitHub Pages desde el repositorio lifeline-landing-page. El origen de la publicación es GitHub Actions. El sitio en línea es https://emergentes-project.github.io/lifeline-landing-page/ y la conexión se fuerza por HTTPS.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/deploy-landing-pages.png" alt="Publicación de la landing en GitHub Pages">
+</p>
+
+**Backend**
+
+El servicio web se despliega en Azure App Service, en el recurso backend-lifeline, dentro del grupo backend-emergentes y del plan ASP-backendemergentes-b5b8. La aplicación está en ejecución sobre Linux, en la región Canadá Central, con la suscripción Azure for Students. El dominio predeterminado es backend-lifeline-cndwcsfcdttfqaaa2.canadacentral-01.azurewebsites.net. El código sale del repositorio https://github.com/emergentes-project/lifeline-backend.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/deploy-backend-appservice.png" alt="App Service backend-lifeline en Azure">
+</p>
+
+Cada push a la rama main dispara el flujo Build and deploy JAR app to Azure Web App. El flujo compila el JAR y lo publica en ese App Service. Las ejecuciones registradas en main terminaron correctamente.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/deploy-backend-actions.png" alt="Flujo de GitHub Actions que despliega el backend">
+</p>
+
+**Broker y worker**
+
+ActiveMQ Artemis y el worker no van en el App Service. Corren en la máquina virtual vm-lifeline, del grupo rg-lifeline, con Ubuntu 24.04, en Canadá Central. La máquina está en ejecución, tamaño Standard B2pls v2, y su IP pública es 52.139.32.116. Las etiquetas del recurso indican el proyecto lifeline y el propósito broker-worker.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/deploy-vm-lifeline.png" alt="Máquina virtual vm-lifeline en Azure">
+</p>
+
+El acceso de administración es por SSH, con el usuario azureuser.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/deploy-vm-ssh.png" alt="Sesión SSH en la máquina virtual">
+</p>
+
+Dentro de la máquina, el broker es el contenedor lifeline-broker, imagen apache/activemq-artemis:2.40.0, con la consola en el puerto 8161 y los mensajes en el puerto 61616. El worker es el servicio lifeline-worker, en estado active y running, y arranca con java sobre el archivo /opt/lifeline-worker/worker.jar.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/deploy-broker-worker.png" alt="ActiveMQ y el worker en ejecución dentro de la máquina virtual">
+</p>
+
+**Aplicación móvil**
+
+La aplicación Flutter se entrega como APK de Android, versión 1.0.0, desde el README del repositorio lifeline-mobile. El archivo pesa 2.64 GB porque incluye el modelo local. Su identificador SHA-256 es D0EC50B217C604AC58DBD5B2C50DF7B0E400120E376F0FD111731D81097D245E. La descarga se aloja en el OneDrive de la Universidad Peruana de Ciencias Aplicadas.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/deploy-mobile-apk.png" alt="Enlace de descarga del APK 1.0.0">
+</p>
+
+**Base de datos**
+
+La base de datos en la nube de esta entrega corresponde a Supabase. La captura de su configuración se agregará en este espacio.
+
 ## 7.2. Solution Implementation.
 
 ### 7.2.1. Sprint 1
