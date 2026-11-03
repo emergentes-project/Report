@@ -6793,11 +6793,19 @@ Se presentan las evidencias del avance en la implementación de los artefactos s
 | lifeline-mobile | mian |  |  |  |
 | lifeline-mobile | main |  |  |  |
 | lifeline-backend | main |  |  |  |
+| lifeline-landing-page | main |  |  |  |
+| lifeline-broker | main |  |  |  |
+| lifeline-load-balancer | main |  |  |  |
 | lifeline-worker | main |  |  |  |
 | Report | main |  |  |  |
 
 #### 7.2.1.4. Testing Suite Evidence for Sprint Review.
 
+![TestingSuiteGherkin-Sprint1-1](public/assets/images/chapter-7/TestingSuiteGherkin-Sprint1-1.png)
+
+![TestingSuiteGherkin-Sprint1-2](public/assets/images/chapter-7/TestingSuiteGherkin-Sprint1-2.png)
+
+![TestingSuiteGherkin-Sprint1-3](public/assets/images/chapter-7/TestingSuiteGherkin-Sprint1-3.png)
 
 
 #### 7.2.1.5. Execution Evidence for Sprint Review.
