@@ -6946,6 +6946,14 @@ Las entrevistas de validación buscan conocer cómo perciben los posibles usuari
 
 8. Como octava conclusión, acordamos cómo se habla en la pantalla. No decimos palabras de ingeniería. Decimos Pendientes, Orientación y Foto. Quien llega a la web de RescueBridge entiende de qué va el producto y puede descargarlo. Quien abre la app recorre poco. El ciudadano consulta, recibe pasos y mira lo que falta enviar. El médico toma un caso, lo atiende y lo cierra.
 
+9. Como novena conclusión, en este avance el diseño dejó de quedarse en el papel. La landing responde en GitHub Pages, el backend corre en Azure, la base de datos responde en Supabase y la aplicación ya abre en un teléfono. Cada pieza tiene un lugar real y una captura que lo demuestra.
+
+10. Como décima conclusión, publicar dejó de ser un paso a mano. Un push a la rama principal dispara el flujo de la landing y el del backend. La landing se construye y queda en línea. El backend se compila con Java 21 y el JAR llega al App Service. Las dos ejecuciones de este sprint terminaron bien.
+
+11. Como undécima conclusión, el broker y el worker no comparten máquina con la API. Viven en una máquina virtual propia. ActiveMQ Artemis atiende la cola y el worker sigue en marcha como servicio del sistema. Así, cuando vuelva la señal y lleguen muchas consultas juntas, ese tráfico no se le echa encima al servicio que usa el médico.
+
+12. Como duodécima conclusión, la aplicación móvil de esta entrega se instala y se abre sin internet. La pantalla de ingreso lo confirma, y también deja ver que la consulta de emergencia no pide cuenta. El archivo pesa porque lleva el modelo local. Eso es coherente con la decisión de orientar en el teléfono y no esperar a la nube.
+
 ## Recomendaciones
 
 1. Como primera recomendación, hay que cuidar con rigor las fuentes médicas que usa la app. Antes de agrandar el modelo hay que saber qué documentos entran, quién los valida y cómo se actualizan. Si eso se suelta, se pierde la confianza que pidieron en las entrevistas.
@@ -6963,6 +6971,14 @@ Las entrevistas de validación buscan conocer cómo perciben los posibles usuari
 7. Como séptima recomendación, no conviene armar ahora un sitio web para gestionar casos. El diseño ya pone esa tarea en el celular. Si más adelante hace falta un escritorio, habría que pensarlo como algo nuevo, no como un atajo de última hora.
 
 8. Como octava recomendación, hay que volver a hablar con ambos públicos cuando haya un prototipo que se pueda tocar. Preguntar si entienden los pasos, si creen en las fuentes y si recibir los casos de verdad les ahorra tiempo. Hasta esa prueba, esto es un diseño bien armado. Todavía no es una prueba de campo.
+
+9. Como novena recomendación, la cola del broker no puede seguir creándose a mano en la consola. Si el contenedor se apaga y no hay un volumen que la conserve, el trabajo se pierde. Hay que dejarla declarada en el arranque, durable, para que un reinicio no borre lo que ya estaba en camino.
+
+10. Como décima recomendación, el siguiente paso del worker es cerrar el mensaje con el backend. Hoy el servicio está prendido. Falta comprobar que una consulta sincronizada se procesa una sola vez, aunque el mismo aviso llegue otra vez. Sin esa prueba, la cola está viva, pero el caso todavía no recorre el camino completo.
+
+11. Como undécima recomendación, el APK hay que instalarlo antes del sismo, como ya dice la landing. Pesa más de dos gigabytes porque incluye el modelo local, y pedirlo el día de la emergencia, con la red caída, no es realista. Conviene dejar esa advertencia bien visible y revisar si el modelo se puede partir para que la descarga no sea tan pesada.
+
+12. Como duodécima recomendación, las capturas muestran que los servicios están arriba. Eso todavía no dice qué pasa cuando muchos teléfonos vuelven a la vez. El broker está precisamente para absorber ese pico. Hay que probarlo con una ráfaga de mensajes, no solo con un aviso de prueba. El balanceador queda fuera de esta entrega y no hace falta adelantarlo antes de esa prueba.
 
 # Video About-the-Team
 
