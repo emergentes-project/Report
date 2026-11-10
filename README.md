@@ -7010,6 +7010,14 @@ Recomendación: Incorporar un indicador de progreso dinámico (spinner o esquele
 
 ## 7.4. Video About-the-Product.
 
+El video presenta la aplicación Lifeline y el recorrido del producto.
+
+**Enlace:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDqfITUm2xIRYtwzfHrB681AcanZatWzrw54L8a3EbRUlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=WUX6z2
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/video-about-the-product.png" alt="Portada del video About-the-Product de Lifeline">
+</p>
+
 # Conclusiones y recomendaciones
 
 ## Conclusiones
