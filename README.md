@@ -329,6 +329,8 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       Participé activamente en las reuniones de equipo sustentando los artefactos de Lean UX, como los Empathy Maps y Scenario Maps, para alinear la visión del producto. Asimismo, argumenté y expuse las decisiones de diseño estratégico para el Impact Mapping y los retoques de los Bounded Context Canvases, asegurando que todos los miembros del equipo comprendieran la relación entre las necesidades de los usuarios y la arquitectura de la solución propuesta.<br><br>
       <strong>TP1:</strong><br>
       Expuse ante el equipo los avances documentales correspondientes a este entregable, detallando las correcciones implementadas tras las revisiones previas. Además, dirigí la presentación de los avances de las diapositivas y expuse los guiones de presentación diseñados para la sustentación (con énfasis en módulos como Lifeline), asegurando que el mensaje técnico y de diseño arquitectónico sea transmitido de manera clara, fluida y objetiva para el momento de la exposición.<br><br>
+      <strong>TB2:</strong><br>
+      Gestioné y conduje la grabación de la entrevista para el rol de Personal Médico, adaptando mi comunicación para interactuar fluidamente con profesionales de la salud. Asimismo, participé en las reuniones de sincronización del equipo, sustentando los avances de la interfaz (UI) y los flujos de usuario (User Flows) del Sprint 1 de manera clara y objetiva para alinear el desarrollo técnico con la experiencia de usuario final.<br><br>
       <strong>Paico Calderon, July Zelmira</strong><br>
       <strong>TB1:</strong><br>
       Participé en las reuniones del equipo explicando las estrategias frente a los competidores, los escenarios de calidad y las principales decisiones arquitectónicas. Esto permitió comunicar con claridad los criterios técnicos utilizados y coordinar su integración con las demás secciones del proyecto.<br><br>
@@ -339,7 +341,9 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>TB1:</strong><br>
       Como equipo, logramos comunicar oralmente nuestras ideas y resultados de manera clara, objetiva y ordenada. Las entrevistas, reuniones de coordinación y exposiciones internas nos permitieron adaptar el mensaje a personas con distintos perfiles, cumpliendo con lo esperado para la presentación de nuestro proyecto.<br><br>
       <strong>TP1:</strong><br>
-      Durante esta fase, el equipo logró coordinar eficientemente las correcciones y avances, estructurando las presentaciones orales y guiones de sustentación de manera objetiva para exponer el estado actual de la arquitectura y diseño con total claridad.
+      Durante esta fase, el equipo logró coordinar eficientemente las correcciones y avances, estructurando las presentaciones orales y guiones de sustentación de manera objetiva para exponer el estado actual de la arquitectura y diseño con total claridad.<br><br>
+      <strong>TB2:</strong><br>
+      En esta entrega, la comunicación oral permitió articular de forma efectiva el trabajo técnico del Sprint 1 con las necesidades reales de los usuarios, logrando que el equipo comprendiera y priorizara las mejoras de interfaz tras analizar el feedback obtenido en la evaluación heurística y la entrevista con el personal médico.
     </td>
   </tr>
   <tr>
@@ -360,6 +364,8 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       Me encargué de redactar y estructurar las secciones de Lean UX Assumptions y la User Task Matrix. Documenté por escrito los Empathy Maps y los Scenario Maps (As-Is y To-Be) para los segmentos de Ciudadanos y Personal Médico. Además, elaboré el Impact Map y el Product Backlog del proyecto, y retoqué la documentación detallada de los Bounded Context Canvases y el Context Mapping, traduciendo los requerimientos del negocio a especificaciones técnicas legibles para el resto del equipo.<br><br>
       <strong>TP1:</strong><br>
       Documenté los avances del proyecto y redacté las justificaciones de las correcciones aplicadas a los entregables y especificaciones de diseño anteriores. Asimismo, me encargué de estructurar por escrito el contenido de las diapositivas y de redactar los guiones de presentación, sintetizando la complejidad de la arquitectura y las especificaciones para garantizar que la documentación de apoyo sea profesional y fácilmente asimilable por el público evaluador.<br><br>
+      <strong>TB2:</strong><br>
+      Me encargué de estructurar los Applications User Flow Diagrams, detallando los caminos ideales y alternativos (Happy/Unhappy paths). Documenté rigurosamente las evidencias del Sprint 1 en el Development Evidence (commits y ramas de GitHub) y elaboré el Testing Suite Evidence utilizando sintaxis BDD (Gherkin). Además, redacté el reporte de Evaluaciones según heurísticas para sustentar las mejoras de usabilidad implementadas, y documenté la traducción de estos requerimientos a código durante la implementación de la landing page y la optimización de UI en la app móvil.<br><br>
       <strong>Paico Calderon, July Zelmira</strong><br>
       <strong>TB1:</strong><br>
       Documenté las estrategias frente a competidores, los escenarios y restricciones de calidad, el backlog de drivers y las decisiones arquitectónicas. También contribuí al modelado de flujos de dominio, los Bounded Context Canvases y el Context Mapping, presentando los resultados con un lenguaje técnico claro y ordenado.<br><br>
@@ -370,11 +376,12 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>TB1:</strong><br>
       Como equipo, logramos comunicar por escrito las ideas, decisiones y resultados del proyecto de forma objetiva y comprensible. La documentación elaborada integra los aportes de todos los miembros y presenta la propuesta con un lenguaje adecuado tanto para lectores técnicos como para públicos de otras especialidades.<br><br>
       <strong>TP1:</strong><br>
-      El equipo mantuvo la rigurosidad en la documentación escrita de los nuevos avances y las correcciones, logrando además plasmar el trabajo en diapositivas estructuradas con un nivel de redacción preciso, accesible y profesional según el público objetivo.
+      El equipo mantuvo la rigurosidad en la documentación escrita de los nuevos avances y las correcciones, logrando además plasmar el trabajo en diapositivas estructuradas con un nivel de redacción preciso, accesible y profesional según el público objetivo.<br><br>
+      <strong>TB2:</strong><br>
+      La rigurosidad en la documentación técnica (evidencias de repositorios y pruebas en Gherkin) junto con el análisis de usabilidad (heurísticas y flujos de usuario) aseguró la trazabilidad total del proyecto, uniendo formalmente la planificación del diseño de interacción con el producto final implementado en el Sprint 1.
     </td>
   </tr>
 </table>
-
 
 # Capítulo I: Introducción
 
