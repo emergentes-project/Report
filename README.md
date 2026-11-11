@@ -4702,6 +4702,12 @@ Explicación: Luis abre su perfil desde el avatar (M-07), edita sus datos profes
 
 ### 6.4.4. Applications User Flow Diagrams.
 
+Se detallan los flujos de usuario (User Flows) de la aplicación Lifeline, contemplando el camino ideal (Happy Path) y los caminos alternativos o de error (Unhappy Path) para las tareas principales de los dos segmentos objetivo: Ciudadanos y Personal Médico. Estos flujos han sido mapeados a partir de los Wireflow Diagrams y los Mock-ups de la aplicación.
+
+![Applications User Flow Diagrams](public/assets/images/chapter-6/AppUserFlow-Ciudadanos.png)
+
+![Applications User Flow Diagrams](public/assets/images/chapter-6/AppUserFlow-PersonalMédico.png)
+
 ## 6.5. Applications Prototyping.
 
 # Capítulo VII: Product Implementation, Validation & Deployment
