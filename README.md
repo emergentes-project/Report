@@ -6956,6 +6956,32 @@ Las entrevistas de validación buscan conocer cómo perciben los posibles usuari
 
 ### 7.3.2. Registro de Entrevistas.
 
+**Segmento objetivo 1: Ciudadanos**
+
+
+**Segmento objetivo 2: Personal médico**
+
+Entrevistado N°1: Andre Ramirez Pella
+
+- Sexo: Masculino
+- Edad: 24 años
+- Distrito: San Miguel
+- Grado de instrucción: Universitario
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:00
+  - Duración: 6:23
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/Segmento2-EntrevistaValidacion1-LifeLine.png" alt="Entrevista Validación Segmento 2 - Andre">
+</p>
+
+- Resumen:
+
+  Para Andre, en esta nueva revisión, la aplicación tendría un impacto altamente positivo frente a la ocurrencia de un desastre, valorando de manera especial el sistema de consultas sin conexión. Aunque en un principio la funcionalidad de envío y gestión de casos offline le resultó inusual, rápidamente comprendió su vital importancia y los grandes beneficios que aporta para cubrir las necesidades reales de los afectados sin ninguna dificultad. Desde la perspectiva del paciente, considera que la orientación médica que se muestra al ciudadano es muy completa. Por el lado del personal médico, confirmó que los datos solicitados para la creación de un caso son los adecuados y suficientes. Asimismo, resaltó que el hecho de que un paciente ya cuente con un historial de consultas agiliza significativamente el proceso de atención, sección en la cual espera poder encontrar datos históricos relevantes del afectado. En cuanto a la usabilidad general, calificó como muy sencillo e intuitivo para cualquier usuario el flujo de localizar y asignarse una solicitud de apoyo, destacando también la gran claridad de los pasos para iniciar la atención médica y cerrar un caso añadiendo las observaciones pertinentes. Al encontrar los flujos tan bien estructurados y funcionales para el escenario crítico, concluye que la herramienta cumple su propósito a la perfección, sin encontrar actualmente ningún área que requiera mejoras adicionales.
+
+
+
+
 ### 7.3.3. Evaluaciones según heurísticas.
 
 **SITE o APP A EVALUAR:** Lifeline (RescueBridge)
@@ -7123,6 +7149,10 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 - Andre Ramirez Pella (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4iY6Ds
 - Katia Milagros Saavedra Saavedra (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
 - Kevin Franco Escobar Coca (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4
+
+
+- Andre Ramirez Pella (personal médico) - Validación: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQDDsxbBUvXMQIIpnpckb8DJAaPHylpGcAd0rDQOZAnUoMA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gf8UPV 
+
 
 **Anexo D — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
 
