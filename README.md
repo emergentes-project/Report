@@ -6965,6 +6965,10 @@ Entrevistado N°1: Mauricio Huertas Romero
 - Distrito: Ate
 - Grado de instrucción: Universitario
 
+<p align="center">
+  <img src="public/assets/images/chapter-7/Segmento1-EntrevistaValidacion1-LifeLine.png" alt="Entrevista Validación Segmento 1 - Mauricio Huertas Romero">
+</p>
+
 **Enlace de validación:** [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQD-oZIYpmxHRJeJWG7UAGE4Ab0HeOrEbqygF5bJYsQpe7Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JzIuLX)
 
 - Resumen:
