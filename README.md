@@ -6979,8 +6979,25 @@ Entrevistado N°1: Andre Ramirez Pella
 
   Para Andre, en esta nueva revisión, la aplicación tendría un impacto altamente positivo frente a la ocurrencia de un desastre, valorando de manera especial el sistema de consultas sin conexión. Aunque en un principio la funcionalidad de envío y gestión de casos offline le resultó inusual, rápidamente comprendió su vital importancia y los grandes beneficios que aporta para cubrir las necesidades reales de los afectados sin ninguna dificultad. Desde la perspectiva del paciente, considera que la orientación médica que se muestra al ciudadano es muy completa. Por el lado del personal médico, confirmó que los datos solicitados para la creación de un caso son los adecuados y suficientes. Asimismo, resaltó que el hecho de que un paciente ya cuente con un historial de consultas agiliza significativamente el proceso de atención, sección en la cual espera poder encontrar datos históricos relevantes del afectado. En cuanto a la usabilidad general, calificó como muy sencillo e intuitivo para cualquier usuario el flujo de localizar y asignarse una solicitud de apoyo, destacando también la gran claridad de los pasos para iniciar la atención médica y cerrar un caso añadiendo las observaciones pertinentes. Al encontrar los flujos tan bien estructurados y funcionales para el escenario crítico, concluye que la herramienta cumple su propósito a la perfección, sin encontrar actualmente ningún área que requiera mejoras adicionales.
 
+Entrevistado N°2: Alison Nava
 
+- Sexo: Femenino
+- Edad: 23 años
+- Distrito: Ate
+- Grado de instrucción: Técnica de fisioterapia
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:00
+  - Duración: 6:23
 
+<p align="center">
+  <img src="public/assets/images/chapter-7/Segmento2-EntrevistaValidacion2-LifeLine.png" alt="Entrevista Validación Segmento 2 - Alison Nava">
+</p>
+
+**Enlace de validación:** [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDgkkb9dnCeRr5_JMiG-XhCAadnkiPY5YaAojLhJ-p5PXc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Q1lwkt)
+
+- Resumen:
+
+  Para Alison, lo más útil de Lifeline es la inteligencia artificial, porque entrega respuestas claras y ordenadas, y le genera confianza el respaldo en fuentes confiables. Lo que menos le gustó fue el tiempo de carga de algunas consultas, y pide que las respuestas lleguen más rápido para no demorar la atención. En el listado y los filtros le sirvió la descripción de cada paciente y la búsqueda por nombres. En el detalle del caso echa de menos alergias, tipo de sangre y una ubicación más precisa. Se sintió cómoda al localizar y asignarse una solicitud, aunque quisiera ver en el progreso estadísticas de casos atendidos y de personas ayudadas. Considera sencillo el flujo de iniciar la atención y cerrar el caso con observaciones, porque primero revisa la descripción y las fotografías y después registra lo atendido. La orientación al ciudadano le inspira confianza por las fuentes, pero le preocupa la demora en una emergencia. Consultaría el historial sobre todo en situaciones críticas, y esperaría encontrar alergias, tipo de sangre y contactos familiares. Ante el registro sin conexión, teme que alguna solicitud no se sincronice bien o llegue tarde, y pide una confirmación clara cuando el envío termine bien. En un evento con varios afectados cree que la app ayudaría a paramédicos y equipos de rescate, sobre todo por la ubicación, pero pide probarla con varias emergencias a la vez. Antes de usarla en su trabajo pediría datos más completos del paciente, siempre bajo lineamientos de privacidad y protección de datos personales.
 
 ### 7.3.3. Evaluaciones según heurísticas.
 
@@ -7051,7 +7068,7 @@ Recomendación: Incorporar un indicador de progreso dinámico (spinner o esquele
 
 El video presenta la aplicación Lifeline y el recorrido del producto.
 
-**Enlace:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDqfITUm2xIRYtwzfHrB681AcanZatWzrw54L8a3EbRUlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=WUX6z2
+**Enlace:** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDqfITUm2xIRYtwzfHrB681AcanZatWzrw54L8a3EbRUlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=WUX6z2)
 
 <p align="center">
   <img src="public/assets/images/chapter-7/video-about-the-product.png" alt="Portada del video About-the-Product de Lifeline">
