@@ -6919,6 +6919,39 @@ El paquete quedó instalado en un teléfono. La pantalla de ingreso confirma que
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint.
 
+La colaboración del sprint se evidencia en los aportes registrados en GitHub para el informe y para cada repositorio del producto.
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Imagen</th>
+  </tr>
+  <tr>
+    <td>Reporte</td>
+    <td><img src="public/assets/images/chapter-7/sprint-collab-reporte.png" alt="Contribuidores del repositorio Report"></td>
+  </tr>
+  <tr>
+    <td>App móvil</td>
+    <td><img src="public/assets/images/chapter-7/sprint-collab-mobile.png" alt="Contribuidores del repositorio lifeline-mobile"></td>
+  </tr>
+  <tr>
+    <td>Backend</td>
+    <td><img src="public/assets/images/chapter-7/sprint-collab-backend.png" alt="Contribuidores del repositorio lifeline-backend"></td>
+  </tr>
+  <tr>
+    <td>Landing page</td>
+    <td><img src="public/assets/images/chapter-7/sprint-collab-landing.png" alt="Contribuidores del repositorio lifeline-landing-page"></td>
+  </tr>
+  <tr>
+    <td>Broker</td>
+    <td><img src="public/assets/images/chapter-7/sprint-collab-broker.png" alt="Contribuidores del repositorio lifeline-broker"></td>
+  </tr>
+  <tr>
+    <td>Worker</td>
+    <td><img src="public/assets/images/chapter-7/sprint-collab-worker.png" alt="Contribuidores del repositorio lifeline-worker"></td>
+  </tr>
+</table>
+
 ## 7.3. Validation Interviews.
 
 ### 7.3.1. Diseño de Entrevistas.
