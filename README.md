@@ -6958,6 +6958,18 @@ Las entrevistas de validación buscan conocer cómo perciben los posibles usuari
 
 **Segmento objetivo 1: Ciudadanos**
 
+Entrevistado N°1: Mauricio Huertas Romero
+
+- Sexo: Masculino
+- Edad: 21 años
+- Distrito: Ate
+- Grado de instrucción: Universitario
+
+**Enlace de validación:** [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQD-oZIYpmxHRJeJWG7UAGE4Ab0HeOrEbqygF5bJYsQpe7Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JzIuLX)
+
+- Resumen:
+
+  Para Mauricio, la aplicación le gustó en general y valora sobre todo la forma de pedir ayuda. En lo personal recomienda el uso de fotos para enviar información de la emergencia. Le gustaron las indicaciones por secuencia y también el historial, porque permite ver si una consulta ya fue contestada antes. Considera buena la implementación del GPS. Lo que no le gustó es que faltan algunos datos y pide que aparezcan más. Se siente seguro al usar la app y la recomendaría por su buen manejo. Además, pide implementar un módulo para personas con discapacidad, por ejemplo para personas ciegas o mudas, e incorporar palabras clave como SOS y otras que faciliten una respuesta rápida en emergencia.
 
 **Segmento objetivo 2: Personal médico**
 
