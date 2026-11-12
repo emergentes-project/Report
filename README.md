@@ -162,6 +162,40 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
   </tr>
 </table>
 
+<table>
+  <tr>
+    <td colspan="2" align="center" style="font-weight: bold; font-size: 20px;">Evidencias y comentarios de la TB2</td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>Integrante</strong></td>
+    <td width="80%"><strong>Descripción de actividades</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Roman Cruz, Natalia Bertha</strong></td>
+    <td>Actualicé el registro de versiones, el Project Report Collaboration Insights y la tabla de contenidos. Coordiné el Student Outcome del equipo y elaboré el Sprint Planning y el Sprint Backlog del Sprint 1, además del diseño de las entrevistas de validación y de parte de su registro. Planteé la estructura de los bounded contexts en el backend Spring Boot y en la aplicación móvil Flutter, y desarrollé la base de conocimientos médicos, la conexión del RAG con la IA on-device, el flujo principal de consulta, los flujos de manejo de casos, el inicio de sesión y los perfiles, y la integración con el frontend. También preparé la evaluación de integrantes y colaboré en la bibliografía, el PPT y el video de la entrega.</td>
+  </tr>
+  <tr>
+    <td><strong>Cacho Seminario, Diego Alonso</strong></td>
+    <td>Desarrollé los Applications User Flow Diagrams y documenté la evidencia de desarrollo y de la suite de pruebas del Sprint 1, así como las evaluaciones según heurísticas. Implementé el load balancer con NGINX para distribuir las solicitudes entre las instancias del backend. Asimismo, colaboré en la implementación de la landing page y en la mejora de la interfaz de la aplicación móvil, y participé en el Student Outcome, el registro de entrevistas de validación, la bibliografía y el material de exposición.</td>
+  </tr>
+  <tr>
+    <td><strong>Paico Calderon, July Zelmira</strong></td>
+    <td>Elaboré los Applications Mock-ups y el Applications Prototyping. Documenté la evidencia de ejecución y la documentación de servicios del Sprint 1. Colaboré en la implementación de la landing page y en la mejora de la interfaz de la aplicación móvil, y participé en el Student Outcome, el registro de entrevistas de validación, la bibliografía y el PPT con su video.</td>
+  </tr>
+  <tr>
+    <td><strong>Solano Armas, Angelo Héctor</strong></td>
+    <td>Documenté la configuración del entorno de desarrollo, la gestión del código fuente, la guía de estilo y la configuración de despliegue. Elaboré la evidencia de despliegue del Sprint Review, los insights de colaboración del sprint y el Video About-the-Product. Implementé el broker ActiveMQ para los trabajos asíncronos, el worker con el publicador del outbox y el procesamiento de Case Management, la persistencia offline y la sincronización, la integración de almacenamiento con Cloudinary y las notificaciones de sincronización y atención. Finalmente, actualicé las conclusiones y las recomendaciones, y participé en el Student Outcome, el registro de entrevistas de validación, la bibliografía y el material de exposición.</td>
+  </tr>
+  <tr>
+    <td><strong>Conclusión</strong></td>
+    <td>En esta entrega, el equipo pasó del diseño a la implementación y al despliegue de Lifeline. Cada integrante asumió tramos concretos del informe y del producto, desde la planificación del sprint y la experiencia de usuario hasta el backend, el broker, el worker, la landing y la aplicación móvil. La colaboración permitió dejar evidencia de desarrollo, pruebas, ejecución, servicios, despliegue y validación, y consolidar un avance coherente para la revisión del Sprint 1.</td>
+  </tr>
+  <tr>
+    <td><strong>Evidencia</strong></td>
+    <td><br><img src="public/assets/images/cover/github/tb2.png" alt="Evidencia de commits del equipo en TB2"><br></td>
+  </tr>
+</table>
+
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
 # Contenido
