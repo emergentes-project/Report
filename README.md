@@ -7204,6 +7204,20 @@ Entrevistado N°2: Deybbi Anderson Crisanto Calle
 - Resumen:
 - Para Deybbi, Lifeline puede servir de apoyo en una emergencia después de un sismo, siempre que su uso sea rápido y exija el menor esfuerzo posible al usuario. Prefiere reportar la emergencia por voz y con fotografía en lugar de escribir, porque en una situación de crisis podría no tener tiempo o no poder usar bien las manos, y sugiere transcribir automáticamente los audios por si la voz no se entiende. Considera que la app debería pedir los permisos de ubicación desde el inicio y tomar la posición del GPS de forma automática, dejando la referencia como un campo opcional, porque los campos obligatorios previos a la solicitud de ayuda resultan desesperantes. También señala que las comprobaciones iniciales son ambiguas y necesitan ejemplos, como si la persona puede pararse o caminar, y que el botón de solicitar apoyo profesional debería ser grande y rojo, ya que su color gris actual hace que parezca desactivado. Sobre las indicaciones de primeros auxilios, opina que tienen demasiado texto, letra pequeña y poco contraste, y propone usar imágenes de referencia, un lenguaje menos técnico y un sondeo previo, por ejemplo si hay otra persona que pueda ayudar, para personalizar las recomendaciones. Espera que, después de solicitar ayuda, la aplicación le informe del avance con notificaciones push como “caso asignado” o “especialista en camino”. Además, recomienda incluir un botón SOS conectado con bomberos o policía, alertas después de cada sismo que recuerden que la app está disponible, y un modo oscuro. Su validación respalda que Lifeline priorice el reporte multimodal, la geolocalización automática, la reducción de pasos antes de pedir ayuda y una interfaz con jerarquía visual clara para situaciones de alta presión.
 
+Entrevistado N°3: Katherine Calle López
+
+- Sexo: Femnenino
+- Edad: 23 años
+- Distrito: Chorrillos
+- Grado de instrucción: Universitaria
+
+![Entrevista de validacion a Katherine](public/assets/images/chapter-7/entrevista-validacion-2.png)
+
+**Enlace de validación:** [Ver entrevista](https://drive.google.com/file/d/1UxNoOVGdtnnfE2nXurlIUPrTkQzQEYYH/view?usp=sharing)
+
+- Resumen:
+  Para Katherine, Lifeline es una aplicación clara y fácil de entender. Comprendió de inmediato el registro y la creación de una consulta. Lo que más valoró fueron las indicaciones de primeros auxilios, porque se generan sin conexión a internet. Para describir una emergencia elegiría primero la voz, ya que le permite explicar su situación con rapidez y le sirve si tiene dificultades para usar las manos. Le resultaron fáciles de registrar el nombre y la edad, pero le costaron la ubicación detallada y los datos sobre el estado del herido. Lo que menos le gustó fue la cantidad de campos que hay que completar antes de pedir ayuda, y lo repitió como su principal observación al cierre de la entrevista. Consideró que las indicaciones son claras y siguen un orden adecuado paso a paso. Le genera confianza que estén respaldadas por médicos especializados. Entendió que la consulta se puede registrar sin internet y que se envía cuando vuelve la conexión. También le pareció sencillo revisar su historial, porque puede distinguir las consultas pendientes de las atendidas. Solicitaría apoyo profesional ante una herida grave o un sangrado que no se detenga con una curación leve, y esperaría recibir instrucciones paso a paso para tratarla sin riesgo. Cree que la aplicación la ayudaría a mantener la calma, tanto ella como el herido, en sus primeras decisiones después de un sismo. Antes de recomendarla, priorizaría tres mejoras: reducir los pasos del registro, agregar imágenes explicativas y enviar notificaciones sobre cada caso. Su validación respalda que Lifeline mantenga la orientación sin conexión y el registro por voz como funciones centrales, y que simplifique el flujo de solicitud de ayuda para que la persona reciba atención lo antes posible.
+
 **Segmento objetivo 2: Personal médico**
 
 Entrevistado N°1: Andre Ramirez Pella
