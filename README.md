@@ -7474,6 +7474,9 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 
 - Andre Ramirez Pella (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQDDsxbBUvXMQIIpnpckb8DJAaPHylpGcAd0rDQOZAnUoMA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gf8UPV 
 - Katia Milagros Saavedra Saavedra (personal médico): https://drive.google.com/file/d/1EX1ulaLhiF_Hf_U-_bcBBqBwaW5UVPtZ/view?usp=sharing
+- 
+- Deybbi Anderson Crisanto Calle (ciudadano): https://drive.google.com/file/d/1pRmetqs_lDeRVWFv3lS9CEpFWbGNNlJG/view?usp=sharing
+- Katherine Calle López (ciudadano): https://drive.google.com/file/d/1UxNoOVGdtnnfE2nXurlIUPrTkQzQEYYH/view?usp=sharing
 
 
 **Anexo D — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
