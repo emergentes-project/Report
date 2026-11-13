@@ -6896,7 +6896,57 @@ Se presentan las evidencias del avance en la implementación de los artefactos s
 
 
 #### 7.2.1.5. Execution Evidence for Sprint Review.
+En este sprint se implementó el flujo principal de Lifeline para ciudadanos y personal médico. La aplicación móvil ya permite el registro y el acceso por rol, la gestión del perfil, el registro de consultas con texto, voz, fotografías y ubicación, y la orientación médica sin conexión mediante IA local y RAG sobre la base de conocimientos médicos. También incluye el guardado local de consultas pendientes, su sincronización al recuperar la conexión, el historial del ciudadano y la gestión de casos por parte del profesional. A continuación se muestran las vistas implementadas, en el orden en que las recorre cada usuario.
 
+**Acceso y registro**
+
+La pantalla de ingreso permite iniciar sesión o registrar una cuenta, y mantiene disponible la consulta de emergencia aunque no haya internet. El ciudadano se registra con sus datos de identidad, contacto y contraseña. El personal médico, además, ingresa su categoría, su número de colegiatura y su especialidad, y la aplicación le muestra el estado de verificación de su cuenta.
+
+![Registro de ciudadano](public/assets/images/chapter-7/citizen-registration.jpeg)
+
+![Registro de personal médico](public/assets/images/chapter-7/medical-registration.jpeg)
+
+![Inicio de sesión](public/assets/images/chapter-7/sign-in.jpeg)
+
+**Perfil**
+
+Cada usuario puede consultar y actualizar sus datos personales, y cerrar su sesión desde el perfil.
+
+![Perfil del usuario](public/assets/images/chapter-7/Profile-ciudadano.jpeg)
+
+
+**Solicitud de apoyo profesional**
+
+Si el ciudadano pide apoyo profesional, la aplicación solicita los datos del paciente y la referencia de su ubicación antes de enviar la consulta.
+
+![Datos del paciente y solicitud de apoyo profesional](public/assets/images/chapter-7/patient-fields.jpeg)
+
+![Datos del paciente y solicitud de apoyo profesional](public/assets/images/chapter-7/patient-ubi.jpeg)
+
+![Datos del paciente y solicitud de apoyo profesional](public/assets/images/chapter-7/patient-soli.jpeg)
+
+
+**Gestión de casos del personal médico**
+
+El profesional ve las consultas que solicitan apoyo y puede filtrarlas por estado: disponible, asignado, en progreso o cerrado. Desde el detalle del caso revisa la información registrada, la orientación entregada y la ubicación del paciente. Luego puede autoasignarse el caso, iniciar la atención y cerrarla con observaciones. Los casos cerrados quedan en su historial de atención.
+
+![Listado y filtro de casos](public/assets/images/chapter-7/cases-list.png)
+
+![Detalle del caso y ubicación del paciente](public/assets/images/chapter-7/case-detail.png)
+
+![Autoasignación e inicio de la atención](public/assets/images/chapter-7/case-assign.png)
+
+![Cierre del caso con observaciones e Historial de casos atendidos](public/assets/images/chapter-7/case-close.png)
+
+
+
+**Video de ejecución**
+
+El recorrido completo de la aplicación en este sprint se puede ver en el siguiente video.
+
+| Video | Enlace |
+|---|---|
+| Execution Evidence – Sprint 1 | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDqfITUm2xIRYtwzfHrB681AcanZatWzrw54L8a3EbRUlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=WUX6z2) |
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review.
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review.
