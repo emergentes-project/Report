@@ -4744,6 +4744,26 @@ User Persona: Luis Mendoza · User goal: Como personal médico, quiero actualiza
 Explicación: Luis abre su perfil desde el avatar (M-07), edita sus datos profesionales y guarda. Luego cierra sesión y la app regresa a A-01.
 
 ### 6.4.3. Applications Mock-ups.
+Los mock-ups aplican el Design System de Life Line sobre los wireframes:
+
+* Perfil Ciudadano
+
+![mockup application1](public/assets/images/chapter-6/mockup1(1).png)
+
+![mockup application2](public/assets/images/chapter-6/mockup1(2).png)
+
+![mockup application3](public/assets/images/chapter-6/mockup1(3).png)
+
+![mockup application3](public/assets/images/chapter-6/mockup1(4).png)
+
+
+* Perfil Personal Médico
+
+![mockup application4](public/assets/images/chapter-6/mockup2(1).png)
+
+![mockup application5](public/assets/images/chapter-6/mockup2(2).png)
+
+![mockup application6](public/assets/images/chapter-6/mockup2(3).png)
 
 ### 6.4.4. Applications User Flow Diagrams.
 
