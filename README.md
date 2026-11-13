@@ -6914,7 +6914,6 @@ Cada usuario puede consultar y actualizar sus datos personales, y cerrar su sesi
 
 ![Perfil del usuario](public/assets/images/chapter-7/Profile-ciudadano.jpeg)
 
-
 **Solicitud de apoyo profesional**
 
 Si el ciudadano pide apoyo profesional, la aplicación solicita los datos del paciente y la referencia de su ubicación antes de enviar la consulta.
@@ -6924,7 +6923,6 @@ Si el ciudadano pide apoyo profesional, la aplicación solicita los datos del pa
 ![Datos del paciente y solicitud de apoyo profesional](public/assets/images/chapter-7/patient-ubi.jpeg)
 
 ![Datos del paciente y solicitud de apoyo profesional](public/assets/images/chapter-7/patient-soli.jpeg)
-
 
 **Gestión de casos del personal médico**
 
@@ -6938,8 +6936,6 @@ El profesional ve las consultas que solicitan apoyo y puede filtrarlas por estad
 
 ![Cierre del caso con observaciones e Historial de casos atendidos](public/assets/images/chapter-7/case-close.png)
 
-
-
 **Video de ejecución**
 
 El recorrido completo de la aplicación en este sprint se puede ver en el siguiente video.
@@ -6947,7 +6943,69 @@ El recorrido completo de la aplicación en este sprint se puede ver en el siguie
 | Video | Enlace |
 |---|---|
 | Execution Evidence – Sprint 1 | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDqfITUm2xIRYtwzfHrB681AcanZatWzrw54L8a3EbRUlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=WUX6z2) |
+
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review.
+
+En este sprint se documentaron los servicios web del backend de Lifeline con OpenAPI mediante springdoc. La documentación se llama Lifeline Backend API, versión 1.0.0, y declara la autenticación con token Bearer (`bearerAuth`). Swagger UI está habilitado en el perfil local, en `http://localhost:8080/swagger-ui/index.html`. En el perfil de producción de Azure, la documentación queda desactivada para no exponer el contrato públicamente.
+
+Los endpoints se agrupan por bounded context. IAM cubre la autenticación y los perfiles. Case Management cubre la recepción de consultas y la gestión de casos. Notifications cubre el registro de los dispositivos que reciben avisos.
+
+**IAM**
+
+| Método | Endpoint | Acción implementada | Parámetros | Acceso |
+|---|---|---|---|---|
+| POST | `/api/v1/authentication/sign-up/citizens` | Registrar a un ciudadano | Body: datos de identidad, contacto y contraseña | Público |
+| POST | `/api/v1/authentication/sign-up/medical-professionals` | Registrar a un profesional de la salud | Body: datos personales, categoría, colegiatura y especialidad | Público |
+| POST | `/api/v1/authentication/sign-in` | Iniciar sesión y obtener el token | Body: correo y contraseña | Público |
+| POST | `/api/v1/authentication/sign-out` | Cerrar sesión y revocar el token actual | Header: `Authorization` | Autenticado |
+| GET | `/api/v1/roles` | Listar los roles disponibles | — | Público |
+| GET | `/api/v1/users/me` | Consultar la cuenta del usuario | Header: `Authorization` | Autenticado |
+| PUT | `/api/v1/users/me` | Actualizar el nombre y el teléfono | Body: nombre y teléfono | Autenticado |
+| GET | `/api/v1/citizen-profiles/me` | Consultar el perfil del ciudadano | Header: `Authorization` | Ciudadano |
+| PUT | `/api/v1/citizen-profiles/me` | Actualizar el perfil del ciudadano | Body: datos del perfil | Ciudadano |
+| GET | `/api/v1/medical-profiles/me` | Consultar el perfil profesional | Header: `Authorization` | Personal médico |
+| PUT | `/api/v1/medical-profiles/me` | Actualizar el perfil y volver a verificar la colegiatura si cambió | Body: datos del perfil | Personal médico |
+
+**Case Management**
+
+| Método | Endpoint | Acción implementada | Parámetros | Acceso |
+|---|---|---|---|---|
+| POST | `/api/v1/consultation-submissions` | Recibir una consulta sincronizada desde el dispositivo | Body: consulta, paciente, ubicación y orientación; clave de idempotencia | Autenticado |
+| GET | `/api/v1/consultation-submissions` | Filtrar las consultas recibidas | Query: `province`, `helpRequested` | Personal médico |
+| GET | `/api/v1/consultation-submissions/{consultationId}` | Ver el detalle de una consulta | Path: `consultationId` | Autenticado |
+| POST | `/api/v1/consultation-submissions/{consultationId}/photo` | Subir la fotografía de una consulta | Path: `consultationId`; multipart: archivo | Autenticado |
+| GET | `/api/v1/consultation-submissions/{consultationId}/photo` | Obtener la URL de la fotografía | Path: `consultationId` | Autenticado |
+| GET | `/api/v1/cases` | Listar los casos según el filtro autorizado | Query: `status` y otros filtros | Personal médico |
+| GET | `/api/v1/cases/paged` | Listar los casos con paginación | Query: `status`, `assignmentRelation`, `priority`, `province`, `page`, `size` | Personal médico |
+| GET | `/api/v1/cases/me` | Listar los casos del ciudadano | Header: `Authorization` | Ciudadano |
+| GET | `/api/v1/cases/me/paged` | Listar los casos del ciudadano con paginación | Query: `status`, `priority`, `province`, `page`, `size` | Ciudadano |
+| GET | `/api/v1/cases/{caseId}` | Ver el detalle de un caso | Path: `caseId` | Autenticado |
+| GET | `/api/v1/cases/{caseId}/history` | Ver el historial de estados de un caso | Path: `caseId` | Autenticado |
+| POST | `/api/v1/cases/{caseId}/assign` | Autoasignar un caso disponible | Path: `caseId` | Personal médico |
+| PATCH | `/api/v1/cases/{caseId}/status` | Cambiar el estado del caso, por ejemplo a en progreso | Path: `caseId`; body: nuevo estado | Personal médico |
+| POST | `/api/v1/cases/{caseId}/close` | Cerrar el caso con observaciones | Path: `caseId`; body: observaciones | Personal médico |
+
+**Notifications**
+
+| Método | Endpoint | Acción implementada | Parámetros | Acceso |
+|---|---|---|---|---|
+| POST | `/api/v1/notification-tokens` | Registrar el token del dispositivo para recibir avisos | Body: token del dispositivo | Autenticado |
+| DELETE | `/api/v1/notification-tokens` | Dar de baja el token del dispositivo | Body: token del dispositivo | Autenticado |
+
+El backend también expone `POST /api/v1/internal/case-jobs/{jobId}`, que el worker usa para procesar los trabajos de casos que toma del broker. No forma parte del contrato de la aplicación móvil.
+
+Los códigos de respuesta siguen la convención de 7.1.3: 201 al crear un recurso, 200 en lecturas y actualizaciones correctas, 400 si el pedido está incompleto, 401 sin sesión, 404 si el recurso no existe y 409 si la misma consulta llega otra vez con la misma clave de idempotencia.
+
+
+**Commits relacionados con los servicios**
+
+| Repository | Branch | Commit ID | Commit Message | Committed on Date |
+|---|---|---|---|---|
+| lifeline-backend | main | 35d79513caec62fe90fa2a86b4445edd999690ee | impleemnt get roles and sign out | 27-10-26 |
+| lifeline-backend | main | a2507cf807ad26ddcd5501a7f20a1ce34b3ec6a5 | implement update profiles | 27-10-26 |
+| lifeline-backend | main | 527ddcf71d949dac7a210807eceff4da44db1b19 | manage consultation submission | 28-10-26 |
+| lifeline-backend | main | f49332716a9bde92eb862e908c715f0a47ef898b | apply filters mapping | 28-10-26 |
+| lifeline-backend | main | 040032c033e6420f18ccf6d3e6878c0d93fdc524 | push correccion | 01-11-26 |
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review.
 
