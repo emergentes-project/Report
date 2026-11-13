@@ -7086,6 +7086,27 @@ Entrevistado N°2: Alison Nava
 
   Para Alison, lo más útil de Lifeline es la inteligencia artificial, porque entrega respuestas claras y ordenadas, y le genera confianza el respaldo en fuentes confiables. Lo que menos le gustó fue el tiempo de carga de algunas consultas, y pide que las respuestas lleguen más rápido para no demorar la atención. En el listado y los filtros le sirvió la descripción de cada paciente y la búsqueda por nombres. En el detalle del caso echa de menos alergias, tipo de sangre y una ubicación más precisa. Se sintió cómoda al localizar y asignarse una solicitud, aunque quisiera ver en el progreso estadísticas de casos atendidos y de personas ayudadas. Considera sencillo el flujo de iniciar la atención y cerrar el caso con observaciones, porque primero revisa la descripción y las fotografías y después registra lo atendido. La orientación al ciudadano le inspira confianza por las fuentes, pero le preocupa la demora en una emergencia. Consultaría el historial sobre todo en situaciones críticas, y esperaría encontrar alergias, tipo de sangre y contactos familiares. Ante el registro sin conexión, teme que alguna solicitud no se sincronice bien o llegue tarde, y pide una confirmación clara cuando el envío termine bien. En un evento con varios afectados cree que la app ayudaría a paramédicos y equipos de rescate, sobre todo por la ubicación, pero pide probarla con varias emergencias a la vez. Antes de usarla en su trabajo pediría datos más completos del paciente, siempre bajo lineamientos de privacidad y protección de datos personales.
 
+Entrevistada N°3: Katia Milagros Saavedra Saavedra
+
+- Sexo: Femenino
+- Edad: 56 años
+- Distrito: Surco
+- Grado de instrucción: Universitario
+- Ocupación: Médica reumatóloga
+- Acerca de la entrevista:
+  - Instante en el que inicia: 0:00
+  - Duración: 9:48
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/Katia.png" alt="Entrevista Validación Segmento 2 - Alison Nava">
+</p>
+
+**Enlace de validación:** [Ver entrevista](https://drive.google.com/file/d/1EX1ulaLhiF_Hf_U-_bcBBqBwaW5UVPtZ/view?usp=sharing)
+
+- Resumen:
+
+  Para la Dra. Katia Saavedra, una inteligencia artificial puede orientar a un ciudadano cuando todavía no llega el personal de emergencia y no existe otra alternativa inmediata, pero debe funcionar únicamente como apoyo y advertir que no reemplaza la atención médica. La aplicación debería comenzar preguntando qué ocurrió, cómo se produjo la lesión, qué síntomas presenta la persona, dónde y qué tipo de dolor siente, cuánto tiempo ha transcurrido y qué antecedentes médicos posee. También debería guiar la comprobación de la respiración y el pulso, y considerar datos como la frecuencia cardíaca, la frecuencia respiratoria, la presión arterial y la temperatura, aunque estos resultados siempre requieren una posterior evaluación clínica. Entre las señales de peligro que deben activar una atención inmediata identifica la hipotensión, la respiración acelerada y el aumento de la frecuencia cardíaca, debido a que pueden indicar una hemorragia u otra condición de riesgo vital. Como regla de seguridad, la IA no debería recomendar mover a una víctima sin la intervención de un profesional o paramédico, salvo que permanecer en el lugar represente un peligro inminente. Su validación respalda que Lifeline priorice la orientación inicial, el reconocimiento de signos de alarma y la derivación profesional, con restricciones claras para evitar acciones que puedan agravar al paciente.
+
 ### 7.3.3. Evaluaciones según heurísticas.
 
 **SITE o APP A EVALUAR:** Lifeline (RescueBridge)
@@ -7245,7 +7266,7 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 
 **Anexo B — Lean UX Canvas:** https://canva.link/a0rosb44f3zycsg
 
-**Anexo C — Entrevistas**
+**Anexo C — Entrevistas de investigación**
 
 - Barbara Eliana Seminario Leon (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQCN_juWlEoLTqJhCKvZk9JhAUL5UB2olgvMbwjLDSsdFE8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m4hGMX
 - Roberto Mauricio Huertas Romero (ciudadanos): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDDWLQjGTGLTa7N3srs73xSAT-tzDIPOBWb65EZ3WDK6s4?e=gvbK6L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
@@ -7254,8 +7275,10 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 - Katia Milagros Saavedra Saavedra (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
 - Kevin Franco Escobar Coca (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4
 
+**Anexo C — Entrevistas de validación**
 
-- Andre Ramirez Pella (personal médico) - Validación: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQDDsxbBUvXMQIIpnpckb8DJAaPHylpGcAd0rDQOZAnUoMA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gf8UPV 
+- Andre Ramirez Pella (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQDDsxbBUvXMQIIpnpckb8DJAaPHylpGcAd0rDQOZAnUoMA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gf8UPV 
+- Katia Milagros Saavedra Saavedra (personal médico): https://drive.google.com/file/d/1EX1ulaLhiF_Hf_U-_bcBBqBwaW5UVPtZ/view?usp=sharing
 
 
 **Anexo D — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
