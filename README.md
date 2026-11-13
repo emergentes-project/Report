@@ -7082,6 +7082,20 @@ Entrevistado N°1: Mauricio Huertas Romero
 
   Para Mauricio, la aplicación le gustó en general y valora sobre todo la forma de pedir ayuda. En lo personal recomienda el uso de fotos para enviar información de la emergencia. Le gustaron las indicaciones por secuencia y también el historial, porque permite ver si una consulta ya fue contestada antes. Considera buena la implementación del GPS. Lo que no le gustó es que faltan algunos datos y pide que aparezcan más. Se siente seguro al usar la app y la recomendaría por su buen manejo. Además, pide implementar un módulo para personas con discapacidad, por ejemplo para personas ciegas o mudas, e incorporar palabras clave como SOS y otras que faciliten una respuesta rápida en emergencia.
 
+Entrevistado N°2: Deybbi Anderson Crisanto Calle
+
+- Sexo: Masculino
+- Edad: 23 años
+- Distrito: Chorrillos
+- Grado de instrucción: Universitario
+
+![Entrevista de validacion a Deybbi](public/assets/images/chapter-7/entrevista-validacion.png)
+
+**Enlace de validación:** [Ver entrevista](https://drive.google.com/file/d/1pRmetqs_lDeRVWFv3lS9CEpFWbGNNlJG/view?usp=sharing)
+
+- Resumen:
+- Para Deybbi, Lifeline puede servir de apoyo en una emergencia después de un sismo, siempre que su uso sea rápido y exija el menor esfuerzo posible al usuario. Prefiere reportar la emergencia por voz y con fotografía en lugar de escribir, porque en una situación de crisis podría no tener tiempo o no poder usar bien las manos, y sugiere transcribir automáticamente los audios por si la voz no se entiende. Considera que la app debería pedir los permisos de ubicación desde el inicio y tomar la posición del GPS de forma automática, dejando la referencia como un campo opcional, porque los campos obligatorios previos a la solicitud de ayuda resultan desesperantes. También señala que las comprobaciones iniciales son ambiguas y necesitan ejemplos, como si la persona puede pararse o caminar, y que el botón de solicitar apoyo profesional debería ser grande y rojo, ya que su color gris actual hace que parezca desactivado. Sobre las indicaciones de primeros auxilios, opina que tienen demasiado texto, letra pequeña y poco contraste, y propone usar imágenes de referencia, un lenguaje menos técnico y un sondeo previo, por ejemplo si hay otra persona que pueda ayudar, para personalizar las recomendaciones. Espera que, después de solicitar ayuda, la aplicación le informe del avance con notificaciones push como “caso asignado” o “especialista en camino”. Además, recomienda incluir un botón SOS conectado con bomberos o policía, alertas después de cada sismo que recuerden que la app está disponible, y un modo oscuro. Su validación respalda que Lifeline priorice el reporte multimodal, la geolocalización automática, la reducción de pasos antes de pedir ayuda y una interfaz con jerarquía visual clara para situaciones de alta presión.
+
 **Segmento objetivo 2: Personal médico**
 
 Entrevistado N°1: Andre Ramirez Pella
