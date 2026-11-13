@@ -4775,6 +4775,22 @@ Se detallan los flujos de usuario (User Flows) de la aplicación Lifeline, conte
 
 ## 6.5. Applications Prototyping.
 
+El prototipo de Lifeline es navegable y simula la interacción de la aplicación móvil para sus dos roles: ciudadano y personal médico. Se construyó en Figma sobre los mismos mock-ups de la sección 6.4.3, incorporando interacciones (`On click → Navigate to` y `After delay` para los eventos del sistema) y dos puntos de inicio, uno por cada rol.
+
+**[Ver prototipo en Figma](https://www.figma.com/proto/58y6JpYrqroZFWwTga6SpU/Mockups-mobile-application?node-id=17-1852&p=f&t=8exN7PGWd5OOaIlq-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=17%3A1852&show-proto-sidebar=1)**
+
+Los criterios de interacción fueron:
+
+- **Rutas de los Wireflows:** cada enlace del prototipo corresponde a una flecha de los diagramas de la sección 6.4.2 (W-01 a W-08), incluidos los caminos alternos, como iniciar sesión con una cuenta existente o recibir una respuesta segura cuando no hay información suficiente.
+
+- **Sistema de navegación:** barra inferior de tres destinos para cada rol (Nueva consulta, Historial / Outbox y Perfil para el ciudadano; Casos disponibles, Mis asignaciones e Historial para el personal médico), menú de tres líneas en Nueva consulta con «Consultas guardadas» y «Salir», y flecha de regreso en las pantallas secundarias. El perfil del personal médico se abre desde el avatar del encabezado.
+
+- **Eventos del sistema simulados:** el análisis de la consulta ocurre en el dispositivo y la sincronización se realiza al recuperar la conexión, por lo que ninguno de los dos eventos es provocado por un clic del usuario. En Figma, el paso de «Procesando consulta» a la orientación médica y el cambio de estado de las consultas pendientes avanzan automáticamente mediante una interacción `After delay`.
+
+- **Tipos de interacción:** tap para las acciones principales; paneles inferiores de confirmación solo para acciones que comprometen al usuario (solicitar apoyo profesional, autoasignarse un caso y cerrar un caso); validaciones en línea debajo de cada campo en los formularios; e indicador persistente de conexión en el encabezado («Modo Offline · IA local activa» o «Conectado · Sincronizando con la nube»).
+
+- **Fidelidad:** los mock-ups reproducen la interfaz de la aplicación implementada, con su paleta, componentes y comportamiento, de modo que el prototipo anticipa la experiencia real.
+
 # Capítulo VII: Product Implementation, Validation & Deployment
 
 ## 7.1. Software Configuration Management.
