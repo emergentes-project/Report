@@ -7118,6 +7118,8 @@ El alcance de esta evaluación incluye la revisión de la usabilidad de las sigu
 2. Obtención y lectura de indicaciones médicas generadas por IA on-device
 3. Solicitud de apoyo profesional durante la emergencia
 4. Visualización de consultas pendientes de sincronización local (Outbox)
+5. Asignación y cambio de estado de casos por parte del personal médico
+6. Orientación de estado de conexión (offline/online) en la interfaz
 
 **ESCALA DE SEVERIDAD:**
 *Los errores serán puntuados tomando en cuenta la siguiente escala de severidad*
@@ -7136,6 +7138,8 @@ El alcance de esta evaluación incluye la revisión de la usabilidad de las sigu
 | 1 | El botón de "Solicitar apoyo profesional" carece de confirmación explícita. | 3 | Usability: Prevención de errores |
 | 2 | La lectura de los pasos médicos requiere scroll manual continuo durante la emergencia. | 2 | Usability: Flexibilidad y eficiencia de uso |
 | 3 | Ausencia de retroalimentación visual clara mientras el modelo IA on-device genera la respuesta. | 3 | Usability: Visibilidad del estado del sistema |
+| 4 | Ausencia de atajos o filtros predefinidos rápidos para el triaje de casos masivos en la vista del personal médico. | 2 | Usability: Flexibilidad y eficiencia de uso |
+| 5 | Falta de claridad visual para distinguir si un caso autoasignado requiere atención urgente o prioritaria. | 3 | Usability: Reconocer antes que recordar |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
@@ -7171,6 +7175,25 @@ Problema: El procesamiento de la consulta mediante el modelo de IA on-device pue
 
 Recomendación: Incorporar un indicador de progreso dinámico (spinner o esqueleto de carga) acompañado de un texto tranquilizador como "Analizando la situación y consultando bases médicas locales..." para mantener al usuario informado y en calma.
 
+PROBLEMA #4:
+
+Severidad: 2
+
+Heurística violada: Usabilidad - Flexibilidad y eficiencia de uso.
+
+Problema: En la vista de "Casos disponibles", el personal médico debe aplicar filtros manualmente para priorizar la atención. En un escenario de múltiples heridos post-sismo, realizar varios toques para filtrar ralentiza el proceso de triaje.
+
+Recomendación: Incluir atajos visuales o pestañas rápidas de pre-filtrado en la parte superior de la pantalla (ej. "Casos Críticos", "Apoyo Solicitado", "Cercanos") para agilizar la priorización de los rescates con un solo toque.
+
+PROBLEMA #5:
+
+Severidad: 3
+
+Heurística violada: Usabilidad - Reconocer antes que recordar.
+
+Problema: Una vez que un profesional se autoasigna un caso y este pasa a la pestaña de "Mis asignaciones", la tarjeta del paciente muestra el estado (En progreso) pero pierde los distintivos visuales rápidos (colores de prioridad o el badge de "Apoyo urgente") que sí existían en la vista general.
+
+Recomendación: Mantener la consistencia del diseño trasladando los badges de prioridad y apoyo (rojo/ámbar) a las tarjetas de "Mis asignaciones", permitiendo al médico reconocer visualmente la urgencia de sus propios casos sin tener que abrir el detalle de cada uno.
 
 ## 7.4. Video About-the-Product.
 
