@@ -7211,7 +7211,7 @@ Entrevistado N°3: Katherine Calle López
 - Distrito: Chorrillos
 - Grado de instrucción: Universitaria
 
-![Entrevista de validacion a Katherine](public/assets/images/chapter-7/entrevista-validacion-2.png)
+![Entrevista de validacion a Katherine](public/assets/images/chapter-7/entrevista-validacion2.jpeg)
 
 **Enlace de validación:** [Ver entrevista](https://drive.google.com/file/d/1UxNoOVGdtnnfE2nXurlIUPrTkQzQEYYH/view?usp=sharing)
 
