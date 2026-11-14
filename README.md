@@ -6876,15 +6876,70 @@ Se presentan las evidencias del avance en la implementación de los artefactos s
 
 | Repository | Branch | Commit ID | Commit Message | Committed on Date |
 |---|---|---|---|---|
+| lifeline-mobile | main | 0509d0139dcf07fd5dc179c612e38d253156f8ff | first commit | 23-10-26 |
 | lifeline-mobile | main | 0c1da023ed10ad84f4d861ba8d26fa42ab08785f | create flutter project | 23-10-26 |
+| lifeline-mobile | main | 7ebb390ee45ec8f9af8f38e3e99a40e3224b700d | sign in and sign up flow | 28-10-26 |
+| lifeline-mobile | main | 898cd74f4e7b1159e79c38deb3f3cb77d728517f | UI consultation form | 28-10-26 |
+| lifeline-mobile | main | 239785aa53c37da240c943cb903a28d35237bf3f | integration of geolocator | 28-10-26 |
+| lifeline-mobile | main | 67bd5cc6b2eeacca8f81817b11b78a3fac084011 | audtio to text | 28-10-26 |
+| lifeline-mobile | main | 61e736629b75bf69b6ad7655737c69057ad14704 | implement RAG bases and Gemma model | 28-10-26 |
+| lifeline-mobile | main | b2658c57814875192820acdec02a050f03b57ea3 | implement Gemma 4 model, RAG and prompt | 28-10-26 |
+| lifeline-mobile | main | 8b60c38011232cd2919f722bcc0b099cf2d945ca | send picture to Gemma | 28-10-26 |
+| lifeline-mobile | main | 0eb8a3317a33bf1a4286875119d898a218a28ec6 | implement consultation history | 28-10-26 |
+| lifeline-mobile | main | 23083bd0a4e8eb989244db2446ddd9e90ef444d8 | add user profiles | 28-10-26 |
+| lifeline-mobile | main | 04a683ce20679276ba21db38ee69c7d3c64f4895 | manage local consultation and patient data | 28-10-26 |
+| lifeline-mobile | main | 4b2694740810aaef32273727a22b7ffde8beaba2 | case management application | 28-10-26 |
 | lifeline-mobile | main | 82628f28bd7f49012f998479ca5477c3c0c3422b | apply cases filter and improve design | 28-10-26 |
+| lifeline-mobile | main | 30d0bbc8a550de679dfd747d5bda395e67fae3ca | fix consultarion flow | 29-10-26 |
+| lifeline-mobile | main | 079b79ac17f888792f4325105cc06c25c3608ae6 | sincronizacion | 29-10-26 |
+| lifeline-mobile | main | 251beda260514664079d2d229d3a027f490c11c7 | push | 29-10-26 |
+| lifeline-mobile | main | 0c92189820033b7dc34eab3a2070520c29b07783 | fixes for adapting to back | 29-10-26 |
+| lifeline-mobile | main | 3c101b4e92a73d6687973aa1a4e678439bda31a9 | docs: add Android APK download link | 30-10-26 |
+| lifeline-mobile | main | e29d9f45fbd28a3ecc5d9241dc7d3fde0ab0802d | push correccion | 01-11-26 |
+| lifeline-mobile | main | a5146939bd04c0fa9c02ce8c8ce1dd0992c07392 | consulta pending | 01-11-26 |
 | lifeline-mobile | main | dcaa451041a4024f0b81fa90fb916b94147653a2 | sincronizacion correcion | 01-11-26 |
+| lifeline-mobile | main | f81235c503ae4805591364b8c2c11cbfa8cd9648 | style(ui): update mobile visual design to match application wireframes and style guidelines | 03-11-26 |
+| lifeline-backend | main | 6ba14abb221a6b493ebb77aa4c1e26e04aa4ff88 | first commit | 23-10-26 |
+| lifeline-backend | main | 82cbd1cca8058bcfea973c018a7e8b9edb10f6b5 | create springboot ptoject | 23-10-26 |
+| lifeline-backend | main | 5a8f8344a0abe16f9e31b9426b0a9dccadcb250d | add value objects | 23-10-26 |
+| lifeline-backend | main | b0541859b9eb6a856ce0e5b1721e1748e5826d4b | claudinary & jwt bases | 27-10-26 |
+| lifeline-backend | main | f57d26c6ccf2511053257a104db8b0c1bec509c0 | add entities, aggrgates and tests | 27-10-26 |
+| lifeline-backend | main | 735e8d22aee8a1956abb998d878d36e3e825abb0 | add commands queries and events | 27-10-26 |
+| lifeline-backend | main | fab4ec72414e2a1990d85895c968843e6ed1cd68 | create sign in and sign up flow | 27-10-26 |
+| lifeline-backend | main | 2e18222faa20a6bf69f3a18f41389833f10cc279 | implement swagger | 27-10-26 |
+| lifeline-backend | main | 9f5d51922b817080f7726b7dce12b750c806844b | implement license verification | 27-10-26 |
+| lifeline-backend | main | 6e59acabcbaf305f7fabb67df5a68dc121f28003 | recibir consulta | 27-10-26 |
+| lifeline-backend | main | a2507cf807ad26ddcd5501a7f20a1ce34b3ec6a5 | implement update profiles | 27-10-26 |
+| lifeline-backend | main | bb252407f068414730f5e1ece97d59af8551dcce | Merge branch 'main' of https://github.com/emergentes-project/lifeline-backend | 27-10-26 |
+| lifeline-backend | main | 35d79513caec62fe90fa2a86b4445edd999690ee | impleemnt get roles and sign out | 27-10-26 |
+| lifeline-backend | main | d97f9680d1648129fecccca45238b362f6ed53d5 | implement tests | 27-10-26 |
+| lifeline-backend | main | 6c465c0581d5f62cecb2df6049144f9928cad1c5 | add consultations | 27-10-26 |
+| lifeline-backend | main | 723a6bc539e1135934db10c10718028b3094e079 | add consultations with picture | 27-10-26 |
+| lifeline-backend | main | da65da94fc5b3966f92066ffd2af3c30613ef429 | upload and get pictures | 27-10-26 |
+| lifeline-backend | main | 3c74e09d06bfbb9265e2329f5e5a4528d4fbf719 | case management flow | 27-10-26 |
+| lifeline-backend | main | a4f37cf655b9061ab9da447146055db7eb7b203a | manage cases status | 27-10-26 |
+| lifeline-backend | main | 08058a0a441d502237f4103e9513140b67e709b9 | Subir la foto de la consulta y guardar photoStorageKey sin repetir la carga. | 28-10-26 |
+| lifeline-backend | main | 527ddcf71d949dac7a210807eceff4da44db1b19 | manage consultation submission | 28-10-26 |
+| lifeline-backend | main | f49332716a9bde92eb862e908c715f0a47ef898b | apply filters mapping | 28-10-26 |
+| lifeline-backend | main | 2836504d570a9332ea9334b8deab08b045f3b518 | sincronizacion | 29-10-26 |
+| lifeline-backend | main | 2fe9d7b47be2ec58f4749e3f8666d8d3583053e0 | push | 29-10-26 |
+| lifeline-backend | main | 7d72e62a58cd70a461bcb82a36b5c75d8ba13e91 | Merge branch 'develop' of https://github.com/emergentes-project/lifeline-backend | 29-10-26 |
+| lifeline-backend | main | e3af2fd94c5c21b7b31a8e3cac663f6b8358b993 | Add or update the Azure App Service build and deployment workflow config | 29-10-26 |
+| lifeline-backend | main | fa00f7e5850edf393519695111df0dd03f3a5b3e | fix deploy | 29-10-26 |
+| lifeline-backend | main | f803326a846b7d8215d29b12af3fbb397fe5925d | add certificate | 29-10-26 |
+| lifeline-backend | main | 460d5df951606facc26ab1eed07f6a327c77ca74 | Fix paged case query with empty province filter | 30-10-26 |
 | lifeline-backend | main | 2a4fb81a354086ea0a2f5cfdf6a6a9d7a5cbf540 | Document patient phone schema update [skip ci] | 30-10-26 |
+| lifeline-backend | main | 040032c033e6420f18ccf6d3e6878c0d93fdc524 | push correccion | 01-11-26 |
+| lifeline-landing-page | main | 71b7fca8e27fba49b7d86316f1966fcd9a6c9fac | first commit | 23-10-26 |
+| lifeline-landing-page | main | df42ae8b3633c6509480586d8674391adc2df850 | create angular project | 23-10-26 |
 | lifeline-landing-page | main | 8a7f2b8475c2f50b4eefd78a5021fba7b8fd859b | implement landing page sections, routing and style guidelines | 28-10-26 |
+| lifeline-landing-page | main | 23a5a85bae0c5858268fbfe65766904af2b2962b | include download link | 30-10-26 |
+| lifeline-landing-page | main | f7e91c8c969adf9b11ab6c7bde04eab1aa13ec9e | ci: deploy landing to GitHub Pages | 30-10-26 |
+| lifeline-landing-page | main | c6aa13f3b1f90c02468c5075e72126f4156c3154 | ci: serve direct links to landing routes | 30-10-26 |
+| lifeline-broker | main | c6b7a1cb88d35dc2da79ebacc569f28b93de1a36 | inciar | 20-10-26 |
 | lifeline-broker | main | 0ed98aa5c5b92aa1a3d9dd29f8347bb158e18e38 | Conservar la instancia del broker y las colas de casos. | 27-10-26 |
-| lifeline-load-balancer | main |  |  |  |
+| lifeline-broker | main | bcfdbb8250a87b1f0311f7d9430777d4b284ffdd | docs: agregar guia de despliegue de Artemis en Azure | 30-10-26 |
 | lifeline-worker | main | dd38ba89986145c4cbec57d1be6d007e3c05e05c | consumir los trabajos de casi y llamar al backend | 27-10-26 |
-| Report | main | 267eb56c422c8ab78eff93ac76ab02dff6acf3a5 | docs: Add chapter 7 Testing Suite Evidence for Sprint Review | 03-11-26 |
 
 #### 7.2.1.4. Testing Suite Evidence for Sprint Review.
 
@@ -6894,6 +6949,48 @@ Se presentan las evidencias del avance en la implementación de los artefactos s
 
 ![TestingSuiteGherkin-Sprint1-3](public/assets/images/chapter-7/TestingSuiteGherkin-Sprint1-3.png)
 
+Los siguientes commits de `main` incluyen archivos de prueba. Como los mensajes originales no tienen cuerpo, la columna **Commit Message Body** resume brevemente las pruebas añadidas o actualizadas a partir de los archivos del commit.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| emergentes-project/lifeline-backend | main | 82cbd1cca8058bcfea973c018a7e8b9edb10f6b5 | create springboot ptoject | Application context smoke test. | 23-10-26 |
+| emergentes-project/lifeline-backend | main | b0541859b9eb6a856ce0e5b1721e1748e5826d4b | claudinary & jwt bases | Tests for JWT, Cloudinary and shared configuration. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | f57d26c6ccf2511053257a104db8b0c1bec509c0 | add entities, aggrgates and tests | Tests for entity persistence. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | 735e8d22aee8a1956abb998d878d36e3e825abb0 | add commands queries and events | Updated entity persistence tests. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | fab4ec72414e2a1990d85895c968843e6ed1cd68 | create sign in and sign up flow | Tests for user sign-in and sign-up. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | 2e18222faa20a6bf69f3a18f41389833f10cc279 | implement swagger | Tests for Swagger UI. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | 9f5d51922b817080f7726b7dce12b750c806844b | implement license verification | Tests for medical license verification. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | 6e59acabcbaf305f7fabb67df5a68dc121f28003 | recibir consulta | Tests for consultation submission and case jobs. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | a2507cf807ad26ddcd5501a7f20a1ce34b3ec6a5 | implement update profiles | Tests for profile updates. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | d97f9680d1648129fecccca45238b362f6ed53d5 | implement tests | Tests for IAM reads and sign-out. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | 723a6bc539e1135934db10c10718028b3094e079 | add consultations with picture | Tests for consultation photo endpoint. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | a4f37cf655b9061ab9da447146055db7eb7b203a | manage cases status | Tests for case workflow. | 27-10-26 |
+| emergentes-project/lifeline-backend | main | 08058a0a441d502237f4103e9513140b67e709b9 | Subir la foto de la consulta y guardar photoStorageKey sin repetir la carga. | Tests for consultation photo upload. | 28-10-26 |
+| emergentes-project/lifeline-backend | main | 527ddcf71d949dac7a210807eceff4da44db1b19 | manage consultation submission | Updated consultation submission and workflow tests. | 28-10-26 |
+| emergentes-project/lifeline-backend | main | f49332716a9bde92eb862e908c715f0a47ef898b | apply filters mapping | Updated case workflow filter tests. | 28-10-26 |
+| emergentes-project/lifeline-backend | main | 2836504d570a9332ea9334b8deab08b045f3b518 | sincronizacion | Updated persistence and consultation submission tests. | 29-10-26 |
+| emergentes-project/lifeline-backend | main | 2fe9d7b47be2ec58f4749e3f8666d8d3583053e0 | push | Tests for case assignment and notifications. | 29-10-26 |
+| emergentes-project/lifeline-backend | main | fa00f7e5850edf393519695111df0dd03f3a5b3e | fix deploy | Updated shared configuration test. | 29-10-26 |
+| emergentes-project/lifeline-backend | main | 460d5df951606facc26ab1eed07f6a327c77ca74 | Fix paged case query with empty province filter | Updated case workflow pagination tests. | 30-10-26 |
+| emergentes-project/lifeline-backend | main | 040032c033e6420f18ccf6d3e6878c0d93fdc524 | push correccion | Updated case notification tests. | 01-11-26 |
+| emergentes-project/lifeline-mobile | main | 0c1da023ed10ad84f4d861ba8d26fa42ab08785f | create flutter project | Initial Flutter widget smoke test. | 23-10-26 |
+| emergentes-project/lifeline-mobile | main | 7ebb390ee45ec8f9af8f38e3e99a40e3224b700d | sign in and sign up flow | Tests for authentication. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | 61e736629b75bf69b6ad7655737c69057ad14704 | implement RAG bases and Gemma model | Tests for medical knowledge. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | b2658c57814875192820acdec02a050f03b57ea3 | implement Gemma 4 model, RAG and prompt | Tests for consultation and RAG flow. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | 8b60c38011232cd2919f722bcc0b099cf2d945ca | send picture to Gemma | Updated consultation image tests. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | 0eb8a3317a33bf1a4286875119d898a218a28ec6 | implement consultation history | Updated consultation history tests. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | 23083bd0a4e8eb989244db2446ddd9e90ef444d8 | add user profiles | Tests for profile API. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | 04a683ce20679276ba21db38ee69c7d3c64f4895 | manage local consultation and patient data | Tests for case API and local consultations. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | 4b2694740810aaef32273727a22b7ffde8beaba2 | case management application | Tests for case management. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | 82628f28bd7f49012f998479ca5477c3c0c3422b | apply cases filter and improve design | Tests for navigation accessibility and case filters. | 28-10-26 |
+| emergentes-project/lifeline-mobile | main | 30d0bbc8a550de679dfd747d5bda395e67fae3ca | fix consultarion flow | Updated consultation flow tests. | 29-10-26 |
+| emergentes-project/lifeline-mobile | main | 079b79ac17f888792f4325105cc06c25c3608ae6 | sincronizacion | Tests for consultation synchronization. | 29-10-26 |
+| emergentes-project/lifeline-mobile | main | 251beda260514664079d2d229d3a027f490c11c7 | push | Tests for notification tokens. | 29-10-26 |
+| emergentes-project/lifeline-mobile | main | 0c92189820033b7dc34eab3a2070520c29b07783 | fixes for adapting to back | Updated consultation synchronization tests. | 29-10-26 |
+| emergentes-project/lifeline-mobile | main | e29d9f45fbd28a3ecc5d9241dc7d3fde0ab0802d | push correccion | Updated notification token tests. | 01-11-26 |
+| emergentes-project/lifeline-mobile | main | a5146939bd04c0fa9c02ce8c8ce1dd0992c07392 | consulta pending | Tests for atomic consultation saves. | 01-11-26 |
+| emergentes-project/lifeline-mobile | main | dcaa451041a4024f0b81fa90fb916b94147653a2 | sincronizacion correcion | Tests for synchronization errors. | 01-11-26 |
+| emergentes-project/lifeline-worker | main | dd38ba89986145c4cbec57d1be6d007e3c05e05c | consumir los trabajos de casi y llamar al backend | Tests for case job processing, messaging and remote handling. | 27-10-26 |
 
 #### 7.2.1.5. Execution Evidence for Sprint Review.
 En este sprint se implementó el flujo principal de Lifeline para ciudadanos y personal médico. La aplicación móvil ya permite el registro y el acceso por rol, la gestión del perfil, el registro de consultas con texto, voz, fotografías y ubicación, y la orientación médica sin conexión mediante IA local y RAG sobre la base de conocimientos médicos. También incluye el guardado local de consultas pendientes, su sincronización al recuperar la conexión, el historial del ciudadano y la gestión de casos por parte del profesional. A continuación se muestran las vistas implementadas, en el orden en que las recorre cada usuario.
@@ -7134,6 +7231,8 @@ La colaboración del sprint se evidencia en los aportes registrados en GitHub pa
   </tr>
 </table>
 
+Si bien los commits muestran participación distinta por parte de los integrantes, se dividieron las tareas de forma en que cada una contribuyera desde el área que mejor maneja, así como se realizaron sesiones de code review entre compañeros y pruebas funcionales para asegurar la calidad de la implementación. En general, se puede decir que existió mucho apoyo y solidaridad dentro del equipo, así como compromiso.
+
 ## 7.3. Validation Interviews.
 
 ### 7.3.1. Diseño de Entrevistas.
@@ -7233,6 +7332,8 @@ Entrevistado N°1: Andre Ramirez Pella
 <p align="center">
   <img src="public/assets/images/chapter-7/Segmento2-EntrevistaValidacion1-LifeLine.png" alt="Entrevista Validación Segmento 2 - Andre">
 </p>
+
+**Enlace de validación:** [Ver entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQDDsxbBUvXMQIIpnpckb8DJAaPHylpGcAd0rDQOZAnUoMA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gf8UPV)
 
 - Resumen:
 
@@ -7470,21 +7571,22 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 - Katia Milagros Saavedra Saavedra (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQA1eeA0b6IIQru3aWtYKV1rAbdlC0QFpfN6YejWyAcPw68?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3A5JVQ
 - Kevin Franco Escobar Coca (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQBLygbC1TxOTb5NTfqPQJOjAb64A2MSoaNk_oWaEqQrRqQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTsKy4
 
-**Anexo C — Entrevistas de validación**
+**Anexo D — Entrevistas de validación**
 
-- Andre Ramirez Pella (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQDDsxbBUvXMQIIpnpckb8DJAaPHylpGcAd0rDQOZAnUoMA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gf8UPV 
-- Katia Milagros Saavedra Saavedra (personal médico): https://drive.google.com/file/d/1EX1ulaLhiF_Hf_U-_bcBBqBwaW5UVPtZ/view?usp=sharing
-- 
+- Mauricio Huertas Romero (ciudadano): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQD-oZIYpmxHRJeJWG7UAGE4Ab0HeOrEbqygF5bJYsQpe7Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JzIuLX
 - Deybbi Anderson Crisanto Calle (ciudadano): https://drive.google.com/file/d/1pRmetqs_lDeRVWFv3lS9CEpFWbGNNlJG/view?usp=sharing
 - Katherine Calle López (ciudadano): https://drive.google.com/file/d/1UxNoOVGdtnnfE2nXurlIUPrTkQzQEYYH/view?usp=sharing
+- Andre Ramirez Pella (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202223990_upc_edu_pe/IQDDsxbBUvXMQIIpnpckb8DJAaPHylpGcAd0rDQOZAnUoMA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Gf8UPV
+- Alison Nava (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDgkkb9dnCeRr5_JMiG-XhCAadnkiPY5YaAojLhJ-p5PXc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Q1lwkt
+- Katia Milagros Saavedra Saavedra (personal médico): https://drive.google.com/file/d/1EX1ulaLhiF_Hf_U-_bcBBqBwaW5UVPtZ/view?usp=sharing
 
 
-**Anexo D — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
+**Anexo E — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
 
-**Anexo E — Bounded Context Canvases:** https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
+**Anexo F — Bounded Context Canvases:** https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
 
-**Anexo F — Video de exposición TB1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQBNFWEp0eu-Tq5JqPx6zMy0Af61bR_jIWZgAegB6poM8xQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MV8loY
+**Anexo G — Video de exposición TB1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQBNFWEp0eu-Tq5JqPx6zMy0Af61bR_jIWZgAegB6poM8xQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MV8loY
 
-**Anexo G — Diseño de la aplicación en Figma:** https://www.figma.com/design/CRiupyF7Y7lgMrmHATV1up/Landing---Application-wieframes?node-id=30-46&t=enQlztgjAvrXmFMz-1
+**Anexo H — Diseño de la aplicación en Figma:** https://www.figma.com/design/CRiupyF7Y7lgMrmHATV1up/Landing---Application-wieframes?node-id=30-46&t=enQlztgjAvrXmFMz-1
 
-**Anexo H — Video de exposición TP1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQB71TFWeuAZTZj-If24vp3hAYmin_XJ4IinijSU3weydME?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=effnRP
+**Anexo I — Video de exposición TP1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQB71TFWeuAZTZj-If24vp3hAYmin_XJ4IinijSU3weydME?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=effnRP
