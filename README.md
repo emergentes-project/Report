@@ -7424,6 +7424,10 @@ Heurística violada: Usabilidad - Prevención de errores.
 
 Problema: En una situación de alto estrés y pánico post-sismo, el usuario podría presionar accidentalmente el botón rojo de "Solicitar apoyo profesional" con un solo toque, enviando alertas de rescate involuntarias que saturarían al personal médico.
 
+<p align="center">
+  <img src="public/assets/images/chapter-7/HeuristicaProblema1.png" alt="Heuristica Problema 1">
+</p>
+
 Recomendación: Implementar un Bottom Sheet (Modal de diálogo) de seguridad que exija una confirmación explícita (ej. "¿Está seguro de notificar a los rescatistas?") o utilizar un botón de deslizamiento (*swipe-to-confirm*) antes de registrar la solicitud de apoyo.
 
 
@@ -7434,6 +7438,10 @@ Severidad: 2
 Heurística violada: Usabilidad - Flexibilidad y eficiencia de uso.
 
 Problema: El usuario recibe las instrucciones de primeros auxilios numeradas en texto. Si el ciudadano está aplicando presión sobre una herida o inmovilizando al paciente, le resultará difícil interactuar con la pantalla para hacer *scroll* y leer el siguiente paso.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/HeuristicaProblema2.png" alt="Heuristica Problema 2">
+</p>
 
 Recomendación: Integrar un control accesible de "Lectura en voz alta" (mediante Text-to-Speech nativo) que dicte los pasos médicos de manera continua, permitiendo al usuario actuar sin tener que mirar o tocar constantemente la pantalla.
 
@@ -7446,6 +7454,10 @@ Heurística violada: Usabilidad - Visibilidad del estado del sistema.
 
 Problema: El procesamiento de la consulta mediante el modelo de IA on-device puede tomar varios segundos en dispositivos de gama media. Sin una animación o texto de progreso evidente, el usuario bajo estrés asume que la aplicación se congeló y podría forzar el cierre.
 
+<p align="center">
+  <img src="public/assets/images/chapter-7/HeuristicaProblema3.png" alt="Heuristica Problema 3">
+</p>
+
 Recomendación: Incorporar un indicador de progreso dinámico (spinner o esqueleto de carga) acompañado de un texto tranquilizador como "Analizando la situación y consultando bases médicas locales..." para mantener al usuario informado y en calma.
 
 PROBLEMA #4:
@@ -7456,6 +7468,10 @@ Heurística violada: Usabilidad - Flexibilidad y eficiencia de uso.
 
 Problema: En la vista de "Casos disponibles", el personal médico debe aplicar filtros manualmente para priorizar la atención. En un escenario de múltiples heridos post-sismo, realizar varios toques para filtrar ralentiza el proceso de triaje.
 
+<p align="center">
+  <img src="public/assets/images/chapter-7/HeuristicaProblema4.png" alt="Heuristica Problema 4">
+</p>
+
 Recomendación: Incluir atajos visuales o pestañas rápidas de pre-filtrado en la parte superior de la pantalla (ej. "Casos Críticos", "Apoyo Solicitado", "Cercanos") para agilizar la priorización de los rescates con un solo toque.
 
 PROBLEMA #5:
@@ -7465,6 +7481,10 @@ Severidad: 3
 Heurística violada: Usabilidad - Reconocer antes que recordar.
 
 Problema: Una vez que un profesional se autoasigna un caso y este pasa a la pestaña de "Mis asignaciones", la tarjeta del paciente muestra el estado (En progreso) pero pierde los distintivos visuales rápidos (colores de prioridad o el badge de "Apoyo urgente") que sí existían en la vista general.
+
+<p align="center">
+  <img src="public/assets/images/chapter-7/HeuristicaProblema5.png" alt="Heuristica Problema 5">
+</p>
 
 Recomendación: Mantener la consistencia del diseño trasladando los badges de prioridad y apoyo (rojo/ámbar) a las tarjetas de "Mis asignaciones", permitiendo al médico reconocer visualmente la urgencia de sus propios casos sin tener que abrir el detalle de cada uno.
 
