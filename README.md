@@ -81,6 +81,14 @@
 | 2.3 | 02/10/2026 | Solano Armas, Angelo Héctor | Desarrollo de Bounded Context Software Architecture Component Level Diagrams para los bounded contexts IAM, Consultation, Medical Bases y Case Management; Bounded Context Database Design Diagram para los bounded contexts IAM, Consultation, Medical Bases y Case Management; y 6.2.2. Labeling Systems., 6.2.3. Searching Systems., 6.2.4. SEO Tags and Meta Tags. y 6.2.5. Navigation Systems. |
 | 2.4 | 03/10/2026 | Paico Calderon, July Zelmira | Desarrollo de 6.3.1. Landing Page Wireframe., 6.3.2. Landing Page Mock-up. y 6.4.1. Applications Wireframes. |
 | 2.5 | 04/10/2026 | Paico Calderon, July Zelmira | Desarrollo de 6.4.2. Applications Wireflow Diagrams. |
+| 3.1 | 31/10/2026 | Roman Cruz, Natalia Bertha | Actualización de la tabla de contenido; desarrollo de 7.2.1.1. Sprint Planning 1, 7.2.1.2. Sprint Backlog 1 y 7.3.1. Diseño de Entrevistas. |
+| 3.2 | 02/11/2026 | Solano Armas, Angelo Héctor | Desarrollo de 7.1.1. Software Development Environment Configuration, 7.1.2. Source Code Management, 7.1.3. Source Code Style Guide & Conventions y 7.1.4. Software Deployment Configuration; actualización de Conclusiones y recomendaciones. |
+| 3.3 | 03/11/2026 | Cacho Seminario, Diego Alonso | Desarrollo de 7.2.1.3. Development Evidence for Sprint Review, 7.2.1.4. Testing Suite Evidence for Sprint Review y 7.3.3. Evaluaciones según heurísticas. |
+| 3.4 | 11/11/2026 | Cacho Seminario, Diego Alonso | Incorporación de 6.4.4. Applications User Flow Diagrams, actualización de Student Outcome y desarrollo del registro de entrevistas de validación del segmento de personal médico. |
+| 3.5 | 12/11/2026 | Roman Cruz, Natalia Bertha | Incorporación de la entrevista de validación con la doctora Katia Saavedra en 7.3.2. Registro de Entrevistas. |
+| 3.6 | 12/11/2026 | Solano Armas, Angelo Héctor | Desarrollo de 7.2.1.8. Team Collaboration Insights during Sprint y 7.4. Video About-the-Product; incorporación de entrevistas de validación, actualización de Student Outcome y de Evidencias y comentarios de la TB2. |
+| 3.7 | 13/11/2026 | Paico Calderon, July Zelmira | Desarrollo de 6.4.3. Applications Mock-ups, 6.5. Applications Prototyping, 7.2.1.5. Execution Evidence for Sprint Review y 7.2.1.6. Services Documentation Evidence for Sprint Review; actualización de 6.4.2. Applications Wireflow Diagrams, entrevistas de validación y Anexos. |
+| 3.8 | 13/11/2026 | Cacho Seminario, Diego Alonso | Actualización de 7.3.3. Evaluaciones según heurísticas e incorporación de imágenes de apoyo. |
 
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
@@ -360,6 +368,8 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       Participé en las reuniones para la planificación, coordinación y discusión de acuerdos respecto a la elaboración del trabajo, así como me encargué de dirigir el EventStorming para formar los bounded contexts de la aplicación. Además, me encargué de parte del registro de entrevistas.<br><br>
       <strong>TP1:</strong><br>
       Convercé y llegué a acuerdos con mis compañeros mediante reuninoes en cuanto a los flujos que la aplicación debía seguir para los roles planteados, así como sobre la arquitectura que tendría la aplicación internamente tanto a nivel local como en el backend desplegado en la nube. Adicionalmente, expusé los artefactos que implementaríamos y la función que tendría cada uno, así como donde debía ser desplegado más adelante.<br><br>
+      <strong>TB2:</strong><br>
+      Para el tercer avance, me encargué de tener discusiones con los demás integrantes del grupo para lograr dividir las partes que debían ser realizadas, de forma que se lograra formar la primera versión de la aplicación incluyendo la totalidad de las funcionalidades implementadas. Así, al terminar, apoyé a mis compañeros para realizar el vídeo sobre la app, así como realicé una de las entrevistas de validación, resolviendo las dudas de un médico y recibiendo su feedback sobre la demo.<br><br>
       <strong>Cacho Seminario, Diego Alonso</strong><br>
       <strong>TB1:</strong><br>
       Participé activamente en las reuniones de equipo sustentando los artefactos de Lean UX, como los Empathy Maps y Scenario Maps, para alinear la visión del producto. Asimismo, argumenté y expuse las decisiones de diseño estratégico para el Impact Mapping y los retoques de los Bounded Context Canvases, asegurando que todos los miembros del equipo comprendieran la relación entre las necesidades de los usuarios y la arquitectura de la solución propuesta.<br><br>
@@ -395,6 +405,8 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>Roman Cruz, Natalia Bertha</strong><br>
       <strong>TB1:</strong><br>
       Me encargué de la redacción del startup profile y del planteamiento del caso y solución que queríamos abordar. Además, redacté las user stories junto con sus criterios de aceptación, así como realicé el diseño y análisis de las entrevistas. Por último, me encargué de la documentación del EventStorming y justificación de los bounded contexts definidos.<br><br>
+      <strong>TB2:</strong><br>
+      Para esta entrega, me centré en la implementación de la aplicación, para lo cual fui realizando múltiples commits hacia varios de los repositorios, buscando que en estos logren describir aquello que se implementó de forma en que quede claro como historial y también para mis compañeros. Asimismo, me encargué del registro del Sprint Backlog, especificando cada historia a implementar a través de tareas desglosadas.<br><br>
       <strong>TP1:</strong><br>
       Dentro del informé, colaboré junto a mis compañeros para el planteamiento de los diagramas de clases y bases de datos tanro a nivel local como la que se desplegaría para el backend en la nube. Asimismo, me encargué de la definición y registro de las capas de dominio, interface, aplicación e infraestructura, marcando la función de cada elemento y la jerarquía entre los mismos usando, a la vez, buenas prácticas y siguiendo la estructura de Domain Driven Design para facilitar la fase de implementación más adelante.<br><br>
       <strong>Cacho Seminario, Diego Alonso</strong><br>
