@@ -381,7 +381,9 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       <strong>TB1:</strong><br>
       Participé en las reuniones del equipo explicando las estrategias frente a los competidores, los escenarios de calidad y las principales decisiones arquitectónicas. Esto permitió comunicar con claridad los criterios técnicos utilizados y coordinar su integración con las demás secciones del proyecto.<br><br>
       <strong>TP1:</strong><br>
-      Presenté al equipo los wireframes de la aplicación móvil, los wireflows de cada User goal y la landing page, explicando cómo cada decisión de interfaz respondía a las General Style Guidelines, a las User Personas y a las historias de usuario. Adapté el mensaje según quién escuchaba: lenguaje sencillo para describir el recorrido del ciudadano en una emergencia, y lenguaje técnico para explicar al equipo los estados de pantalla, el modo sin conexión y la relación entre el diseño y la arquitectura, de modo que las demás secciones y el desarrollo se alinearan con el diseño propuesto.  
+      Presenté al equipo los wireframes de la aplicación móvil, los wireflows de cada User goal y la landing page, explicando cómo cada decisión de interfaz respondía a las General Style Guidelines, a las User Personas y a las historias de usuario. Adapté el mensaje según quién escuchaba: lenguaje sencillo para describir el recorrido del ciudadano en una emergencia, y lenguaje técnico para explicar al equipo los estados de pantalla, el modo sin conexión y la relación entre el diseño y la arquitectura, de modo que las demás secciones y el desarrollo se alinearan con el diseño propuesto.
+      <br><br><strong>TB2:</strong><br>
+      Sustenté ante el equipo y en la exposición del Sprint 1 los Applications Mock-ups, el prototipo navegable y los resultados de las entrevistas de validación, explicando cómo el diseño reproduce la interfaz real de la aplicación móvil. Adapté el mensaje al público: expliqué el recorrido del ciudadano y del personal médico en lenguaje sencillo, y los criterios de interacción, los estados simulados y los ajustes de la landing page y de la interfaz móvil en lenguaje técnico, de modo que el resto de integrantes alineara sus secciones con lo implementado.
     </td>
     <td>
       <strong>TB1:</strong><br>
@@ -421,6 +423,8 @@ Repositorio del informe: [GitHub — emergentes-project/Report](https://github.c
       Documenté las estrategias frente a competidores, los escenarios y restricciones de calidad, el backlog de drivers y las decisiones arquitectónicas. También contribuí al modelado de flujos de dominio, los Bounded Context Canvases y el Context Mapping, presentando los resultados con un lenguaje técnico claro y ordenado.<br><br>
       <strong>TP1:</strong><br>
       Documenté los wireframes, wireflows y la landing page, explicando cómo las decisiones de interfaz respondían a las General Style Guidelines, User Personas e historias de usuario. Adapté el lenguaje y nivel de detalle según el público, utilizando una redacción sencilla para describir el recorrido del ciudadano y una redacción técnica para documentar los estados de pantalla, el modo sin conexión y su relación con la arquitectura, facilitando la alineación del equipo y el desarrollo.
+      <br><br><strong>TB2:</strong><br>
+      Elaboré los Applications Mock-ups, tomando como referencia la aplicación implementada, y el Applications Prototyping, donde documenté los criterios de interacción y los eventos simulados del prototipo. Además, documenté la evidencia de ejecución y la documentación de servicios del Sprint 1, registré las entrevistas de validación y la bibliografía, y colaboré en la landing page y en la mejora de la interfaz móvil. Redacté cada sección con un lenguaje claro y ordenado, para que fuera comprensible tanto para lectores técnicos como para públicos de otras especialidades.
     </td>
     <td>
       <strong>TB1:</strong><br>
