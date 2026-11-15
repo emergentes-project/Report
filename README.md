@@ -7612,7 +7612,6 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 - Alison Nava (personal médico): https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDgkkb9dnCeRr5_JMiG-XhCAadnkiPY5YaAojLhJ-p5PXc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Q1lwkt
 - Katia Milagros Saavedra Saavedra (personal médico): https://drive.google.com/file/d/1EX1ulaLhiF_Hf_U-_bcBBqBwaW5UVPtZ/view?usp=sharing
 
-
 **Anexo E — EventStorming:** https://lucid.app/lucidchart/d0f602b7-11f4-48bb-a4d7-7e7e20013e43/edit?viewport_loc=-8281%2C23529%2C16955%2C8315%2C0_0&invitationId=inv_aa5a24a1-6795-41ee-beeb-4de03eed109a
 
 **Anexo F — Bounded Context Canvases:** https://miro.com/welcomeonboard/UkpaOFN5cko0U0VDWm51T2FtMjVVY1N2akQvTSt5eTFJZkxJYnB0TVpaQ2xha1U3VGpwQ051bFZKUVMvQzNtaUY1dWZkc2ExcDVBMjM3aDZwRXl5V1ljTzZORXAvU1JmSGQ0cDZZNG9RR0NWc1MvVHVWTHBrNDBHd0VjOFJSMEdQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=452015576853
@@ -7622,3 +7621,5 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 **Anexo H — Diseño de la aplicación en Figma:** https://www.figma.com/design/CRiupyF7Y7lgMrmHATV1up/Landing---Application-wieframes?node-id=30-46&t=enQlztgjAvrXmFMz-1
 
 **Anexo I — Video de exposición TP1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQB71TFWeuAZTZj-If24vp3hAYmin_XJ4IinijSU3weydME?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=effnRP
+
+**Anexo J - Link a landing page:** https://emergentes-project.github.io/lifeline-landing-page/
