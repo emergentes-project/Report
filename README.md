@@ -7570,6 +7570,21 @@ El video presenta la aplicación Lifeline y el recorrido del producto.
 
 # Video About-the-Team
 
+<p align="center">
+  <img src="public/assets/images/chapter-7/aboutTheTeam.png" alt="Portada del video About-the-Product de Lifeline">
+</p>
+
+**Video About-the-Team:** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQDFrYgckJpVQKcIQ9mKSYlqAWbRBs2PTL218g-35ecpa5g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JUfzs5)
+
+| Integrante | Enfoque a lo largo del trabajo |
+|---|---|
+| Roman Cruz, Natalia Bertha | Investigación de usuarios y requisitos, planificación del sprint, diseño de los bounded contexts e implementación de los flujos principales en el backend y la aplicación móvil. |
+| Cacho Seminario, Diego Alonso | Lean UX, entrevistas y flujos de usuario, backlog, guías de estilo, mejoras de interfaz, pruebas y balanceador de carga. |
+| Paico Calderon, July Zelmira | Análisis competitivo y decisiones de arquitectura, wireframes y prototipos, documentación de servicios y apoyo en la landing page y la aplicación móvil. |
+| Solano Armas, Angelo Héctor | Diagramas y documentación de arquitectura, diseño de bases de datos, implementación del broker y el worker, sincronización y evidencias de despliegue. |
+
+Nos hemos reunido semanalmente para avanzar en el trabajo. Estas sesiones nos permitieron revisar los avances de manera progresiva, coordinar las tareas de cada integrante y acordar los siguientes pasos del proyecto.
+
 # Bibliografía
 
 Banco Mundial. (2021). *Advancing policy reforms in Peru to reduce risk from natural hazards*. https://www.worldbank.org/en/results/2021/11/05/advancing-policy-reforms-in-peru-to-reduce-risk-from-natural-hazards
@@ -7629,3 +7644,7 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 **Anexo J - Link a landing page:** https://emergentes-project.github.io/lifeline-landing-page/
 
 **Anexo K — Video de exposición TB2:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQALQnKQoWjWRZfGDDxcWMuwAQqVBVy01852vRLormrYNXc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=zZQee3
+
+**Anexo L — Video About the Team:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQDFrYgckJpVQKcIQ9mKSYlqAWbRBs2PTL218g-35ecpa5g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JUfzs5
+
+**Anexo M — Video About the Product:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDqfITUm2xIRYtwzfHrB681AcanZatWzrw54L8a3EbRUlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=WUX6z2
