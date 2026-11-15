@@ -7574,7 +7574,7 @@ El video presenta la aplicación Lifeline y el recorrido del producto.
   <img src="public/assets/images/chapter-7/aboutTheTeam.png" alt="Portada del video About-the-Product de Lifeline">
 </p>
 
-**Video About-the-Team:** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQDFrYgckJpVQKcIQ9mKSYlqAWbRBs2PTL218g-35ecpa5g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JUfzs5)
+**Video About-the-Team:** [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQDFrYgckJpVQKcIQ9mKSYlqAWbRBs2PTL218g-35ecpa5g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=jbgoh3)
 
 | Integrante | Enfoque a lo largo del trabajo |
 |---|---|
@@ -7645,6 +7645,6 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 
 **Anexo K — Video de exposición TB2:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQALQnKQoWjWRZfGDDxcWMuwAQqVBVy01852vRLormrYNXc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=zZQee3
 
-**Anexo L — Video About the Team:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQDFrYgckJpVQKcIQ9mKSYlqAWbRBs2PTL218g-35ecpa5g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JUfzs5
+**Anexo L — Video About the Team:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQDFrYgckJpVQKcIQ9mKSYlqAWbRBs2PTL218g-35ecpa5g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=jbgoh3
 
 **Anexo M — Video About the Product:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231b775_upc_edu_pe/IQDqfITUm2xIRYtwzfHrB681AcanZatWzrw54L8a3EbRUlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=WUX6z2
