@@ -7627,3 +7627,5 @@ Unión Internacional de Telecomunicaciones. (2020). *ITU guidelines for national
 **Anexo I — Video de exposición TP1:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQB71TFWeuAZTZj-If24vp3hAYmin_XJ4IinijSU3weydME?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=effnRP
 
 **Anexo J - Link a landing page:** https://emergentes-project.github.io/lifeline-landing-page/
+
+**Anexo K — Video de exposición TB2:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310148_upc_edu_pe/IQALQnKQoWjWRZfGDDxcWMuwAQqVBVy01852vRLormrYNXc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=zZQee3
