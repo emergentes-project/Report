@@ -49,7 +49,7 @@
 </table>
 
 <br>
-<p align="center">Octubre 2026</p>
+<p align="center">Noviembre 2026</p>
 
 <div style="page-break-after:always;break-after:page;">&nbsp;</div>
 
